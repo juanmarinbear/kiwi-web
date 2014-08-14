@@ -14,18 +14,10 @@ module.exports = function (grunt) {
   grunt.initConfig({
     codecery: {
       // configurable paths
-      app: require('./bower.json').appPath || 'app',
+      app: require('./bower.json').appPath || 'src',
       dist: 'dist'
     },
     watch: {
-      coffee: {
-        files: ['<%= codecery.app %>/scripts/{,*/}*.coffee'],
-        tasks: ['coffee:dist']
-      },
-      coffeeTest: {
-        files: ['test/spec/{,*/}*.coffee'],
-        tasks: ['coffee:test']
-      },
       styles: {
         files: ['<%= codecery.app %>/styles/{,*/}*.css'],
         tasks: ['copy:styles', 'autoprefixer']
@@ -37,8 +29,9 @@ module.exports = function (grunt) {
         files: [
           '<%= codecery.app %>/{,*/}*.html',
           '.tmp/styles/{,*/}*.css',
-          '{.tmp,<%= codecery.app %>}/scripts/{,*/}*.js',
-          '<%= codecery.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+          '{.tmp,<%= codecery.app %>}/common/**/*.js',
+          '{.tmp,<%= codecery.app %>}/app/**/*.js',
+          '<%= codecery.app %>/assets/**/*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       }
     },
@@ -104,32 +97,9 @@ module.exports = function (grunt) {
       },
       all: [
         'Gruntfile.js',
-        '<%= codecery.app %>/scripts/{,*/}*.js'
+        '<%= codecery.app %>/common/**/*.js'
+        '<%= codecery.app %>/app/**/*.js'
       ]
-    },
-    coffee: {
-      options: {
-        sourceMap: true,
-        sourceRoot: ''
-      },
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= codecery.app %>/scripts',
-          src: '{,*/}*.coffee',
-          dest: '.tmp/scripts',
-          ext: '.js'
-        }]
-      },
-      test: {
-        files: [{
-          expand: true,
-          cwd: 'test/spec',
-          src: '{,*/}*.coffee',
-          dest: '.tmp/spec',
-          ext: '.js'
-        }]
-      }
     },
     // not used since Uglify task does concat,
     // but still available if needed
@@ -140,9 +110,10 @@ module.exports = function (grunt) {
       dist: {
         files: {
           src: [
-            '<%= codecery.dist %>/scripts/{,*/}*.js',
+            '<%= codecery.dist %>/common/**/*.js',
+            '<%= codecery.dist %>/app/**/*.js',
             '<%= codecery.dist %>/styles/{,*/}*.css',
-            '<%= codecery.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+            '<%= codecery.dist %>/assets/**/*.{png,jpg,jpeg,gif,webp,svg}',
             '<%= codecery.dist %>/styles/fonts/*'
           ]
         }
@@ -155,7 +126,7 @@ module.exports = function (grunt) {
       }
     },
     usemin: {
-      html: ['<%= codecery.dist %>/{,*/}*.html'],
+      html: ['<%= codecery.dist %>/**/*.html'],
       css: ['<%= codecery.dist %>/styles/{,*/}*.css'],
       options: {
         dirs: ['<%= codecery.dist %>']
@@ -165,9 +136,9 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '<%= codecery.app %>/images',
+          cwd: '<%= codecery.app %>/assets/images',
           src: '{,*/}*.{png,jpg,jpeg}',
-          dest: '<%= codecery.dist %>/images'
+          dest: '<%= codecery.dist %>/assets/images'
         }]
       }
     },
@@ -175,9 +146,9 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '<%= codecery.app %>/images',
+          cwd: '<%= codecery.app %>/assets/images',
           src: '{,*/}*.svg',
-          dest: '<%= codecery.dist %>/images'
+          dest: '<%= codecery.dist %>/assets/images'
         }]
       }
     },
@@ -210,7 +181,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= codecery.app %>',
-          src: ['*.html', 'views/*.html'],
+          src: ['*.html', '**/*.html'],
           dest: '<%= codecery.dist %>'
         }]
       }
@@ -227,13 +198,13 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '.htaccess',
             'bower_components/**/*',
-            'images/{,*/}*.{gif,webp}',
+            'assets/images/{,*/}*.{gif,webp}',
             'styles/fonts/*'
           ]
         }, {
           expand: true,
-          cwd: '.tmp/images',
-          dest: '<%= codecery.dist %>/images',
+          cwd: '.tmp/assets/images',
+          dest: '<%= codecery.dist %>/assets/images',
           src: [
             'generated/*'
           ]
@@ -248,15 +219,12 @@ module.exports = function (grunt) {
     },
     concurrent: {
       server: [
-        'coffee:dist',
         'copy:styles'
       ],
       test: [
-        'coffee',
         'copy:styles'
       ],
       dist: [
-        'coffee',
         'copy:styles',
         'imagemin',
         'svgmin',
@@ -276,11 +244,18 @@ module.exports = function (grunt) {
     },
     ngmin: {
       dist: {
-        files: [{
+        files: [
+        {
           expand: true,
-          cwd: '<%= codecery.dist %>/scripts',
+          cwd: '<%= codecery.dist %>/common',
           src: '*.js',
-          dest: '<%= codecery.dist %>/scripts'
+          dest: '<%= codecery.dist %>/common'
+        },
+        {
+          expand: true,
+          cwd: '<%= codecery.dist %>/app',
+          src: '*.js',
+          dest: '<%= codecery.dist %>/app'
         }]
       }
     },
