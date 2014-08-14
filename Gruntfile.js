@@ -97,7 +97,7 @@ module.exports = function (grunt) {
       },
       all: [
         'Gruntfile.js',
-        '<%= codecery.app %>/common/**/*.js'
+        '<%= codecery.app %>/common/**/*.js',
         '<%= codecery.app %>/app/**/*.js'
       ]
     },
