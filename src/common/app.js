@@ -17,6 +17,7 @@ angular.module('kiwiWeb', [
     controller:'MainCtrl'
   })
   .state('/landing', {
+    url: '/landing',
     templateUrl: 'app/landing/landing.tpl.html',
     controller:'MainCtrl'
   });
