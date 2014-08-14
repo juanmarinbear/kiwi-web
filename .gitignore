@@ -1,4 +1,11 @@
 # --------------------
-# Bower
+# Node 
 # --------------------
-bower_components
+
+node_modules
+
+# --------------------
+# Bower 
+# --------------------
+
+app/bower_components
