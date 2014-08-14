@@ -8,7 +8,7 @@ node_modules
 # Bower 
 # --------------------
 
-app/bower_components
+src/bower_components
 
 # --------------------
 # Misc 
