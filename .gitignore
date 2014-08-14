@@ -9,3 +9,10 @@ node_modules
 # --------------------
 
 app/bower_components
+
+# --------------------
+# Misc 
+# --------------------
+dist
+.tmp
+.sass-cache
