@@ -181,7 +181,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= codecery.app %>',
-          src: ['*.html', '**/*.html'],
+          src: ['*.html', 'app/**/*.html'],
           dest: '<%= codecery.dist %>'
         }]
       }
@@ -244,8 +244,7 @@ module.exports = function (grunt) {
     },
     ngmin: {
       dist: {
-        files: [
-        {
+        files: [{
           expand: true,
           cwd: '<%= codecery.dist %>/common',
           src: '*.js',
