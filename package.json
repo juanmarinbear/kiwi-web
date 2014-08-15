@@ -1,0 +1,58 @@
+{
+  "name": "kiwi-web",
+  "description": "The best project ever.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/juanmarinbear/kiwi-web",
+  "author": {
+    "name": "Juan Marin",
+    "email": "juan@codecery.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/juanmarinbear/kiwi-web.git"
+  },
+  "bugs": {
+    "url": "https://github.com/juanmarinbear/kiwi-web/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/juanmarinbear/kiwi-web/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/kiwi-web",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "scripts": {
+    "test": "grunt nodeunit"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-autoprefixer": "~0.2.0",
+    "grunt-concurrent": "~0.3.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-connect": "~0.5.0",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-cssmin": "~0.6.0",
+    "grunt-contrib-htmlmin": "~0.1.3",
+    "grunt-contrib-imagemin": "~0.2.0",
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-watch": "~0.5.2",
+    "grunt-google-cdn": "~0.2.0",
+    "grunt-karma": "^0.8.3",
+    "grunt-ngmin": "~0.0.2",
+    "grunt-rev": "~0.1.0",
+    "grunt-svgmin": "~0.2.0",
+    "grunt-usemin": "~0.1.11",
+    "karma": "^0.12.21",
+    "karma-ng-html2js-preprocessor": "^0.1.0",
+    "karma-ng-scenario": "^0.1.0",
+    "karma-jasmine": "^0.1.5",
+    "load-grunt-tasks": "~0.1.0",
+    "time-grunt": "~0.1.0"
+  },
+  "keywords": []
+}
