@@ -25,10 +25,13 @@ angular.module('kiwiWeb', [
     controller: 'LandingCtrl',
     resolve: {
       lang: function($http) {
-        return $http({method: 'GET', url: 'app/landing/landing.lang.es.json'})
-               .then (function (data) {
-                 return data;
-               });  
+        return $http({
+          method: 'GET',
+          url: 'app/landing/landing.lang.es.json'
+        })
+        .then (function (data) {
+          return data;
+        });
       }
     }
   });

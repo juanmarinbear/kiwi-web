@@ -2,5 +2,5 @@
 
 angular.module('kiwiWeb')
 .controller('MainCtrl', function ($scope) {
-  $scope;
+  console.log($scope);
 });
