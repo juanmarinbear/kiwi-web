@@ -2,26 +2,34 @@
 
 angular.module('kiwiWeb', [
   'ngSanitize',
-  'ui.router',
-  'pascalprecht.translate'
+  'ngStorage',
+  'ngCookies',
+  'ui.router'
 ])
-.config(function ($stateProvider, $urlRouterProvider, $translateProvider) {
+.config(function ($stateProvider, $urlRouterProvider) {
 
-  //delete $httpProvider.defaults.headers.common['X-Requested-With'];
-  
-  $translateProvider.preferredLanguage('es');
-  
-  $urlRouterProvider.otherwise('/');
+  // Routing Configuration
+
+  $urlRouterProvider.otherwise('/landing');
 
   $stateProvider
   .state('main', {
+    abstract: true,
     url: '/',
     templateUrl: 'app/main/main.tpl.html',
-    controller:'MainCtrl'
+    controller: 'MainCtrl',
   })
-  .state('/landing', {
-    url: '/landing',
+  .state('main.landing', {
+    url: 'landing',
     templateUrl: 'app/landing/landing.tpl.html',
-    controller:'MainCtrl'
+    controller: 'LandingCtrl',
+    resolve: {
+      lang: function($http) {
+        return $http({method: 'GET', url: 'app/landing/landing.lang.es.json'})
+               .then (function (data) {
+                 return data;
+               });  
+      }
+    }
   });
 });
