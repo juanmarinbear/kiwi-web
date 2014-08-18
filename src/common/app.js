@@ -5,9 +5,11 @@ angular.module('kiwiWeb', [
   'ui.router',
   'pascalprecht.translate'
 ])
-.config(function ($stateProvider, $urlRouterProvider) {
+.config(function ($stateProvider, $urlRouterProvider, $translateProvider) {
 
   //delete $httpProvider.defaults.headers.common['X-Requested-With'];
+  
+  $translateProvider.preferredLanguage('es');
   
   $urlRouterProvider.otherwise('/');
 
