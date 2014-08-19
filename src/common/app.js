@@ -77,5 +77,21 @@ angular.module('kiwiWeb', [
         });
       }
     }
+  })
+  .state('main.business', {
+    url: 'business',
+    templateUrl: 'app/business/business.tpl.html',
+    controller: 'BusinessCtrl',
+    resolve: {
+      lang: function($http) {
+        return $http({
+          method: 'GET',
+          url: 'app/business/business.lang.es.json'
+        })
+        .then (function (data) {
+          return data;
+        });
+      }
+    }
   });
 });
