@@ -109,5 +109,21 @@ angular.module('kiwiWeb', [
         });
       }
     }
+  })
+  .state('main.metromesh', {
+    url: 'metromesh',
+    templateUrl: 'app/metromesh/metromesh.tpl.html',
+    controller: 'MetroMeshCtrl',
+    resolve: {
+      lang: function($http) {
+        return $http({
+          method: 'GET',
+          url: 'app/metromesh/metromesh.lang.es.json'
+        })
+        .then (function (data) {
+          return data;
+        });
+      }
+    }
   });
 });
