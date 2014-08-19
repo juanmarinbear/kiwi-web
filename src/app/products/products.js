@@ -1,6 +1,6 @@
 'use strict';
 
 angular.module('kiwiWeb')
-.controller('MainCtrl', function ($scope, lang) {
+.controller('ProductsCtrl', function ($scope, lang) {
   $scope.lang = lang.data;
 });

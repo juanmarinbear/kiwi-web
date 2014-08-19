@@ -1,0 +1,30 @@
+<div class="pure-g">
+  <div class="pure-u-1">
+    <div class="products">
+      <div class="pure-g">
+        <div class="pure-u-1 pure-u-md-1-4" data-ng-repeat="product in lang.products">
+          <div class="icon">
+          </div>
+          <h2>{{ product.title }}</h2>
+          <div class="features">
+            <ul>
+              <li data-ng-repeat="paragraph in product.paragraphs">{{ paragraph }}</li>
+            </ul>
+          </div>
+          <div class="price">
+            <p>{{ product.price }}</p>
+          </div>
+          <div class="buttons">
+            <div class="pure-g">
+              <div class="pure-u-1 pure-u-md-1-2" data-ng-repeat="button in product.buttons">
+                <div>
+                  <a class="pure-button" href="{{ button.href }}">{{ button.title }}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
