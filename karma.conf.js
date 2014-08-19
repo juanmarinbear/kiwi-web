@@ -14,6 +14,8 @@ module.exports = function(config) {
       'src/bower_components/angular/angular.js',
       'src/bower_components/angular-ui-router/release/angular-ui-router.js',
       'src/bower_components/angular-sanitize/angular-sanitize.js',
+      'src/bower_components/ngstorage/ngStorage.js',
+      'src/bower_components/angular-cookies/angular-cookies.js',
       'src/bower_components/angular-mocks/angular-mocks.js',
       'src/common/**/*.js',
       'src/app/**/*.js'
