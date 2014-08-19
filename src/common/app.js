@@ -6,6 +6,8 @@ angular.module('kiwiWeb', [
   'ngCookies',
   'ui.router'
 ])
+.run(['$rootScope', function($rootScope) {
+}])
 .config(function ($stateProvider, $urlRouterProvider) {
 
   // Routing Configuration
