@@ -93,5 +93,21 @@ angular.module('kiwiWeb', [
         });
       }
     }
+  })
+  .state('main.dedicated', {
+    url: 'dedicated',
+    templateUrl: 'app/dedicated/dedicated.tpl.html',
+    controller: 'DedicatedCtrl',
+    resolve: {
+      lang: function($http) {
+        return $http({
+          method: 'GET',
+          url: 'app/dedicated/dedicated.lang.es.json'
+        })
+        .then (function (data) {
+          return data;
+        });
+      }
+    }
   });
 });
