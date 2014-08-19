@@ -6,5 +6,5 @@ angular.module('kiwiWeb')
 
   $scope.changeTitle = function(title) {
     $scope.title = title;
-  }
+  };
 });
