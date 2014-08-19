@@ -1,13 +1,13 @@
 'use strict';
 
-describe('MainCtrl', function(){
+describe('SupportCtrl', function(){
   var scope, ctrl;
 
   beforeEach(module('kiwiWeb'));
 
   beforeEach(inject(function($controller) {
     scope = {};
-    ctrl = $controller('MainCtrl', {$scope:scope});
+    ctrl = $controller('SupportCtrl', {$scope:scope});
   }));
 
   it('contains spec with expectation', function() {
