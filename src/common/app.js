@@ -34,5 +34,21 @@ angular.module('kiwiWeb', [
         });
       }
     }
+  })
+  .state('main.products', {
+    url: 'products',
+    templateUrl: 'app/products/products.tpl.html',
+    controller: 'ProductsCtrl',
+    resolve: {
+      lang: function($http) {
+        return $http({
+          method: 'GET',
+          url: 'app/products/products.lang.es.json'
+        })
+        .then (function (data) {
+          return data;
+        });
+      }
+    }
   });
 });
