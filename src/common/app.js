@@ -18,6 +18,17 @@ angular.module('kiwiWeb', [
     url: '/',
     templateUrl: 'app/main/main.tpl.html',
     controller: 'MainCtrl',
+    resolve: {
+      lang: function($http) {
+        return $http({
+          method: 'GET',
+          url: 'app/main/main.lang.es.json'
+        })
+        .then (function (data) {
+          return data;
+        });
+      }
+    }
   })
   .state('main.landing', {
     url: 'landing',
