@@ -5,8 +5,14 @@
     "Sin plan forzoso ni costo de instalación",
     "Desde 50 Mbps por $500 / mes*"
   ],
-  "buttons" : {
-    "more" : "Conoce Más",
-    "signup" : "Contrata"
-  }
+  "buttons" : [
+    {
+      "title" : "Conoce Más",
+      "href" : "#"
+    }, 
+    {
+      "title" : "Contrata",
+      "href" : "#"
+    } 
+  ]
 }
