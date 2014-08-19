@@ -5,7 +5,9 @@
         <div class="pure-u-1 pure-u-md-1-4" data-ng-repeat="product in lang.products">
           <div class="icon">
           </div>
-          <h2 data-ng-bind="product.title"></h2>
+          <div class="title">
+            <p data-ng-bind="product.title"></p>
+          </div>
           <div class="features">
             <ul>
               <li data-ng-repeat="paragraph in product.paragraphs"><span data-ng-bind="paragraph"></span></li>

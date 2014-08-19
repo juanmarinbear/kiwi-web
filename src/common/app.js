@@ -63,5 +63,21 @@ angular.module('kiwiWeb', [
         });
       }
     }
+  })
+  .state('main.residential', {
+    url: 'residential',
+    templateUrl: 'app/residential/residential.tpl.html',
+    controller: 'ResidentialCtrl',
+    resolve: {
+      lang: function($http) {
+        return $http({
+          method: 'GET',
+          url: 'app/residential/residential.lang.es.json'
+        })
+        .then (function (data) {
+          return data;
+        });
+      }
+    }
   });
 });
