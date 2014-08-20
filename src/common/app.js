@@ -10,12 +10,12 @@ angular.module('kiwiWeb', [
 
   // Routing Configuration
 
-  $urlRouterProvider.otherwise('/landing');
+  $urlRouterProvider.otherwise('/main/landing');
 
   $stateProvider
   .state('main', {
     abstract: true,
-    url: '/',
+    url: '/main',
     templateUrl: 'app/main/main.tpl.html',
     controller: 'MainCtrl',
     resolve: {
@@ -31,14 +31,14 @@ angular.module('kiwiWeb', [
     }
   })
   .state('main.landing', {
-    url: 'landing',
-    templateUrl: 'app/landing/landing.tpl.html',
+    url: '/landing',
+    templateUrl: 'app/main/landing/landing.tpl.html',
     controller: 'LandingCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/landing/landing.lang.es.json'
+          url: 'app/main/landing/landing.lang.es.json'
         })
         .then (function (data) {
           return data;
@@ -47,14 +47,14 @@ angular.module('kiwiWeb', [
     }
   })
   .state('main.products', {
-    url: 'products',
-    templateUrl: 'app/products/products.tpl.html',
+    url: '/products',
+    templateUrl: 'app/main/products/products.tpl.html',
     controller: 'ProductsCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/products/products.lang.es.json'
+          url: 'app/main/products/products.lang.es.json'
         })
         .then (function (data) {
           return data;
@@ -63,14 +63,14 @@ angular.module('kiwiWeb', [
     }
   })
   .state('main.residential', {
-    url: 'residential',
-    templateUrl: 'app/residential/residential.tpl.html',
+    url: '/residential',
+    templateUrl: 'app/main/residential/residential.tpl.html',
     controller: 'ResidentialCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/residential/residential.lang.es.json'
+          url: 'app/main/residential/residential.lang.es.json'
         })
         .then (function (data) {
           return data;
@@ -79,14 +79,14 @@ angular.module('kiwiWeb', [
     }
   })
   .state('main.business', {
-    url: 'business',
-    templateUrl: 'app/business/business.tpl.html',
+    url: '/business',
+    templateUrl: 'app/main/business/business.tpl.html',
     controller: 'BusinessCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/business/business.lang.es.json'
+          url: 'app/main/business/business.lang.es.json'
         })
         .then (function (data) {
           return data;
@@ -95,14 +95,14 @@ angular.module('kiwiWeb', [
     }
   })
   .state('main.dedicated', {
-    url: 'dedicated',
-    templateUrl: 'app/dedicated/dedicated.tpl.html',
+    url: '/dedicated',
+    templateUrl: 'app/main/dedicated/dedicated.tpl.html',
     controller: 'DedicatedCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/dedicated/dedicated.lang.es.json'
+          url: 'app/main/dedicated/dedicated.lang.es.json'
         })
         .then (function (data) {
           return data;
@@ -111,14 +111,47 @@ angular.module('kiwiWeb', [
     }
   })
   .state('main.metromesh', {
-    url: 'metromesh',
-    templateUrl: 'app/metromesh/metromesh.tpl.html',
+    url: '/metromesh',
+    templateUrl: 'app/main/metromesh/metromesh.tpl.html',
     controller: 'MetroMeshCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/metromesh/metromesh.lang.es.json'
+          url: 'app/main/metromesh/metromesh.lang.es.json'
+        })
+        .then (function (data) {
+          return data;
+        });
+      }
+    }
+  })
+  .state('support', {
+    abstract: true,
+    url: '/support',
+    templateUrl: 'app/support/support.tpl.html',
+    controller: 'SupportCtrl',
+    resolve: {
+      lang: function($http) {
+        return $http({
+          method: 'GET',
+          url: 'app/support/support.lang.es.json'
+        })
+        .then (function (data) {
+          return data;
+        });
+      }
+    }
+  })
+  .state('support.faq', {
+    url: '/faq',
+    templateUrl: 'app/support/faq/faq.tpl.html',
+    controller: 'FaqCtrl',
+    resolve: {
+      lang: function($http) {
+        return $http({
+          method: 'GET',
+          url: 'app/support/faq/faq.lang.es.json'
         })
         .then (function (data) {
           return data;
