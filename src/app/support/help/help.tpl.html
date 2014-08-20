@@ -1,25 +1,8 @@
 <div class="pure-g">
   <div class="pure-u-1">
-    <div class="product">
+    <div class="support">
       <div class="title">
         <p data-ng-bind="lang.title"></p>
-      </div>
-      <div class="pure-g">
-        <div class="pure-u-1">
-          <div data-ng-repeat="section in lang.sections">
-            <div class="sub-title">
-              <p data-ng-bind="section.title"></p>
-            </div>
-            <div class="questions">
-              <div data-ng-repeat="question in section.questions">
-                <p data-ng-bind="question.question"></p>
-                <div data-ng-repeat="answer in question.answer">
-                  <p data-ng-bind="answer"></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>

@@ -193,20 +193,19 @@ angular.module('kiwiWeb', [
     }
   })
   .state('company.about', {
-    abstract: true,
     url: '/about',
-    templateUrl: 'app/company/about.tpl.html',
-    controller: 'CompanyCtrl',
+    templateUrl: 'app/company/about/about.tpl.html',
+    controller: 'AboutCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/company/about.lang.es.json'
+          url: 'app/company/about/about.lang.es.json'
         })
         .then (function (data) {
           return data;
         });
       }
     }
-  })
+  });
 });
