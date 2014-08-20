@@ -158,5 +158,54 @@ angular.module('kiwiWeb', [
         });
       }
     }
+  })
+  .state('support.help', {
+    url: '/help',
+    templateUrl: 'app/support/help/help.tpl.html',
+    controller: 'HelpCtrl',
+    resolve: {
+      lang: function($http) {
+        return $http({
+          method: 'GET',
+          url: 'app/support/help/help.lang.es.json'
+        })
+        .then (function (data) {
+          return data;
+        });
+      }
+    }
+  })
+  .state('company', {
+    abstract: true,
+    url: '/company',
+    templateUrl: 'app/company/company.tpl.html',
+    controller: 'CompanyCtrl',
+    resolve: {
+      lang: function($http) {
+        return $http({
+          method: 'GET',
+          url: 'app/company/company.lang.es.json'
+        })
+        .then (function (data) {
+          return data;
+        });
+      }
+    }
+  })
+  .state('company.about', {
+    url: '/about',
+    templateUrl: 'app/company/about/about.tpl.html',
+    controller: 'AboutCtrl',
+    resolve: {
+      lang: function($http) {
+        return $http({
+          method: 'GET',
+          url: 'app/company/about/about.lang.es.json'
+        })
+        .then (function (data) {
+          return data;
+        });
+      }
+    }
   });
 });

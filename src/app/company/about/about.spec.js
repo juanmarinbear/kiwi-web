@@ -1,6 +1,6 @@
 'use strict';
 
-describe('FaqCtrl', function(){
+describe('AboutCtrl', function(){
   it('contains spec with expectation', function() {
     expect(true).toBe(true);
   });
