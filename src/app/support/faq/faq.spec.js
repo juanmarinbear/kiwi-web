@@ -1,6 +1,6 @@
 'use strict';
 
-describe('MetroMeshCtrl', function(){
+describe('FaqCtrl', function(){
   var scope, ctrl, _lang;
 
   beforeEach(module('kiwiWeb'));
@@ -8,9 +8,9 @@ describe('MetroMeshCtrl', function(){
   beforeEach(inject(function($controller) {
     scope = {};
     _lang = {
-      'title' : 'Metro Mesh'
+      'title' : 'Preguntas Frecuentes'
     };
-    ctrl = $controller('MetroMeshCtrl', {$scope:scope, lang:_lang});
+    ctrl = $controller('FaqCtrl', {$scope:scope, lang:_lang});
   }));
 
   it('contains spec with expectation', function() {

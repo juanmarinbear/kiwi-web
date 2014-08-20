@@ -10,12 +10,12 @@ angular.module('kiwiWeb', [
 
   // Routing Configuration
 
-  $urlRouterProvider.otherwise('/landing');
+  $urlRouterProvider.otherwise('/main/landing');
 
   $stateProvider
   .state('main', {
     abstract: true,
-    url: '/',
+    url: '/main',
     templateUrl: 'app/main/main.tpl.html',
     controller: 'MainCtrl',
     resolve: {
@@ -31,7 +31,7 @@ angular.module('kiwiWeb', [
     }
   })
   .state('main.landing', {
-    url: 'landing',
+    url: '/landing',
     templateUrl: 'app/main/landing/landing.tpl.html',
     controller: 'LandingCtrl',
     resolve: {
@@ -47,7 +47,7 @@ angular.module('kiwiWeb', [
     }
   })
   .state('main.products', {
-    url: 'products',
+    url: '/products',
     templateUrl: 'app/main/products/products.tpl.html',
     controller: 'ProductsCtrl',
     resolve: {
@@ -63,7 +63,7 @@ angular.module('kiwiWeb', [
     }
   })
   .state('main.residential', {
-    url: 'residential',
+    url: '/residential',
     templateUrl: 'app/main/residential/residential.tpl.html',
     controller: 'ResidentialCtrl',
     resolve: {
@@ -79,7 +79,7 @@ angular.module('kiwiWeb', [
     }
   })
   .state('main.business', {
-    url: 'business',
+    url: '/business',
     templateUrl: 'app/main/business/business.tpl.html',
     controller: 'BusinessCtrl',
     resolve: {
@@ -95,7 +95,7 @@ angular.module('kiwiWeb', [
     }
   })
   .state('main.dedicated', {
-    url: 'dedicated',
+    url: '/dedicated',
     templateUrl: 'app/main/dedicated/dedicated.tpl.html',
     controller: 'DedicatedCtrl',
     resolve: {
@@ -111,7 +111,7 @@ angular.module('kiwiWeb', [
     }
   })
   .state('main.metromesh', {
-    url: 'metromesh',
+    url: '/metromesh',
     templateUrl: 'app/main/metromesh/metromesh.tpl.html',
     controller: 'MetroMeshCtrl',
     resolve: {
@@ -144,7 +144,7 @@ angular.module('kiwiWeb', [
     }
   })
   .state('support.faq', {
-    url: 'landing',
+    url: '/faq',
     templateUrl: 'app/support/faq/faq.tpl.html',
     controller: 'FaqCtrl',
     resolve: {
