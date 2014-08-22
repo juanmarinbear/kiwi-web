@@ -1,0 +1,32 @@
+<div class="pure-g">
+  <div class="pure-u-1">
+    <div class="about">
+      <div class="title">
+        <h2 data-ng-bind="lang.title"></h2>
+      </div>
+      <div class="sections">
+        <div class="section" data-ng-repeat="section in lang.sections">
+          <div class="pure-g">
+            <div class="pure-u-1">
+              <h3 data-ng-bind="section.title"></h3>
+              <h4 data-ng-bind="section.version"></h4>
+              <div data-ng-repeat="paragraph in section.paragraphs">
+                <div data-ng-if="!angular.isObject(paragraph)">
+                  <p data-ng-bind="paragraph"></p>
+                </div>
+                <div data-ng-if="angular.isObject(paragraph)">
+                  <h4 data-ng-bind="paragraph.title"></h4>
+                  <ul>
+                    <li data-ng-repeat="subparagraph in paragraph">
+                      <span data-ng-bind="subparagraph"></span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
