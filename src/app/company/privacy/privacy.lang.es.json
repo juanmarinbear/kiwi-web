@@ -3,7 +3,7 @@
   "sections" : [
     {
       "title" : "Aviso de Privacidad Reducido",
-      "version" : "Versíon 0.1.0",
+      "subtitle" : "Versíon 0.1.0",
       "sections" : [
         "Kiwi Networks S.A.P.I. de C.V., con domicilio en Calle Recta a Cholula 308, Interior 3, Fraccionamiento Los Frayles, San Pedro Cholula, Puebla, 72760; usará sus datos personales de la siguiente forma:",
         "Proveer los servicios y productos requeridos por usted.",
@@ -15,7 +15,7 @@
     },
     {
       "title" : "Aviso de Privacidad Completo",
-      "version" : "Versíon 0.1.0",
+      "subtitle" : "Versíon 0.1.0",
       "sections" : [
         {
           "title" : "Responsable de la protección de sus datos personales",
