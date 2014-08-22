@@ -207,5 +207,21 @@ angular.module('kiwiWeb', [
         });
       }
     }
+  })
+  .state('company.privacy', {
+    url: '/privacy',
+    templateUrl: 'app/company/privacy/privacy.tpl.html',
+    controller: 'PrivacyCtrl',
+    resolve: {
+      lang: function($http) {
+        return $http({
+          method: 'GET',
+          url: 'app/company/privacy/privacy.lang.es.json'
+        })
+        .then (function (data) {
+          return data;
+        });
+      }
+    }
   });
 });

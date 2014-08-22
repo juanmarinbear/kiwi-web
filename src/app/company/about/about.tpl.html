@@ -2,7 +2,7 @@
   <div class="pure-u-1">
     <div class="about">
       <div class="title">
-        <p data-ng-bind="lang.title"></p>
+        <h2 data-ng-bind="lang.title"></h2>
       </div>
       <div class="sections">
         <div class="section" data-ng-repeat="section in lang.sections">
@@ -17,9 +17,9 @@
                 <h4 data-ng-bind="section.subtitle"></h4>
               </div>
               <div class="paragraphs">
-                <p data-ng-repeat="paragraph in section.paragraphs">
-                  <span data-ng-bind="paragraph"></span>
-                </p>
+                <div data-ng-repeat="paragraph in section.paragraphs">
+                  <p data-ng-bind="paragraph"></p>
+                </div>
               </div>
             </div>
           </div>
