@@ -1,0 +1,44 @@
+{
+  "title" : "Contacto",
+  "sections" : [
+    {
+      "title" : "Online",
+      "subtitle" : "Para darte atención inmediata y eficiente, usa nuestras formas online:",
+      "art" : "",
+      "paragraphs" : [
+        "Ventas",
+        "Soporte",
+        "Contacto"
+      ]
+    },
+    {
+      "title" : "Teléfono",
+      "subtitle" : "Llámanos a:",
+      "art" : "",
+      "paragraphs" : [
+        "Distrito Federal:",
+        "Puebla:",
+        "Resto de la República:"
+      ]
+    },
+    {
+      "title" : "Email",
+      "subtitle" : "Escríbenos a:",
+      "art" : "",
+      "paragraphs" : [
+        "Ventas:",
+        "Soporte:",
+        "Contacto:"
+      ]
+    },
+    {
+      "title" : "Redes Sociales",
+      "subtitle" : "Síguenos en:",
+      "art" : "",
+      "paragraphs" : [
+        "Facebook:",
+        "Twitter:"
+      ]
+    }
+  ]
+}
