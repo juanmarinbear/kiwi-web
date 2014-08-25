@@ -223,5 +223,21 @@ angular.module('kiwiWeb', [
         });
       }
     }
+  })
+  .state('company.contact', {
+    url: '/contact',
+    templateUrl: 'app/company/contact/contact.tpl.html',
+    controller: 'PrivacyCtrl',
+    resolve: {
+      lang: function($http) {
+        return $http({
+          method: 'GET',
+          url: 'app/company/contact/contact.lang.es.json'
+        })
+        .then (function (data) {
+          return data;
+        });
+      }
+    }
   });
 });
