@@ -239,5 +239,38 @@ angular.module('kiwiWeb', [
         });
       }
     }
+  })
+  .state('customer', {
+    abstract: true,
+    url: '/customer',
+    templateUrl: 'app/customer/customer.tpl.html',
+    controller: 'CustomerCtrl',
+    resolve: {
+      lang: function($http) {
+        return $http({
+          method: 'GET',
+          url: 'app/customer/customer.lang.es.json'
+        })
+        .then (function (data) {
+          return data;
+        });
+      }
+    }
+  })
+  .state('customer.landing', {
+    url: '/landing',
+    templateUrl: 'app/customer/landing/landing.tpl.html',
+    controller: 'CustomerLandingCtrl',
+    resolve: {
+      lang: function($http) {
+        return $http({
+          method: 'GET',
+          url: 'app/customer/landing/landing.lang.es.json'
+        })
+        .then (function (data) {
+          return data;
+        });
+      }
+    }
   });
 });
