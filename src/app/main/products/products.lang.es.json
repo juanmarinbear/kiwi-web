@@ -2,7 +2,7 @@
   "title" : "Productos",
   "products" : [ 
     { 
-      "icon" : "",
+      "art" : "",
       "title" : "Residencial",
       "paragraphs" : [
         "Velocidad simétrica",
@@ -24,7 +24,7 @@
       ]
     },
     { 
-      "icon" : "",
+      "art" : "",
       "title" : "Business",
       "paragraphs" : [
         "Velocidad simétrica",
@@ -46,7 +46,7 @@
       ]
     },
     { 
-      "icon" : "",
+      "art" : "",
       "title" : "Dedicado",
       "paragraphs" : [
         "Velocidad simétrica",
@@ -68,7 +68,7 @@
       ]
     },
     { 
-      "icon" : "",
+      "art" : "",
       "title" : "Metro Mesh",
       "paragraphs" : [
         "Conecta 2 o más sucursales de forma segura",
