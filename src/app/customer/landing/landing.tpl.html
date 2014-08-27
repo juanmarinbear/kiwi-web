@@ -1,6 +1,54 @@
+<h2 data-ng-bind="lang.title"></h2>
 <div class="pure-g">
-  <div class="pure-u-1">
-    <div class="pure-g">
+  <div class="pure-u-1 pure-u-md-1-4" data-ng-repeat="section in lang.sections">
+    <h3 data-ng-bind="section.title"></h3>
+    <div class="art">
     </div>
+    <p data-ng-repeat="paragraph in section.paragraphs" data-ng-bind="paragraph"></p>
+  </div>
+  <div class="pure-u-1 pure-u-md-1-2">
+    <h3 data-ng-bind="lang.authentication.signin.title"></h3>
+    <div class="art">
+    </div>
+    <p data-ng-repeat="paragraph in lang.authentication.signin.paragraphs" data-ng-bind="paragraph">
+    <form id="{{lang.authentication.signin.name}}" class="pure-form pure-form-stacked" name="{{lang.authentication.signin.name}}">
+      <div class="pure-g">
+        <div class="pure-u-1">
+          <label for="{{lang.authentication.signin.inputs.username.name}}" data-ng-bind="lang.authentication.signin.inputs.username.label"></label>
+          <input type="text" id="{{lang.authentication.signin.inputs.username.name}}" name="{{lang.authentication.signin.inputs.username.name}}" placeholder="{{lang.authentication.signin.inputs.username.placeholder}}"></input>
+        </div>
+        <button type="submit" class="pure-button pure-button-primary" data-ng-bind="lang.authentication.signin.inputs.submit.label"></button>
+        <div class="pure-u-1">
+          <label for="{{lang.authentication.signin.inputs.password.name}}" data-ng-bind="lang.authentication.signin.inputs.password.label"></label>
+          <input type="password" id="{{lang.authentication.signin.inputs.password.name}}" name="{{lang.authentication.signin.inputs.password.name}}" placeholder="{{lang.authentication.signin.inputs.password.placeholder}}"></input>
+        </div>
+        <button type="submit" class="pure-button pure-button-primary" data-ng-bind="lang.authentication.signin.inputs.signin.label"></button>
+      </div>
+    </form>
+  </div>
+  <div class="pure-u-1 pure-u-md-1-2">
+    <h3 data-ng-bind="lang.authentication.signup.title"></h3>
+    <div class="art">
+    </div>
+    <p data-ng-repeat="paragraph in lang.authentication.signup.paragraphs" data-ng-bind="paragraph">
+    <form id="{{lang.authentication.signup.name}}" class="pure-form pure-form-stacked" name="{{lang.authentication.signup.name}}">
+      <div class="pure-g">
+        <div class="pure-u-1">
+          <label for="{{lang.authentication.signup.inputs.serial.name}}" data-ng-bind="lang.authentication.signup.inputs.serial.label"></label>
+          <input type="text" id="{{lang.authentication.signup.inputs.serial.name}}" name="{{lang.authentication.signup.inputs.serial.name}}" placeholder="{{lang.authentication.signup.inputs.serial.placeholder}}"></input>
+        </div>
+        <button type="submit" class="pure-button pure-button-primary" data-ng-bind="lang.authentication.signup.inputs.lookup.label"></button>
+        <div class="pure-u-1">
+          <label for="{{lang.authentication.signup.inputs.username.name}}" data-ng-bind="lang.authentication.signup.inputs.username.label"></label>
+          <input type="text" id="{{lang.authentication.signup.inputs.username.name}}" name="{{lang.authentication.signup.inputs.username.name}}" placeholder="{{lang.authentication.signup.inputs.username.placeholder}}"></input>
+        </div>
+        <button type="submit" class="pure-button pure-button-primary" data-ng-bind="lang.authentication.signup.inputs.submit.label"></button>
+        <div class="pure-u-1">
+          <label for="{{lang.authentication.signup.inputs.password.name}}" data-ng-bind="lang.authentication.signup.inputs.password.label"></label>
+          <input type="password" id="{{lang.authentication.signup.inputs.password.name}}" name="{{lang.authentication.signup.inputs.password.name}}" placeholder="{{lang.authentication.signup.inputs.password.placeholder}}"></input>
+        </div>
+        <button type="submit" class="pure-button pure-button-primary" data-ng-bind="lang.authentication.signup.inputs.signup.label"></button>
+      </div>
+    </form>
   </div>
 </div>
