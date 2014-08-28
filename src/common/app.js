@@ -248,7 +248,7 @@ angular.module('kiwiWeb', [
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/company/contact/contact.lang.es.json'
+          url: 'app/company/contactForm/contactForm.lang.es.json'
         })
         .then (function (data) {
           return data;
