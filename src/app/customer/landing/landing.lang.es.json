@@ -39,7 +39,7 @@
     }
   ],
   "authentication" : {
-    "signin" : {
+    "signinForm" : {
       "title" : "Sign In",
       "name" : "signin",
       "art" : "",
@@ -69,7 +69,7 @@
         }
       } 
     },
-    "signup" : {
+    "signupForm" : {
       "title" : "Sign Up",
       "name" : "signup",
       "art" : "",
