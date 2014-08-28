@@ -227,7 +227,23 @@ angular.module('kiwiWeb', [
   .state('company.contact', {
     url: '/contact',
     templateUrl: 'app/company/contact/contact.tpl.html',
-    controller: 'PrivacyCtrl',
+    controller: 'ContactCtrl',
+    resolve: {
+      lang: function($http) {
+        return $http({
+          method: 'GET',
+          url: 'app/company/contact/contact.lang.es.json'
+        })
+        .then (function (data) {
+          return data;
+        });
+      }
+    }
+  })
+  .state('company.contactForm', {
+    url: '/contactForm',
+    templateUrl: 'app/company/contactForm/contactForm.tpl.html',
+    controller: 'ContactFormCtrl',
     resolve: {
       lang: function($http) {
         return $http({
