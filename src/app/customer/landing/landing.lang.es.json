@@ -39,7 +39,7 @@
     }
   ],
   "authentication" : {
-    "signin" : {
+    "signinForm" : {
       "title" : "Sign In",
       "name" : "signin",
       "art" : "",
@@ -47,8 +47,8 @@
         "Entra a nuestro portal de atención con tu celular y la contraseña que te enviaremos por SMS."
       ],
       "inputs" : { 
-        "username" : {
-          "name" : "username",
+        "mobile" : {
+          "name" : "mobile",
           "label" : "Móvil",
           "placeholder" : "Móvil, 10 dígitos",
           "help" : "Móvil, 10 dígitos.",
@@ -69,7 +69,7 @@
         }
       } 
     },
-    "signup" : {
+    "signupForm" : {
       "title" : "Sign Up",
       "name" : "signup",
       "art" : "",
@@ -85,11 +85,11 @@
           "help" : "Número de serie de tu router.  Son 12 dígitos sin la /.  Lo puedes encontrar aquí.  Si no te entregamos un router, llama al 01-800-XXX-XXXX",
           "validation" : {}
         },
-        "username" : {
-          "name" : "username",
-          "label" : "Celular",
-          "placeholder" : "Celular",
-          "help" : "Celular, 10 dígitos.",
+        "mobile" : {
+          "name" : "mobile",
+          "label" : "Móvil",
+          "placeholder" : "Móvil, 10 dígitos",
+          "help" : "Móvil, 10 dígitos.",
           "validation" : {}
         },
         "password" : {
