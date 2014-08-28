@@ -1,0 +1,65 @@
+{
+  "title" : "Soporte",
+  "subtitle" : "¿Necesitas soporte?",
+    "paragraphs" : [
+      "Llena esta forma de soporte y nos comunicaremos contigo inmediatamente.",
+      "Tus datos están seguros, no los compartimos con terceros, ni te enviaremos correos que no solicitaste (Marketing, comunicados, etc...).",
+      "Únicamente usaremos tus datos para dar seguimiento al asunto por el que nos contactaste.",
+      "Para conocer más sobre nuestras políticas de privacidad, da click aquí."
+  ],
+  "supportForm" : {
+    "title" : "Forma de Soporte",
+    "name" : "support",
+    "art" : "",
+    "inputs" : {
+      "name" : {
+        "name" : "name",
+        "label" : "Nombre",
+        "placeholder" : "Homero Simpson",
+        "help" : "Tu nombre.",
+        "validation" : {}
+      },
+      "email" : {
+        "name" : "email",
+        "label" : "Email",
+        "placeholder" : "homero.simpson@gmail.com",
+        "help" : "Tu email.",
+        "validation" : {}
+      },
+      "mobile" : {
+        "name" : "mobile",
+        "label" : "Móvil",
+        "placeholder" : "Móvil 10 dígitos",
+        "help" : "Tu móvil, 10 dígitos.",
+        "validation" : {}
+      },
+      "subject" : {
+        "name" : "subject",
+        "label" : "Asunto",
+        "help" : "¿Cómo podemos ayudarte?",
+        "options" : {
+          "default" : "-- Ninguno --",
+          "items" : [
+            { "label" : "Pregunta", "value" : "Question" },
+            { "label" : "Desconexión", "value" : "Disconnection" },
+            { "label" : "Velocidad", "value" : "Speed" },
+            { "label" : "Router", "value" : "Router" },
+            { "label" : "Facturación y Cobranza", "value" : "Billing" },
+            { "label" : "Otro", "value" : "Other" }
+          ]
+        },
+        "validation" : {}
+      },
+      "message" : {
+        "name" : "message",
+        "label" : "Mensaje",
+        "placeholder" : "¿Cómo podemos ayudarte?",
+        "help" : "¿Cómo podemos ayudarte?",
+        "validation" : {}
+      },
+      "submit" : {
+        "label"  : "Enviar"
+      }
+    }
+  }
+}
