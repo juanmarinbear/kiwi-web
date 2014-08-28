@@ -242,13 +242,13 @@ angular.module('kiwiWeb', [
   })
   .state('company.contactForm', {
     url: '/contactForm',
-    templateUrl: 'app/company/contactForm/contactForm.tpl.html',
+    templateUrl: 'app/forms/contact/contactForm.tpl.html',
     controller: 'ContactFormCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/company/contactForm/contactForm.lang.es.json'
+          url: 'app/forms/contact/contactForm.lang.es.json'
         })
         .then (function (data) {
           return data;
@@ -273,15 +273,15 @@ angular.module('kiwiWeb', [
       }
     }
   })
-  .state('customer.landing', {
-    url: '/landing',
-    templateUrl: 'app/customer/landing/landing.tpl.html',
-    controller: 'CustomerLandingCtrl',
+  .state('customer.customerForm', {
+    url: '/customerForm',
+    templateUrl: 'app/forms/customer/customerForm.tpl.html',
+    controller: 'CustomerFormCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/customer/landing/landing.lang.es.json'
+          url: 'app/forms/customer/customerForm.lang.es.json'
         })
         .then (function (data) {
           return data;
