@@ -1,15 +1,16 @@
 {
   "title" : "Contacto",
-  "contactForm" : {
-    "title" : "Contacto",
-    "name" : "contact",
-    "art" : "",
+  "subtitle" : "¿Quieres contactarnos?",
     "paragraphs" : [
       "Llena esta forma de contacto y nos comunicaremos contigo en menos de 24 horas.",
       "Tus datos están seguros, no los compartimos con terceros, ni te enviaremos correos que no solicitaste (Marketing, comunicados, etc...).",
       "Únicamente usaremos tus datos para dar seguimiento al  asunto por el que nos contactaste.",
       "Para conocer más sobre nuestras políticas de privacidad, da click aquí."
-    ],
+  ],
+  "contactForm" : {
+    "title" : "Forma de Contacto",
+    "name" : "contact",
+    "art" : "",
     "inputs" : {
       "name" : {
         "name" : "name",
@@ -56,6 +57,9 @@
         "placeholder" : "¿Cómo podemos ayudarte?",
         "help" : "¿Cómo podemos ayudarte?",
         "validation" : {}
+      },
+      "submit" : {
+        "label"  : "Enviar"
       }
     }
   }
