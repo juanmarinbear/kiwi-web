@@ -1,44 +1,62 @@
 {
   "title" : "Contacto",
-  "sections" : [
-    {
-      "title" : "Online",
-      "subtitle" : "Para darte atención inmediata y eficiente, usa nuestras formas online:",
-      "art" : "",
-      "paragraphs" : [
-        "Ventas",
-        "Soporte",
-        "Contacto"
-      ]
-    },
-    {
-      "title" : "Teléfono",
-      "subtitle" : "Llámanos a:",
-      "art" : "",
-      "paragraphs" : [
-        "Distrito Federal:",
-        "Puebla:",
-        "Resto de la República:"
-      ]
-    },
-    {
-      "title" : "Email",
-      "subtitle" : "Escríbenos a:",
-      "art" : "",
-      "paragraphs" : [
-        "Ventas:",
-        "Soporte:",
-        "Contacto:"
-      ]
-    },
-    {
-      "title" : "Redes Sociales",
-      "subtitle" : "Síguenos en:",
-      "art" : "",
-      "paragraphs" : [
-        "Facebook:",
-        "Twitter:"
-      ]
+  "contactForm" : {
+    "title" : "Contacto",
+    "name" : "contact",
+    "art" : "",
+    "paragraphs" : [
+      "Llena esta forma de contacto y nos comunicaremos contigo en menos de 24 horas.",
+      "Tus datos están seguros, no los compartimos con terceros, ni te enviaremos correos que no solicitaste (Marketing, comunicados, etc...).",
+      "Únicamente usaremos tus datos para dar seguimiento al  asunto por el que nos contactaste.",
+      "Para conocer más sobre nuestras políticas de privacidad, da click aquí."
+    ],
+    "inputs" : {
+      "name" : {
+        "name" : "name",
+        "label" : "Nombre",
+        "placeholder" : "Homero Simpson",
+        "help" : "Tu nombre.",
+        "validation" : {}
+      },
+      "email" : {
+        "name" : "email",
+        "label" : "Email",
+        "placeholder" : "homero.simpson@gmail.com",
+        "help" : "Tu email.",
+        "validation" : {}
+      },
+      "mobile" : {
+        "name" : "mobile",
+        "label" : "Móvil",
+        "placeholder" : "Móvil 10 dígitos",
+        "help" : "Tu móvil, 10 dígitos.",
+        "validation" : {}
+      },
+      "subject" : {
+        "name" : "subject",
+        "label" : "Asunto",
+        "help" : "¿Para qué nos contactas?",
+        "options" : {
+          "default" : "-- Ninguno --",
+          "items" : [
+            { "label" : "Ventas", "value" : "Sales" },
+            { "label" : "Soporte", "value" : "Support" },
+            { "label" : "Facturación y Cobranza", "value" : "Billing" },
+            { "label" : "Bolsa de Trabajo", "value" : "Jobs" },
+            { "label" : "Proveeduría", "value" : "Supplier" },
+            { "label" : "Prensa", "value" : "Press" },
+            { "label" : "Otro", "value" : "Other" }
+          ]
+        },
+        "validation" : {}
+      },
+      "message" : {
+        "name" : "message",
+        "label" : "Mensaje",
+        "placeholder" : "¿Cómo podemos ayudarte?",
+        "help" : "¿Cómo podemos ayudarte?",
+        "validation" : {}
+      }
     }
-  ]
+  }
 }
