@@ -126,6 +126,22 @@ angular.module('kiwiWeb', [
       }
     }
   })
+  .state('main.salesForm', {
+    url: '/salesForm',
+    templateUrl: 'app/forms/sales/salesForm.tpl.html',
+    controller: 'SalesFormCtrl',
+    resolve: {
+      lang: function($http) {
+        return $http({
+          method: 'GET',
+          url: 'app/forms/sales/salesForm.lang.es.json'
+        })
+        .then (function (data) {
+          return data;
+        });
+      }
+    }
+  })
   .state('support', {
     abstract: true,
     url: '/support',

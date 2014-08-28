@@ -40,12 +40,12 @@
         "options" : {
           "default" : "-- Ninguno --",
           "items" : [
-            { "label" : "Pregunta", "value" : "Question" },
-            { "label" : "Desconexión", "value" : "Disconnection" },
-            { "label" : "Velocidad", "value" : "Speed" },
-            { "label" : "Router", "value" : "Router" },
-            { "label" : "Facturación y Cobranza", "value" : "Billing" },
-            { "label" : "Otro", "value" : "Other" }
+            { "label" : "Pregunta", "value" : "question" },
+            { "label" : "Desconexión", "value" : "disconnection" },
+            { "label" : "Velocidad", "value" : "speed" },
+            { "label" : "Router", "value" : "router" },
+            { "label" : "Facturación y Cobranza", "value" : "billing" },
+            { "label" : "Otro", "value" : "other" }
           ]
         },
         "validation" : {}

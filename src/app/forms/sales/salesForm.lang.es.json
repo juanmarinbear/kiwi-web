@@ -1,0 +1,111 @@
+{
+  "title" : "Ventas",
+  "subtitle" : "¿Quieres contratar?",
+    "paragraphs" : [
+      "Llena esta forma de ventas y nos comunicaremos contigo inmediatamente.",
+      "Tus datos están seguros, no los compartimos con terceros, ni te enviaremos correos que no solicitaste (Marketing, comunicados, etc...).",
+      "Únicamente usaremos tus datos para dar seguimiento al asunto por el que nos contactaste.",
+      "Para conocer más sobre nuestras políticas de privacidad, da click aquí."
+  ],
+  "salesForm" : {
+    "title" : "Forma de Ventas",
+    "name" : "sales",
+    "art" : "",
+    "inputs" : {
+      "product" : {
+        "name" : "product",
+        "label" : "Producto",
+        "help" : "¿Qué producto te interesa?",
+        "options" : {
+          "default" : "-- Ninguno --",
+          "items" : [
+            { "label" : "Residential", "value" : "residential" },
+            { "label" : "Business", "value" : "business" },
+            { "label" : "Dedicated", "value" : "dedicated" },
+            { "label" : "Metro Mesh", "value" : "metromesh" },
+            { "label" : "Otro", "value" : "other" }
+          ]
+        },
+        "validation" : {}
+      },
+      "name" : {
+        "name" : "name",
+        "label" : "Nombre",
+        "placeholder" : "Homero Simpson",
+        "help" : "Tu nombre.",
+        "validation" : {}
+      },
+      "email" : {
+        "name" : "email",
+        "label" : "Email",
+        "placeholder" : "homero.simpson@gmail.com",
+        "help" : "Tu email.",
+        "validation" : {}
+      },
+      "mobile" : {
+        "name" : "mobile",
+        "label" : "Móvil",
+        "placeholder" : "Móvil 10 dígitos",
+        "help" : "Tu móvil, 10 dígitos.",
+        "validation" : {}
+      },
+      "zip" : {
+        "name" : "zip",
+        "label" : "Código Postal",
+        "placeholder" : "Código Postal",
+        "help" : "Tu código postal.",
+        "validation" : {}
+      },
+      "state" : {
+        "name" : "state",
+        "label" : "Estado",
+        "help" : "Tu estado.",
+        "options" : {
+          "default" : "-- Ninguno --",
+          "items" : [
+            { "label" : "Aguascalientes", "value" : "aguascalientes" },
+            { "label" : "Baja California", "value" : "bajacalifornia" }
+          ]
+        },
+        "validation" : {}
+      },
+      "city" : {
+        "name" : "city",
+        "label" : "Ciudad",
+        "help" : "Tu ciudad.",
+        "options" : {
+          "default" : "-- Ninguno --",
+          "items" : [
+            { "label" : "Gotham City", "value" : "gothamcity" },
+            { "label" : "Metropolitan", "value" : "metropolitan" }
+          ]
+        },
+        "validation" : {}
+      },
+      "street" : {
+        "name" : "street",
+        "label" : "Calle",
+        "placeholder" : "Calle",
+        "help" : "Tu calle.",
+        "validation" : {}
+      },
+      "number" : {
+        "name" : "number",
+        "label" : "Exterior",
+        "placeholder" : "Número Exterior",
+        "help" : "Tu número exterior.",
+        "validation" : {}
+      },
+      "apt" : {
+        "name" : "apt",
+        "label" : "Interior",
+        "placeholder" : "Número Interior",
+        "help" : "Tu número interior.",
+        "validation" : {}
+      },
+      "submit" : {
+        "label"  : "Enviar"
+      }
+    }
+  }
+}
