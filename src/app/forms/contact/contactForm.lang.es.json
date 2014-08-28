@@ -2,7 +2,7 @@
   "title" : "Contacto",
   "subtitle" : "¿Quieres contactarnos?",
     "paragraphs" : [
-      "Llena esta forma de contacto y nos comunicaremos contigo en menos de 24 horas.",
+      "Llena esta forma de contacto y nos comunicaremos contigo inmediatamente.",
       "Tus datos están seguros, no los compartimos con terceros, ni te enviaremos correos que no solicitaste (Marketing, comunicados, etc...).",
       "Únicamente usaremos tus datos para dar seguimiento al asunto por el que nos contactaste.",
       "Para conocer más sobre nuestras políticas de privacidad, da click aquí."
@@ -40,13 +40,13 @@
         "options" : {
           "default" : "-- Ninguno --",
           "items" : [
-            { "label" : "Ventas", "value" : "Sales" },
-            { "label" : "Soporte", "value" : "Support" },
-            { "label" : "Facturación y Cobranza", "value" : "Billing" },
-            { "label" : "Bolsa de Trabajo", "value" : "Jobs" },
-            { "label" : "Proveeduría", "value" : "Supplier" },
-            { "label" : "Prensa", "value" : "Press" },
-            { "label" : "Otro", "value" : "Other" }
+            { "label" : "Ventas", "value" : "sales" },
+            { "label" : "Soporte", "value" : "support" },
+            { "label" : "Facturación y Cobranza", "value" : "billing" },
+            { "label" : "Bolsa de Trabajo", "value" : "jobs" },
+            { "label" : "Proveeduría", "value" : "supplier" },
+            { "label" : "Prensa", "value" : "press" },
+            { "label" : "Otro", "value" : "other" }
           ]
         },
         "validation" : {}
