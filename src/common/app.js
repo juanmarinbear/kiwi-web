@@ -159,15 +159,15 @@ angular.module('kiwiWeb', [
       }
     }
   })
-  .state('support.landing', {
-    url: '/landing',
-    templateUrl: 'app/support/landing/landing.tpl.html',
-    controller: 'HelpLandingCtrl',
+  .state('support.supportForm', {
+    url: '/supportForm',
+    templateUrl: 'app/forms/support/supportForm.tpl.html',
+    controller: 'SupportFormCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/support/landing/landing.lang.es.json'
+          url: 'app/forms/support/supportForm.lang.es.json'
         })
         .then (function (data) {
           return data;

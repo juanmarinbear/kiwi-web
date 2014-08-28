@@ -1,15 +1,15 @@
 {
-  "title" : "Contacto",
-  "subtitle" : "¿Quieres contactarnos?",
+  "title" : "Soporte",
+  "subtitle" : "¿Necesitas soporte?",
     "paragraphs" : [
-      "Llena esta forma de contacto y nos comunicaremos contigo en menos de 24 horas.",
+      "Llena esta forma de soporte nos comunicaremos contigo inmediatamente.",
       "Tus datos están seguros, no los compartimos con terceros, ni te enviaremos correos que no solicitaste (Marketing, comunicados, etc...).",
       "Únicamente usaremos tus datos para dar seguimiento al asunto por el que nos contactaste.",
       "Para conocer más sobre nuestras políticas de privacidad, da click aquí."
   ],
-  "contactForm" : {
-    "title" : "Forma de Contacto",
-    "name" : "contact",
+  "supportForm" : {
+    "title" : "Forma de Soporte",
+    "name" : "support",
     "art" : "",
     "inputs" : {
       "name" : {
@@ -36,16 +36,15 @@
       "subject" : {
         "name" : "subject",
         "label" : "Asunto",
-        "help" : "¿Para qué nos contactas?",
+        "help" : "¿Cómo podemos ayudarte?",
         "options" : {
           "default" : "-- Ninguno --",
           "items" : [
-            { "label" : "Ventas", "value" : "Sales" },
-            { "label" : "Soporte", "value" : "Support" },
+            { "label" : "Pregunta", "value" : "Question" },
+            { "label" : "Desconexión", "value" : "Disconnection" },
+            { "label" : "Velocidad", "value" : "Speed" },
+            { "label" : "Router", "value" : "Router" },
             { "label" : "Facturación y Cobranza", "value" : "Billing" },
-            { "label" : "Bolsa de Trabajo", "value" : "Jobs" },
-            { "label" : "Proveeduría", "value" : "Supplier" },
-            { "label" : "Prensa", "value" : "Press" },
             { "label" : "Otro", "value" : "Other" }
           ]
         },
