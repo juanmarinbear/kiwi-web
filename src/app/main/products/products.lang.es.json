@@ -15,11 +15,11 @@
       "buttons" : [
         {
           "title" : "Conoce Más",
-          "href" : "#"
+          "href" : "main.residential"
         }, 
         {
           "title" : "Contrata",
-          "href" : "#"
+          "href" : "main.salesForm({product: 'residential'})"
         } 
       ]
     },
@@ -37,11 +37,11 @@
       "buttons" : [
         {
           "title" : "Conoce Más",
-          "href" : "#"
+          "href" : "main.business"
         }, 
         {
           "title" : "Contrata",
-          "href" : "#"
+          "href" : "main.salesForm({product: 'business'})"
         } 
       ]
     },
@@ -59,11 +59,11 @@
       "buttons" : [
         {
           "title" : "Conoce Más",
-          "href" : "#"
+          "href" : "main.dedicated"
         }, 
         {
           "title" : "Contrata",
-          "href" : "#"
+          "href" : "main.salesForm({product: 'dedicated'})"
         } 
       ]
     },
@@ -80,11 +80,11 @@
       "buttons" : [
         {
           "title" : "Conoce Más",
-          "href" : "#"
+          "href" : "main.metromesh"
         }, 
         {
           "title" : "Contrata",
-          "href" : "#"
+          "href" : "main.salesForm({product: 'metromesh'})"
         } 
       ]
     } 

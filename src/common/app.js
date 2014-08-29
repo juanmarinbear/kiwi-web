@@ -4,7 +4,8 @@ angular.module('kiwiWeb', [
   'ngSanitize',
   'ngStorage',
   'ngCookies',
-  'ui.router'
+  'ui.router',
+  'ngAnimate'
 ])
 .config(function ($stateProvider, $urlRouterProvider) {
 
@@ -127,7 +128,7 @@ angular.module('kiwiWeb', [
     }
   })
   .state('main.salesForm', {
-    url: '/salesForm',
+    url: '/salesForm/:product',
     templateUrl: 'app/forms/sales/salesForm.tpl.html',
     controller: 'SalesFormCtrl',
     resolve: {
@@ -160,7 +161,7 @@ angular.module('kiwiWeb', [
     }
   })
   .state('support.faq', {
-    url: '/faq',
+    url: '/faq/:location',
     templateUrl: 'app/support/faq/faq.tpl.html',
     controller: 'FaqCtrl',
     resolve: {
