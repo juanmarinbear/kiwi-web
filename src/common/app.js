@@ -160,7 +160,7 @@ angular.module('kiwiWeb', [
     }
   })
   .state('support.faq', {
-    url: '/faq',
+    url: '/faq/:location',
     templateUrl: 'app/support/faq/faq.tpl.html',
     controller: 'FaqCtrl',
     resolve: {
