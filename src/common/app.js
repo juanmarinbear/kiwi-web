@@ -4,7 +4,8 @@ angular.module('kiwiWeb', [
   'ngSanitize',
   'ngStorage',
   'ngCookies',
-  'ui.router'
+  'ui.router',
+  'ngAnimate'
 ])
 .config(function ($stateProvider, $urlRouterProvider) {
 
