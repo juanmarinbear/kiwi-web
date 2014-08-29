@@ -127,7 +127,7 @@ angular.module('kiwiWeb', [
     }
   })
   .state('main.salesForm', {
-    url: '/salesForm',
+    url: '/salesForm/:product',
     templateUrl: 'app/forms/sales/salesForm.tpl.html',
     controller: 'SalesFormCtrl',
     resolve: {
