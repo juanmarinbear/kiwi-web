@@ -1,1 +1,54 @@
 /* Main Stylesheet */
+
+.page {
+  bottom:0; 
+  padding-top:200px;
+  position:absolute; 
+  text-align:center;
+  top:0;  
+  width:100%; 
+}
+
+/* Pages (specific colors for each page) */
+
+.page-main-landing {
+  background-color: #7D0E55;
+}
+
+.page-main-products {
+  background-color: #D3BE41;
+}
+
+.page-main-residential {
+  background-color: #CA2A90;
+}
+
+.page-main-business {
+  background-color: #109097;
+}
+
+.page-main-dedicated {
+  background-color: #14787D;
+}
+
+.page-main-metromesh {
+  background-color: #7D0E55;
+}
+
+/* Angular Animations */
+
+.page-main-landing.ng-enter {
+  animation: pt-page-moveFromBottom;
+}
+
+.page-main-landing.ng-leave {
+  animation: pt-page-moveToTop;
+}
+
+.page-main-products.ng-enter {
+  animation: pt-page-moveFromBottom;
+}
+
+.page-main-products.ng-leave {
+  animation: pt-page-moveToTop;
+}
