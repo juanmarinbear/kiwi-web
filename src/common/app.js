@@ -7,6 +7,7 @@ angular.module('kiwiWeb', [
   'ui.router',
   'ngAnimate'
 ])
+/*
 .config(function ($stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider.otherwise('/');
@@ -138,7 +139,7 @@ angular.module('kiwiWeb', [
     }
   });
 });
-/*
+*/
 .config(function ($stateProvider, $urlRouterProvider) {
 
   // Routing Configuration
@@ -439,4 +440,3 @@ angular.module('kiwiWeb', [
     }
   });
 });
-*/
