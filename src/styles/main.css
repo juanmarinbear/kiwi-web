@@ -41,3 +41,54 @@ html, body { height: 100%; }
 .kw-page-ontop {
 	z-index: 999;
 }
+
+/*
+ * Page Styles
+ */
+
+.main-landing {
+  background: #CA2A90;
+}
+
+.main-products {
+  background: #CA2A90;
+}
+
+.main-residential {
+  background: #FD331B;
+}
+
+.main-business {
+  background: #CEFD1B;
+}
+
+.main-dedicated {
+  background: #644A47;
+}
+
+.main-metromesh {
+  background: #93D161;
+}
+
+/*
+ * Page Animations
+ */
+
+[ui-view].ng-enter, [ui-view].ng-leave {
+}
+
+[ui-view].ng-enter {
+	-webkit-animation: moveFromBottom .6s ease both;
+	animation: moveFromBottom .6s ease both;
+}
+
+[ui-view].ng-enter-active {
+}
+
+[ui-view].ng-leave {
+	-webkit-animation: moveToTop .6s ease both;
+	animation: moveToTop .6s ease both;
+}
+
+[ui-view].ng-leave-active {
+}
