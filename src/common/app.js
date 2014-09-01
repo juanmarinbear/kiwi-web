@@ -9,6 +9,138 @@ angular.module('kiwiWeb', [
 ])
 .config(function ($stateProvider, $urlRouterProvider) {
 
+  $urlRouterProvider.otherwise('/');
+
+  $stateProvider
+  .state('main', {
+    url: '/',
+    views: {
+      '': {
+        templateUrl: 'app/main/main.tpl.html',
+        controller: 'MainCtrl',
+        resolve: {
+          lang: function($http) {
+            return $http({
+              method: 'GET',
+              url: 'app/main/main.lang.es.json'
+            })
+            .then (function (data) {
+              return data;
+            });
+          }
+        }
+      },
+      'salesForm@main': {
+        templateUrl: 'app/forms/sales/salesForm.tpl.html',
+        controller: 'SalesFormCtrl',
+        resolve: {
+          lang: function($http) {
+            return $http({
+              method: 'GET',
+              url: 'app/forms/sales/salesForm.lang.es.json'
+            })
+            .then (function (data) {
+              return data;
+            });
+          }
+        }
+      },
+      'landing@main': {
+        templateUrl: 'app/main/landing/landing.tpl.html',
+        controller: 'LandingCtrl',
+        resolve: {
+          lang: function($http) {
+            return $http({
+              method: 'GET',
+              url: 'app/main/landing/landing.lang.es.json'
+            })
+            .then (function (data) {
+              return data;
+            });
+          }
+        }
+      },
+      'products@main': {
+        templateUrl: 'app/main/products/products.tpl.html',
+        controller: 'ProductsCtrl',
+        resolve: {
+          lang: function($http) {
+            return $http({
+              method: 'GET',
+              url: 'app/main/products/products.lang.es.json'
+            })
+            .then (function (data) {
+              return data;
+            });
+          }
+        }
+      },
+      'residential@main': {
+        templateUrl: 'app/main/residential/residential.tpl.html',
+        controller: 'ResidentialCtrl',
+        resolve: {
+          lang: function($http) {
+            return $http({
+              method: 'GET',
+              url: 'app/main/residential/residential.lang.es.json'
+            })
+            .then (function (data) {
+              return data;
+            });
+          }
+        }
+      },
+      'business@main': {
+        templateUrl: 'app/main/business/business.tpl.html',
+        controller: 'BusinessCtrl',
+        resolve: {
+          lang: function($http) {
+            return $http({
+              method: 'GET',
+              url: 'app/main/business/business.lang.es.json'
+            })
+            .then (function (data) {
+              return data;
+            });
+          }
+        }
+      },
+      'dedicated@main': {
+        templateUrl: 'app/main/dedicated/dedicated.tpl.html',
+        controller: 'DedicatedCtrl',
+        resolve: {
+          lang: function($http) {
+            return $http({
+              method: 'GET',
+              url: 'app/main/dedicated/dedicated.lang.es.json'
+            })
+            .then (function (data) {
+              return data;
+            });
+          }
+        }
+      },
+      'metromesh@main': {
+        templateUrl: 'app/main/metromesh/metromesh.tpl.html',
+        controller: 'MetroMeshCtrl',
+        resolve: {
+          lang: function($http) {
+            return $http({
+              method: 'GET',
+              url: 'app/main/metromesh/metromesh.lang.es.json'
+            })
+            .then (function (data) {
+              return data;
+            });
+          }
+        }
+      }
+    }
+  });
+});
+/*
+.config(function ($stateProvider, $urlRouterProvider) {
+
   // Routing Configuration
 
   $urlRouterProvider.otherwise('/main/landing');
@@ -307,3 +439,4 @@ angular.module('kiwiWeb', [
     }
   });
 });
+*/
