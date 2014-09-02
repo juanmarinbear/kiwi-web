@@ -74,21 +74,22 @@ html, body { height: 100%; }
  * Page Animations
  */
 
-[ui-view].ng-enter, [ui-view].ng-leave {
+[ui-view].up.ng-enter {
+	-webkit-animation: moveFromBottom ease both;
+	animation: moveFromBottom ease both;
 }
 
-[ui-view].ng-enter {
-	-webkit-animation: moveFromBottom .6s ease both;
-	animation: moveFromBottom .6s ease both;
+[ui-view].up.ng-leave {
+	-webkit-animation: moveToTop ease both;
+	animation: moveToTop ease both;
 }
 
-[ui-view].ng-enter-active {
+[ui-view].down.ng-enter {
+	-webkit-animation: moveFromTop ease both;
+	animation: moveFromTop ease both;
 }
 
-[ui-view].ng-leave {
-	-webkit-animation: moveToTop .6s ease both;
-	animation: moveToTop .6s ease both;
-}
-
-[ui-view].ng-leave-active {
+[ui-view].down.ng-leave {
+	-webkit-animation: moveToBottom ease both;
+	animation: moveToBottom ease both;
 }
