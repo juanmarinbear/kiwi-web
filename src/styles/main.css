@@ -1,54 +1,95 @@
-/* Main Stylesheet */
+html, body { height: 100%; }
 
-.page {
-  bottom:0; 
-  padding-top:200px;
-  position:absolute; 
-  text-align:center;
-  top:0;  
-  width:100%; 
+.kw-perspective {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	-webkit-perspective: 1200px;
+	-moz-perspective: 1200px;
+	perspective: 1200px;
 }
 
-/* Pages (specific colors for each page) */
-
-.page-main-landing {
-  background-color: #7D0E55;
+.kw-page {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
 }
 
-.page-main-products {
-  background-color: #D3BE41;
+.kw-page-current,
+.no-js .kw-page {
+	visibility: visible;
+	z-index: 1;
 }
 
-.page-main-residential {
-  background-color: #CA2A90;
+.no-js body {
+	overflow: auto;
 }
 
-.page-main-business {
-  background-color: #109097;
+.kw-page-ontop {
+	z-index: 999;
 }
 
-.page-main-dedicated {
-  background-color: #14787D;
+/*
+ * Page Styles
+ */
+
+.main-landing {
+  background: #CA2A90;
 }
 
-.page-main-metromesh {
-  background-color: #7D0E55;
+.main-products {
+  background: #CA2A90;
 }
 
-/* Angular Animations */
-
-.page-main-landing.ng-enter {
-  animation: pt-page-moveFromBottom;
+.main-residential {
+  background: #FD331B;
 }
 
-.page-main-landing.ng-leave {
-  animation: pt-page-moveToTop;
+.main-business {
+  background: #CEFD1B;
 }
 
-.page-main-products.ng-enter {
-  animation: pt-page-moveFromBottom;
+.main-dedicated {
+  background: #644A47;
 }
 
-.page-main-products.ng-leave {
-  animation: pt-page-moveToTop;
+.main-metromesh {
+  background: #93D161;
+}
+
+/*
+ * Page Animations
+ */
+
+[ui-view].up.ng-enter {
+	-webkit-animation: moveFromBottom ease both;
+	animation: moveFromBottom ease both;
+}
+
+[ui-view].up.ng-leave {
+	-webkit-animation: moveToTop ease both;
+	animation: moveToTop ease both;
+}
+
+[ui-view].down.ng-enter {
+	-webkit-animation: moveFromTop ease both;
+	animation: moveFromTop ease both;
+}
+
+[ui-view].down.ng-leave {
+	-webkit-animation: moveToBottom ease both;
+	animation: moveToBottom ease both;
 }
