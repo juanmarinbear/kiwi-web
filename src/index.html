@@ -33,7 +33,7 @@
 
     <!-- Add your site or application content here -->
 
-    <div class="kw-perspective" ui-view></div>
+    <div class="kw-perspective" data-ng-class="transition.parent" ui-view></div>
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -63,6 +63,8 @@
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="common/app.js"></script>
+    <script src="common/services/transition.js"></script>
+    <script src="common/services/routes.js"></script>
     <script src="app/title/title.js"></script>
     <script src="app/main/main.js"></script>
     <script src="app/main/landing/landing.js"></script>

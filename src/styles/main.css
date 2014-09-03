@@ -74,22 +74,70 @@ html, body { height: 100%; }
  * Page Animations
  */
 
-[ui-view].up.ng-enter {
-	-webkit-animation: moveFromBottom ease both;
-	animation: moveFromBottom ease both;
+[ui-view].slideUp.ng-enter {
+	-webkit-animation: moveFromBottom ease 0.6s both;
+	animation: moveFromBottom ease 0.6s both;
 }
 
-[ui-view].up.ng-leave {
-	-webkit-animation: moveToTop ease both;
-	animation: moveToTop ease both;
+[ui-view].slideUp.ng-leave {
+	-webkit-animation: moveToTop ease 0.6s both;
+	animation: moveToTop ease 0.6s both;
 }
 
-[ui-view].down.ng-enter {
-	-webkit-animation: moveFromTop ease both;
-	animation: moveFromTop ease both;
+[ui-view].slideDown.ng-enter {
+	-webkit-animation: moveFromTop ease 0.6s both;
+	animation: moveFromTop ease 0.6s both;
 }
 
-[ui-view].down.ng-leave {
-	-webkit-animation: moveToBottom ease both;
-	animation: moveToBottom ease both;
+[ui-view].slideDown.ng-leave {
+	-webkit-animation: moveToBottom ease 0.6s both;
+	animation: moveToBottom ease 0.6s both;
+}
+
+[ui-view].slideLeft.ng-enter {
+	-webkit-animation: moveFromRight ease 0.6s both;
+	animation: moveFromBottom ease 0.6s both;
+}
+
+[ui-view].slideLeft.ng-leave {
+	-webkit-animation: moveToLeft ease 0.6s both;
+	animation: moveToTop ease 0.6s both;
+}
+
+[ui-view].slideRight.ng-enter {
+	-webkit-animation: moveFromLeft ease 0.6s both;
+	animation: moveFromTop ease 0.6s both;
+}
+
+[ui-view].slideRight.ng-leave {
+	-webkit-animation: moveToRight ease 0.6s both;
+	animation: moveToBottom ease 0.6s both;
+}
+
+[ui-view].rotateCubeUp.ng-enter {
+	-webkit-transform-origin: 50% 100%;
+	transform-origin: 50% 100%;
+	-webkit-animation: rotateCubeBottomIn .6s both ease-in;
+	animation: rotateCubeBottomIn .6s both ease-in;
+}
+
+[ui-view].rotateCubeUp.ng-leave {
+	-webkit-transform-origin: 50% 0%;
+	transform-origin: 50% 0%;
+	-webkit-animation: rotateCubeBottomOut .6s both ease-in;
+	animation: rotateCubeBottomOut .6s both ease-in;
+}
+
+[ui-view].rotateCubeDown.ng-enter {
+	-webkit-transform-origin: 50% 0%;
+	transform-origin: 50% 0%;
+	-webkit-animation: rotateCubeTopIn .6s both ease-in;
+	animation: rotateCubeTopIn .6s both ease-in;
+}
+
+[ui-view].rotateCubeDown.ng-leave {
+	-webkit-transform-origin: 50% 100%;
+	transform-origin: 50% 100%;
+	-webkit-animation: rotateCubeTopOut .6s both ease-in;
+	animation: rotateCubeTopOut .6s both ease-in;
 }
