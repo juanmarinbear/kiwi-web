@@ -24,22 +24,8 @@ angular.module('kiwiWeb')
     toIndex = sections.indexOf(toState.name);
     fromIndex = sections.indexOf(fromState.name);
     direction = toIndex > fromIndex  ? 1 : -1;
-    steps = Math.abs(toIndex - fromIndex);
 
-    if(steps > 1) {
-      event.preventDefault();
-      $scope.transition.origin = fromState.name;
-      $scope.transition.origin = fromState.name;
-      $scope.transition.finalDestination = toState.name;
-      $state.go(sections[fromIndex + direction]);
-    } 
+    $scope.transition.css = direction > 0 ? 'up' : 'down';
   });
 
-  $scope.$on("$stateChangeSuccess", function (event, toState, toParams, fromState, fromParams) {
-    if(toState.name && $scope.transition.finalDestination && (toState.name !== $scope.transition.finalDestination)) {
-      $state.go($scope.transition.finalDestination);
-    } else {
-      $scope.transition.finalDestination = null; 
-    }
-  });
 });
