@@ -14,7 +14,6 @@ angular.module('kiwiWeb')
       toChild = toState.name.split('.')[1];
 
       if(toParent === 'customer') {
-        console.log('Cubo!');
         return 'rotateCubeDown';
       }
 
