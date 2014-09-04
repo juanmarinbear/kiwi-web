@@ -1,7 +1,6 @@
 'use strict';
 
-kiwiWeb
-.config(function ($stateProvider, $urlRouterProvider) {
+kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
 
   // Routing Configuration
 
