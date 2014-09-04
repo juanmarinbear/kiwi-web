@@ -16,9 +16,9 @@ var kiwiWeb = angular.module('kiwiWeb', [
   };
 
   $scope.$on("$stateChangeStart", function (event, toState, toParams, fromState, fromParams) {
-
+/*
     $scope.transition = Transition.getTransition(toState, toParams, fromState, fromParams);
-
+*/
   });
 
   $scope.$on("$stateChangeSuccess", function (event, toState, toParams, fromState, fromParams) {
