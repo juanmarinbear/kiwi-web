@@ -46,27 +46,27 @@ html, body { height: 100%; }
  * Page Styles
  */
 
-.main-landing {
+.home{
   background: #CA2A90;
 }
 
-.main-products {
+.products {
   background: #CA2A90;
 }
 
-.main-residential {
+.residential {
   background: #FD331B;
 }
 
-.main-business {
+.business {
   background: #CEFD1B;
 }
 
-.main-dedicated {
+.dedicated {
   background: #644A47;
 }
 
-.main-metromesh {
+.metromesh {
   background: #93D161;
 }
 
