@@ -1,0 +1,36 @@
+{
+  "title" : "Business",
+  "art" : "",
+  "paragraphs" : [
+    "Sin plan forzoso ni costo de instalación",
+    "Cancela sin penalización",
+    "Velocidad simétrica",
+    "Servicio best effort",
+    "Hasta 8 IPs públicas estáticas",
+    "Router empresarial",
+    "20 Mbps a 1 Gbps (depende ubicación)",
+    "Precio sin IVA"
+  ],
+  "pricing" : [
+    {
+      "title" : "On-Net",
+      "description" : "Edificios en red Kiwi Networks",
+      "price" : "$1,000 / mes*"
+    },
+    {
+      "title" : "Off-Net",
+      "description" : "Fuera de red Kiwi Networks",
+      "price" : "$2,000 / mes*"
+    }
+  ],
+  "buttons" : [
+    {
+      "title" : "¿Dudas?",
+      "href" : "faq({location: 'business'})"
+    }, 
+    {
+      "title" : "Contrata",
+      "href" : "sales({product: 'business'})"
+    } 
+  ]
+}

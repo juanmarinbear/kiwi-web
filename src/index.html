@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7 data-ng-app='kiwiWeb'"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" data-ng-app='kiwiWeb'> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" data-ng-app='kiwiWeb'> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" data-ng-app="kiwiWeb" data-ng-controller="TitleCtrl"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" data-ng-app="kiwiWeb" data-ng-controller="AppCtrl"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,8 +32,9 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-
-    <div class="kw-perspective" data-ng-class="transition.parent" ui-view></div>
+    <div class="kw-perspective">
+      <div class="kw-page kw-page-current" data-ng-class="[styles.page, styles.transition]" ui-view></div>
+    </div>
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -63,27 +64,23 @@
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="common/app.js"></script>
+    <script src="common/router.js"></script>
     <script src="common/services/transition.js"></script>
     <script src="common/services/routes.js"></script>
-    <script src="app/title/title.js"></script>
-    <script src="app/main/main.js"></script>
-    <script src="app/main/landing/landing.js"></script>
-    <script src="app/main/products/products.js"></script>
-    <script src="app/main/residential/residential.js"></script>
-    <script src="app/main/business/business.js"></script>
-    <script src="app/main/dedicated/dedicated.js"></script>
-    <script src="app/main/metromesh/metromesh.js"></script>
-    <script src="app/support/support.js"></script>
-    <script src="app/forms/support/supportForm.js"></script>
-    <script src="app/support/faq/faq.js"></script>
-    <script src="app/company/company.js"></script>
+    <script src="app/home/home.js"></script>
+    <script src="app/products/products.js"></script>
+    <script src="app/products/residential/residential.js"></script>
+    <script src="app/products/business/business.js"></script>
+    <script src="app/products/dedicated/dedicated.js"></script>
+    <script src="app/products/metromesh/metromesh.js"></script>
+    <script src="app/products/sales/salesForm/salesForm.js"></script>
     <script src="app/company/about/about.js"></script>
     <script src="app/company/privacy/privacy.js"></script>
-    <script src="app/company/contact/contact.js"></script>
-    <script src="app/forms/contact/contactForm.js"></script>
-    <script src="app/customer/customer.js"></script>
-    <script src="app/forms/customer/customerForm.js"></script>
-    <script src="app/forms/sales/salesForm.js"></script>
+    <script src="app/contact/contact.js"></script>
+    <script src="app/contact/contactForm/contactForm.js"></script>
+    <script src="app/customer/customerForm/customerForm.js"></script>
+    <script src="app/support/faq/faq.js"></script>
+    <script src="app/support/supportForm/supportForm.js"></script>
     <!-- endbuild -->
 
   </body>

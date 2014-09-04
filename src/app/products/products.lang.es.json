@@ -1,0 +1,92 @@
+{
+  "title" : "Productos",
+  "products" : [ 
+    { 
+      "art" : "",
+      "title" : "Residencial",
+      "paragraphs" : [
+        "Velocidad simétrica",
+        "Servicio best effort",
+        "DHCP con IP pública",
+        "Router de alta velocidad",
+        "50 Mbps a 1 Gbps"
+      ],
+      "price" : "Desde $500 / mes*",
+      "buttons" : [
+        {
+          "title" : "Conoce Más",
+          "href" : "residential"
+        }, 
+        {
+          "title" : "Contrata",
+          "href" : "sales({product: 'residential'})"
+        } 
+      ]
+    },
+    { 
+      "art" : "",
+      "title" : "Business",
+      "paragraphs" : [
+        "Velocidad simétrica",
+        "Servicio best effort",
+        "Hasta 8 IPs estáticas",
+        "Router empresarial",
+        "20 Mbps a 1 Gbps"
+      ],
+      "price" : "Desde $1,000 / mes*",
+      "buttons" : [
+        {
+          "title" : "Conoce Más",
+          "href" : "business"
+        }, 
+        {
+          "title" : "Contrata",
+          "href" : "sales({product: 'business'})"
+        } 
+      ]
+    },
+    { 
+      "art" : "",
+      "title" : "Dedicado",
+      "paragraphs" : [
+        "Velocidad simétrica",
+        "Hasta 8 IPs estáticas",
+        "Router Empresarial",
+        "4 Mbps a 10 Gbps",
+        "Garantía de servicio (SLA)"
+      ],
+      "price" : "Desde $5,000 / mes*",
+      "buttons" : [
+        {
+          "title" : "Conoce Más",
+          "href" : "dedicated"
+        }, 
+        {
+          "title" : "Contrata",
+          "href" : "sales({product: 'dedicated'})"
+        } 
+      ]
+    },
+    { 
+      "art" : "",
+      "title" : "Metro Mesh",
+      "paragraphs" : [
+        "Conecta 2 o más sucursales de forma segura",
+        "Adquiere bandwidth en una sucursal y distribuye como quieras en las demás",
+        "Kiwi Networks administra tu red",
+        "Garantía de servicio (SLA)"
+      ],
+      "price" : "Desde $36,000 / mes*",
+      "buttons" : [
+        {
+          "title" : "Conoce Más",
+          "href" : "metromesh"
+        }, 
+        {
+          "title" : "Contrata",
+          "href" : "sales({product: 'metromesh'})"
+        } 
+      ]
+    } 
+  ] 
+}

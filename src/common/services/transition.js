@@ -1,31 +1,28 @@
 'use strict';
 
-angular.module('kiwiWeb')
-.factory('Transition', function(Routes) {
+kiwiWeb.factory('Transition', function(Routes) {
 
   return {
     getTransition: function(toState, toParams, fromState, fromParams) {
 
-      var fromParent, toParent, fromChild, toChild, fromIndex, toIndex;
+      if(fromState.name === '') {
+        console.log('Outside!');
+        return; 
+      }
 
-      fromParent = fromState.name.split('.')[0];
-      fromChild = fromState.name.split('.')[1];
-      toParent = toState.name.split('.')[0];
-      toChild = toState.name.split('.')[1];
-
-      if(toParent === 'customer') {
+      if(Routes[fromState.name].parent === 'form') {
         return 'rotateCubeDown';
       }
 
-      if(fromParent === 'customer') {
+      if(Routes[toState.name].parent === 'form') {
         return 'rotateCubeUp';
       }
 
-      if(fromParent === toParent) {
-        fromIndex = Routes[fromParent][fromChild];
-        toIndex = Routes[toParent][toChild];
-        return toIndex > fromIndex ? 'slideUp' : 'slideDown';
-      }    
+      if(Routes[fromState.name].parent === Routes[toState.name].parent) {
+        return Routes[toState.name].yOrder > Routes[fromState.name].yOrder ? 'slideUp' : 'slideDown';
+      } else {
+        return Routes[toState.name].xOrder > Routes[fromState.name].xOrder ? 'slideLeft' : 'slideRight';
+      }
     }
   }
 });
