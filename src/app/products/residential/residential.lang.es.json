@@ -22,11 +22,11 @@
   "buttons" : [
     {
       "title" : "¿Dudas?",
-      "href" : "support.faq({location: 'residential'})"
+      "href" : "faq({location: 'residential'})"
     }, 
     {
       "title" : "Contrata",
-      "href" : "main.salesForm({product: 'residential'})"
+      "href" : "sales({product: 'residential'})"
     } 
   ]
 }

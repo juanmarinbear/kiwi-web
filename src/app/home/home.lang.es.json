@@ -8,11 +8,11 @@
   "buttons" : [
     {
       "title" : "Conoce Más",
-      "href" : "main.products"
+      "href" : "products"
     }, 
     {
       "title" : "Contrata",
-      "href" : "main.salesForm"
+      "href" : "sales"
     } 
   ]
 }

@@ -48,11 +48,11 @@
   "buttons" : [
     {
       "title" : "¿Dudas?",
-      "href" : "support.faq({location: 'dedicated'})"
+      "href" : "faq({location: 'dedicated'})"
     }, 
     {
       "title" : "Contrata",
-      "href" : "main.salesForm({product: 'dedicated'})"
+      "href" : "sales({product: 'dedicated'})"
     } 
   ]
 }

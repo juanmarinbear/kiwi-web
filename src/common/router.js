@@ -175,7 +175,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/forms/contact/contactForm/contactForm.lang.es.json'
+          url: 'app/company/contact/contactForm/contactForm.lang.es.json'
         })
         .then (function (data) {
           return data;
