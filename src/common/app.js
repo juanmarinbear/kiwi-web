@@ -8,7 +8,7 @@ var kiwiWeb = angular.module('kiwiWeb', [
   'ngAnimate'
 ])
 .controller('AppCtrl', function ($scope, Transition) {
-  $scope.title = 'Default';
+  $scope.title = 'Kiwi Networks';
   $scope.transition = '';
 
   $scope.changeTitle = function(title) {

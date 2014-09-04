@@ -4,19 +4,19 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
 
   // Routing Configuration
 
-  $urlRouterProvider.otherwise('/main/landing');
+  $urlRouterProvider.otherwise('/');
 
   $stateProvider
-  .state('main', {
+  .state('index', {
     abstract: true,
-    url: '/main',
-    templateUrl: 'app/main/main.tpl.html',
-    controller: 'MainCtrl',
+    url: '/',
+    templateUrl: 'app/landing/landing.tpl.html',
+    controller: 'AppLandingCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/main/main.lang.es.json'
+          url: 'app/landing/landing.lang.es.json'
         })
         .then (function (data) {
           return data;

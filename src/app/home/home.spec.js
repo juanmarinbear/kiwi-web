@@ -1,6 +1,6 @@
 'use strict';
 
-describe('LandingCtrl', function(){
+describe('HomeCtrl', function(){
   it('contains spec with expectation', function() {
     expect(true).toBe(true);
   });
