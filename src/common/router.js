@@ -4,19 +4,18 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
 
   // Routing Configuration
 
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/home');
 
   $stateProvider
-  .state('index', {
-    abstract: true,
-    url: '/',
-    templateUrl: 'app/landing/landing.tpl.html',
-    controller: 'AppLandingCtrl',
+  .state('home', {
+    url: '/home',
+    templateUrl: 'app/home/home.tpl.html',
+    controller: 'HomeCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/landing/landing.lang.es.json'
+          url: 'app/home/home.lang.es.json'
         })
         .then (function (data) {
           return data;
@@ -24,31 +23,15 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
       }
     }
   })
-  .state('main.landing', {
-    url: '/landing',
-    templateUrl: 'app/main/landing/landing.tpl.html',
-    controller: 'LandingCtrl',
-    resolve: {
-      lang: function($http) {
-        return $http({
-          method: 'GET',
-          url: 'app/main/landing/landing.lang.es.json'
-        })
-        .then (function (data) {
-          return data;
-        });
-      }
-    }
-  })
-  .state('main.products', {
+  .state('products', {
     url: '/products',
-    templateUrl: 'app/main/products/products.tpl.html',
+    templateUrl: 'app/products/products.tpl.html',
     controller: 'ProductsCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/main/products/products.lang.es.json'
+          url: 'app/products/products.lang.es.json'
         })
         .then (function (data) {
           return data;
@@ -56,15 +39,15 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
       }
     }
   })
-  .state('main.residential', {
+  .state('residential', {
     url: '/residential',
-    templateUrl: 'app/main/residential/residential.tpl.html',
+    templateUrl: 'app/products/residential/residential.tpl.html',
     controller: 'ResidentialCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/main/residential/residential.lang.es.json'
+          url: 'app/products/residential/residential.lang.es.json'
         })
         .then (function (data) {
           return data;
@@ -72,15 +55,15 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
       }
     }
   })
-  .state('main.business', {
+  .state('business', {
     url: '/business',
-    templateUrl: 'app/main/business/business.tpl.html',
+    templateUrl: 'app/products/business/business.tpl.html',
     controller: 'BusinessCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/main/business/business.lang.es.json'
+          url: 'app/products/business/business.lang.es.json'
         })
         .then (function (data) {
           return data;
@@ -88,15 +71,15 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
       }
     }
   })
-  .state('main.dedicated', {
+  .state('dedicated', {
     url: '/dedicated',
-    templateUrl: 'app/main/dedicated/dedicated.tpl.html',
+    templateUrl: 'app/products/dedicated/dedicated.tpl.html',
     controller: 'DedicatedCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/main/dedicated/dedicated.lang.es.json'
+          url: 'app/products/dedicated/dedicated.lang.es.json'
         })
         .then (function (data) {
           return data;
@@ -104,15 +87,15 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
       }
     }
   })
-  .state('main.metromesh', {
+  .state('metromesh', {
     url: '/metromesh',
-    templateUrl: 'app/main/metromesh/metromesh.tpl.html',
+    templateUrl: 'app/products/metromesh/metromesh.tpl.html',
     controller: 'MetroMeshCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/main/metromesh/metromesh.lang.es.json'
+          url: 'app/products/metromesh/metromesh.lang.es.json'
         })
         .then (function (data) {
           return data;
