@@ -9,7 +9,7 @@ var kiwiWeb = angular.module('kiwiWeb', [
 ])
 .controller('AppCtrl', function ($scope, Transition) {
   $scope.title = 'Kiwi Networks';
-  $scope.transition = '';
+  $scope.styles = {};
 
   $scope.changeTitle = function(title) {
     $scope.title = title;
