@@ -103,15 +103,15 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
       }
     }
   })
-  .state('main.salesForm', {
-    url: '/salesForm/:product',
-    templateUrl: 'app/forms/sales/salesForm.tpl.html',
+  .state('sales', {
+    url: '/sales/:product',
+    templateUrl: 'app/products/sales/salesForm/salesForm.tpl.html',
     controller: 'SalesFormCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/forms/sales/salesForm.lang.es.json'
+          url: 'app/products/sales/salesForm/salesForm.lang.es.json'
         })
         .then (function (data) {
           return data;
@@ -119,73 +119,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
       }
     }
   })
-  .state('support', {
-    abstract: true,
-    url: '/support',
-    templateUrl: 'app/support/support.tpl.html',
-    controller: 'SupportCtrl',
-    resolve: {
-      lang: function($http) {
-        return $http({
-          method: 'GET',
-          url: 'app/support/support.lang.es.json'
-        })
-        .then (function (data) {
-          return data;
-        });
-      }
-    }
-  })
-  .state('support.faq', {
-    url: '/faq/:location',
-    templateUrl: 'app/support/faq/faq.tpl.html',
-    controller: 'FaqCtrl',
-    resolve: {
-      lang: function($http) {
-        return $http({
-          method: 'GET',
-          url: 'app/support/faq/faq.lang.es.json'
-        })
-        .then (function (data) {
-          return data;
-        });
-      }
-    }
-  })
-  .state('support.supportForm', {
-    url: '/supportForm',
-    templateUrl: 'app/forms/support/supportForm.tpl.html',
-    controller: 'SupportFormCtrl',
-    resolve: {
-      lang: function($http) {
-        return $http({
-          method: 'GET',
-          url: 'app/forms/support/supportForm.lang.es.json'
-        })
-        .then (function (data) {
-          return data;
-        });
-      }
-    }
-  })
-  .state('company', {
-    abstract: true,
-    url: '/company',
-    templateUrl: 'app/company/company.tpl.html',
-    controller: 'CompanyCtrl',
-    resolve: {
-      lang: function($http) {
-        return $http({
-          method: 'GET',
-          url: 'app/company/company.lang.es.json'
-        })
-        .then (function (data) {
-          return data;
-        });
-      }
-    }
-  })
-  .state('company.about', {
+  .state('about', {
     url: '/about',
     templateUrl: 'app/company/about/about.tpl.html',
     controller: 'AboutCtrl',
@@ -201,7 +135,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
       }
     }
   })
-  .state('company.privacy', {
+  .state('privacy', {
     url: '/privacy',
     templateUrl: 'app/company/privacy/privacy.tpl.html',
     controller: 'PrivacyCtrl',
@@ -217,7 +151,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
       }
     }
   })
-  .state('company.contact', {
+  .state('contact', {
     url: '/contact',
     templateUrl: 'app/company/contact/contact.tpl.html',
     controller: 'ContactCtrl',
@@ -233,15 +167,15 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
       }
     }
   })
-  .state('company.contactForm', {
+  .state('contactForm', {
     url: '/contactForm',
-    templateUrl: 'app/forms/contact/contactForm.tpl.html',
+    templateUrl: 'app/company/contact/contactForm/contactForm.tpl.html',
     controller: 'ContactFormCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/forms/contact/contactForm.lang.es.json'
+          url: 'app/forms/contact/contactForm/contactForm.lang.es.json'
         })
         .then (function (data) {
           return data;
@@ -250,15 +184,14 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
     }
   })
   .state('customer', {
-    abstract: true,
     url: '/customer',
-    templateUrl: 'app/customer/customer.tpl.html',
-    controller: 'CustomerCtrl',
+    templateUrl: 'app/customer/customerForm/customerForm.tpl.html',
+    controller: 'CustomerFormCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/customer/customer.lang.es.json'
+          url: 'app/customer/customerForm/customerForm.lang.es.json'
         })
         .then (function (data) {
           return data;
@@ -266,15 +199,31 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
       }
     }
   })
-  .state('customer.customerForm', {
-    url: '/customerForm',
-    templateUrl: 'app/forms/customer/customerForm.tpl.html',
-    controller: 'CustomerFormCtrl',
+  .state('faq', {
+    url: '/faq/:location',
+    templateUrl: 'app/support/faq/faq.tpl.html',
+    controller: 'FaqCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/forms/customer/customerForm.lang.es.json'
+          url: 'app/support/faq/faq.lang.es.json'
+        })
+        .then (function (data) {
+          return data;
+        });
+      }
+    }
+  })
+  .state('supportForm', {
+    url: '/supportForm',
+    templateUrl: 'app/support/supportForm/supportForm.tpl.html',
+    controller: 'SupportFormCtrl',
+    resolve: {
+      lang: function($http) {
+        return $http({
+          method: 'GET',
+          url: 'app/forms/support/supportForm/supportForm.lang.es.json'
         })
         .then (function (data) {
           return data;
