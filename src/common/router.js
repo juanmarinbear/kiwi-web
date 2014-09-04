@@ -153,13 +153,13 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
   })
   .state('contact', {
     url: '/contact',
-    templateUrl: 'app/company/contact/contact.tpl.html',
+    templateUrl: 'app/contact/contact.tpl.html',
     controller: 'ContactCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/company/contact/contact.lang.es.json'
+          url: 'app/contact/contact.lang.es.json'
         })
         .then (function (data) {
           return data;
@@ -169,13 +169,13 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
   })
   .state('contactForm', {
     url: '/contactForm',
-    templateUrl: 'app/company/contact/contactForm/contactForm.tpl.html',
+    templateUrl: 'app/contact/contactForm/contactForm.tpl.html',
     controller: 'ContactFormCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/company/contact/contactForm/contactForm.lang.es.json'
+          url: 'app/contact/contactForm/contactForm.lang.es.json'
         })
         .then (function (data) {
           return data;

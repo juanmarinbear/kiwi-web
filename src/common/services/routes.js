@@ -3,30 +3,67 @@
 kiwiWeb.factory('Routes', function() {
 
   return {
-    main: {
-      order: 0,
-      landing: 0,
-      products: 1,
-      residential: 2,
-      business: 3,
-      dedicated: 4,
-      metromesh: 5,
-      salesForm: 6 
+    home: {
+      parent: 'home',
+      xOrder: 2,
+      yOrder: 0
     },
-    support: {
-      order: 1,
-      faq: 0,
-      supportForm: 1
+    products: {
+      parent: 'home',
+      xOrder: 2,
+      yOrder: 1
     },
-    company: {
-      order: -1,
-      about: 0,
-      privacy: 1,
-      contact: 2,
-      contactForm: 3
+    residential: {
+      parent: 'home',
+      xOrder: 2,
+      yOrder: 2
+    },
+    business: {
+      parent: 'home',
+      xOrder: 2,
+      yOrder: 3
+    },
+    dedicated: {
+      parent: 'home',
+      xOrder: 2,
+      yOrder: 4
+    },
+    metromesh: {
+      parent: 'home',
+      xOrder: 2,
+      yOrder: 5
+    },
+    sales: {
+      parent: 'form'
+    },
+    about: {
+      parent: 'company',
+      xOrder: 1,
+      yOrder: 0
+    },
+    privacy: {
+      parent: 'company',
+      xOrder: 1,
+      yOrder: 5
+    },
+    contact: {
+      parent: 'contact',
+      xOrder: 0,
+      yOrder: 0
+    },
+    contactForm: {
+      parent: 'form'
     },
     customer: {
-      customerForm: 0
+      parent: 'form' 
+    },
+    faq: {
+      parent: 'support',
+      xOrder: 3,
+      yOrder: 0
+    },
+    supportForm: {
+      parent: 'form' 
     }
   }
 });
