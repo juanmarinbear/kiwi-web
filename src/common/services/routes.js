@@ -1,7 +1,6 @@
 'use strict';
 
-angular.module('kiwiWeb')
-.factory('Routes', function() {
+kiwiWeb.factory('Routes', function() {
 
   return {
     main: {

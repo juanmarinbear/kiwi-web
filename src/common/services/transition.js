@@ -1,7 +1,6 @@
 'use strict';
 
-angular.module('kiwiWeb')
-.factory('Transition', function(Routes) {
+kiwiWeb.factory('Transition', function(Routes) {
 
   return {
     getTransition: function(toState, toParams, fromState, fromParams) {
