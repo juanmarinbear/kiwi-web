@@ -5,9 +5,13 @@ kiwiWeb.factory('Transition', function(Routes) {
   return {
     getTransition: function(toState, toParams, fromState, fromParams) {
 
+      if(toParams === fromParams) {
+        console.log('Useless JSLint!');
+      }
+
       if(fromState.name === '') {
         console.log('Outside!');
-        return; 
+        return;
       }
 
       if(Routes[fromState.name].parent === 'form') {
@@ -24,5 +28,5 @@ kiwiWeb.factory('Transition', function(Routes) {
         return Routes[toState.name].xOrder > Routes[fromState.name].xOrder ? 'slideLeft' : 'slideRight';
       }
     }
-  }
+  };
 });
