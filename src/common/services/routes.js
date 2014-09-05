@@ -55,7 +55,7 @@ kiwiWeb.factory('Routes', function() {
       parent: 'form'
     },
     customer: {
-      parent: 'form' 
+      parent: 'form'
     },
     faq: {
       parent: 'support',
@@ -63,7 +63,7 @@ kiwiWeb.factory('Routes', function() {
       yOrder: 0
     },
     supportForm: {
-      parent: 'form' 
+      parent: 'form'
     }
-  }
+  };
 });
