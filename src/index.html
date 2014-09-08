@@ -39,7 +39,7 @@
         <a class="pure-menu-heading" data-ui-sref="/home" data-ng-bind="menu.title"></a>
         <ul>
           <li data-ng-repeat="section in menu.sections">
-            <a class="menu-header" data-ng-bind="section.label" data-ng-click="menuToggle(section.name)"></a>
+            <a class="menu-header" data-ng-bind="section.label" data-ng-click="menuToggle(section)"></a>
             <div class="menu-item-divided" data-ng-class="{ 'pure-menu pure-menu-open': section.visible }">
               <ul>
                 <li data-ng-repeat="option in section.sections">

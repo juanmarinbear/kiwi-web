@@ -12,6 +12,7 @@ kiwiWeb.controller('AppCtrl', function ($scope, Transition, Menu) {
   $scope.title = 'Kiwi Networks';
   $scope.styles = {};
   $scope.menu = Menu;
+  $scope.menu.current = $scope.menu.sections[0];
 
   $scope.changeTitle = function(title) {
     $scope.title = title;
@@ -19,14 +20,14 @@ kiwiWeb.controller('AppCtrl', function ($scope, Transition, Menu) {
 
   $scope.menuToggle = function(section) {
 
-    $scope.menu.sections[section].visible = !$scope.menu.sections[section].visible;
+    section.visible = !section.visible;
 
-    if($scope.menu.current === '') {
+    if($scope.menu.current === null) {
       $scope.menu.current = section;
     } else if($scope.menu.current === section) {
-      $scope.menu.current = '';
+      $scope.menu.current = null;
     } else {
-      $scope.menu.sections[$scope.menu.current].visible = !$scope.menu.sections[$scope.menu.current].visible;
+      $scope.menu.current.visible = !$scope.menu.current.visible;
       $scope.menu.current = section;
     }
   }
