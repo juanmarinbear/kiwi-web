@@ -3,7 +3,7 @@
 kiwiWeb.factory('Menu', function() {
 
   return {
-    title : 'Kiwi',
+    title : 'Menu',
     sections : [
       {
         name : 'company',
