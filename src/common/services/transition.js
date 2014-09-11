@@ -10,7 +10,6 @@ kiwiWeb.factory('Transition', function(Routes) {
       }
 
       if(fromState.name === '') {
-        console.log('Outside!');
         return;
       }
 
