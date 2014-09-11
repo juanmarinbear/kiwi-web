@@ -231,15 +231,15 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
       }
     }
   })
-  .state('customer', {
-    url: '/customer',
-    templateUrl: 'app/customer/customerForm/customerForm.tpl.html',
-    controller: 'CustomerFormCtrl',
+  .state('dashboard', {
+    url: '/dashboard',
+    templateUrl: 'app/customer/dashboard/dashboard.tpl.html',
+    controller: 'DashboardCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/customer/customerForm/customerForm.lang.es.json'
+          url: 'app/customer/dashboard/dashboard.lang.es.json'
         })
         .then (function (data) {
           return data;
