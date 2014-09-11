@@ -41,10 +41,25 @@ kiwiWeb.factory('Routes', function() {
       xOrder: 1,
       yOrder: 0
     },
+    concesion: {
+      parent: 'company',
+      xOrder: 1,
+      yOrder: 1
+    },
+    jobs: {
+      parent: 'company',
+      xOrder: 1,
+      yOrder: 2
+    },
+    stories: {
+      parent: 'company',
+      xOrder: 1,
+      yOrder: 3
+    },
     privacy: {
       parent: 'company',
       xOrder: 1,
-      yOrder: 5
+      yOrder: 4
     },
     contact: {
       parent: 'contact',
@@ -54,16 +69,13 @@ kiwiWeb.factory('Routes', function() {
     contactForm: {
       parent: 'form'
     },
-    customer: {
+    dashboard: {
       parent: 'form'
     },
     faq: {
       parent: 'support',
       xOrder: 3,
       yOrder: 0
-    },
-    supportForm: {
-      parent: 'form'
     }
   };
 });

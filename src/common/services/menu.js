@@ -70,12 +70,12 @@ kiwiWeb.factory('Menu', function() {
           {
             name : 'faq',
             label : 'Preguntas',
-            href : 'faq'
+            href : 'faq({location: \'general\'})'
           },
           {
-            name : 'salesForm',
+            name : 'sales',
             label : 'Contrata',
-            href : 'salesForm'
+            href : 'sales({product: \'\'})'
           }
         ]
       },
@@ -85,14 +85,14 @@ kiwiWeb.factory('Menu', function() {
         visible: false,
         sections : [
           {
-            name : 'customer',
+            name : 'dashboard',
             label : 'Dashboard',
-            href : 'customer'
+            href : 'dashboard'
           },
           {
-            name : 'payments',
+            name : 'pay',
             label : 'Paga',
-            href : 'payments'
+            href : 'pay'
           },
           {
             name : 'refer',
@@ -107,19 +107,14 @@ kiwiWeb.factory('Menu', function() {
         visible: false,
         sections : [
           {
-            name : 'wiki',
-            label : 'Wiki',
-            href : 'wiki'
+            name : 'helpcenter',
+            label : 'Help Center',
+            href : 'helpcenter'
           },
           {
             name : 'status',
             label : 'Status',
             href : 'status'
-          },
-          {
-            name : 'support',
-            label : 'Ayuda',
-            href : 'support'
           }
         ]
       },
