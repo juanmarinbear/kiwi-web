@@ -85,9 +85,9 @@ kiwiWeb.factory('Menu', function() {
         visible: false,
         sections : [
           {
-            name : 'kiwicloud',
-            label : 'Kiwi Cloud',
-            href : 'kiwicloud'
+            name : 'dashboard',
+            label : 'Dashboard',
+            href : 'dashboard'
           },
           {
             name : 'pay',
