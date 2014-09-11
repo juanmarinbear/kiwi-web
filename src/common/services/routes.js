@@ -72,6 +72,9 @@ kiwiWeb.factory('Routes', function() {
     dashboard: {
       parent: 'form'
     },
+    pay: {
+      parent: 'form'
+    },
     faq: {
       parent: 'support',
       xOrder: 3,
