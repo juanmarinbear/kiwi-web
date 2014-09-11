@@ -20,7 +20,7 @@ kiwiWeb.controller('AppCtrl', function ($scope, Transition, Menu) {
   };
 
   $scope.menuToggle = function() {
-    $scope.menu.active = !$scope.menu.active; 
+    $scope.menu.active = !$scope.menu.active;
   };
 
   $scope.menuSectionToggle = function(section) {
