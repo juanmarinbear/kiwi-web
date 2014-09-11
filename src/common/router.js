@@ -247,6 +247,22 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
       }
     }
   })
+  .state('pay', {
+    url: '/pay',
+    templateUrl: 'app/customer/pay/pay.tpl.html',
+    controller: 'PayCtrl',
+    resolve: {
+      lang: function($http) {
+        return $http({
+          method: 'GET',
+          url: 'app/customer/pay/pay.lang.es.json'
+        })
+        .then (function (data) {
+          return data;
+        });
+      }
+    }
+  })
   .state('faq', {
     url: '/faq/:location',
     templateUrl: 'app/support/faq/faq.tpl.html',
