@@ -43,7 +43,8 @@
             <div class="menu-item-divided" data-ng-class="{ 'pure-menu pure-menu-open': section.visible }">
               <ul>
                 <li data-ng-repeat="option in section.sections">
-                  <a data-ui-sref="{{ option.href }}" data-ng-bind="option.label"></a>
+                  <a ng-if="option.uiSref" data-ui-sref="{{ option.uiSref }}" data-ng-bind="option.label"></a>
+                  <a ng-if="option.href" href="{{ option.href }}" data-ng-bind="option.label" target="{{ option.target }}"></a>
                 </li>
               </ul>
             </div>

@@ -13,32 +13,33 @@ kiwiWeb.factory('Menu', function() {
           {
             name : 'about',
             label : 'Nosotros',
-            href : 'about'
+            uiSref : 'about'
           },
           {
             name : 'concesion',
             label : 'Concesión',
-            href : 'concesion'
+            uiSref : 'concesion'
           },
           {
             name : 'blog',
             label : 'Blog',
-            href : 'blog'
+            href: 'http://blog.kiwinetworks.com',
+            target: '_blank'
           },
           {
             name : 'jobs',
             label : 'Trabajo',
-            href : 'jobs'
+            uiSref : 'jobs'
           },
           {
             name : 'stories',
             label : 'Casos de Éxito',
-            href : 'stories'
+            uiSref : 'stories'
           },
           {
             name : 'privacy',
             label : 'Privacidad',
-            href : 'privacy'
+            uiSref : 'privacy'
           }
         ]
       },
@@ -50,32 +51,32 @@ kiwiWeb.factory('Menu', function() {
           {
             name : 'residential',
             label : 'Residencial',
-            href : 'residential'
+            uiSref : 'residential'
           },
           {
             name : 'business',
             label : 'Business',
-            href : 'business'
+            uiSref : 'business'
           },
           {
             name : 'dedicated',
             label : 'Dedicated',
-            href : 'dedicated'
+            uiSref : 'dedicated'
           },
           {
             name : 'metromesh',
             label : 'Metro Mesh',
-            href : 'metromesh'
+            uiSref : 'metromesh'
           },
           {
             name : 'faq',
             label : 'Preguntas',
-            href : 'faq({location: \'general\'})'
+            uiSref : 'faq({location: \'general\'})'
           },
           {
             name : 'sales',
             label : 'Contrata',
-            href : 'sales({product: \'\'})'
+            uiSref : 'sales({product: \'\'})'
           }
         ]
       },
@@ -87,17 +88,17 @@ kiwiWeb.factory('Menu', function() {
           {
             name : 'dashboard',
             label : 'Dashboard',
-            href : 'dashboard'
+            uiSref : 'dashboard'
           },
           {
             name : 'pay',
             label : 'Paga',
-            href : 'pay'
+            uiSref : 'pay'
           },
           {
             name : 'refer',
             label : 'Recomienda',
-            href : 'refer'
+            uiSref : 'refer'
           }
         ]
       },
@@ -109,12 +110,13 @@ kiwiWeb.factory('Menu', function() {
           {
             name : 'helpcenter',
             label : 'Help Center',
-            href : 'helpcenter'
+            href: 'http://support.kiwinetworks.com',
+            target: '_blank'
           },
           {
             name : 'status',
             label : 'Status',
-            href : 'status'
+            uiSref : 'status'
           }
         ]
       },
@@ -126,17 +128,17 @@ kiwiWeb.factory('Menu', function() {
           {
             name : 'phones',
             label : 'Teléfonos',
-            href : 'contact'
+            uiSref : 'contact'
           },
           {
             name: 'email',
             label : 'Email',
-            href : 'contact'
+            uiSref : 'contact'
           },
           {
             name : 'social',
             label : 'Social',
-            href : 'contact'
+            uiSref : 'contact'
           }
         ]
       }
