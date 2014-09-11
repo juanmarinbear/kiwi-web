@@ -263,6 +263,22 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
       }
     }
   })
+  .state('refer', {
+    url: '/refer',
+    templateUrl: 'app/customer/refer/refer.tpl.html',
+    controller: 'ReferCtrl',
+    resolve: {
+      lang: function($http) {
+        return $http({
+          method: 'GET',
+          url: 'app/customer/refer/refer.lang.es.json'
+        })
+        .then (function (data) {
+          return data;
+        });
+      }
+    }
+  })
   .state('faq', {
     url: '/faq/:location',
     templateUrl: 'app/support/faq/faq.tpl.html',
