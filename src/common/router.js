@@ -279,31 +279,15 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
       }
     }
   })
-  .state('faq', {
-    url: '/faq/:location',
-    templateUrl: 'app/support/faq/faq.tpl.html',
-    controller: 'FaqCtrl',
+  .state('status', {
+    url: '/status',
+    templateUrl: 'app/support/status/status.tpl.html',
+    controller: 'StatusCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/support/faq/faq.lang.es.json'
-        })
-        .then (function (data) {
-          return data;
-        });
-      }
-    }
-  })
-  .state('supportForm', {
-    url: '/supportForm',
-    templateUrl: 'app/support/supportForm/supportForm.tpl.html',
-    controller: 'SupportFormCtrl',
-    resolve: {
-      lang: function($http) {
-        return $http({
-          method: 'GET',
-          url: 'app/forms/support/supportForm/supportForm.lang.es.json'
+          url: 'app/support/status/status.lang.es.json'
         })
         .then (function (data) {
           return data;
