@@ -135,6 +135,54 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
       }
     }
   })
+  .state('concesion', {
+    url: '/concesion',
+    templateUrl: 'app/company/concesion/concesion.tpl.html',
+    controller: 'ConcesionCtrl',
+    resolve: {
+      lang: function($http) {
+        return $http({
+          method: 'GET',
+          url: 'app/company/concesion/concesion.lang.es.json'
+        })
+        .then (function (data) {
+          return data;
+        });
+      }
+    }
+  })
+  .state('jobs', {
+    url: '/jobs',
+    templateUrl: 'app/company/jobs/jobs.tpl.html',
+    controller: 'JobsCtrl',
+    resolve: {
+      lang: function($http) {
+        return $http({
+          method: 'GET',
+          url: 'app/company/jobs/jobs.lang.es.json'
+        })
+        .then (function (data) {
+          return data;
+        });
+      }
+    }
+  })
+  .state('stories', {
+    url: '/stories',
+    templateUrl: 'app/company/stories/stories.tpl.html',
+    controller: 'StoriesCtrl',
+    resolve: {
+      lang: function($http) {
+        return $http({
+          method: 'GET',
+          url: 'app/company/stories/stories.lang.es.json'
+        })
+        .then (function (data) {
+          return data;
+        });
+      }
+    }
+  })
   .state('privacy', {
     url: '/privacy',
     templateUrl: 'app/company/privacy/privacy.tpl.html',
