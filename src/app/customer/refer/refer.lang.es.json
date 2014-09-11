@@ -1,0 +1,114 @@
+{
+  "title" : "Recomienda",
+  "sections" : [
+    {
+      "title" : "Cuenta",
+      "art" : "",
+      "paragraphs" : [
+        "Administra la información de tu cuenta.",
+        "Modifica o cancela servicios.",
+        "Administra usuarios."
+      ]
+    },
+    {
+      "title" : "Dashboard",
+      "art" : "",
+      "paragraphs" : [
+        "Consulta el estado actual e historial de tu enlace.",
+        "Consulta tu consumo de bandwidth.",
+        "Cambiar la contraseña de tu red."
+      ]
+    },
+    {
+      "title" : "Pagos y Facturación",
+      "art" : "",
+      "paragraphs" : [
+        "Paga tu servicio con tarjeta de crédito, débito, transferencia bancaria o en Oxxo.",
+        "Genera tu factura y descárgala.",
+        "Consulta historial de pagos y facturación."
+      ]
+    },
+    {
+      "title" : "Soporte",
+      "art" : "",
+      "paragraphs" : [
+        "Levanta tickets de soporte.",
+        "Consulta tickets anteriores.",
+        "Escribe directo al CEO."
+      ]
+    }
+  ],
+  "authentication" : {
+    "signinForm" : {
+      "title" : "Sign In",
+      "name" : "signin",
+      "art" : "",
+      "paragraphs" : [
+        "Entra a nuestro portal de atención con tu celular y la contraseña que te enviaremos por SMS."
+      ],
+      "inputs" : { 
+        "mobile" : {
+          "name" : "mobile",
+          "label" : "Móvil",
+          "placeholder" : "Móvil, 10 dígitos",
+          "help" : "Móvil, 10 dígitos.",
+          "validation" : {}
+        },
+        "password" : {
+          "name" : "password",
+          "label" : "Contraseña",
+          "placeholder" : "Contraseña",
+          "help" : "Contraseña que te enviamos por SMS.",
+          "validation" : {}
+        },
+        "submit" : {
+          "label"  : "Enviar"
+        },
+        "signin" : {
+          "label"  : "Ingresar"
+        }
+      } 
+    },
+    "signupForm" : {
+      "title" : "Sign Up",
+      "name" : "signup",
+      "art" : "",
+      "paragraphs" : [
+        "Regístrate en nuestro portal de cliente.",
+        "Si necesitas ayuda, da click aquí o llama al 01-800-XXX-XXXX"
+      ],
+      "inputs" : { 
+        "serial" : {
+          "name" : "serial",
+          "label" : "# de Serie de Router",
+          "placeholder" : "# de Serie de Router",
+          "help" : "Número de serie de tu router.  Son 12 dígitos sin la /.  Lo puedes encontrar aquí.  Si no te entregamos un router, llama al 01-800-XXX-XXXX",
+          "validation" : {}
+        },
+        "mobile" : {
+          "name" : "mobile",
+          "label" : "Móvil",
+          "placeholder" : "Móvil, 10 dígitos",
+          "help" : "Móvil, 10 dígitos.",
+          "validation" : {}
+        },
+        "password" : {
+          "name" : "password",
+          "label" : "Contraseña",
+          "placeholder" : "Contraseña",
+          "help" : "Contraseña que te enviamos por SMS.",
+          "validation" : {}
+        },
+        "lookup" : {
+          "label"  : "Consultar"
+        },
+        "submit" : {
+          "label"  : "Enviar"
+        },
+        "signup" : {
+          "label"  : "Registrar"
+        }
+      } 
+    }
+  }
+}
