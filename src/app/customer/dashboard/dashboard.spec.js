@@ -1,6 +1,6 @@
 'use strict';
 
-describe('CustomerFormCtrl', function(){
+describe('DashboardCtrl', function(){
   it('contains spec with expectation', function() {
     expect(true).toBe(true);
   });
