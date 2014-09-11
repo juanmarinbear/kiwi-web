@@ -69,7 +69,7 @@ kiwiWeb.factory('Routes', function() {
     contactForm: {
       parent: 'form'
     },
-    customer: {
+    dashboard: {
       parent: 'form'
     },
     faq: {
