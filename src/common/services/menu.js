@@ -73,9 +73,9 @@ kiwiWeb.factory('Menu', function() {
             href : 'faq'
           },
           {
-            name : 'salesForm',
+            name : 'sales',
             label : 'Contrata',
-            href : 'salesForm'
+            href : 'sales({product: \'\'})'
           }
         ]
       },
