@@ -1,11 +1,9 @@
 'use strict';
 
 var kiwiWeb = angular.module('kiwiWeb', [
-  'ngSanitize',
-  'ngStorage',
-  'ngCookies',
   'ui.router',
-  'ngAnimate'
+  'ngAnimate',
+  'ngResource'
 ]);
 
 kiwiWeb.controller('AppCtrl', function ($scope, Transition, Menu) {
