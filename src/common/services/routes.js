@@ -76,9 +76,6 @@ kiwiWeb.factory('Routes', function() {
       parent: 'support',
       xOrder: 3,
       yOrder: 0
-    },
-    supportForm: {
-      parent: 'form'
     }
   };
 });
