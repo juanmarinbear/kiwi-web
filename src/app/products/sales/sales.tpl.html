@@ -4,58 +4,60 @@
     <h3 data-ng-bind="lang.subtitle"></h3>
     <div class="art"></div>
     <p data-ng-repeat="paragraph in lang.paragraphs" data-ng-bind="paragraph"></p>
+    <p>{{ sales | json }}</p>
+    <p>{{ data | json }}</p>
   </div>
   <div class="pure-u-1 pure-u-md-1-2">
-    <h3 data-ng-bind="lang.salesForm.title"></h3>
-    <form id="{{lang.salesForm.name}}" class="pure-form pure-form-stacked" name="{{lang.salesForm.name}}">
+    <h3 data-ng-bind="lang.form.title"></h3>
+    <form id="sales" class="pure-form pure-form-stacked" name="sales">
       <div class="pure-g">
         <div class="pure-u-1">
-          <label for="{{lang.salesForm.inputs.product.name}}" data-ng-bind="lang.salesForm.inputs.product.label"></label>
-          <select id="{{lang.salesForm.inputs.product.name}}" class="" name="{{lang.salesForm.inputs.product.name}}" data-ng-model="data.product" data-ng-options="item as item.label for item in lang.salesForm.inputs.product.options.items">
-            <option value="" data-ng-bind="lang.salesForm.inputs.product.options.default" selected></option>
+          <label for="{{lang.form.inputs.product.name}}" data-ng-bind="lang.form.inputs.product.label"></label>
+          <select id="product" class="" name="product" data-ng-model="data.product" data-ng-options="item.value as item.label for item in lang.form.inputs.product.options.items">
+            <option value="" data-ng-bind="lang.form.inputs.product.options.default" selected></option>
           </select>
         </div>
         <div class="pure-u-1">
-          <label for="{{lang.salesForm.inputs.name.name}}" data-ng-bind="lang.salesForm.inputs.name.label"></label>
-          <input type="text" id="{{lang.salesForm.inputs.name.name}}" name="{{lang.salesForm.inputs.name.name}}" placeholder="{{lang.salesForm.inputs.name.placeholder}}"></input>
+          <label for="{{lang.form.inputs.name.name}}" data-ng-bind="lang.form.inputs.name.label"></label>
+          <input type="text" id="name" name="name" placeholder="{{lang.form.inputs.name.placeholder}}" data-ng-model="data.name"></input>
         </div>
         <div class="pure-u-1">
-          <label for="{{lang.salesForm.inputs.email.name}}" data-ng-bind="lang.salesForm.inputs.email.label"></label>
-          <input type="email" id="{{lang.salesForm.inputs.email.name}}" name="{{lang.salesForm.inputs.email.name}}" placeholder="{{lang.salesForm.inputs.email.placeholder}}"></input>
+          <label for="{{lang.form.inputs.email.name}}" data-ng-bind="lang.form.inputs.email.label"></label>
+          <input type="email" id="email" name="email" placeholder="{{lang.form.inputs.email.placeholder}}" data-ng-model="data.email"></input>
         </div>
         <div class="pure-u-1">
-          <label for="{{lang.salesForm.inputs.mobile.name}}" data-ng-bind="lang.salesForm.inputs.mobile.label"></label>
-          <input type="email" id="{{lang.salesForm.inputs.mobile.name}}" name="{{lang.salesForm.inputs.mobile.name}}" placeholder="{{lang.salesForm.inputs.mobile.placeholder}}"></input>
+          <label for="{{lang.form.inputs.mobile.name}}" data-ng-bind="lang.form.inputs.mobile.label"></label>
+          <input type="text" id="mobile" name="mobile" placeholder="{{lang.form.inputs.mobile.placeholder}}" data-ng-model="data.mobile"></input>
         </div>
         <div class="pure-u-1">
-          <label for="{{lang.salesForm.inputs.zip.name}}" data-ng-bind="lang.salesForm.inputs.zip.label"></label>
-          <input type="email" id="{{lang.salesForm.inputs.zip.name}}" name="{{lang.salesForm.inputs.zip.name}}" placeholder="{{lang.salesForm.inputs.zip.placeholder}}"></input>
+          <label for="{{lang.form.inputs.zip.name}}" data-ng-bind="lang.form.inputs.zip.label"></label>
+          <input type="text" id="zip" name="zip" placeholder="{{lang.form.inputs.zip.placeholder}}" data-ng-model="data.zip"></input>
         </div>
         <div class="pure-u-1">
-          <label for="{{lang.salesForm.inputs.state.name}}" data-ng-bind="lang.salesForm.inputs.state.label"></label>
-          <select id="{{lang.salesForm.inputs.state.name}}" class="" name="{{lang.salesForm.inputs.state.name}}" data-ng-model="data.state" data-ng-options="item as item.label for item in lang.salesForm.inputs.state.options.items">
-            <option value="" data-ng-bind="lang.salesForm.inputs.state.options.default" selected></option>
+          <label for="{{lang.form.inputs.state.name}}" data-ng-bind="lang.form.inputs.state.label"></label>
+          <select id="state" class="" name="state" data-ng-model="data.state" data-ng-options="item.value as item.label for item in lang.form.inputs.state.options.items">
+            <option value="" data-ng-bind="lang.form.inputs.state.options.default" selected></option>
           </select>
         </div>
         <div class="pure-u-1">
-          <label for="{{lang.salesForm.inputs.city.name}}" data-ng-bind="lang.salesForm.inputs.city.label"></label>
-          <select id="{{lang.salesForm.inputs.city.name}}" class="" name="{{lang.salesForm.inputs.city.name}}" data-ng-model="data.city" data-ng-options="item as item.label for item in lang.salesForm.inputs.city.options.items">
-            <option value="" data-ng-bind="lang.salesForm.inputs.city.options.default" selected></option>
+          <label for="{{lang.form.inputs.city.name}}" data-ng-bind="lang.form.inputs.city.label"></label>
+          <select id="city" class="" name="city" data-ng-model="data.city" data-ng-options="item.value as item.label for item in lang.form.inputs.city.options.items">
+            <option value="" data-ng-bind="lang.form.inputs.city.options.default" selected></option>
           </select>
         </div>
         <div class="pure-u-1">
-          <label for="{{lang.salesForm.inputs.street.name}}" data-ng-bind="lang.salesForm.inputs.street.label"></label>
-          <input type="email" id="{{lang.salesForm.inputs.street.name}}" name="{{lang.salesForm.inputs.street.name}}" placeholder="{{lang.salesForm.inputs.street.placeholder}}"></input>
+          <label for="{{lang.form.inputs.street.name}}" data-ng-bind="lang.form.inputs.street.label"></label>
+          <input type="text" id="street" name="street" placeholder="{{lang.form.inputs.street.placeholder}}" data-ng-model="data.street"></input>
         </div>
         <div class="pure-u-1">
-          <label for="{{lang.salesForm.inputs.number.name}}" data-ng-bind="lang.salesForm.inputs.number.label"></label>
-          <input type="email" id="{{lang.salesForm.inputs.number.name}}" name="{{lang.salesForm.inputs.number.name}}" placeholder="{{lang.salesForm.inputs.number.placeholder}}"></input>
+          <label for="{{lang.form.inputs.number.name}}" data-ng-bind="lang.form.inputs.number.label"></label>
+          <input type="text" id="number" name="number" placeholder="{{lang.form.inputs.number.placeholder}}" data-ng-model="data.number"></input>
         </div>
         <div class="pure-u-1">
-          <label for="{{lang.salesForm.inputs.apt.name}}" data-ng-bind="lang.salesForm.inputs.apt.label"></label>
-          <input type="email" id="{{lang.salesForm.inputs.apt.name}}" name="{{lang.salesForm.inputs.apt.name}}" placeholder="{{lang.salesForm.inputs.number.placeholder}}"></input>
+          <label for="{{lang.form.inputs.apt.name}}" data-ng-bind="lang.form.inputs.apt.label"></label>
+          <input type="text" id="apt" name="apt" placeholder="{{lang.form.inputs.number.placeholder}}" data-ng-model="data.apt"></input>
         </div>
-        <button type="submit" class="pure-button pure-button-primary" data-ng-bind="lang.salesForm.inputs.submit.label"></button>
+        <button type="submit" class="pure-button pure-button-primary" data-ng-bind="lang.form.inputs.submit.label"></button>
       </div>
     </form>
   </div>
