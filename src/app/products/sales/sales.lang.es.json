@@ -7,7 +7,7 @@
       "Únicamente usaremos tus datos para dar seguimiento al asunto por el que nos contactaste.",
       "Para conocer más sobre nuestras políticas de privacidad, da click aquí."
   ],
-  "salesForm" : {
+  "form" : {
     "title" : "Forma de Ventas",
     "name" : "sales",
     "art" : "",

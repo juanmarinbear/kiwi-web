@@ -105,13 +105,13 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
   })
   .state('sales', {
     url: '/sales/:product',
-    templateUrl: 'app/products/sales/salesForm/salesForm.tpl.html',
-    controller: 'SalesFormCtrl',
+    templateUrl: 'app/products/sales/sales.tpl.html',
+    controller: 'SalesCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/products/sales/salesForm/salesForm.lang.es.json'
+          url: 'app/products/sales/sales.lang.es.json'
         })
         .then (function (data) {
           return data;
