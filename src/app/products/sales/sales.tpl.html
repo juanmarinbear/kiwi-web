@@ -9,7 +9,7 @@
   </div>
   <div class="pure-u-1 pure-u-md-1-2">
     <h3 data-ng-bind="lang.form.title"></h3>
-    <form id="sales" class="pure-form pure-form-stacked" name="sales">
+    <form id="sales" class="pure-form pure-form-stacked" name="sales" novalidate>
       <div class="pure-g">
         <div class="pure-u-1">
           <label for="{{lang.form.inputs.product.name}}" data-ng-bind="lang.form.inputs.product.label"></label>
@@ -57,7 +57,7 @@
           <label for="{{lang.form.inputs.apt.name}}" data-ng-bind="lang.form.inputs.apt.label"></label>
           <input type="text" id="apt" name="apt" placeholder="{{lang.form.inputs.number.placeholder}}" data-ng-model="data.apt"></input>
         </div>
-        <button type="submit" class="pure-button pure-button-primary" data-ng-bind="lang.form.inputs.submit.label"></button>
+        <button type="submit" class="pure-button pure-button-primary" data-ng-bind="lang.form.inputs.submit.label" data-ng-click="submit()"></button>
       </div>
     </form>
   </div>
