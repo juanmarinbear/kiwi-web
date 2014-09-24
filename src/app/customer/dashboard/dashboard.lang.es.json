@@ -11,12 +11,12 @@
       ]
     },
     {
-      "title" : "Dashboard",
+      "title" : "Kiwi Cloud",
       "art" : "",
       "paragraphs" : [
         "Consulta el estado actual e historial de tu enlace.",
         "Consulta tu consumo de bandwidth.",
-        "Cambiar la contraseña de tu red."
+        "Cambia la contraseña de tu red."
       ]
     },
     {
@@ -44,7 +44,7 @@
       "name" : "signin",
       "art" : "",
       "paragraphs" : [
-        "Entra a nuestro portal de atención con tu celular y la contraseña que te enviaremos por SMS."
+        "Entra al Dashboard con tu celular y la contraseña que te enviaremos por SMS."
       ],
       "inputs" : { 
         "mobile" : {
@@ -74,7 +74,7 @@
       "name" : "signup",
       "art" : "",
       "paragraphs" : [
-        "Regístrate en nuestro portal de cliente.",
+        "Regístrate para usar el Dashboard.",
         "Si necesitas ayuda, da click aquí o llama al 01-800-XXX-XXXX"
       ],
       "inputs" : { 
