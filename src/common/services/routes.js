@@ -46,7 +46,7 @@ kiwiWeb.factory('Routes', function() {
       xOrder: 1,
       yOrder: 1
     },
-    jobs: {
+    careers: {
       parent: 'company',
       xOrder: 1,
       yOrder: 2

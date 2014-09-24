@@ -27,9 +27,9 @@ kiwiWeb.factory('Menu', function() {
             target: '_blank'
           },
           {
-            name : 'jobs',
+            name : 'careers',
             label : 'Trabajo',
-            uiSref : 'jobs'
+            uiSref : 'careers'
           },
           {
             name : 'stories',

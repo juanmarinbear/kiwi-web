@@ -151,15 +151,15 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
       }
     }
   })
-  .state('jobs', {
-    url: '/jobs',
-    templateUrl: 'app/company/jobs/jobs.tpl.html',
-    controller: 'JobsCtrl',
+  .state('careers', {
+    url: '/careers',
+    templateUrl: 'app/company/careers/careers.tpl.html',
+    controller: 'CareersCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/company/jobs/jobs.lang.es.json'
+          url: 'app/company/careers/careers.lang.es.json'
         })
         .then (function (data) {
           return data;
