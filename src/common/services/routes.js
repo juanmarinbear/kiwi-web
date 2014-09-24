@@ -66,9 +66,6 @@ kiwiWeb.factory('Routes', function() {
       xOrder: 0,
       yOrder: 0
     },
-    contactForm: {
-      parent: 'form'
-    },
     dashboard: {
       parent: 'form'
     },
