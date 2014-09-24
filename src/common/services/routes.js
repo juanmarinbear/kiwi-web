@@ -75,10 +75,15 @@ kiwiWeb.factory('Routes', function() {
     refer: {
       parent: 'form'
     },
-    status: {
+    support: {
       parent: 'support',
       xOrder: 3,
       yOrder: 0
+    },
+    status: {
+      parent: 'support',
+      xOrder: 3,
+      yOrder: 1
     }
   };
 });
