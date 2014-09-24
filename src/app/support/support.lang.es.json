@@ -1,0 +1,110 @@
+{
+  "title" : "Soporte",
+  "subtitle" : "¿Necesitas ayuda?",
+  "paragraphs" : [
+    "Aquí puedes consultar el Status de la red Kiwi Networks.",
+    "Tenemos un Help Center con problemas comunes y su solución.",
+    "También nos puedes llamar al 01-800-XXX-XXXXX.  Si no te contestamos, deja un mensaje con tu nombre, email, móvil y empresa.  Tu mensaje se convierte automáticamente en un ticket y le daremos seguimiento.",
+    "Si no encontraste solución a tu problema en el Help Center o no quieres llamar, llena esta forma de soporte y te contactaremos inmediatamente.",
+    "Tus datos están seguros, no los compartimos con terceros, ni te enviaremos correos que no solicitaste (Marketing, comunicados, etc...).",
+    "Únicamente usaremos tus datos para dar seguimiento al asunto por el que nos contactaste.",
+    "Para conocer más sobre nuestras políticas de privacidad, da click aquí."
+  ],
+  "form" : {
+    "title" : "Forma de Soporte",
+    "name" : "support",
+    "art" : "",
+    "inputs" : {
+      "service" : {
+        "name" : "service",
+        "label" : "Servicio",
+        "help" : "¿Qué servicio contrataste?",
+        "options" : {
+          "default" : "-- Ninguno --",
+          "items" : [
+            { "label" : "Residential", "value" : "residential" },
+            { "label" : "Business", "value" : "business" },
+            { "label" : "Dedicated", "value" : "dedicated" },
+            { "label" : "Metro Mesh", "value" : "metromesh" },
+            { "label" : "Otro", "value" : "other" }
+          ]
+        },
+        "validation" : {
+          "required" : "Servicio requerido."
+        }
+      },
+      "subject" : {
+        "name" : "subject",
+        "label" : "Asunto",
+        "help" : "¿Cuál es el problema?",
+        "options" : {
+          "default" : "-- Ninguno --",
+          "items" : [
+            { "label" : "Desconexión", "value" : "disconnection" },
+            { "label" : "Lentitud", "value" : "slowness" },
+            { "label" : "Facturación y Cobranza", "value" : "billing" },
+            { "label" : "Otro", "value" : "other" }
+          ]
+        },
+        "validation" : {
+          "required" : "Asunto requerido."
+        }
+      },
+      "company" : {
+        "name" : "company",
+        "label" : "Empresa",
+        "placeholder" : "ACME",
+        "help" : "Tu empresa.",
+        "validation" : {}
+      },
+      "name" : {
+        "name" : "name",
+        "label" : "Nombre",
+        "placeholder" : "Homero",
+        "help" : "Tu nombre.",
+        "validation" : {
+          "required" : "Nombre requerido."
+        }
+      },
+      "last" : {
+        "name" : "last",
+        "label" : "Apellido",
+        "placeholder" : "Simpson",
+        "help" : "Tu apellido.",
+        "validation" : {
+          "required" : "Apellido requerido."
+        }
+      },
+      "email" : {
+        "name" : "email",
+        "label" : "Email",
+        "placeholder" : "homero.simpson@gmail.com",
+        "help" : "Tu email.",
+        "validation" : {
+          "required" : "Email requerido.",
+          "invalid" : "Email inválido."
+        }
+      },
+      "mobile" : {
+        "name" : "mobile",
+        "label" : "Móvil",
+        "placeholder" : "Móvil 10 dígitos",
+        "help" : "Tu móvil, 10 dígitos.",
+        "validation" : {
+          "required" : "Móvil requerido.",
+          "invalid" : "Móvil inválido.  Deben ser 10 dígitos."
+        }
+      },
+      "message" : {
+        "name" : "message",
+        "label" : "Mensaje",
+        "placeholder" : "¿Quieres darnos más información?",
+        "help" : "¿Quieres darnos más información?",
+        "validation" : {}
+      },
+      "submit" : {
+        "label"  : "Enviar"
+      }
+    }
+  }
+}
