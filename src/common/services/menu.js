@@ -108,6 +108,11 @@ kiwiWeb.factory('Menu', function() {
         visible: false,
         sections : [
           {
+            name : 'support',
+            label : 'Solicita Soporte',
+            uiSref: 'support'
+          },
+          {
             name : 'helpcenter',
             label : 'Help Center',
             href: 'http://support.kiwinetworks.com',

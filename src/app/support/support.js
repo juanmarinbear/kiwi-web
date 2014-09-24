@@ -1,6 +1,6 @@
 'use strict';
 
-kiwiWeb.controller('SalesCtrl', function ($scope, $stateParams, $http, Parse, lang) {
+kiwiWeb.controller('SupportCtrl', function ($scope, $stateParams, $http, Parse, lang) {
   $scope.lang = lang.data;
   $scope.changeTitle($scope.lang.title);
   $scope.data = {};
@@ -15,7 +15,7 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $stateParams, $http, Parse, la
 
   $scope.submit = function() {
 
-    if($scope.sales.$valid) {
+    if($scope.support.$valid) {
       $scope.loading = true;
       $scope.success = true;
       $scope.loading = false;

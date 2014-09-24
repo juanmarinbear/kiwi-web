@@ -20,6 +20,7 @@
   "smarttabs": true,
   "globals": {
     "kiwiWeb": true,
+    "Parse" : true,
     "angular": false,
     /* Jasmine */
     "jasmine": false,

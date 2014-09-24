@@ -215,22 +215,6 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
       }
     }
   })
-  .state('contactForm', {
-    url: '/contactForm',
-    templateUrl: 'app/contact/contactForm/contactForm.tpl.html',
-    controller: 'ContactFormCtrl',
-    resolve: {
-      lang: function($http) {
-        return $http({
-          method: 'GET',
-          url: 'app/contact/contactForm/contactForm.lang.es.json'
-        })
-        .then (function (data) {
-          return data;
-        });
-      }
-    }
-  })
   .state('dashboard', {
     url: '/dashboard',
     templateUrl: 'app/customer/dashboard/dashboard.tpl.html',
@@ -272,6 +256,22 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
         return $http({
           method: 'GET',
           url: 'app/customer/refer/refer.lang.es.json'
+        })
+        .then (function (data) {
+          return data;
+        });
+      }
+    }
+  })
+  .state('support', {
+    url: '/support',
+    templateUrl: 'app/support/support.tpl.html',
+    controller: 'SupportCtrl',
+    resolve: {
+      lang: function($http) {
+        return $http({
+          method: 'GET',
+          url: 'app/support/support.lang.es.json'
         })
         .then (function (data) {
           return data;
