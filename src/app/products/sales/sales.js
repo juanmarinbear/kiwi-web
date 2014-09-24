@@ -5,80 +5,45 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $stateParams, $http, Parse, la
   $scope.changeTitle($scope.lang.title);
   $scope.data = {};
 
+  var zendesk = {};
+  zendesk.username = 'kiwiadmin@kiwinetworks.com';
+  zendesk.token = '9UWLTlGmIWLsxSMWqQSVWRo2GxYO0gsKXaXEVTUO';
+  zendesk.api = 'https://kiwinetworks.zendesk.com/api/v2';
+
   $http.defaults.useXDomain = true;
   delete $http.defaults.headers.common['X-Requested-With'];
 
   $scope.submit = function() {
-/*
-    $http({
-      url: 'https://kiwinetworks.zendesk.com/api/v2/tickets.json',
-      method: 'GET', 
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'Authorization': 'Basic a2l3aWFkbWluQGtpd2luZXR3b3Jrcy5jb20vdG9rZW46OVVXTFRsR21JV0xzeFNNV3FRU1ZXUm8yR3hZTzBnc0tYYVhFVlRVTw==' 
-      }    
-    }).
-    success(function(data, status, headers, config) {
-      console.log('Success!');
-      console.log(data);
-      // this callback will be called asynchronously
-      // when the response is available
-    }).
-    error(function(data, status, headers, config) {
-      console.log('Error!');
-      console.log(data);
-      // called asynchronously if an error occurs
-      // or server returns response with an error status.
-    });
-*/
-    $http({
-      url: 'https://kiwinetworks.zendesk.com/api/v2/tickets.json',
-      method: 'POST', 
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'Authorization': 'Basic a2l3aWFkbWluQGtpd2luZXR3b3Jrcy5jb20vdG9rZW46OVVXTFRsR21JV0xzeFNNV3FRU1ZXUm8yR3hZTzBnc0tYYVhFVlRVTw==' 
-      },
-      data: {
-        ticket: {
-          subject: "This is a test!",
-          comment: {
-            body: "Hope it succeeds!" 
-          },
-          priority: "urgent"
-        }
-      }
-    }).
-    success(function(data, status, headers, config) {
-      console.log('Success!');
-      console.log(data);
-      // this callback will be called asynchronously
-      // when the response is available
-    }).
-    error(function(data, status, headers, config) {
-      console.log('Error!');
-      console.log(data);
-      // called asynchronously if an error occurs
-      // or server returns response with an error status.
-    });
-/*
+
     if($scope.sales.$valid) {
       $scope.loading = true;
-      var Lead = Parse.Object.extend('Lead');
-      var lead = new Lead($scope.data);
-      lead.save(null, {
-        success: function(lead) {
-          $scope.success = true;
-          $scope.loading = false;
-          $scope.$apply();
-        },
-        error: function(lead, error) {
-          $scope.loading = false;
-        }
-      });
+      $scope.success = true;
+      alert('Form is valid!');
+      $scope.loading = false;
+      $scope.$apply();
     }
     $scope.submitted = true;
+/*
+    $http({
+      method: 'GET', 
+      url: $scope.zendesk.api + '/users/me.json',
+      headers: {
+        'Accept': 'application/json',
+        'Authorization': 'Basic ' + btoa(zendesk.username + '/token:' + zendesk.token)
+      }
+      }).
+      success(function(data, status, headers, config) {
+        console.log('Success!');
+        console.log(data);
+        console.log(status);
+        console.log(config);
+      }).
+      error(function(data, status, headers, config) {
+        console.log('Error!');
+        console.log(data);
+        console.log(status);
+        console.log(config);
+      });
 */
   };
 });

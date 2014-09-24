@@ -12,10 +12,10 @@
     "name" : "sales",
     "art" : "",
     "inputs" : {
-      "product" : {
-        "name" : "product",
-        "label" : "Producto",
-        "help" : "¿Qué producto te interesa?",
+      "service" : {
+        "name" : "service",
+        "label" : "Servicio",
+        "help" : "¿Qué servicio te interesa?",
         "options" : {
           "default" : "-- Ninguno --",
           "items" : [
@@ -26,35 +26,57 @@
             { "label" : "Otro", "value" : "other" }
           ]
         },
-        "validation" : {}
+        "validation" : {
+          "required" : "Servicio requerido."
+        }
       },
       "name" : {
         "name" : "name",
         "label" : "Nombre",
-        "placeholder" : "Homero Simpson",
+        "placeholder" : "Homero",
         "help" : "Tu nombre.",
-        "validation" : {}
+        "validation" : {
+          "required" : "Nombre requerido."
+        }
+      },
+      "last" : {
+        "name" : "last",
+        "label" : "Apellido",
+        "placeholder" : "Simpson",
+        "help" : "Tu apellido.",
+        "validation" : {
+          "required" : "Apellido requerido."
+        }
       },
       "email" : {
         "name" : "email",
         "label" : "Email",
         "placeholder" : "homero.simpson@gmail.com",
         "help" : "Tu email.",
-        "validation" : {}
+        "validation" : {
+          "required" : "Email requerido.",
+          "invalid" : "Email inválido."
+        }
       },
       "mobile" : {
         "name" : "mobile",
         "label" : "Móvil",
         "placeholder" : "Móvil 10 dígitos",
         "help" : "Tu móvil, 10 dígitos.",
-        "validation" : {}
+        "validation" : {
+          "required" : "Móvil requerido.",
+          "invalid" : "Móvil inválido.  Deben ser 10 dígitos."
+        }
       },
       "zip" : {
         "name" : "zip",
         "label" : "Código Postal",
         "placeholder" : "Código Postal",
         "help" : "Tu código postal.",
-        "validation" : {}
+        "validation" : {
+          "required" : "Código Postal requerido.",
+          "invalid" : "Código Postal inválido.  Deben ser 5 dígitos."
+        }
       },
       "state" : {
         "name" : "state",
@@ -67,12 +89,14 @@
             { "label" : "Baja California", "value" : "bajacalifornia" }
           ]
         },
-        "validation" : {}
+        "validation" : {
+          "required" : "Estado requerido."
+        }
       },
       "city" : {
         "name" : "city",
-        "label" : "Ciudad",
-        "help" : "Tu ciudad.",
+        "label" : "Ciudad / Delegación / Municipio",
+        "help" : "Tu ciudad, delegación o municipio.",
         "options" : {
           "default" : "-- Ninguno --",
           "items" : [
@@ -80,21 +104,27 @@
             { "label" : "Metropolitan", "value" : "metropolitan" }
           ]
         },
-        "validation" : {}
+        "validation" : {
+          "required" : "Ciudad requerida."
+        }
       },
       "street" : {
         "name" : "street",
         "label" : "Calle",
         "placeholder" : "Calle",
         "help" : "Tu calle.",
-        "validation" : {}
+        "validation" : {
+          "required" : "Calle requerida."
+        }
       },
       "number" : {
         "name" : "number",
-        "label" : "Exterior",
+        "label" : "Número Exterior",
         "placeholder" : "Número Exterior",
         "help" : "Tu número exterior.",
-        "validation" : {}
+        "validation" : {
+          "required" : "Número Exterior requerido."
+        }
       },
       "apt" : {
         "name" : "apt",
@@ -102,6 +132,16 @@
         "placeholder" : "Número Interior",
         "help" : "Tu número interior.",
         "validation" : {}
+      },
+      "levels" : {
+        "name" : "levels",
+        "label" : "Niveles",
+        "placeholder" : "Niveles",
+        "help" : "Niveles en tu edificio.  Si vives en casa o tu negocio es un local, usa 1.",
+        "validation" : {
+          "required" : "Niveles requerido.",
+          "invalid" : "Niveles inválido.  Debe ser entre 1 y 99."
+        }
       },
       "submit" : {
         "label"  : "Enviar"
