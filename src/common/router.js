@@ -263,6 +263,22 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
       }
     }
   })
+  .state('support', {
+    url: '/support',
+    templateUrl: 'app/support/support.tpl.html',
+    controller: 'SupportCtrl',
+    resolve: {
+      lang: function($http) {
+        return $http({
+          method: 'GET',
+          url: 'app/support/support.lang.es.json'
+        })
+        .then (function (data) {
+          return data;
+        });
+      }
+    }
+  })
   .state('status', {
     url: '/status',
     templateUrl: 'app/support/status/status.tpl.html',
