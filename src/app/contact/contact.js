@@ -10,11 +10,10 @@ kiwiWeb.controller('ContactCtrl', function ($scope, lang) {
     if($scope.contact.$valid) {
       $scope.loading = true;
       $scope.success = true;
-      alert('Form is valid!');
       $scope.loading = false;
       $scope.$apply();
     }
     $scope.submitted = true;
-  }
+  };
 
 });

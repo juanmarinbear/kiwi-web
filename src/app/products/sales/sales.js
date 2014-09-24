@@ -18,7 +18,6 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $stateParams, $http, Parse, la
     if($scope.sales.$valid) {
       $scope.loading = true;
       $scope.success = true;
-      alert('Form is valid!');
       $scope.loading = false;
       $scope.$apply();
     }
