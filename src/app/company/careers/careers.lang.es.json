@@ -1,55 +1,153 @@
 {
   "title" : "Trabajo",
-  "sections" : [
+  "locations" : [
     {
-      "title" : "¡Hola!",
-      "subtitle" : "Somos Kiwi Networks",
+      "title" : "Distrito Federal",
       "art" : "",
-      "paragraphs" : [
-        "Una empresa de telecomunicaciones.",
-        "¿Otra más? ¡Sí! Pero somos diferentes.",
-        "Nos enfocamos a empresas en crecimiento como la tuya.  Queremos que uses lo último en Information Technology (IT) como VoIP, infraestructura y plataformas como servicio (IaaS y PaaS), video vigilancia y virtualización.",
-        "Primero, requieres más Bandwidth (ancho de banda) de lo que te ofrecen los demás.  Pero no sólo es descargar más rápido,es importante subir información más rápido, tener baja latencia y perdida de paquetes (calidad)."
+      "careers" : [
+        {
+          "name" : "Ingeniero en Redes",
+          "description" : "#networkEngineer"
+        },
+        {
+          "name" : "Ingeniero de Soluciones",
+          "description" : "#solutionsEngineer"
+        }
       ]
     },
     {
-      "title" : "Velocidad y Calidad",
-      "subtitle" : "Sobrepasando la necesidad de tus aplicaciones",
+      "title" : "Puebla",
       "art" : "",
-      "paragraphs" : [
-        "Kiwi Networks usa lo último en fibra óptica y microondas para darte servicios desde 4 Mbps hasta 10 Gbps simétricos (es decir, misma velocidad de subida que descarga).",
-        "Cuando lo requieras, puedes incrementar o disminuir tu velocidad (escalable).  Con cada servicio, te damos 8 IPs públicas y estáticas para aplicaciones como servidores o cámaras de video vigilancia.",
-        "Finalmente, desde nuestro portal, puedes ver el status de tu servicio.  Cuanto datos transferiste, velocidad, desconexiones, reportar fallas, pagar y facturar."
+      "careers" : [
+        {
+          "name" : "Ingeniero en Redes",
+          "description" : "#networkEngineer"
+        },
+        {
+          "name" : "Ingeniero de Soluciones",
+          "description" : "#solutionsEngineer"
+        }
       ]
     },
     {
-      "title" : "Servicio excepcional",
-      "subtitle" : "Tu eres lo más importante",
+      "title" : "Estado de México",
       "art" : "",
-      "paragraphs" : [
-        "¿Todavía no te convences?",
-        "¿Y si te decimos que no te cobramos instalación ni obligamos a un plan forzoso?",
-        "Esto no lo dan otros proveedores porque ven a cada cliente como un riesgo por mitigar y un ingreso que optimizar.  Kiwi Networks te ve como una inversión.  Queremos que crezcas y nos permitas crecer contigo.  No tememos invertir en ti.  Sabemos que con la calidad de nuestro servicio, estarás con nosotros siempre.",
-        "Y si no podemos darte el servicio que esperas.  No debes seguir con nosotros.  No es necesario un plan forzoso ni una penalización por cancelación.  Queremos que seas nuestro cliente por convicción, no por contrato.",
-        "Finalmente, en todos nuestros servicios, tu tienes la última palabra sobre tu factura.  Si no estás satisfecho por cualquier razón, nos dices lo que no te gustó, y pagas lo que creas justo.  Así de fácil."
-      ] 
+      "careers" : [
+        {
+          "name" : "Ingeniero en Redes",
+          "description" : "#networkEngineer"
+        },
+        {
+          "name" : "Ingeniero de Soluciones",
+          "description" : "#solutionsEngineer"
+        }
+      ]
+    }
+  ],
+  "descriptions" : [ 
+    {
+      "anchor" : "#networkEngineer",
+      "title" : "Ingeniero en Redes",
+      "intro" : [
+        "Kiwi Networks S.A.P.I. de C.V. es un proveedor concesionado de servicios de telecomunicaciones rentable y en crecimiento.",
+        "Ofrecemos servicios residenciales y empresariales que van desde 4 Mbps hasta 1 Gbps.",
+        "Nuestra prioridad es la calidad de nuestro servicio y la atención al cliente."
+      ],
+      "sections" : [
+        {
+          "title" : "La Red",
+          "paragraphs" : [
+            "La red Kiwi Networks incluye cientos de dispositivos como routers, switches y access points de diferentes fabricantes.",
+          "Cada día, hay nuevas instalaciónes y mantenimiento preventivo y correctivo.",
+          "Nuestra topología de red cambia semanalmente y nuestras configuraciones BGP y OSPF cambian.",
+          "Usamos enlaces inalámbricos punto-a-punto, punto-multipunto y de fibra óptica."
+          ]
+        },
+        {
+          "title" : "El Trabajo",
+          "paragraphs" : [
+            "Tu responsabilidad es facilitar el crecimiento y estabilidad de nuestra red.",
+            "Trabajarás con el NOC para ayudar con el diseño, instalación y mantenimiento de nuestra red.",
+            "Responderás a emergencias en la red y mejorarás su monitoreo.",
+            "Coordinaras instalaciones y configurarás equipo de redes."
+          ]
+        },
+        {
+          "title" : "Requerimientos",
+          "list" : true,
+          "paragraphs" : [
+            "Habilidades superiores de atención a cliente.",
+            "Personalidad extrovertida y amigable",
+            "Experiencia en diseño e implementación de BGP y OSPF",
+            "3 a 4 años de experiencia en redes",
+            "Licenciatura en sistemas, telemática, redes o similar.",
+            "Habilidades superiores de diagnóstico y resolución de problemas",
+            "Experiencia en diseño de redes.",
+            "Excelente comunicación verbal y escrita.",
+            "Inglés: Lectura 90%, Escritura 90%, Conversación 70%."
+          ]
+        },
+        {
+          "title" : "Compensación",
+          "list" : true,
+          "paragraphs" : [
+            "Prestaciones de ley.",
+            "Sueldo bruto de $700 a $2,800 USD mensuales (depende experiencia).",
+            "Bono mensual a nivel empresa."
+          ]
+        }
+      ]
     },
     {
-      "title" : "Ecológico y moderno",
-      "subtitle" : "Rompiendo paradigmas de trabajo",
-      "art" : "",
-      "paragraphs" : [
-        "Otros proveedores usan fibra o cobre aéreo y dejan tendederos de cables que no sólo contaminen visualmente, también son inseguros.  Kiwi Networks usa fibra 100% subterránea.",
-        "Nuestros enlaces de microondas usan lo último en wireless para minimizar interferencia, dar alta velocidad, baja latencia y no contaminan la imagen de tu comunidad.",
-        "Usamos una flotilla de baja emisión de CO2.  Nuestros contratos y facturas son digitales.  Instalamos molinos eólicos y celdas solares en algunas de nuestras acometidas para usar energía renovable.",
-        "Nuestra meta es que toda la energía que usamos sea renovable."
-      ] 
-    },
-    {
-      "title" : "¡Gracias!",
-      "subtitle" : "Agradecemos tu interés en Kiwi Networks y esperamos ganar la oportunidad de servirte.",
-      "art" : "",
-      "paragrpahs" : [] 
+      "anchor" : "#solutionsEngineer",
+      "title" : "Ingeniero en Soluciones",
+      "intro" : [
+        "Kiwi Networks S.A.P.I. de C.V. es un proveedor concesionado de servicios de telecomunicaciones rentable y en crecimiento.",
+        "Ofrecemos servicios residenciales y empresariales que van desde 4 Mbps hasta 1 Gbps.",
+        "Nuestra prioridad es la calidad de nuestro servicio y la atención al cliente."
+      ],
+      "sections" : [
+        {
+          "title" : "El Servicio",
+          "paragraphs" : [
+            "Nuestra prioridad es la calidad de nuestro servicio y la atención al cliente.",
+            "No tenemos planes forzosos, costo de instalación o penalización por cancelación porque no tememos invertir en nuestros clientes.",
+            "Si nuestro servicio no satisface a nuestros clientes, ellos tienen la última palabra sobre su factura.",
+            "Finalmente, somos transparentes con la conectividad y velocidad de nuestra red hacia nuestros clientes."
+          ]
+        },
+        {
+          "title" : "El Trabajo",
+          "paragraphs" : [
+            "Tu responsabilidad es facilitar nuestro crecimiento en clientes y edificios conectados a nuestra red.",
+            "Trabajarás con ventas y operaciones para incrementar nuestra cartera de clientes y conectar nuevos edificios.",
+            "Diagnosticarás el producto que cumpla las necesidades de prospectos."
+          ]
+        },
+        {
+          "title" : "Requerimientos",
+          "list" : true,
+          "paragraphs" : [
+            "Habilidades superiores de atención a cliente.",
+            "Personalidad extrovertida y amigable.",
+            "Entendimiento básico de redes.",
+            "Licenciatura en sistemas, telemática, redes, industrial o similar.",
+            "Habilidades superiores de diagnóstico y resolución de problemas",
+            "Experiencia en ventas.",
+            "Excelente comunicación verbal y escrita.",
+            "Inglés: Lectura 90%, Escritura 90%, Conversación 70%."
+          ]
+        },
+        {
+          "title" : "Compensación",
+          "list" : true,
+          "paragraphs" : [
+            "Prestaciones de ley.",
+            "Sueldo bruto de $700 a $2,800 USD mensuales (depende experiencia).",
+            "Bono mensual a nivel empresa."
+          ]
+        }
+      ]
     }
   ]
 }
