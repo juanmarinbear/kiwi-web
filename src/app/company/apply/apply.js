@@ -7,7 +7,7 @@ kiwiWeb.controller('ApplyCtrl', function ($scope, lang) {
 
   $scope.submit = function() {
 
-    if($scope.contact.$valid) {
+    if($scope.apply.$valid) {
       $scope.loading = true;
       $scope.success = true;
       $scope.loading = false;

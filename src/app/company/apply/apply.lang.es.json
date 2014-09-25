@@ -1,66 +1,39 @@
 {
-  "title" : "Contacto",
-  "sections" : [
-    {
-      "title" : "Online",
-      "subtitle" : "Para darte atención inmediata y eficiente, usa nuestras formas online:",
-      "art" : "",
-      "paragraphs" : [
-        "Ventas",
-        "Soporte"
-      ]
-    },
-    {
-      "title" : "Teléfono",
-      "subtitle" : "Llámanos a:",
-      "art" : "",
-      "paragraphs" : [
-        "México:",
-        "Estados Unidos:"
-      ]
-    },
-    {
-      "title" : "Email",
-      "subtitle" : "Escríbenos a:",
-      "art" : "",
-      "paragraphs" : [
-        "Ventas:",
-        "Soporte:",
-        "Contacto:"
-      ]
-    },
-    {
-      "title" : "Redes Sociales",
-      "subtitle" : "Síguenos en:",
-      "art" : "",
-      "paragraphs" : [
-        "Facebook:",
-        "Twitter:"
-      ]
-    }
-  ],
+  "title" : "Aplicación de Trabajo",
   "form" : {
-    "title" : "Forma de Contacto",
-    "name" : "contact",
+    "name" : "apply",
     "art" : "",
     "inputs" : {
-      "subject" : {
-        "name" : "subject",
-        "label" : "Asunto",
-        "help" : "¿Para qué nos contactas?",
+      "job" : {
+        "name" : "job",
+        "label" : "Puesto",
+        "help" : "¿Para qué puesto deseas aplicar?",
         "options" : {
           "default" : "-- Ninguno --",
           "items" : [
-            { "label" : "Ventas", "value" : "sales" },
-            { "label" : "Soporte", "value" : "support" },
-            { "label" : "Bolsa de Trabajo", "value" : "jobs" },
-            { "label" : "Proveeduría", "value" : "supplier" },
-            { "label" : "Prensa", "value" : "press" },
-            { "label" : "Otro", "value" : "other" }
+            { "label" : "Ingeniero en Redes", "value" : "network" },
+            { "label" : "Ingeniero de Soluciones", "value" : "solutions" },
+            { "label" : "Ingeniero en Software", "value" : "software" }
           ]
         },
         "validation" : {
-          "required" : "Asunto requerido."
+          "required" : "Puesto requerido."
+        }
+      },
+      "location" : {
+        "name" : "location",
+        "label" : "Ubicación",
+        "help" : "¿En qué plaza deseas aplicar?",
+        "options" : {
+          "default" : "-- Ninguno --",
+          "items" : [
+            { "label" : "Distrito Federal", "value" : "dif" },
+            { "label" : "Puebla", "value" : "pue" },
+            { "label" : "Estado de México", "value" : "mex" }
+          ]
+        },
+        "validation" : {
+          "required" : "Ubicación requerida."
         }
       },
       "name" : {
@@ -101,23 +74,31 @@
           "invalid" : "Móvil inválido.  Deben ser 10 dígitos."
         }
       },
-      "levels" : {
-        "name" : "levels",
-        "label" : "Niveles",
-        "placeholder" : "Niveles",
-        "help" : "Niveles en tu edificio.  Si vives en casa o tu negocio es un local, usa 1.",
+      "education" : {
+        "name" : "education",
+        "label" : "Educación",
+        "help" : "Máximo nivel de escolaridad terminado.",
+        "options" : {
+          "default" : "-- Ninguno --",
+          "items" : [
+            { "label" : "Preparatoria", "value" : "highschool" },
+            { "label" : "Licenciatura", "value" : "college" },
+            { "label" : "Maestría", "value" : "graduate" },
+            { "label" : "Doctorado", "value" : "doctoral" }
+          ]
+        },
         "validation" : {
-          "required" : "Niveles requerido.",
-          "invalid" : "Niveles inválido.  Debe ser entre 1 y 99."
+          "required" : "Educación requerida."
         }
       },
-      "message" : {
-        "name" : "message",
-        "label" : "Mensaje",
-        "placeholder" : "¿Cómo podemos ayudarte?",
-        "help" : "¿Cómo podemos ayudarte?",
+      "experience" : {
+        "name" : "experience",
+        "label" : "Experiencia",
+        "placeholder" : "Años",
+        "help" : "Años de experiencia realizando esta labor o similar.",
         "validation" : {
-          "required" : "Mensaje requerido."
+          "required" : "Experiencia requerida.",
+          "number" : "Experiencia debe ser dígitos."
         }
       },
       "submit" : {

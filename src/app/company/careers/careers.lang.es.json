@@ -30,6 +30,10 @@
         {
           "name" : "Ingeniero de Soluciones",
           "description" : "#solutionsEngineer"
+        },
+        {
+          "name" : "Ingeniero en Software",
+          "description" : "#softwareEngineer"
         }
       ]
     },
@@ -44,6 +48,10 @@
         {
           "name" : "Ingeniero de Soluciones",
           "description" : "#solutionsEngineer"
+        },
+        {
+          "name" : "Ingeniero en Software",
+          "description" : "#softwareEngineer"
         }
       ]
     }
@@ -99,6 +107,12 @@
             "Sueldo bruto de $700 a $2,800 USD mensuales (depende experiencia).",
             "Bono mensual a nivel empresa."
           ]
+        },
+        {
+          "title" : "Aplicación",
+          "paragraphs" : [
+            "Para aplicar, da click aquí."
+          ]
         }
       ]
     },
@@ -149,6 +163,12 @@
             "Prestaciones de ley.",
             "Sueldo bruto de $700 a $2,800 USD mensuales (depende experiencia).",
             "Bono mensual a nivel empresa."
+          ]
+        },
+        {
+          "title" : "Aplicación",
+          "paragraphs" : [
+            "Para aplicar, da click aquí."
           ]
         }
       ]
@@ -205,6 +225,12 @@
             "Prestaciones de ley.",
             "Sueldo bruto de $1,400 a $2,800 USD mensuales (depende experiencia).",
             "Bono mensual a nivel empresa."
+          ]
+        },
+        {
+          "title" : "Aplicación",
+          "paragraphs" : [
+            "Para aplicar, da click aquí."
           ]
         }
       ]
