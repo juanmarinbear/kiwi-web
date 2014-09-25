@@ -1,0 +1,64 @@
+<h2 data-ng-bind="lang.title"></h2>
+<div class="pure-g">
+  <div class="pure-u-1">
+    <form id="apply" class="pure-form pure-form-stacked" name="apply" novalidate>
+      <div class="pure-g">
+        <div class="pure-u-1">
+          <label for="{{lang.form.inputs.job.name}}" data-ng-bind="lang.form.inputs.job.label"></label>
+          <select id="job" class="" name="job" data-ng-model="data.job" data-ng-options="item.value as item.label for item in lang.form.inputs.job.options.items" required autofocus>
+            <option value="" data-ng-bind="lang.form.inputs.job.options.default" selected></option>
+          </select>
+        </div>
+        <div class="pure-u-1">
+          <label for="{{lang.form.inputs.location.name}}" data-ng-bind="lang.form.inputs.location.label"></label>
+          <select id="location" class="" name="location" data-ng-model="data.location" data-ng-options="item.value as item.label for item in lang.form.inputs.location.options.items" required autofocus>
+            <option value="" data-ng-bind="lang.form.inputs.location.options.default" selected></option>
+          </select>
+        </div>
+        <div class="pure-u-1">
+          <label for="{{lang.form.inputs.name.name}}" data-ng-bind="lang.form.inputs.name.label"></label>
+          <input type="text" id="name" name="name" placeholder="{{lang.form.inputs.name.placeholder}}" data-ng-model="data.name" required></input>
+        </div>
+        <div class="pure-u-1">
+          <label for="{{lang.form.inputs.last.name}}" data-ng-bind="lang.form.inputs.last.label"></label>
+          <input type="text" id="last" name="last" placeholder="{{lang.form.inputs.last.placeholder}}" data-ng-model="data.last" required></input>
+        </div>
+        <div class="pure-u-1">
+          <label for="{{lang.form.inputs.email.name}}" data-ng-bind="lang.form.inputs.email.label"></label>
+          <input type="email" id="email" name="email" placeholder="{{lang.form.inputs.email.placeholder}}" data-ng-model="data.email" required></input>
+        </div>
+        <div class="pure-u-1">
+          <label for="{{lang.form.inputs.mobile.name}}" data-ng-bind="lang.form.inputs.mobile.label"></label>
+          <input type="text" id="mobile" name="mobile" placeholder="{{lang.form.inputs.mobile.placeholder}}" data-ng-model="data.mobile" data-ng-pattern="/\d{10}/" required></input>
+        </div>
+        <div class="pure-u-1">
+          <label for="{{lang.form.inputs.education.name}}" data-ng-bind="lang.form.inputs.education.label"></label>
+          <select id="education" class="" name="education" data-ng-model="data.education" data-ng-options="item.value as item.label for item in lang.form.inputs.education.options.items" required autofocus>
+            <option value="" data-ng-bind="lang.form.inputs.education.options.default" selected></option>
+          </select>
+        </div>
+        <div class="pure-u-1">
+          <label for="{{lang.form.inputs.experience.name}}" data-ng-bind="lang.form.inputs.experience.label"></label>
+          <input type="number" id="experience" name="experience" placeholder="{{lang.form.inputs.experience.placeholder}}" data-ng-model="data.experience" required></input>
+        </div>
+        <div class="pure-u-1">
+          <button type="submit" class="pure-button pure-button-primary" data-ng-bind="lang.form.inputs.submit.label" data-ng-click="submit()"></button>
+        </div>
+        <div class="pure-u-1" data-ng-show="submitted && !apply.$valid">
+          <p data-ng-show="apply.job.$error.required" data-ng-bind="lang.form.inputs.job.validation.required"></p>
+          <p data-ng-show="apply.location.$error.required" data-ng-bind="lang.form.inputs.location.validation.required"></p>
+          <p data-ng-show="apply.name.$error.required" data-ng-bind="lang.form.inputs.name.validation.required"></p>
+          <p data-ng-show="apply.last.$error.required" data-ng-bind="lang.form.inputs.last.validation.required"></p>
+          <p data-ng-show="apply.email.$error.required" data-ng-bind="lang.form.inputs.email.validation.required"></p>
+          <p data-ng-show="apply.email.$error.email" data-ng-bind="lang.form.inputs.email.validation.invalid"></p>
+          <p data-ng-show="apply.mobile.$error.required" data-ng-bind="lang.form.inputs.mobile.validation.required"></p>
+          <p data-ng-show="apply.mobile.$error.pattern" data-ng-bind="lang.form.inputs.mobile.validation.invalid"></p>
+          <p data-ng-show="apply.education.$error.required" data-ng-bind="lang.form.inputs.education.validation.required"></p>
+          <p data-ng-show="apply.experience.$error.required" data-ng-bind="lang.form.inputs.experience.validation.required"></p>
+          <p data-ng-show="apply.experience.$error.number" data-ng-bind="lang.form.inputs.experience.validation.number"></p>
+          <p>{{apply.experience.$error}}</p>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
