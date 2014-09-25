@@ -12,6 +12,10 @@
         {
           "name" : "Ingeniero de Soluciones",
           "description" : "#solutionsEngineer"
+        },
+        {
+          "name" : "Ingeniero en Software",
+          "description" : "#softwareEngineer"
         }
       ]
     },
@@ -144,6 +148,62 @@
           "paragraphs" : [
             "Prestaciones de ley.",
             "Sueldo bruto de $700 a $2,800 USD mensuales (depende experiencia).",
+            "Bono mensual a nivel empresa."
+          ]
+        }
+      ]
+    },
+    {
+      "anchor" : "#softwareEngineer",
+      "title" : "Ingeniero en Software",
+      "intro" : [
+        "Kiwi Networks S.A.P.I. de C.V. es un proveedor concesionado de servicios de telecomunicaciones rentable y en crecimiento.",
+        "Ofrecemos servicios residenciales y empresariales que van desde 4 Mbps hasta 1 Gbps.",
+        "Nuestra prioridad es la calidad de nuestro servicio y la atención al cliente."
+      ],
+      "sections" : [
+        {
+          "title" : "El Software",
+          "paragraphs" : [
+            "Cualquier empresa es tan escalable como el software que usa.",
+            "En Kiwi Networks usamos las mejores soluciones en CRM, atención a cliente y monitoreo pero también desarrollamos herramientas propias."
+          ]
+        },
+        {
+          "title" : "El Trabajo",
+          "paragraphs" : [
+            "Tu responsabilidad es mantener nuestro software operando así como desarrollar nuevo.",
+            "Trabajarás con el NOC, ventas y operaciones, para identificar necesidades de software e implementarlas con aplicaciones existentes o desarrollando nuevas."
+          ]
+        },
+        {
+          "title" : "Requerimientos",
+          "list" : true,
+          "paragraphs" : [
+            "Habilidades superiores de atención a cliente.",
+            "Personalidad extrovertida y amigable",
+            "Licenciatura en sistemas o experiencia equivalente desarrollando software.",
+            "Experiencia desarrollando bajo OOP.",
+            "Experiencia con alguno de los siguientes lenguajes: C, C++, Java, PHP, Ruby, Python.",
+            "Experiencia con HTML y CSS.",
+            "Excelente conocimiento de JavaScript.",
+            "Experiencia con algun framework MVC o MVV como: Rails, CodeIgniter, Zend, Django etc...",
+            "Experiencia con JQuery, Backbone, Angular o Ember deseable.",
+            "Experiencia con Node, Express y MongoDB deseable.",
+            "Experiencia desarrollando bajo TDD.",
+            "Experiencia desarrollando con control de versiones (Git, Subversion).",
+            "Conocimiento de SCRUM.",
+            "Habilidades superiores de diagnóstico y resolución de problemas",
+            "Excelente comunicación verbal y escrita.",
+            "Inglés: Lectura 90%, Escritura 90%, Conversación 70%."
+          ]
+        },
+        {
+          "title" : "Compensación",
+          "list" : true,
+          "paragraphs" : [
+            "Prestaciones de ley.",
+            "Sueldo bruto de $1,400 a $2,800 USD mensuales (depende experiencia).",
             "Bono mensual a nivel empresa."
           ]
         }
