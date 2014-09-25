@@ -36,6 +36,9 @@ kiwiWeb.factory('Routes', function() {
     sales: {
       parent: 'form'
     },
+    apply: {
+      parent: 'form'
+    },
     about: {
       parent: 'company',
       xOrder: 1,

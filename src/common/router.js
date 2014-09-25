@@ -167,6 +167,22 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
       }
     }
   })
+  .state('apply', {
+    url: '/apply',
+    templateUrl: 'app/company/apply/apply.tpl.html',
+    controller: 'ApplyCtrl',
+    resolve: {
+      lang: function($http) {
+        return $http({
+          method: 'GET',
+          url: 'app/company/apply/apply.lang.es.json'
+        })
+        .then (function (data) {
+          return data;
+        });
+      }
+    }
+  })
   .state('stories', {
     url: '/stories',
     templateUrl: 'app/company/stories/stories.tpl.html',
