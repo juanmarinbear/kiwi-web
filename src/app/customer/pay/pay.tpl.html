@@ -5,16 +5,16 @@
     <p data-ng-repeat="paragraph in lang.paragraphs" data-ng-bind="paragraph"></p>
   </div>
   <div class="pure-u-1 pure-u-md-1-2">
-    <h3 data-ng-bind="lang.sections.signin.title"></h3>
-    <p data-ng-repeat="paragraph in lang.sections.signin.paragraphs" data-ng-bind="paragraph"></p>
-    <form id="signin" class="pure-form pure-form-stacked" name="signin" novalidate>
+    <h3 data-ng-bind="lang.sections.submitMobile.title"></h3>
+    <p data-ng-repeat="paragraph in lang.sections.submitMobile.paragraphs" data-ng-bind="paragraph"></p>
+    <form id="submitMobile" class="pure-form pure-form-stacked" name="submitMobile" novalidate>
       <div class="pure-g">
         <div class="pure-u-1">
-          <label for="{{lang.forms.signin.inputs.mobile.name}}" data-ng-bind="lang.forms.signin.inputs.mobile.label"></label>
-          <input type="text" id="mobile" name="mobile" placeholder="{{lang.forms.signin.inputs.mobile.placeholder}}" data-ng-model="data.mobile" data-ng-pattern="/\d{10}/" required></input>
+          <label for="{{lang.forms.submitMobile.inputs.mobile.name}}" data-ng-bind="lang.forms.submitMobile.inputs.mobile.label"></label>
+          <input type="text" id="mobile" name="mobile" placeholder="{{lang.forms.submitMobile.inputs.mobile.placeholder}}" data-ng-model="data.mobile" data-ng-pattern="/\d{10}/" required></input>
         </div>
         <div class="pure-u-1">
-          <button type="submit" class="pure-button pure-button-primary" data-ng-bind="lang.forms.signin.inputs.submit.label" data-ng-click="submit()"></button>
+          <button type="submit" class="pure-button pure-button-primary" data-ng-bind="lang.forms.submitMobile.inputs.submit.label" data-ng-click="submit()"></button>
         </div>
       </div>
     </form>
@@ -33,46 +33,52 @@
   <div class="pure-u-1 pure-u-md-1-2">
     <h3 data-ng-bind="lang.sections.signup.title"></h3>
     <p data-ng-repeat="paragraph in lang.sections.signup.paragraphs" data-ng-bind="paragraph"></p>
-    <form id="lookUpSerial" class="pure-form pure-form-stacked" name="lookUpSerial" novalidate>
+    <form id="lookUpSerial" class="pure-form pure-form-stacked" name="lookUpSerial" data-ng-show="data.steps.lookUpSerial" novalidate>
       <div class="pure-g">
         <div class="pure-u-1">
           <label for="{{lang.forms.lookUpSerial.inputs.serial.name}}" data-ng-bind="lang.forms.lookUpSerial.inputs.serial.label"></label>
-          <input type="text" id="serial" name="serial" placeholder="{{lang.forms.lookUpSerial.inputs.serial.placeholder}}" data-ng-model="data.serial" data-ng-pattern="/\d{12}/" data-ng-maxlength="12" required></input>
+          <input type="text" id="serial" name="serial" placeholder="{{lang.forms.lookUpSerial.inputs.serial.placeholder}}" maxlength="12" data-ng-model="data.serial" data-ng-pattern="/\d{12}/" data-ng-maxlength="12" required></input>
         </div>
         <div class="pure-u-1">
-          <button type="submit" class="pure-button pure-button-primary" data-ng-class="{'pure-button-disabled': lookUpSerial.$invalid}" data-ng-disabled="lookUpSerial.$invalid" data-ng-bind="lang.forms.lookUpSerial.inputs.lookUpSerial.label" data-ng-click="submitSerial()"></button>
+          <button type="submit" class="pure-button pure-button-primary" data-ng-class="{'pure-button-disabled': lookUpSerial.$invalid}" data-ng-disabled="lookUpSerial.$invalid" data-ng-bind="lang.forms.lookUpSerial.inputs.submit.label" data-ng-click="submitSerial()"></button>
         </div>
-        <div class="pure-u-1" data-ng-show="lookUpSerialSubmitted && lookUpSerial.$invalid">
+        <div class="pure-u-1" data-ng-show="data.lookUpSerialSubmitted && lookUpSerial.$invalid">
           <p data-ng-show="lookUpSerial.serial.$error.required" data-ng-bind="lang.forms.lookUpSerial.inputs.serial.validation.required"></p>
           <p data-ng-show="lookup.serial.$error.pattern || lookUpSerial.serial.$error.maxlength" data-ng-bind="lang.forms.lookup.inputs.serial.validation.pattern"></p>
         </div>
-        <div class="pure-u-1" data-ng-show="lookUpSerialSubmitted && lookUpSerial.$valid">
-          <div data-ng-show="client && user">
-            <p data-ng-bind="lang.forms.lookUpSerial.messages.foundRegistered"></p>
-            <p data-ng-bind="user.name + ' ' + user.last"></p>
-          </div>
-          <div  data-ng-show="client && !user">
-            <p data-ng-bind="lang.forms.lookUpSerial.messages.foundNotRegistered"></p>
-            <p data-ng-bind="client.name"></p>
-          </div>
-          <div data-ng-show="!client">
-            <p data-ng-bind="lang.forms.lookUpSerial.messages.notFound"></p>
-          </div>
-        </div>
       </div>
     </form>
-    <form id="submitMobile" class="pure-form pure-form-stacked" name="signin" novalidate>
+    <div data-ng-show="data.lookUpSerialSubmitted && lookUpSerial.$valid">
+      <div data-ng-show="data.client && data.user">
+        <p data-ng-bind="lang.forms.lookUpSerial.messages.foundUnavailable"></p>
+        <p data-ng-bind="data.user.name + ' ' + data.user.last"></p>
+        <p data-ng-bind="lang.forms.lookUpSerial.messages.reset"></p>
+      </div>
+      <div data-ng-show="!data.client">
+        <p data-ng-bind="lang.forms.lookUpSerial.messages.notFound"></p>
+        <p data-ng-bind="lang.forms.lookUpSerial.messages.reset"></p>
+      </div>
+      <div data-ng-show="data.client && !data.user">
+        <p data-ng-bind="lang.forms.lookUpSerial.messages.foundAvailable"></p>
+        <p data-ng-bind="data.client.name"></p>
+        <p data-ng-bind="lang.forms.lookUpSerial.messages.continue"></p>
+      </div>
+      <div>
+        <button type="submit" class="pure-button pure-button-primary" data-ng-bind="lang.forms.lookUpSerial.inputs.reset.label" data-ng-click="reset()"></button>
+      </div>
+    </div>
+    <form id="submitMobile" class="pure-form pure-form-stacked" name="submitMobile" data-ng-show="data.steps.submitMobile" novalidate>
       <div class="pure-g">
         <div class="pure-u-1">
-          <label for="{{lang.forms.signin.inputs.mobile.name}}" data-ng-bind="lang.forms.signin.inputs.mobile.label"></label>
-          <input type="text" id="mobile" name="mobile" placeholder="{{lang.forms.signin.inputs.mobile.placeholder}}" data-ng-model="data.mobile" data-ng-pattern="/\d{10}/" required></input>
+          <label for="{{lang.forms.submitMobile.inputs.mobile.name}}" data-ng-bind="lang.forms.submitMobile.inputs.mobile.label"></label>
+          <input type="text" id="mobile" name="mobile" placeholder="{{lang.forms.submitMobile.inputs.mobile.placeholder}}" max-length="10" data-ng-model="data.mobile" data-ng-pattern="/\d{10}/" required></input>
         </div>
         <div class="pure-u-1">
-          <button type="submit" class="pure-button pure-button-primary" data-ng-bind="lang.forms.signin.inputs.submit.label" data-ng-click="submit()"></button>
+          <button type="submit" class="pure-button pure-button-primary" data-ng-bind="lang.forms.submitMobile.inputs.submit.label" data-ng-click="submit()"></button>
         </div>
       </div>
     </form>
-    <form id="authenticate" class="pure-form pure-form-stacked" name="authenticate" novalidate>
+    <form id="authenticate" class="pure-form pure-form-stacked" name="authenticate" data-ng-show="data.steps.authenticate" novalidate>
       <div class="pure-g">
         <div class="pure-u-1">
           <label for="{{lang.forms.authenticate.inputs.password.name}}" data-ng-bind="lang.forms.authenticate.inputs.password.label"></label>

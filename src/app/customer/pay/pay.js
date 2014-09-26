@@ -4,15 +4,15 @@ kiwiWeb.controller('PayCtrl', function ($scope, $filter, lang) {
   $scope.lang = lang.data;
   $scope.changeTitle($scope.lang.title);
   $scope.data = {};
-  $scope.client;
-  $scope.user;
-  $scope.steps = {
+  $scope.data.client;
+  $scope.data.user;
+  $scope.data.steps = {
     lookUpSerial: true,
     submitMobile: false,
     authenticate: false
-  }
+  };
 
-  $scope.users = [
+  $scope.data.users = [
     {
       "serial" : "123456789098",
       "name" : "Juan Marin Bear",
@@ -32,18 +32,30 @@ kiwiWeb.controller('PayCtrl', function ($scope, $filter, lang) {
     }
   ];
 
+  $scope.originalData = angular.copy($scope.data);
+
+  $scope.reset = function() {
+    $scope.data = angular.copy($scope.originalData);
+    if($scope.lookUpSerial) $scope.lookUpSerial.$setPristine();
+  }
+
   $scope.submitSerial = function() {
 
     if($scope.lookUpSerial.$valid) {
       $scope.loading = true;
-      $scope.client = $filter('filter')($scope.users, {serial: $scope.data.serial}, true)[0];
-      if($scope.client && $scope.client.users.length) {
-        $scope.user = $filter('filter')($scope.client.users, {role: 'admin'}, true)[0];
+      $scope.data.steps.lookUpSerial = false;
+      $scope.data.client = $filter('filter')($scope.data.users, {serial: $scope.data.serial}, true)[0];
+      if($scope.data.client) {
+        if($scope.data.client.users.length)
+          $scope.data.user = $filter('filter')($scope.data.client.users, {role: 'admin'}, true)[0];
+        else {
+          $scope.data.steps.submitMobile = true;
+        }
       }
       $scope.loading = false;
     }
 
-    $scope.lookUpSerialSubmitted = true;
+    $scope.data.lookUpSerialSubmitted = true;
   };
 
   $scope.submitMobile = function() {
