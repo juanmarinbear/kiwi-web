@@ -51,6 +51,9 @@
     <div data-ng-show="data.lookUpSerialSubmitted && lookUpSerial.$valid">
       <div data-ng-show="data.client && data.user">
         <p data-ng-bind="lang.forms.lookUpSerial.messages.foundUnavailable"></p>
+        <p data-ng-bind="lang.forms.lookUpSerial.messages.client"></p>
+        <p data-ng-bind="data.client.name"></p>
+        <p data-ng-bind="lang.forms.lookUpSerial.messages.user"></p>
         <p data-ng-bind="data.user.name + ' ' + data.user.last"></p>
         <p data-ng-bind="lang.forms.lookUpSerial.messages.reset"></p>
       </div>
@@ -60,6 +63,7 @@
       </div>
       <div data-ng-show="data.client && !data.user">
         <p data-ng-bind="lang.forms.lookUpSerial.messages.foundAvailable"></p>
+        <p data-ng-bind="lang.forms.lookUpSerial.messages.client"></p>
         <p data-ng-bind="data.client.name"></p>
         <p data-ng-bind="lang.forms.lookUpSerial.messages.continue"></p>
       </div>

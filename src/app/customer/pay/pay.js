@@ -46,9 +46,9 @@ kiwiWeb.controller('PayCtrl', function ($scope, $filter, lang) {
       $scope.data.steps.lookUpSerial = false;
       $scope.data.client = $filter('filter')($scope.data.users, {serial: $scope.data.serial}, true)[0];
       if($scope.data.client) {
-        if($scope.data.client.users.length)
+        if($scope.data.client.users.length) {
           $scope.data.user = $filter('filter')($scope.data.client.users, {role: 'admin'}, true)[0];
-        else {
+        } else {
           $scope.data.steps.submitMobile = true;
         }
       }

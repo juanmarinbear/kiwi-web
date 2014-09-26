@@ -46,8 +46,10 @@
         }
       },
       "messages" : {
-        "foundUnavailable" : "Encontramos un usuario registrado con ese número de serie y solo él puede dar de alta más usuarios.  Te sugerimos contactarlo o llamarnos al 01-800-XXX-XXXX si tienes dudas.  El usuario es:",
-        "foundAvailable" : "Encontramos un cliente con ese número de serie.  Si tu eres el cliente, continúa con el proceso.  Si no lo eres, verifica tu número de serie o llámanos al 01-800-XXX-XXXX.  El cliente es:",
+        "foundUnavailable" : "Encontramos un usuario registrado con ese número de serie y solo él puede dar de alta más usuarios.  Te sugerimos contactarlo o llamarnos al 01-800-XXX-XXXX si tienes dudas.",
+        "user" : "Usuario",
+        "client" : "Cliente",
+        "foundAvailable" : "Encontramos un cliente con ese número de serie.  Si tu eres el cliente, continúa con el proceso.  Si no lo eres, verifica tu número de serie o llámanos al 01-800-XXX-XXXX.",
         "notFound" : "No encontramos algún cliente con ese número de serie.  Verifica que sea correcto.  Si tienes problemas, llámanos al 01-800-XXX-XXX.",
         "continue" : "Para continuar con el registro, ingresa tu móvil.  Para reiniciar, da click al botón de \"Reiniciar\".",
         "reset" : "Para reiniciar, da click al botón de \"Reiniciar\"."
