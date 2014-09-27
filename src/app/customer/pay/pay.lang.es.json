@@ -26,7 +26,7 @@
     }
   },
   "forms" : {
-    "lookUpSerial" : {
+    "serialLookUp" : {
       "inputs" : {
         "serial" : {
           "name" : "serial",
@@ -46,17 +46,35 @@
         }
       },
       "messages" : {
-        "foundUnavailable" : "Encontramos un usuario registrado con ese número de serie y solo él puede dar de alta más usuarios.  Te sugerimos contactarlo o llamarnos al 01-800-XXX-XXXX si tienes dudas.",
+        "foundUnavailable" : "Encontramos un usuario registrado con ese número de serie y solo él puede dar de alta más usuarios.  Te sugerimos contactarlo.",
         "user" : "Usuario",
         "client" : "Cliente",
-        "foundAvailable" : "Encontramos un cliente con ese número de serie.  Si tu eres el cliente, continúa con el proceso.  Si no lo eres, verifica tu número de serie o llámanos al 01-800-XXX-XXXX.",
-        "notFound" : "No encontramos algún cliente con ese número de serie.  Verifica que sea correcto.  Si tienes problemas, llámanos al 01-800-XXX-XXX.",
+        "foundAvailable" : "Encontramos un cliente con ese número de serie.  Si tu eres el cliente, continúa con el proceso.  Si no lo eres, verifica tu número de serie.",
+        "notFound" : "No encontramos algún cliente con ese número de serie.  Verifica que sea correcto.",
         "continue" : "Para continuar con el registro, ingresa tu móvil.  Para reiniciar, da click al botón de \"Reiniciar\".",
         "reset" : "Para reiniciar, da click al botón de \"Reiniciar\"."
       }
     },
-    "submitMobile" : {
+    "mobileSignUp" : {
       "inputs" : {
+        "name" : {
+          "name" : "name",
+          "label" : "Nombre",
+          "placeholder" : "Homero",
+          "help" : "Tu nombre.",
+          "validation" : {
+            "required" : "Nombre requerido."
+          }
+        },
+        "last" : {
+          "name" : "last",
+          "label" : "Apellido",
+          "placeholder" : "Simpson",
+          "help" : "Tu apellido.",
+          "validation" : {
+            "required" : "Apellido requerido."
+          }
+        },
         "mobile" : {
           "name" : "mobile",
           "label" : "Móvil",
@@ -69,12 +87,20 @@
         },
         "submit" : {
           "label"  : "Enviar"
+        },
+        "reset" : {
+          "label"  : "Reiniciar"
+        },
+        "resend" : {
+          "label"  : "Reenviar"
         }
       },
       "messages" : {
+        "mobile" : "Móvil",
+        "submit" : "Te enviamos un SMS con tu código de activación.  En cuanto te llegue, ingresa el código y da click a \"Ingresar\".  Si en 5 minutos no te llega, da click a \"Reenviar\".  Si ingresaste un móvil equivocado o quieres cambiarlo, da click a \"Reiniciar\"."
       }
     },
-    "authenticate" : {
+    "mobileSignUpAuth" : {
       "inputs" : {
         "password" : {
           "name" : "password",
@@ -82,12 +108,17 @@
           "placeholder" : "Contraseña",
           "help" : "Contraseña que te enviamos por SMS.",
           "validation" : {
-            "required" : "Contraseña requerida."
+            "required" : "Contraseña requerida.",
+            "pattern" : "Contraseña inválida.  Deben ser 4 dígitos."
           }
         },
         "authenticate" : {
           "label"  : "Ingresar"
         }
+      },
+      "messages" : {
+        "error" : "Contraseña incorrecta.  Intenta nuevamente.",
+        "success" : "Registro exitoso.  Da click aqui para ver y pagar tu factura."
       }
     }
   }
