@@ -1,0 +1,45 @@
+<div class="pure-g">
+  <div class="pure-u-1">
+    <h3 data-ng-bind="lang.title"></h3>
+    <p data-ng-repeat="paragraph in lang.paragraphs" data-ng-bind="paragraph"></p>
+  </div>
+  <div id="messages" class="pure-u-1">
+    <p data-ng-repeat="message in data.messages" data-ng-bind="message"></p>
+    <div>
+      <button class="pure-button button-warning" data-ng-bind="lang.forms.serialLookUp.inputs.reset.label" data-ng-click="reset(data.step)"></button>
+    </div>
+  </div>
+  <div class="pure-u-1">
+    <div id="serialLookUp" data-ng-show="data.serialLookUp.active">
+      <form class="pure-form pure-form-stacked" name="serialLookUp" data-ng-hide="data.serialLookUp.submitted" novalidate>
+        <div class="pure-g">
+          <div class="pure-u-1">
+            <label for="{{lang.forms.serialLookUp.inputs.serial.name}}" data-ng-bind="lang.forms.serialLookUp.inputs.serial.label"></label>
+            <input type="text" name="serial" placeholder="{{lang.forms.serialLookUp.inputs.serial.placeholder}}" maxlength="12" data-ng-model="data.serialLookUp.serial" data-ng-pattern="/\d{12}/" data-ng-maxlength="12" required>
+          </div>
+          <div class="pure-u-1">
+            <button type="submit" class="pure-button pure-button-primary" data-ng-class="{'pure-button-disabled': serialLookUp.$invalid}" data-ng-disabled="serialLookUp.$invalid" data-ng-bind="lang.forms.serialLookUp.inputs.submit.label" data-ng-click="serialLookUpSubmit()"></button>
+          </div>
+          <div class="pure-u-1" data-ng-show="data.serialLookUp.submitted && serialLookUp.$invalid">
+            <p data-ng-show="serialLookUp.serial.$error.required" data-ng-bind="lang.forms.serialLookUp.inputs.serial.validation.required"></p>
+            <p data-ng-show="serialLookUp.serial.$error.pattern || serialLookUp.serial.$error.maxlength" data-ng-bind="lang.forms.serialLookUp.inputs.serial.validation.pattern"></p>
+          </div>
+        </div>
+      </form>
+      <div data-ng-show="data.serialLookUp.submitted && serialLookUp.$valid">
+        <div data-ng-show="data.serialLookUp.client && data.serialLookUp.user">
+          <p data-ng-bind="lang.forms.serialLookUp.messages.foundUnavailable"></p>
+          <p data-ng-bind="lang.forms.serialLookUp.messages.client"></p>
+          <p data-ng-bind="data.serialLookUp.client.name"></p>
+          <p data-ng-bind="lang.forms.serialLookUp.messages.user"></p>
+          <p data-ng-bind="data.serialLookUp.user.name + ' ' + data.serialLookUp.user.last"></p>
+          <p data-ng-bind="lang.forms.serialLookUp.messages.reset"></p>
+        </div>
+        <div data-ng-show="!data.serialLookUp.client">
+          <p data-ng-bind="lang.forms.serialLookUp.messages.notFound"></p>
+          <p data-ng-bind="lang.forms.serialLookUp.messages.reset"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
