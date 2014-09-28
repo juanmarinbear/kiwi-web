@@ -8,14 +8,14 @@
     "Después verás tu factura vigente así como los diferentes métodos de pago disponibles incluyendo pago en línea con tarjeta de crédito."
   ],
   "sections" : {
-    "signin" : {
+    "signIn" : {
       "title" : "Usuario Registrado",
       "art" : "",
       "paragraphs" : [
         "Ingresa tu móvil y la contraseña que te enviaremos por SMS para ver y pagar tu factura vigente."
       ]
     },
-    "signup" : {
+    "signUp" : {
       "title" : "Usuario No Registrado",
       "name" : "signup",
       "art" : "",
@@ -26,6 +26,55 @@
     }
   },
   "forms" : {
+    "mobileSignIn" : {
+      "inputs" : {
+        "mobile" : {
+          "name" : "mobile",
+          "label" : "Móvil",
+          "placeholder" : "10 dígitos",
+          "help" : "10 dígitos.",
+          "validation" : {
+            "required" : "Móvil requerido.",
+            "pattern" : "Móvil inválido.  Deben ser 10 dígitos."
+          }
+        },
+        "submit" : {
+          "label"  : "Enviar"
+        },
+        "reset" : {
+          "label"  : "Reiniciar"
+        },
+        "resend" : {
+          "label"  : "Reenviar"
+        }
+      },
+      "messages" : {
+        "mobile" : "Móvil",
+        "submit" : "Te enviamos un SMS con tu código de acceso.  En cuanto te llegue, ingresa el código y da click a \"Ingresar\".  Si en 5 minutos no te llega, da click a \"Reenviar\".  Si ingresaste un móvil equivocado o quieres cambiarlo, da click a \"Reiniciar\".",
+        "error" : "Tu móvil no esta registrado, verifica que sea correcto.  Para intentar de nuevo, da click a \"Reiniciar\"."
+      }
+    },
+    "mobileSignInAuth" : {
+      "inputs" : {
+        "password" : {
+          "name" : "password",
+          "label" : "Contraseña",
+          "placeholder" : "Contraseña",
+          "help" : "Contraseña que te enviamos por SMS.",
+          "validation" : {
+            "required" : "Contraseña requerida.",
+            "pattern" : "Contraseña inválida.  Deben ser 4 dígitos."
+          }
+        },
+        "authenticate" : {
+          "label"  : "Ingresar"
+        }
+      },
+      "messages" : {
+        "error" : "Contraseña incorrecta.  Intenta nuevamente.",
+        "success" : "Registro exitoso.  Da click aqui para ver y pagar tu factura."
+      }
+    },
     "serialLookUp" : {
       "inputs" : {
         "serial" : {

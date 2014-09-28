@@ -41,7 +41,25 @@ kiwiWeb.controller('PayCtrl', function ($scope, $filter, lang) {
     }
   ];
 
+  $scope.mobiles = [
+    {
+      "name" : "Juan",
+      "last" : "Marin",
+      "mobile" : "5520253793",
+      "role" : "admin"
+    } 
+  ];
+
   $scope.pin = "1234";
+
+  $scope.resetMobileSignIn = function() {
+    $scope.data.mobileSignIn = angular.copy($scope.data.mobileSignInOriginal);
+  };
+
+  $scope.resetMobileSignInAuth = function() {
+    $scope.data.mobileSignIn = angular.copy($scope.data.mobileSignInOriginal);
+    $scope.data.mobileSignInAuth = angular.copy($scope.data.mobileSignInAuthOriginal);
+  };
 
   $scope.resetSerialLookUp = function() {
     $scope.data.serialLookUp = angular.copy($scope.data.serialLookUpOriginal);
@@ -52,6 +70,41 @@ kiwiWeb.controller('PayCtrl', function ($scope, $filter, lang) {
     $scope.data.mobileSignUp = angular.copy($scope.data.mobileSignUpOriginal);
     $scope.data.mobileSignUp.active = true;
     $scope.data.mobileSignUpAuth = angular.copy($scope.data.mobileSignUpAuthOriginal);
+  };
+
+  $scope.mobileSignInAuthSubmit = function() {
+
+    $scope.loading = true;
+
+    if($scope.mobileSignInAuth.$valid) {
+      if($scope.data.mobileSignInAuth.password === $scope.pin) {
+        $scope.data.mobileSignInAuth.success = true;
+        $scope.data.mobileSignInAuth.active = false;
+      } else {
+        $scope.data.mobileSignInAuth.error = true;
+      }
+    }
+
+    $scope.data.mobileSignInAuth.submitted = true;
+    $scope.loading = false;
+  };
+
+  $scope.mobileSignInSubmit = function() {
+
+    $scope.loading = true;
+
+    if($scope.mobileSignIn.$valid) {
+      $scope.data.mobileSignIn.user = $filter('filter')($scope.mobiles, {mobile: $scope.data.mobileSignIn.mobile}, true)[0];
+      if($scope.data.mobileSignIn.user) {
+        $scope.data.mobileSignIn.active = false;
+        $scope.data.mobileSignInAuth.active = true;
+      } else {
+        $scope.data.mobileSignIn.error = true; 
+      }
+    }
+
+    $scope.data.mobileSignIn.submitted = true;
+    $scope.loading = false;
   };
 
   $scope.serialLookUpSubmit = function() {
@@ -92,7 +145,7 @@ kiwiWeb.controller('PayCtrl', function ($scope, $filter, lang) {
     $scope.loading = true;
 
     if($scope.mobileSignUpAuth.$valid) {
-      if($scope.data.mobileSignUpAuth.password === "1234") {
+      if($scope.data.mobileSignUpAuth.password === $scope.pin) {
         $scope.data.mobileSignUpAuth.success = true;
         $scope.data.mobileSignUpAuth.active = false;
       } else {
