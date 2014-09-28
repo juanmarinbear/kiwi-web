@@ -1,114 +1,174 @@
 {
   "title" : "Paga",
-  "sections" : [
-    {
-      "title" : "Cuenta",
-      "art" : "",
-      "paragraphs" : [
-        "Administra la información de tu cuenta.",
-        "Modifica o cancela servicios.",
-        "Administra usuarios."
-      ]
-    },
-    {
-      "title" : "Dashboard",
-      "art" : "",
-      "paragraphs" : [
-        "Consulta el estado actual e historial de tu enlace.",
-        "Consulta tu consumo de bandwidth.",
-        "Cambiar la contraseña de tu red."
-      ]
-    },
-    {
-      "title" : "Pagos y Facturación",
-      "art" : "",
-      "paragraphs" : [
-        "Paga tu servicio con tarjeta de crédito, débito, transferencia bancaria o en Oxxo.",
-        "Genera tu factura y descárgala.",
-        "Consulta historial de pagos y facturación."
-      ]
-    },
-    {
-      "title" : "Soporte",
-      "art" : "",
-      "paragraphs" : [
-        "Levanta tickets de soporte.",
-        "Consulta tickets anteriores.",
-        "Escribe directo al CEO."
-      ]
-    }
+  "subtitle" : "Paga tu servicio",
+  "paragraphs" : [
+    "Pagar es ahora más sencillo.",
+    "Si ya te registraste en nuestro portal de clientes, ingresa tu móvil y la contraseña que te enviaremos.",
+    "Si aún no te registras en nuestro portal de clientes, ingresa el número de serie de tu Router, tu móvil y la contraseña que te enviaremos.",
+    "Después verás tu factura vigente así como los diferentes métodos de pago disponibles incluyendo pago en línea con tarjeta de crédito."
   ],
-  "authentication" : {
-    "signinForm" : {
-      "title" : "Sign In",
-      "name" : "signin",
+  "sections" : {
+    "signIn" : {
+      "title" : "Usuario Registrado",
       "art" : "",
       "paragraphs" : [
-        "Entra a nuestro portal de atención con tu celular y la contraseña que te enviaremos por SMS."
-      ],
-      "inputs" : { 
-        "mobile" : {
-          "name" : "mobile",
-          "label" : "Móvil",
-          "placeholder" : "Móvil, 10 dígitos",
-          "help" : "Móvil, 10 dígitos.",
-          "validation" : {}
-        },
-        "password" : {
-          "name" : "password",
-          "label" : "Contraseña",
-          "placeholder" : "Contraseña",
-          "help" : "Contraseña que te enviamos por SMS.",
-          "validation" : {}
-        },
-        "submit" : {
-          "label"  : "Enviar"
-        },
-        "signin" : {
-          "label"  : "Ingresar"
-        }
-      } 
+        "Ingresa tu móvil y la contraseña que te enviaremos por SMS para ver y pagar tu factura vigente."
+      ]
     },
-    "signupForm" : {
-      "title" : "Sign Up",
+    "signUp" : {
+      "title" : "Usuario No Registrado",
       "name" : "signup",
       "art" : "",
       "paragraphs" : [
-        "Regístrate en nuestro portal de cliente.",
+        "Regístrate en nuestro portal de cliente para ver y pagar tu factura vigente.",
         "Si necesitas ayuda, da click aquí o llama al 01-800-XXX-XXXX"
-      ],
-      "inputs" : { 
-        "serial" : {
-          "name" : "serial",
-          "label" : "# de Serie de Router",
-          "placeholder" : "# de Serie de Router",
-          "help" : "Número de serie de tu router.  Son 12 dígitos sin la /.  Lo puedes encontrar aquí.  Si no te entregamos un router, llama al 01-800-XXX-XXXX",
-          "validation" : {}
-        },
+      ]
+    }
+  },
+  "forms" : {
+    "mobileSignIn" : {
+      "inputs" : {
         "mobile" : {
           "name" : "mobile",
           "label" : "Móvil",
-          "placeholder" : "Móvil, 10 dígitos",
-          "help" : "Móvil, 10 dígitos.",
-          "validation" : {}
+          "placeholder" : "10 dígitos",
+          "help" : "10 dígitos.",
+          "validation" : {
+            "required" : "Móvil requerido.",
+            "pattern" : "Móvil inválido.  Deben ser 10 dígitos."
+          }
         },
+        "submit" : {
+          "label"  : "Enviar"
+        },
+        "reset" : {
+          "label"  : "Reiniciar"
+        },
+        "resend" : {
+          "label"  : "Reenviar"
+        }
+      },
+      "messages" : {
+        "mobile" : "Móvil",
+        "submit" : "Te enviamos un SMS con tu código de acceso.  En cuanto te llegue, ingresa el código y da click a \"Ingresar\".  Si en 5 minutos no te llega, da click a \"Reenviar\".  Si ingresaste un móvil equivocado o quieres cambiarlo, da click a \"Reiniciar\".",
+        "error" : "Tu móvil no esta registrado, verifica que sea correcto.  Para intentar de nuevo, da click a \"Reiniciar\"."
+      }
+    },
+    "mobileSignInAuth" : {
+      "inputs" : {
         "password" : {
           "name" : "password",
           "label" : "Contraseña",
           "placeholder" : "Contraseña",
           "help" : "Contraseña que te enviamos por SMS.",
-          "validation" : {}
+          "validation" : {
+            "required" : "Contraseña requerida.",
+            "pattern" : "Contraseña inválida.  Deben ser 4 dígitos."
+          }
         },
-        "lookup" : {
+        "authenticate" : {
+          "label"  : "Ingresar"
+        }
+      },
+      "messages" : {
+        "error" : "Contraseña incorrecta.  Intenta nuevamente.",
+        "success" : "Registro exitoso.  Da click aqui para ver y pagar tu factura."
+      }
+    },
+    "serialLookUp" : {
+      "inputs" : {
+        "serial" : {
+          "name" : "serial",
+          "label" : "# de Serie de Router",
+          "placeholder" : "12 caracteres",
+          "help" : "Número de serie de tu router.  Son 12 dígitos sin la /.  Lo puedes encontrar aquí.  Si no te entregamos un router, llama al 01-800-XXX-XXXX",
+          "validation" : {
+            "required" : "Número de serie requerido",
+            "pattern" : "Número de serie inválido."
+          }
+        },
+        "submit" : {
           "label"  : "Consultar"
+        },
+        "reset" : {
+          "label"  : "Reiniciar"
+        }
+      },
+      "messages" : {
+        "foundUnavailable" : "Encontramos un usuario registrado con ese número de serie y solo él puede dar de alta más usuarios.  Te sugerimos contactarlo.",
+        "user" : "Usuario",
+        "client" : "Cliente",
+        "foundAvailable" : "Encontramos un cliente con ese número de serie.  Si tu eres el cliente, continúa con el proceso.  Si no lo eres, verifica tu número de serie.",
+        "notFound" : "No encontramos algún cliente con ese número de serie.  Verifica que sea correcto.",
+        "continue" : "Para continuar con el registro, ingresa tu móvil.  Para reiniciar, da click al botón de \"Reiniciar\".",
+        "reset" : "Para reiniciar, da click al botón de \"Reiniciar\"."
+      }
+    },
+    "mobileSignUp" : {
+      "inputs" : {
+        "name" : {
+          "name" : "name",
+          "label" : "Nombre",
+          "placeholder" : "Homero",
+          "help" : "Tu nombre.",
+          "validation" : {
+            "required" : "Nombre requerido."
+          }
+        },
+        "last" : {
+          "name" : "last",
+          "label" : "Apellido",
+          "placeholder" : "Simpson",
+          "help" : "Tu apellido.",
+          "validation" : {
+            "required" : "Apellido requerido."
+          }
+        },
+        "mobile" : {
+          "name" : "mobile",
+          "label" : "Móvil",
+          "placeholder" : "10 dígitos",
+          "help" : "10 dígitos.",
+          "validation" : {
+            "required" : "Móvil requerido.",
+            "pattern" : "Móvil inválido.  Deben ser 10 dígitos."
+          }
         },
         "submit" : {
           "label"  : "Enviar"
         },
-        "signup" : {
-          "label"  : "Registrar"
+        "reset" : {
+          "label"  : "Reiniciar"
+        },
+        "resend" : {
+          "label"  : "Reenviar"
         }
-      } 
+      },
+      "messages" : {
+        "mobile" : "Móvil",
+        "submit" : "Te enviamos un SMS con tu código de activación.  En cuanto te llegue, ingresa el código y da click a \"Ingresar\".  Si en 5 minutos no te llega, da click a \"Reenviar\".  Si ingresaste un móvil equivocado o quieres cambiarlo, da click a \"Reiniciar\"."
+      }
+    },
+    "mobileSignUpAuth" : {
+      "inputs" : {
+        "password" : {
+          "name" : "password",
+          "label" : "Contraseña",
+          "placeholder" : "Contraseña",
+          "help" : "Contraseña que te enviamos por SMS.",
+          "validation" : {
+            "required" : "Contraseña requerida.",
+            "pattern" : "Contraseña inválida.  Deben ser 4 dígitos."
+          }
+        },
+        "authenticate" : {
+          "label"  : "Ingresar"
+        }
+      },
+      "messages" : {
+        "error" : "Contraseña incorrecta.  Intenta nuevamente.",
+        "success" : "Registro exitoso.  Da click aqui para ver y pagar tu factura."
+      }
     }
   }
 }

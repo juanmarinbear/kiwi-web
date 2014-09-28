@@ -44,7 +44,7 @@
       "name" : "signin",
       "art" : "",
       "paragraphs" : [
-        "Entra al Dashboard con tu celular y la contraseña que te enviaremos por SMS."
+        "Entra al Dashboard con tu móvil y la contraseña que te enviaremos por SMS."
       ],
       "inputs" : { 
         "mobile" : {
