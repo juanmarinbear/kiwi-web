@@ -265,6 +265,21 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
             });
           }
         }
+      },
+      "signIn" : {
+        templateUrl: 'app/customer/signIn/signIn.tpl.html',
+        controller: 'SignInCtrl',
+        resolve: {
+          lang: function($http) {
+            return $http({
+              method: 'GET',
+              url: 'app/customer/signIn/signIn.lang.es.json'
+            })
+            .then (function (data) {
+              return data;
+            });
+          }
+        }
       }
     }
   })
