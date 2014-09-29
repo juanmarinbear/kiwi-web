@@ -1,0 +1,15 @@
+<form class="pure-form pure-form-stacked" name="forms.serialLookUp" novalidate>
+  <div class="pure-g">
+    <div class="pure-u-1">
+      <label for="{{lang.forms.serialLookUp.inputs.serial.name}}" data-ng-bind="lang.forms.serialLookUp.inputs.serial.label"></label>
+      <input type="text" name="serial" placeholder="{{lang.forms.serialLookUp.inputs.serial.placeholder}}" maxlength="12" data-ng-model="data.serialLookUp.serial" data-ng-pattern="/\d{12}/" data-ng-maxlength="12" required>
+    </div>
+    <div class="pure-u-1">
+      <button type="submit" class="pure-button pure-button-primary" data-ng-class="{'pure-button-disabled': forms.serialLookUp.$invalid}" data-ng-disabled="forms.serialLookUp.$invalid" data-ng-bind="lang.forms.serialLookUp.inputs.submit.label" data-ng-click="serialLookUpSubmit()"></button>
+    </div>
+  </div>
+</form>
+<div data-ng-show="data.serialLookUp.submitted && forms.serialLookUp.$invalid">
+  <p data-ng-show="forms.serialLookUp.serial.$error.required" data-ng-bind="lang.forms.serialLookUp.inputs.serial.validation.required"></p>
+  <p data-ng-show="forms.serialLookUp.serial.$error.pattern || forms.serialLookUp.serial.$error.maxlength" data-ng-bind="lang.forms.serialLookUp.inputs.serial.validation.pattern"></p>
+</div>

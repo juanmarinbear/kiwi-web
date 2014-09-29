@@ -1,11 +1,17 @@
 {
   "title" : "Sign Up",
   "paragraphs" : [
-    "En nuestro portal de cliente, podrás ver y pagar tu factura, ver facturas anteriores, ver el status de tu red, solicitar soporte y contactar a los accionistas.",
     "Si aún no te registras en nuestro portal de clientes, ingresa el número de serie de tu Router, tu móvil y la contraseña que te enviaremos.",
     "Si necesitas ayuda, da click aquí o llama al 01-800-XXX-XXXX"
   ],
   "forms" : {
+    "all" : {
+      "inputs" : {
+        "reset" : {
+          "label"  : "Reiniciar"
+        }
+      }
+    },
     "serialLookUp" : {
       "inputs" : {
         "serial" : {
@@ -20,14 +26,9 @@
         },
         "submit" : {
           "label"  : "Consultar"
-        },
-        "reset" : {
-          "label"  : "Reiniciar"
         }
       },
       "messages" : {
-        "user" : "Usuario",
-        "client" : "Cliente",
         "found" : "Encontramos un usuario registrado con ese número de serie y solo él puede dar de alta más usuarios.  Te sugerimos contactarlo.",
         "notFound" : "No encontramos algún cliente con ese número de serie.  Verifica que sea correcto.",
         "reset" : "Para reiniciar, da click al botón de \"Reiniciar\"."
@@ -65,9 +66,6 @@
         },
         "submit" : {
           "label"  : "Enviar"
-        },
-        "reset" : {
-          "label"  : "Reiniciar"
         },
         "resend" : {
           "label"  : "Reenviar"

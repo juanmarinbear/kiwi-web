@@ -4,14 +4,12 @@ kiwiWeb.controller('SignUpCtrl', function ($scope, $filter, lang) {
   $scope.lang = lang.data;
   $scope.changeTitle($scope.lang.title);
   $scope.data = {};
+  $scope.forms = {};
   $scope.data.serialLookUp = {};
-  $scope.data.serialLookUp.active = true;
   $scope.data.mobileSignUp = {};
-  $scope.data.mobileSignUp.active = false;
   $scope.data.mobileSignUpAuth = {};
-  $scope.data.mobileSignUpAuth.active = false;
   $scope.data.messages = [];
-  $scope.data.step;
+  $scope.data.step = 'serialLookUp';
 
   $scope.data.serialLookUpOriginal = angular.copy($scope.data.serialLookUp);
   $scope.data.mobileSignUpOriginal = angular.copy($scope.data.mobileSignUp);
@@ -48,30 +46,30 @@ kiwiWeb.controller('SignUpCtrl', function ($scope, $filter, lang) {
 
   $scope.pin = "1234";
 
-  $scope.resetSerialLookUp = function() {
-    $scope.data.serialLookUp = angular.copy($scope.data.serialLookUpOriginal);
-    $scope.data.mobileSignUp = angular.copy($scope.data.mobileSignUpOriginal);
-  };
+  $scope.reset = function() {
 
-  $scope.resetMobileSignUp = function() {
-    $scope.data.mobileSignUp = angular.copy($scope.data.mobileSignUpOriginal);
-    $scope.data.mobileSignUp.active = true;
-    $scope.data.mobileSignUpAuth = angular.copy($scope.data.mobileSignUpAuthOriginal);
+    $scope.data[$scope.data.step] = angular.copy($scope.data[$scope.data.step + 'Original']);
+
+    if($scope.data.step === 'mobileSignUp') {
+      $scope.data.step = 'serialLookUp';
+    } else {
+      $scope.data.step = 'mobileSignUp';
+    }
   };
 
   $scope.serialLookUpSubmit = function() {
-
     $scope.loading = true;
 
-    if($scope.serialLookUp.$valid) {
+    if($scope.forms.serialLookUp.$valid) {
       $scope.data.serialLookUp.client = $filter('filter')($scope.users, {serial: $scope.data.serialLookUp.serial}, true)[0];
       if($scope.data.serialLookUp.client) {
         if($scope.data.serialLookUp.client.users.length) {
-          $scope.data.serialLookUp.user = $filter('filter')($scope.data.serialLookUp.client.users, {role: 'admin'}, true)[0];
+          $scope.data.messages.push($scope.lang.forms.serialLookUp.messages.found);
         } else {
-          $scope.data.serialLookUp.active = false;
-          $scope.data.mobileSignUp.active = true;
+          $scope.data.step = 'mobileSignUp';
         }
+      } else {
+          $scope.data.messages.push($scope.lang.forms.serialLookUp.messages.notFound);
       }
     }
 

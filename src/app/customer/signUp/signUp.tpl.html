@@ -1,0 +1,18 @@
+<div class="pure-g">
+  <div class="pure-u-1">
+    <h3 data-ng-bind="lang.title"></h3>
+    <p data-ng-repeat="paragraph in lang.paragraphs" data-ng-bind="paragraph"></p>
+  </div>
+  <div id="messages" class="pure-u-1" data-ng-show="data.messages.length">
+    <p data-ng-repeat="message in data.messages" data-ng-bind="message"></p>
+    <div data-ng-hide="data.step === 'serialLookUp'">
+      <button class="pure-button button-warning" data-ng-bind="lang.forms.all.inputs.reset.label" data-ng-click="reset()"></button>
+    </div>
+  </div>
+  <div id="serialLookUp" class="pure-u-1" data-ng-show="data.step === 'serialLookUp'" data-ng-include src="'/app/customer/signUp/serialLookUp.tpl.html'">
+  </div>
+  <div id="mobileSignUp" class="pure-u-1" data-ng-show="data.step === 'mobileSignUp'" data-ng-include src="'/app/customer/signUp/mobileSignUp.tpl.html'">
+  </div>
+  <div id="mobileSignUpAuth" class="pure-u-1" data-ng-show="data.step === 'mobileSignUpAuth'" data-ng-include src="'/app/customer/signUp/mobileSignUpAuth.tpl.html'">
+  </div>
+</div>
