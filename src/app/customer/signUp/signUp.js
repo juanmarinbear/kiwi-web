@@ -8,7 +8,10 @@ kiwiWeb.controller('SignUpCtrl', function ($scope, $filter, lang) {
   $scope.data.serialLookUp = {};
   $scope.data.mobileSignUp = {};
   $scope.data.mobileSignUpAuth = {};
-  $scope.data.messages = [];
+  $scope.data.serialLookUp.messages = [];
+  $scope.data.mobileSignUp.messages = [];
+  $scope.data.mobileSignUpAuth.messages = [];
+  $scope.data.errors = [];
   $scope.data.step = 'serialLookUp';
 
   $scope.data.serialLookUpOriginal = angular.copy($scope.data.serialLookUp);
@@ -48,12 +51,16 @@ kiwiWeb.controller('SignUpCtrl', function ($scope, $filter, lang) {
 
   $scope.reset = function() {
 
-    $scope.data[$scope.data.step] = angular.copy($scope.data[$scope.data.step + 'Original']);
+    $scope.data.errors = [];
 
     if($scope.data.step === 'mobileSignUp') {
       $scope.data.step = 'serialLookUp';
+      $scope.data.serialLookUp = angular.copy($scope.data.serialLookUpOriginal);
+      $scope.data.mobileSignUp = angular.copy($scope.data.mobileSignUpOriginal);
     } else {
       $scope.data.step = 'mobileSignUp';
+      $scope.data.mobileSignUpAuth = angular.copy($scope.data.mobileSignUpAuthOriginal);
+      $scope.data.mobileSignUp.messages.push($scope.lang.forms.mobileSignUp.messages.continue);
     }
   };
 
@@ -64,12 +71,16 @@ kiwiWeb.controller('SignUpCtrl', function ($scope, $filter, lang) {
       $scope.data.serialLookUp.client = $filter('filter')($scope.users, {serial: $scope.data.serialLookUp.serial}, true)[0];
       if($scope.data.serialLookUp.client) {
         if($scope.data.serialLookUp.client.users.length) {
-          $scope.data.messages.push($scope.lang.forms.serialLookUp.messages.found);
+          $scope.data.serialLookUp.messages.push($scope.lang.forms.serialLookUp.messages.found);
         } else {
           $scope.data.step = 'mobileSignUp';
+          $scope.data.mobileSignUp.messages.push($scope.lang.forms.mobileSignUp.messages.found);
+          $scope.data.mobileSignUp.messages.push($scope.lang.forms.mobileSignUp.messages.client);
+          $scope.data.mobileSignUp.messages.push($scope.data.serialLookUp.client.name);
+          $scope.data.mobileSignUp.messages.push($scope.lang.forms.mobileSignUp.messages.continue);
         }
       } else {
-          $scope.data.messages.push($scope.lang.forms.serialLookUp.messages.notFound);
+          $scope.data.serialLookUp.messages.push($scope.lang.forms.serialLookUp.messages.notFound);
       }
     }
 
@@ -78,12 +89,14 @@ kiwiWeb.controller('SignUpCtrl', function ($scope, $filter, lang) {
   };
 
   $scope.mobileSignUpSubmit = function() {
-
     $scope.loading = true;
 
-    if($scope.mobileSignUp.$valid) {
-      $scope.data.mobileSignUp.active = false;
-      $scope.data.mobileSignUpAuth.active = true;
+    if($scope.forms.mobileSignUp.$valid) {
+      $scope.data.step = 'mobileSignUpAuth';
+      $scope.data.mobileSignUpAuth.messages.push($scope.lang.forms.mobileSignUpAuth.messages.submit);
+      $scope.data.mobileSignUpAuth.messages.push($scope.lang.forms.mobileSignUpAuth.messages.mobile);
+      $scope.data.mobileSignUpAuth.messages.push($scope.data.mobileSignUp.mobile);
+      $scope.data.mobileSignUp.messages.pop();
     }
 
     $scope.data.mobileSignUp.submitted = true;
@@ -94,12 +107,14 @@ kiwiWeb.controller('SignUpCtrl', function ($scope, $filter, lang) {
 
     $scope.loading = true;
 
-    if($scope.mobileSignUpAuth.$valid) {
+    if($scope.forms.mobileSignUpAuth.$valid) {
       if($scope.data.mobileSignUpAuth.password === $scope.pin) {
-        $scope.data.mobileSignUpAuth.success = true;
-        $scope.data.mobileSignUpAuth.active = false;
+        $scope.data.step = 'success';
+        $scope.data.serialLookUp = angular.copy($scope.data.serialLookUpOriginal);
+        $scope.data.mobileSignUp = angular.copy($scope.data.mobileSignUpOriginal);
+        $scope.data.mobileSignUpAuth = angular.copy($scope.data.mobileSignUpAuthOriginal);
       } else {
-        $scope.data.mobileSignUpAuth.error = true;
+        $scope.data.errors.push($scope.lang.forms.mobileSignUpAuth.messages.error);
       }
     }
 

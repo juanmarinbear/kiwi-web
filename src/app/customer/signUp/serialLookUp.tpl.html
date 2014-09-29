@@ -2,7 +2,7 @@
   <div class="pure-g">
     <div class="pure-u-1">
       <label for="{{lang.forms.serialLookUp.inputs.serial.name}}" data-ng-bind="lang.forms.serialLookUp.inputs.serial.label"></label>
-      <input type="text" name="serial" placeholder="{{lang.forms.serialLookUp.inputs.serial.placeholder}}" maxlength="12" data-ng-model="data.serialLookUp.serial" data-ng-pattern="/\d{12}/" data-ng-maxlength="12" required>
+      <input type="text" name="serial" placeholder="{{lang.forms.serialLookUp.inputs.serial.placeholder}}" maxlength="12" data-ng-model="data.serialLookUp.serial" data-ng-pattern="/\d{12}/" data-ng-maxlength="12" data-ng-keypress="data.serialLookUp.messages = []" required>
     </div>
     <div class="pure-u-1">
       <button type="submit" class="pure-button pure-button-primary" data-ng-class="{'pure-button-disabled': forms.serialLookUp.$invalid}" data-ng-disabled="forms.serialLookUp.$invalid" data-ng-bind="lang.forms.serialLookUp.inputs.submit.label" data-ng-click="serialLookUpSubmit()"></button>

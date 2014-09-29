@@ -9,7 +9,16 @@
       "inputs" : {
         "reset" : {
           "label"  : "Reiniciar"
+        },
+        "view" : {
+          "label" : "Consultar"
+        },
+        "resend" : {
+          "label" : "Reenviar"
         }
+      },
+      "messages" : {
+        "success" : "Registro exitoso.  Da click a consultar para ver y pagar tu factura."
       }
     },
     "serialLookUp" : {
@@ -29,7 +38,7 @@
         }
       },
       "messages" : {
-        "found" : "Encontramos un usuario registrado con ese número de serie y solo él puede dar de alta más usuarios.  Te sugerimos contactarlo.",
+        "found" : "Ya tenemos un usuario asignado a ese número de serie.  Si crees que esto es un error, contáctanos.",
         "notFound" : "No encontramos algún cliente con ese número de serie.  Verifica que sea correcto.",
         "reset" : "Para reiniciar, da click al botón de \"Reiniciar\"."
       }
@@ -74,7 +83,7 @@
       "messages" : {
         "found" : "Encontramos un cliente con ese número de serie.  Si tu eres el cliente, continúa con el proceso.  Si no lo eres, verifica tu número de serie.",
         "continue" : "Para continuar con el registro, ingresa tu móvil.  Para reiniciar, da click al botón de \"Reiniciar\".",
-        "mobile" : "Móvil"
+        "client" : "Cliente"
       }
     },
     "mobileSignUpAuth" : {
@@ -94,9 +103,9 @@
         }
       },
       "messages" : {
+        "mobile" : "Móvil",
         "submit" : "Te enviamos un SMS con tu código de activación.  En cuanto te llegue, ingresa el código y da click a \"Ingresar\".  Si en 5 minutos no te llega, da click a \"Reenviar\".  Si ingresaste un móvil equivocado o quieres cambiarlo, da click a \"Reiniciar\".",
-        "error" : "Contraseña incorrecta.  Intenta nuevamente.",
-        "success" : "Registro exitoso.  Da click aqui para ver y pagar tu factura."
+        "error" : "Contraseña incorrecta.  Intenta nuevamente."
       }
     }
   }
