@@ -1,0 +1,25 @@
+<form class="pure-form pure-form-stacked" name="forms.mobileSignUp" novalidate>
+  <div class="pure-g">
+    <div class="pure-u-1">
+      <label for="{{lang.forms.mobileSignUp.inputs.name.name}}" data-ng-bind="lang.forms.mobileSignUp.inputs.name.label"></label>
+      <input type="text" name="name" placeholder="{{lang.forms.mobileSignUp.inputs.name.placeholder}}" data-ng-model="data.mobileSignUp.name" required>
+    </div>
+    <div class="pure-u-1">
+      <label for="{{lang.forms.mobileSignUp.inputs.last.name}}" data-ng-bind="lang.forms.mobileSignUp.inputs.last.label"></label>
+      <input type="text" name="last" placeholder="{{lang.forms.mobileSignUp.inputs.last.placeholder}}" data-ng-model="data.mobileSignUp.last" required>
+    </div>
+    <div class="pure-u-1">
+      <label for="{{lang.forms.mobileSignUp.inputs.mobile.name}}" data-ng-bind="lang.forms.mobileSignUp.inputs.mobile.label"></label>
+      <input type="text" name="mobile" placeholder="{{lang.forms.mobileSignUp.inputs.mobile.placeholder}}" maxlength="10" data-ng-model="data.mobileSignUp.mobile" data-ng-pattern="/\d{10}/" data-ng-maxlength="10" required>
+    </div>
+    <div class="pure-u-1">
+      <button type="submit" class="pure-button pure-button-primary" data-ng-class="{'pure-button-disabled': forms.mobileSignUp.$invalid}" data-ng-disabled="forms.mobileSignUp.$invalid" data-ng-bind="lang.forms.mobileSignUp.inputs.submit.label" data-ng-click="mobileSignUpSubmit()"></button>
+    </div>
+  </div>
+</form>
+<div data-ng-show="data.mobileSignUp.submitted && forms.mobileSignUp.$invalid">
+  <p data-ng-show="forms.mobileSignUp.name.$error.required" data-ng-bind="lang.forms.mobileSignUp.inputs.name.validation.required"></p>
+  <p data-ng-show="forms.mobileSignUp.last.$error.required" data-ng-bind="lang.forms.mobileSignUp.inputs.last.validation.required"></p>
+  <p data-ng-show="forms.mobileSignUp.mobile.$error.required" data-ng-bind="lang.forms.mobileSignUp.inputs.mobile.validation.required"></p>
+  <p data-ng-show="forms.mobileSignUp.mobile.$error.pattern || forms.mobileSignUp.mobile.$error.maxlength" data-ng-bind="lang.forms.mobileSignUp.inputs.mobile.validation.pattern"></p>
+</div>

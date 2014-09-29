@@ -232,6 +232,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
     }
   })
   .state('dashboard', {
+    abstract: true,
     url: '/dashboard',
     templateUrl: 'app/customer/dashboard/dashboard.tpl.html',
     controller: 'DashboardCtrl',
@@ -244,6 +245,26 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
         .then (function (data) {
           return data;
         });
+      }
+    }
+  })
+  .state('dashboard.anon', {
+    url: '/anon',
+    views: {
+      "signUp" : {
+        templateUrl: 'app/customer/signUp/signUp.tpl.html',
+        controller: 'SignUpCtrl',
+        resolve: {
+          lang: function($http) {
+            return $http({
+              method: 'GET',
+              url: 'app/customer/signUp/signUp.lang.es.json'
+            })
+            .then (function (data) {
+              return data;
+            });
+          }
+        }
       }
     }
   })

@@ -1,0 +1,15 @@
+<form class="pure-form pure-form-stacked" name="forms.mobileSignUpAuth" novalidate>
+  <div class="pure-g">
+    <div class="pure-u-1">
+      <label for="{{lang.forms.mobileSignUpAuth.inputs.password.name}}" data-ng-bind="lang.forms.mobileSignUpAuth.inputs.password.label"></label>
+      <input type="password" name="password" placeholder="{{lang.forms.mobileSignUpAuth.inputs.password.placeholder}}" maxlength="4" data-ng-model="data.mobileSignUpAuth.password" data-ng-maxlength="4" data-ng-pattern="/\d{4}/" data-ng-keypress="data.errors = []" required>
+    </div>
+    <div class="pure-u-1">
+      <button type="submit" class="pure-button pure-button-primary" data-ng-bind="lang.forms.mobileSignUpAuth.inputs.authenticate.label" data-ng-class="{'pure-button-disabled': forms.mobileSignUpAuth.$invalid}" data-ng-disabled="forms.mobileSignUpAuth.$invalid" data-ng-click="mobileSignUpAuthSubmit()"></button>
+    </div>
+  </div>
+</form>
+<div class="pure-u-1" data-ng-show="data.mobileSignUpAuth.submitted && forms.mobileSignUpAuth.$invalid">
+  <p data-ng-show="forms.mobileSignUpAuth.password.$error.required" data-ng-bind="lang.forms.mobileSignUpAuth.inputs.password.validation.required"></p>
+  <p data-ng-show="forms.mobileSignUpAuth.password.$error.pattern || forms.mobileSignUpAuth.password.$error.maxlength" data-ng-bind="lang.forms.mobileSignUpAuth.inputs.password.validation.pattern"></p>
+</div>

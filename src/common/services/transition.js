@@ -5,6 +5,8 @@ kiwiWeb.factory('Transition', function(Routes) {
   return {
     getTransition: function(toState, toParams, fromState, fromParams) {
 
+      var fromStateName, toStateName;
+
       if(toParams === fromParams) {
         console.log('Useless JSLint!');
       }
@@ -13,18 +15,21 @@ kiwiWeb.factory('Transition', function(Routes) {
         return;
       }
 
-      if(Routes[fromState.name].parent === 'form') {
+      fromStateName = fromState.name.split('.')[0];
+      toStateName = toState.name.split('.')[0];
+
+      if(Routes[fromStateName].parent === 'form') {
         return 'rotateCubeDown';
       }
 
-      if(Routes[toState.name].parent === 'form') {
+      if(Routes[toStateName].parent === 'form') {
         return 'rotateCubeUp';
       }
 
-      if(Routes[fromState.name].parent === Routes[toState.name].parent) {
-        return Routes[toState.name].yOrder > Routes[fromState.name].yOrder ? 'slideUp' : 'slideDown';
+      if(Routes[fromStateName].parent === Routes[toStateName].parent) {
+        return Routes[toStateName].yOrder > Routes[fromStateName].yOrder ? 'slideUp' : 'slideDown';
       } else {
-        return Routes[toState.name].xOrder > Routes[fromState.name].xOrder ? 'slideLeft' : 'slideRight';
+        return Routes[toStateName].xOrder > Routes[fromStateName].xOrder ? 'slideLeft' : 'slideRight';
       }
     }
   };
