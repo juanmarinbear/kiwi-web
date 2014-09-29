@@ -1,0 +1,17 @@
+<form class="pure-form pure-form-stacked" name="forms.mobileSignIn" novalidate>
+  <div class="pure-g">
+    <div class="pure-u-1">
+      <label for="{{lang.forms.mobileSignIn.inputs.mobile.name}}" data-ng-bind="lang.forms.mobileSignIn.inputs.mobile.label"></label>
+      <input type="text" name="mobile" placeholder="{{lang.forms.mobileSignIn.inputs.mobile.placeholder}}" maxlength="10" data-ng-model="data.mobileSignIn.mobile" data-ng-pattern="/\d{10}/" data-ng-maxlength="10" data-ng-keypress="data.errors = []" required>
+    </div>
+    <div class="pure-u-1">
+      <button type="submit" class="pure-button pure-button-primary" data-ng-class="{'pure-button-disabled': forms.mobileSignIn.$invalid}" data-ng-disabled="forms.mobileSignIn.$invalid" data-ng-bind="lang.forms.mobileSignIn.inputs.submit.label" data-ng-click="mobileSignInSubmit()"></button>
+    </div>
+  </div>
+</form>
+<div data-ng-show="data.mobileSignIn.submitted && forms.mobileSignIn.$invalid">
+  <p data-ng-show="forms.mobileSignIn.name.$error.required" data-ng-bind="lang.forms.mobileSignIn.inputs.name.validation.required"></p>
+  <p data-ng-show="forms.mobileSignIn.last.$error.required" data-ng-bind="lang.forms.mobileSignIn.inputs.last.validation.required"></p>
+  <p data-ng-show="forms.mobileSignIn.mobile.$error.required" data-ng-bind="lang.forms.mobileSignIn.inputs.mobile.validation.required"></p>
+  <p data-ng-show="forms.mobileSignIn.mobile.$error.pattern || forms.mobileSignIn.mobile.$error.maxlength" data-ng-bind="lang.forms.mobileSignIn.inputs.mobile.validation.pattern"></p>
+</div>

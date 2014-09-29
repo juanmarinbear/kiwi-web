@@ -1,0 +1,67 @@
+{
+  "title" : "Sign In",
+  "paragraphs" : [
+    "Si ya te registraste en nuestro portal de clientes, ingresa tu móvil y la contraseña que te enviaremos.",
+    "Si necesitas ayuda, da click aquí o llama al 01-800-XXX-XXXX"
+  ],
+  "forms" : {
+    "all" : {
+      "inputs" : {
+        "reset" : {
+          "label"  : "Reiniciar"
+        },
+        "view" : {
+          "label" : "Consultar"
+        },
+        "resend" : {
+          "label" : "Reenviar"
+        }
+      },
+      "messages" : {
+        "success" : "Autenticación exitosa.  Da click a consultar para ver y pagar tu factura."
+      }
+    },
+    "mobileSignIn" : {
+      "inputs" : {
+        "mobile" : {
+          "name" : "mobile",
+          "label" : "Móvil",
+          "placeholder" : "10 dígitos",
+          "help" : "10 dígitos.",
+          "validation" : {
+            "required" : "Móvil requerido.",
+            "pattern" : "Móvil inválido.  Deben ser 10 dígitos."
+          }
+        },
+        "submit" : {
+          "label"  : "Enviar"
+        }
+      },
+      "messages" : {
+        "error" : "Tu móvil no esta registrado, verifica que sea correcto."
+      }
+    },
+    "mobileSignInAuth" : {
+      "inputs" : {
+        "password" : {
+          "name" : "password",
+          "label" : "Contraseña",
+          "placeholder" : "Contraseña",
+          "help" : "Contraseña que te enviamos por SMS.",
+          "validation" : {
+            "required" : "Contraseña requerida.",
+            "pattern" : "Contraseña inválida.  Deben ser 4 dígitos."
+          }
+        },
+        "authenticate" : {
+          "label"  : "Ingresar"
+        }
+      },
+      "messages" : {
+        "mobile" : "Móvil",
+        "submit" : "Te enviamos un SMS con tu código de acceso.  En cuanto te llegue, ingresa el código y da click a \"Ingresar\".  Si en 5 minutos no te llega, da click a \"Reenviar\".  Si ingresaste un móvil equivocado o quieres cambiarlo, da click a \"Reiniciar\".",
+        "error" : "Contraseña incorrecta.  Intenta nuevamente."
+      }
+    }
+  }
+}
