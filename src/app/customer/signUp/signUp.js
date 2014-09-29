@@ -2,7 +2,6 @@
 
 kiwiWeb.controller('SignUpCtrl', function ($scope, $filter, lang) {
   $scope.lang = lang.data;
-  $scope.changeTitle($scope.lang.title);
   $scope.data = {};
   $scope.forms = {};
   $scope.data.serialLookUp = {};
@@ -59,6 +58,7 @@ kiwiWeb.controller('SignUpCtrl', function ($scope, $filter, lang) {
       $scope.data.mobileSignUp = angular.copy($scope.data.mobileSignUpOriginal);
     } else {
       $scope.data.step = 'mobileSignUp';
+      $scope.data.mobileSignUp = angular.copy($scope.data.mobileSignUpOriginal);
       $scope.data.mobileSignUpAuth = angular.copy($scope.data.mobileSignUpAuthOriginal);
       $scope.data.mobileSignUp.messages.push($scope.lang.forms.mobileSignUp.messages.continue);
     }
