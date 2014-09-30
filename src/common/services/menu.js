@@ -88,7 +88,7 @@ kiwiWeb.factory('Menu', function() {
           {
             name : 'dashboard',
             label : 'Dashboard',
-            uiSref : 'dashboard'
+            uiSref : 'dashboard.anon'
           },
           {
             name : 'pay',
@@ -98,7 +98,7 @@ kiwiWeb.factory('Menu', function() {
           {
             name : 'refer',
             label : 'Recomienda',
-            uiSref : 'refer'
+            uiSref : 'refer.anon'
           }
         ]
       },

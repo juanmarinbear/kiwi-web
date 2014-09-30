@@ -284,6 +284,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
     }
   })
   .state('pay', {
+    abstract: true,
     url: '/pay',
     templateUrl: 'app/customer/pay/pay.tpl.html',
     controller: 'PayCtrl',
@@ -296,6 +297,41 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
         .then (function (data) {
           return data;
         });
+      }
+    }
+  })
+  .state('refer.anon', {
+    url: '/anon',
+    views: {
+      'signUp' : {
+        templateUrl: 'app/customer/signUp/signUp.tpl.html',
+        controller: 'SignUpCtrl',
+        resolve: {
+          lang: function($http) {
+            return $http({
+              method: 'GET',
+              url: 'app/customer/signUp/signUp.lang.es.json'
+            })
+            .then (function (data) {
+              return data;
+            });
+          }
+        }
+      },
+      'signIn' : {
+        templateUrl: 'app/customer/signIn/signIn.tpl.html',
+        controller: 'SignInCtrl',
+        resolve: {
+          lang: function($http) {
+            return $http({
+              method: 'GET',
+              url: 'app/customer/signIn/signIn.lang.es.json'
+            })
+            .then (function (data) {
+              return data;
+            });
+          }
+        }
       }
     }
   })
