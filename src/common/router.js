@@ -251,7 +251,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
   .state('dashboard.anon', {
     url: '/anon',
     views: {
-      "signUp" : {
+      'signUp' : {
         templateUrl: 'app/customer/signUp/signUp.tpl.html',
         controller: 'SignUpCtrl',
         resolve: {
@@ -266,7 +266,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
           }
         }
       },
-      "signIn" : {
+      'signIn' : {
         templateUrl: 'app/customer/signIn/signIn.tpl.html',
         controller: 'SignInCtrl',
         resolve: {

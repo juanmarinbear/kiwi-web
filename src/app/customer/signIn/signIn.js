@@ -16,34 +16,34 @@ kiwiWeb.controller('SignInCtrl', function ($scope, $filter, lang) {
 
   $scope.users = [
     {
-      "serial" : "222222222222",
-      "name" : "Juan Marin Bear",
-      "users" : [
+      'serial' : '222222222222',
+      'name' : 'Juan Marin Bear',
+      'users' : [
         {
-          "name" : "Juan",
-          "last" : "Marin",
-          "mobile" : "5520253793",
-          "role" : "admin"
+          'name' : 'Juan',
+          'last' : 'Marin',
+          'mobile' : '5520253793',
+          'role' : 'admin'
         }
       ]
     },
     {
-      "serial" : "111111111111",
-      "name" : "Dulce Maria Carral",
-      "users" : []
+      'serial' : '111111111111',
+      'name' : 'Dulce Maria Carral',
+      'users' : []
     }
   ];
 
   $scope.mobiles = [
     {
-      "name" : "Juan",
-      "last" : "Marin",
-      "mobile" : "5520253793",
-      "role" : "admin"
-    } 
+      'name' : 'Juan',
+      'last' : 'Marin',
+      'mobile' : '5520253793',
+      'role' : 'admin'
+    }
   ];
 
-  $scope.pin = "1234";
+  $scope.pin = '1234';
 
   $scope.reset = function() {
 
