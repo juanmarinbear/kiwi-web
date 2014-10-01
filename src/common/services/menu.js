@@ -71,7 +71,7 @@ kiwiWeb.factory('Menu', function() {
           {
             name : 'faq',
             label : 'Preguntas',
-            uiSref : 'faq({location: \'general\'})'
+            uiSref : 'faq({section: \'general\'})'
           },
           {
             name : 'sales',

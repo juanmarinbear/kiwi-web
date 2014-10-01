@@ -103,6 +103,22 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
       }
     }
   })
+  .state('faq', {
+    url: '/faq/:section',
+    templateUrl: 'app/products/faq/faq.tpl.html',
+    controller: 'FaqCtrl',
+    resolve: {
+      lang: function($http) {
+        return $http({
+          method: 'GET',
+          url: 'app/products/faq/faq.lang.es.json'
+        })
+        .then (function (data) {
+          return data;
+        });
+      }
+    }
+  })
   .state('sales', {
     url: '/sales/:product',
     templateUrl: 'app/products/sales/sales.tpl.html',
@@ -284,7 +300,6 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
     }
   })
   .state('pay', {
-    abstract: true,
     url: '/pay',
     templateUrl: 'app/customer/pay/pay.tpl.html',
     controller: 'PayCtrl',
@@ -293,6 +308,23 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
         return $http({
           method: 'GET',
           url: 'app/customer/pay/pay.lang.es.json'
+        })
+        .then (function (data) {
+          return data;
+        });
+      }
+    }
+  })
+  .state('refer', {
+    abstract: true,
+    url: '/refer',
+    templateUrl: 'app/customer/refer/refer.tpl.html',
+    controller: 'ReferCtrl',
+    resolve: {
+      lang: function($http) {
+        return $http({
+          method: 'GET',
+          url: 'app/customer/refer/refer.lang.es.json'
         })
         .then (function (data) {
           return data;
@@ -332,22 +364,6 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
             });
           }
         }
-      }
-    }
-  })
-  .state('refer', {
-    url: '/refer',
-    templateUrl: 'app/customer/refer/refer.tpl.html',
-    controller: 'ReferCtrl',
-    resolve: {
-      lang: function($http) {
-        return $http({
-          method: 'GET',
-          url: 'app/customer/refer/refer.lang.es.json'
-        })
-        .then (function (data) {
-          return data;
-        });
       }
     }
   })
