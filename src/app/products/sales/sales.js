@@ -3,8 +3,27 @@
 kiwiWeb.controller('SalesCtrl', function ($scope, $stateParams, $http, Parse, lang) {
   $scope.lang = lang.data;
   $scope.changeTitle($scope.lang.title);
-  $scope.data = {};
+  $scope.forms = {};
+  $scope.ticket = {};
+  $scope.step = 'client';
 
+  $scope.next = function() {
+    $scope.loading = true;
+    $scope.step = 'location';
+    $scope.loading = false;
+  };
+
+  $scope.prev = function() {
+    $scope.loading = true;
+    $scope.step = 'client';
+    $scope.loading = false;
+  };
+
+  $scope.submit = function() {
+  
+  };
+
+/*
   var zendesk = {};
   zendesk.username = 'kiwiadmin@kiwinetworks.com';
   zendesk.token = '9UWLTlGmIWLsxSMWqQSVWRo2GxYO0gsKXaXEVTUO';
@@ -19,10 +38,8 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $stateParams, $http, Parse, la
       $scope.loading = true;
       $scope.success = true;
       $scope.loading = false;
-      $scope.$apply();
     }
     $scope.submitted = true;
-/*
     $http({
       method: 'GET', 
       url: $scope.zendesk.api + '/users/me.json',
@@ -43,6 +60,6 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $stateParams, $http, Parse, la
         console.log(status);
         console.log(config);
       });
-*/
   };
+*/
 });
