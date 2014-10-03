@@ -136,6 +136,9 @@
           "label" : "Colonia",
           "placeholder" : "Colonia",
           "help" : "Tu colonia.",
+          "options" : {
+            "default" : "-- Colonia --"
+          },
           "validation" : {
             "required" : "Colonia requerida."
           }

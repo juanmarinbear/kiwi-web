@@ -23,19 +23,61 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, Parse, lang, s
   $scope.submit = function() {
   };
 
+  $scope.geoZip = function() {
+
+    $scope.ticket.state = $scope.findState().code;
+    $scope.loadGeoData($scope.ticket.state, function(data){
+
+      var district = $filter('filter')(data, {zip: $scope.ticket.zip}, true)[0];
+
+      console.log(district);
+
+      $scope.cities = _.sortBy(_.uniq(data, function(item) {
+        return item.municipalityId;
+      }),function(item) {
+        return item.municipality;
+      });
+
+      $scope.districts = _.sortBy(_.uniq(data, function(item) {
+        return item.district;
+      }),function(item) {
+        return item.district;
+      });
+
+      console.log($scope.districts);
+
+      $scope.ticket.city = district.municipality;
+      $scope.ticket.district = district.district;
+
+    });
+  };
+
   $scope.findState = function() {
 
-    var state, zip;
-    zip = $scope.ticket.zip.substr(0,2);
-    state = $filter('filter')($scope.states, function(value, index){
+    var zip = $scope.ticket.zip.substr(0,2);
+
+    var state = $filter('filter')($scope.states, function(value, index){
       if(value.zip.indexOf(zip) > -1) {
         return true; 
       } else {
         return false; 
       }
     }, false)[0];
-    
-    $scope.ticket.state = state.code;
+    return state;
+  };
+
+  $scope.loadGeoData = function(state, callback) {
+
+    var url = '/common/json/mx/states/' + state + '.json';
+
+    $http({method: 'GET', url: url}).
+      success(function(data, status, headers, config) {
+        callback(data);
+      }).
+      error(function(data, status, headers, config) {
+        console.log('Error loading data!');
+        callback(data);
+      });
   };
 
 /*
