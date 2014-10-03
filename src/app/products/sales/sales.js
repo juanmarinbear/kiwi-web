@@ -1,7 +1,8 @@
 'use strict';
 
-kiwiWeb.controller('SalesCtrl', function ($scope, $stateParams, $http, Parse, lang) {
+kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, Parse, lang, states) {
   $scope.lang = lang.data;
+  $scope.states = states.data;
   $scope.changeTitle($scope.lang.title);
   $scope.forms = {};
   $scope.ticket = {};
@@ -20,7 +21,21 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $stateParams, $http, Parse, la
   };
 
   $scope.submit = function() {
-  
+  };
+
+  $scope.findState = function() {
+
+    var state, zip;
+    zip = $scope.ticket.zip.substr(0,2);
+    state = $filter('filter')($scope.states, function(value, index){
+      if(value.zip.indexOf(zip) > -1) {
+        return true; 
+      } else {
+        return false; 
+      }
+    }, false)[0];
+    
+    $scope.ticket.state = state.code;
   };
 
 /*
