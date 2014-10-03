@@ -28,7 +28,7 @@
           "label" : "Servicio",
           "help" : "¿Qué servicio te interesa?",
           "options" : {
-            "default" : "-- Ninguno --",
+            "default" : "-- Servicio --",
             "items" : [
               { "label" : "Residential", "value" : "residential" },
               { "label" : "Business", "value" : "business" },
@@ -84,7 +84,7 @@
           "label" : "¿Cómo prefieres que te contactemos?",
           "help" : "¿Cómo prefieres que te contactemos?",
           "options" : {
-            "default" : "-- Ninguno --",
+            "default" : "-- Contacto --",
             "items" : [
               { "label" : "Móvil", "value" : "mobile"},
               { "label" : "Email", "value" : "email"},
@@ -114,11 +114,7 @@
           "label" : "Estado",
           "help" : "Tu estado.",
           "options" : {
-            "default" : "-- Ninguno --",
-            "items" : [
-              { "label" : "Aguascalientes", "value" : "aguascalientes" },
-              { "label" : "Baja California", "value" : "bajacalifornia" }
-            ]
+            "default" : "-- Estado --"
           },
           "validation" : {
             "required" : "Estado requerido."
@@ -129,11 +125,7 @@
           "label" : "Ciudad / Delegación / Municipio",
           "help" : "Tu ciudad, delegación o municipio.",
           "options" : {
-            "default" : "-- Ninguno --",
-            "items" : [
-              { "label" : "Gotham City", "value" : "gothamcity" },
-              { "label" : "Metropolitan", "value" : "metropolitan" }
-            ]
+            "default" : "-- Ciudad --"
           },
           "validation" : {
             "required" : "Ciudad requerida."
@@ -180,7 +172,7 @@
           "helpResidential" : "¿Vives en un edificio?",
           "helpBusiness" : "Tu negocio está en un edificio?",
           "options" : {
-            "default" : "-- Ninguno --",
+            "default" : "-- Seleccionar --",
             "items" : [
               { "label" : "Si", "value" : true },
               { "label" : "No", "value" : false }
