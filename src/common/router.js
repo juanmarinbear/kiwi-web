@@ -136,7 +136,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
       states: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/common/json/mx/states.json'
+          url: '/common/json/mx/states.json'
         })
         .then(function(states) {
           return states; 
