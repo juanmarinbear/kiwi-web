@@ -106,7 +106,8 @@
           "help" : "Tu código postal.",
           "validation" : {
             "required" : "Código Postal requerido.",
-            "invalid" : "Código Postal inválido.  Deben ser 5 dígitos."
+            "invalid" : "Código Postal inválido.  Deben ser 5 dígitos.",
+            "inexistent" : "Código Postal inexistente."
           }
         },
         "state" : {
