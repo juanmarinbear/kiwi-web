@@ -136,10 +136,17 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
       states: function($http) {
         return $http({
           method: 'GET',
-          url: '/common/json/mx/states.json'
+          headers: {
+            'X-Parse-Application-Id' : 'OB82iuKjelfGNuaPLWO09Fr4zk8rsb0bQ1pcrFex',
+            'X-Parse-REST-API-Key' : 'TzXwbfcfk3Z7s4t8GeTQdpuATCHX2COmO0xnr37s'
+          },
+          url: 'https://api.parse.com/1/classes/State',
+          params: {
+            order: 'name'
+          }
         })
-        .then(function(states) {
-          return states; 
+        .then(function(data) {
+          return data.data.results; 
         });
       }
     }
