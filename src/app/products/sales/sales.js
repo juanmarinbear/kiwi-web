@@ -2,11 +2,12 @@
 
 kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, Parse, lang, states) {
   $scope.lang = lang.data;
-  $scope.states = states.data;
+  $scope.states = states; 
   $scope.changeTitle($scope.lang.title);
   $scope.forms = {};
   $scope.ticket = {};
   $scope.step = 'client';
+  $scope.errors = {};
 
   $scope.next = function() {
     $scope.loading = true;
@@ -23,62 +24,159 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, Parse, lang, s
   $scope.submit = function() {
   };
 
-  $scope.geoZip = function() {
-
-    $scope.ticket.state = $scope.findState().code;
-    $scope.loadGeoData($scope.ticket.state, function(data){
-
-      var district = $filter('filter')(data, {zip: $scope.ticket.zip}, true)[0];
-
-      console.log(district);
-
-      $scope.cities = _.sortBy(_.uniq(data, function(item) {
-        return item.municipalityId;
-      }),function(item) {
-        return item.municipality;
-      });
-
-      $scope.districts = _.sortBy(_.uniq(data, function(item) {
-        return item.district;
-      }),function(item) {
-        return item.district;
-      });
-
-      console.log($scope.districts);
-
-      $scope.ticket.city = district.municipality;
-      $scope.ticket.district = district.district;
-
+  $scope.geoState = function() {
+    $scope.errors.zip = false;
+    $http({
+      method: 'GET',
+      headers: {
+        'X-Parse-Application-Id' : 'OB82iuKjelfGNuaPLWO09Fr4zk8rsb0bQ1pcrFex',
+        'X-Parse-REST-API-Key' : 'TzXwbfcfk3Z7s4t8GeTQdpuATCHX2COmO0xnr37s'
+      },
+      url: 'https://api.parse.com/1/classes/Municipality',
+      params: {
+        where: {
+          state: $scope.ticket.state
+        },
+        limit: '1000',
+        order: 'name'
+      }
+    })
+    .then(function(data) {
+      $scope.municipalities = data.data.results;
+      $scope.districts = []; 
+      $scope.ticket.district = null; 
+      $scope.ticket.city = null; 
+      $scope.ticket.zip = null; 
     });
   };
 
-  $scope.findState = function() {
-
-    var zip = $scope.ticket.zip.substr(0,2);
-
-    var state = $filter('filter')($scope.states, function(value, index){
-      if(value.zip.indexOf(zip) > -1) {
-        return true; 
-      } else {
-        return false; 
+  $scope.geoCity = function() {
+    $scope.errors.zip = false;
+    $http({
+      method: 'GET',
+      headers: {
+        'X-Parse-Application-Id' : 'OB82iuKjelfGNuaPLWO09Fr4zk8rsb0bQ1pcrFex',
+        'X-Parse-REST-API-Key' : 'TzXwbfcfk3Z7s4t8GeTQdpuATCHX2COmO0xnr37s'
+      },
+      url: 'https://api.parse.com/1/classes/District',
+      params: {
+        where: {
+          state: $scope.ticket.state,
+          municipality: $scope.ticket.city
+        },
+        limit: '1000',
+        order: 'name'
       }
-    }, false)[0];
-    return state;
+    })
+    .then(function(data) {
+      $scope.districts = data.data.results;
+      $scope.ticket.district = null; 
+      $scope.ticket.zip = null; 
+    });
+  
   };
 
-  $scope.loadGeoData = function(state, callback) {
+  $scope.geoDistrict = function() {
+    $scope.errors.zip = false;
+    $http({
+      method: 'GET',
+      headers: {
+        'X-Parse-Application-Id' : 'OB82iuKjelfGNuaPLWO09Fr4zk8rsb0bQ1pcrFex',
+        'X-Parse-REST-API-Key' : 'TzXwbfcfk3Z7s4t8GeTQdpuATCHX2COmO0xnr37s'
+      },
+      url: 'https://api.parse.com/1/classes/District',
+      params: {
+        where: {
+          state: $scope.ticket.state,
+          municipality: $scope.ticket.city,
+          name: $scope.ticket.district
+        },
+        limit: '1000',
+        order: 'name'
+      }
+    })
+    .then(function(data) {
+      $scope.district = data.data.results[0];
+      $scope.ticket.district = $scope.district.name;
+      $scope.ticket.zip = $scope.district.zip; 
+    });
+  
+  };
 
-    var url = '/common/json/mx/states/' + state + '.json';
-
-    $http({method: 'GET', url: url}).
-      success(function(data, status, headers, config) {
-        callback(data);
-      }).
-      error(function(data, status, headers, config) {
-        console.log('Error loading data!');
-        callback(data);
+  $scope.geoZip = function() {
+    $http({
+      method: 'GET',
+      headers: {
+        'X-Parse-Application-Id' : 'OB82iuKjelfGNuaPLWO09Fr4zk8rsb0bQ1pcrFex',
+        'X-Parse-REST-API-Key' : 'TzXwbfcfk3Z7s4t8GeTQdpuATCHX2COmO0xnr37s'
+      },
+      url: 'https://api.parse.com/1/classes/District',
+      params: {
+        where: {
+          zip: $scope.ticket.zip 
+        },
+        order: 'name'
+      }
+    })
+    .then(function(data) {
+      $scope.district = data.data.results;
+      if(!$scope.district.length) {
+        $scope.errors.zip = true;
+        $scope.districts = []; 
+        $scope.municipalities = []; 
+        $scope.ticket.state = null; 
+        $scope.ticket.city = null; 
+        $scope.ticket.district = null; 
+        return;
+      }
+      $scope.errors.zip = false;
+      $http({
+        method: 'GET',
+        headers: {
+          'X-Parse-Application-Id' : 'OB82iuKjelfGNuaPLWO09Fr4zk8rsb0bQ1pcrFex',
+          'X-Parse-REST-API-Key' : 'TzXwbfcfk3Z7s4t8GeTQdpuATCHX2COmO0xnr37s'
+        },
+        url: 'https://api.parse.com/1/classes/Municipality',
+        params: {
+          where: {
+            state: $scope.district[0].state
+          },
+          limit: '1000',
+          order: 'name'
+        }
+      })
+      .then(function(data) {
+        $scope.municipalities = data.data.results;
+        $http({
+          method: 'GET',
+          headers: {
+            'X-Parse-Application-Id' : 'OB82iuKjelfGNuaPLWO09Fr4zk8rsb0bQ1pcrFex',
+            'X-Parse-REST-API-Key' : 'TzXwbfcfk3Z7s4t8GeTQdpuATCHX2COmO0xnr37s'
+          },
+          url: 'https://api.parse.com/1/classes/District',
+          params: {
+            where: {
+              state: $scope.district[0].state,
+              municipality: $scope.district[0].municipality
+            },
+            limit: '1000',
+            order: 'name'
+          }
+        })
+        .then(function(data) {
+          if($scope.district.length > 1) {
+            $scope.districts = $scope.district;
+          } else {
+            $scope.districts = data.data.results; 
+          };
+          $scope.ticket.district = $scope.district[0].name;
+          $scope.ticket.city = $scope.district[0].municipality;
+          $scope.ticket.state = $scope.district[0].state;
+        });
       });
+    });
   };
+
 
 /*
   var zendesk = {};

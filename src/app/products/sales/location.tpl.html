@@ -4,13 +4,14 @@
       <label for="{{lang.forms.location.inputs.zip.name}}" data-ng-bind="lang.forms.location.inputs.zip.label"></label>
       <input type="text" name="zip" placeholder="{{lang.forms.location.inputs.zip.placeholder}}" maxlength="5" data-ng-model="ticket.zip" data-ng-pattern="/\d{5}/" data-ng-maxlength="5" data-ng-keyup="forms.location.zip.$valid && geoZip()" required></input>
     </div>
-    <div class="pure-u-1" data-ng-show="submitted && forms.location.$invalid">
+    <div class="pure-u-1" data-ng-show="(submitted && forms.location.$invalid) || (errors.zip)">
       <p data-ng-show="forms.location.zip.$error.required" data-ng-bind="lang.forms.location.inputs.zip.validation.required"></p>
       <p data-ng-show="forms.location.zip.$error.pattern || forms.location.zip.$error.maxlength" data-ng-bind="lang.forms.location.inputs.zip.validation.invalid"></p>
+      <p data-ng-show="errors.zip" data-ng-bind="lang.forms.location.inputs.zip.validation.inexistent"></p>
     </div>
     <div class="pure-u-1">
       <label for="{{lang.forms.location.inputs.state.name}}" data-ng-bind="lang.forms.location.inputs.state.label"></label>
-      <select name="state" data-ng-model="ticket.state" data-ng-options="state.code as state.name for state in states" required>
+      <select name="state" data-ng-model="ticket.state" data-ng-options="state.name as state.name for state in states" data-ng-change="geoState()" required>
         <option value="" data-ng-bind="lang.forms.location.inputs.state.options.default" selected></option>
       </select>
     </div>
@@ -19,7 +20,7 @@
     </div>
     <div class="pure-u-1">
       <label for="{{lang.forms.location.inputs.city.name}}" data-ng-bind="lang.forms.location.inputs.city.label"></label>
-      <select name="city" data-ng-model="ticket.city" data-ng-options="city.municipality as city.municipality for city in cities" required>
+      <select name="city" data-ng-model="ticket.city" data-ng-options="municipality.name as municipality.name for municipality in municipalities" data-ng-change="geoCity()"required>
         <option value="" data-ng-bind="lang.forms.location.inputs.city.options.default" selected></option>
       </select>
     </div>
@@ -28,7 +29,7 @@
     </div>
     <div class="pure-u-1">
       <label for="{{lang.forms.location.inputs.district.name}}" data-ng-bind="lang.forms.location.inputs.district.label"></label>
-      <select name="district" data-ng-model="ticket.district" data-ng-options="district.district as district.district for district in districts" required>
+      <select name="district" data-ng-model="ticket.district" data-ng-options="district.name as district.name for district in districts" data-ng-change="geoDistrict()"required>
         <option value="" data-ng-bind="lang.forms.location.inputs.district.options.default" selected></option>
       </select>
     </div>
@@ -56,7 +57,7 @@
     <div class="pure-u-1">
       <label for="{{lang.forms.location.inputs.building.name}}" data-ng-bind="lang.forms.location.inputs.building.labelResidential" data-ng-show="data.service == 'residential'"></label>
       <label for="{{lang.forms.location.inputs.building.name}}" data-ng-bind="lang.forms.location.inputs.building.labelBusiness" data-ng-show="data.service != 'residential'"></label>
-      <select name="building" data-ng-model="ticket.building" data-ng-options="item.value as item.label for item in lang.forms.location.inputs.building.options.items" required autofocus>
+      <select name="building" data-ng-model="ticket.building" data-ng-options="item.value as item.label for item in lang.forms.location.inputs.building.options.items" required>
         <option value="" data-ng-bind="lang.forms.location.inputs.building.options.default" selected></option>
       </select>
     </div>
