@@ -86,9 +86,9 @@
           "options" : {
             "default" : "-- Contacto --",
             "items" : [
-              { "label" : "Móvil", "value" : "mobile"},
-              { "label" : "Email", "value" : "email"},
-              { "label" : "WhatsApp", "value" : "email"}
+              { "label" : "Móvil", "value" : "Phone"},
+              { "label" : "Email", "value" : "Email"},
+              { "label" : "WhatsApp", "value" : "WhatsApp"}
             ]
           },
           "validation" : {
@@ -178,8 +178,8 @@
           "options" : {
             "default" : "-- Seleccionar --",
             "items" : [
-              { "label" : "Si", "value" : true },
-              { "label" : "No", "value" : false }
+              { "label" : "Si", "value" : "Yes" },
+              { "label" : "No", "value" : "No" }
             ]
           },
           "validation" : {

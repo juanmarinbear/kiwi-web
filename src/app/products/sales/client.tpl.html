@@ -7,25 +7,25 @@
       </select>
     </div>
     <div class="pure-u-1" data-ng-show="submitted && forms.client.$invalid">
-      <p data-ng-show="formsclient.service.$error.required" data-ng-bind="lang.forms.client.inputs.service.validation.required"></p>
+      <p data-ng-show="forms.client.service.$error.required" data-ng-bind="lang.forms.client.inputs.service.validation.required"></p>
     </div>
     <div class="pure-u-1">
       <label for="{{lang.forms.client.inputs.name.name}}" data-ng-bind="lang.forms.client.inputs.name.label"></label>
-      <input type="text" name="name" placeholder="{{lang.forms.client.inputs.name.placeholder}}" data-ng-model="ticket.name" required></input>
+      <input type="text" name="name" placeholder="{{lang.forms.client.inputs.name.placeholder}}" data-ng-model="ticket.name" required>
     </div>
     <div class="pure-u-1" data-ng-show="submitted && forms.client.$invalid">
       <p data-ng-show="forms.client.name.$error.required" data-ng-bind="lang.forms.client.inputs.name.validation.required"></p>
     </div>
     <div class="pure-u-1">
       <label for="{{lang.forms.client.inputs.last.name}}" data-ng-bind="lang.forms.client.inputs.last.label"></label>
-      <input type="text" name="last" placeholder="{{lang.forms.client.inputs.last.placeholder}}" data-ng-model="ticket.last" required></input>
+      <input type="text" name="last" placeholder="{{lang.forms.client.inputs.last.placeholder}}" data-ng-model="ticket.last" required>
     </div>
     <div class="pure-u-1" data-ng-show="submitted && forms.client.$invalid">
       <p data-ng-show="forms.client.last.$error.required" data-ng-bind="lang.forms.client.inputs.last.validation.required"></p>
     </div>
     <div class="pure-u-1">
       <label for="{{lang.forms.client.inputs.email.name}}" data-ng-bind="lang.forms.client.inputs.email.label"></label>
-      <input type="email" name="email" placeholder="{{lang.forms.client.inputs.email.placeholder}}" data-ng-model="ticket.email" required></input>
+      <input type="email" name="email" placeholder="{{lang.forms.client.inputs.email.placeholder}}" data-ng-model="ticket.email" required>
     </div>
     <div class="pure-u-1" data-ng-show="submitted && forms.client.$invalid">
       <p data-ng-show="forms.client.email.$error.required" data-ng-bind="lang.forms.client.inputs.email.validation.required"></p>
@@ -33,7 +33,7 @@
     </div>
     <div class="pure-u-1">
       <label for="{{lang.forms.client.inputs.mobile.name}}" data-ng-bind="lang.forms.client.inputs.mobile.label"></label>
-      <input type="text" name="mobile" placeholder="{{lang.forms.client.inputs.mobile.placeholder}}" maxlength="10" data-ng-model="ticket.mobile" data-ng-pattern="/\d{10}/" data-ng-maxlength="10" required></input>
+      <input type="text" name="mobile" placeholder="{{lang.forms.client.inputs.mobile.placeholder}}" maxlength="10" data-ng-model="ticket.mobile" data-ng-pattern="/\d{10}/" data-ng-maxlength="10" required>
     </div>
     <div class="pure-u-1" data-ng-show="submitted && forms.client.$invalid">
       <p data-ng-show="forms.client.mobile.$error.required" data-ng-bind="lang.forms.client.inputs.mobile.validation.required"></p>

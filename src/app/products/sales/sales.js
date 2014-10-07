@@ -21,9 +21,6 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, Parse, lang, s
     $scope.loading = false;
   };
 
-  $scope.submit = function() {
-  };
-
   $scope.geoState = function() {
     $scope.errors.zip = false;
     $http({
@@ -177,9 +174,8 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, Parse, lang, s
     });
   };
 
-
-/*
   var zendesk = {};
+
   zendesk.username = 'kiwiadmin@kiwinetworks.com';
   zendesk.token = '9UWLTlGmIWLsxSMWqQSVWRo2GxYO0gsKXaXEVTUO';
   zendesk.api = 'https://kiwinetworks.zendesk.com/api/v2';
@@ -189,32 +185,91 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, Parse, lang, s
 
   $scope.submit = function() {
 
-    if($scope.sales.$valid) {
+    if($scope.forms.client.$valid && $scope.forms.location.$valid) {
       $scope.loading = true;
-      $scope.success = true;
-      $scope.loading = false;
-    }
-    $scope.submitted = true;
-    $http({
-      method: 'GET', 
-      url: $scope.zendesk.api + '/users/me.json',
-      headers: {
-        'Accept': 'application/json',
-        'Authorization': 'Basic ' + btoa(zendesk.username + '/token:' + zendesk.token)
+      var ticket = {
+        ticket: {
+          requester: {
+            name: $scope.ticket.name + ' ' + $scope.ticket.last,
+            email: $scope.ticket.email,
+            locale_id: '2',
+            user_fields: {
+              mobile_mx: $scope.ticket.mobile 
+            }
+          },
+          subject: 'Sales ' + '- ' + $scope.ticket.service,
+          description: 'Sales ' + '- ' + $scope.ticket.service,
+          ticket_form_id: '22855',
+          custom_fields: [
+            {
+              id: '22630199',
+              value: $scope.ticket.service
+            },
+            {
+              id: '22785105',
+              value: $scope.ticket.contact
+            },
+            {
+              id: '22739659',
+              value: $scope.ticket.zip
+            },
+            {
+              id: '22630289',
+              value: $scope.ticket.state
+            },
+            {
+              id: '22630299',
+              value: $scope.ticket.city
+            },
+            {
+              id: '22739579',
+              value: $scope.ticket.district
+            },
+            {
+              id: '22679095',
+              value: $scope.ticket.street
+            },
+            {
+              id: '22679105',
+              value: $scope.ticket.number
+            },
+            {
+              id: '22679115',
+              value: $scope.ticket.apt
+            },
+            {
+              id: '22739669',
+              value: $scope.ticket.building 
+            },
+            {
+              id: '22630209',
+              value: $scope.ticket.levels
+            }
+          ]
+        }
+      };
+
+      $http({
+        method: 'POST', 
+        url: zendesk.api + '/tickets.json',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type' : 'application/json',
+          'Authorization': 'Basic ' + btoa(zendesk.username + '/token:' + zendesk.token)
+        },
+        data: JSON.stringify(ticket)
+        }).
+        success(function(data, status, headers, config) {
+          console.log('Success!');
+          console.log(data);
+          $scope.success = true;
+        }).
+        error(function(data, status, headers, config) {
+          console.log('Error!');
+          console.log(data);
+        });
       }
-      }).
-      success(function(data, status, headers, config) {
-        console.log('Success!');
-        console.log(data);
-        console.log(status);
-        console.log(config);
-      }).
-      error(function(data, status, headers, config) {
-        console.log('Error!');
-        console.log(data);
-        console.log(status);
-        console.log(config);
-      });
+    $scope.loading = false;
+    $scope.submitted = true;
   };
-*/
 });
