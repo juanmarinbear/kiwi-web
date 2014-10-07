@@ -64,7 +64,7 @@ kiwiWeb.factory('Routes', function() {
     faq: {
       parent: 'home',
       xOrder: 1,
-      yOrder: 6 
+      yOrder: 6
     },
     sales: {
       parent: 'form'
@@ -72,17 +72,17 @@ kiwiWeb.factory('Routes', function() {
     dashboard: {
       parent: 'customer',
       xOrder: 2,
-      yOrder: 0 
+      yOrder: 0
     },
     pay: {
       parent: 'customer',
       xOrder: 2,
-      yOrder: 1 
+      yOrder: 1
     },
     refer: {
       parent: 'customer',
       xOrder: 2,
-      yOrder: 2 
+      yOrder: 2
     },
     support: {
       parent: 'support',
