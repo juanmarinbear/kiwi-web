@@ -1,0 +1,11 @@
+{
+    "applications": {
+        "_default": {
+            "link": "kiwiWeb"
+        }, 
+        "kiwiWeb": {
+            "applicationId": "1r3I7GFxkiMDBE6tbvSnrCLhc7kX0pi9KSc0cWG6", 
+            "masterKey": "slUHskPqDzDmLixJicpKc4hztLRBiFCgySlEURQO"
+        }
+    }
+}
