@@ -17,7 +17,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
           method: 'GET',
           url: 'app/home/home.lang.es.json'
         })
-        .then (function (data) {
+        .then(function(data) {
           return data;
         });
       }
@@ -33,7 +33,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
           method: 'GET',
           url: 'app/products/products.lang.es.json'
         })
-        .then (function (data) {
+        .then(function(data) {
           return data;
         });
       }
@@ -49,7 +49,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
           method: 'GET',
           url: 'app/products/residential/residential.lang.es.json'
         })
-        .then (function (data) {
+        .then(function(data) {
           return data;
         });
       }
@@ -65,7 +65,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
           method: 'GET',
           url: 'app/products/business/business.lang.es.json'
         })
-        .then (function (data) {
+        .then(function(data) {
           return data;
         });
       }
@@ -81,7 +81,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
           method: 'GET',
           url: 'app/products/dedicated/dedicated.lang.es.json'
         })
-        .then (function (data) {
+        .then(function(data) {
           return data;
         });
       }
@@ -97,7 +97,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
           method: 'GET',
           url: 'app/products/metromesh/metromesh.lang.es.json'
         })
-        .then (function (data) {
+        .then(function(data) {
           return data;
         });
       }
@@ -113,7 +113,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
           method: 'GET',
           url: 'app/products/faq/faq.lang.es.json'
         })
-        .then (function (data) {
+        .then(function(data) {
           return data;
         });
       }
@@ -129,8 +129,24 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
           method: 'GET',
           url: 'app/products/sales/sales.lang.es.json'
         })
-        .then (function (data) {
+        .then(function(data) {
           return data;
+        });
+      },
+      states: function($http) {
+        return $http({
+          method: 'GET',
+          headers: {
+            'X-Parse-Application-Id' : 'OB82iuKjelfGNuaPLWO09Fr4zk8rsb0bQ1pcrFex',
+            'X-Parse-REST-API-Key' : 'TzXwbfcfk3Z7s4t8GeTQdpuATCHX2COmO0xnr37s'
+          },
+          url: 'https://api.parse.com/1/classes/State',
+          params: {
+            order: 'name'
+          }
+        })
+        .then(function(data) {
+          return data.data.results; 
         });
       }
     }
@@ -145,7 +161,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
           method: 'GET',
           url: 'app/company/about/about.lang.es.json'
         })
-        .then (function (data) {
+        .then(function(data) {
           return data;
         });
       }
@@ -161,7 +177,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
           method: 'GET',
           url: 'app/company/concesion/concesion.lang.es.json'
         })
-        .then (function (data) {
+        .then(function(data) {
           return data;
         });
       }
@@ -177,7 +193,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
           method: 'GET',
           url: 'app/company/careers/careers.lang.es.json'
         })
-        .then (function (data) {
+        .then(function(data) {
           return data;
         });
       }
@@ -193,7 +209,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
           method: 'GET',
           url: 'app/company/apply/apply.lang.es.json'
         })
-        .then (function (data) {
+        .then(function(data) {
           return data;
         });
       }
@@ -209,7 +225,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
           method: 'GET',
           url: 'app/company/stories/stories.lang.es.json'
         })
-        .then (function (data) {
+        .then(function(data) {
           return data;
         });
       }
@@ -225,7 +241,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
           method: 'GET',
           url: 'app/company/privacy/privacy.lang.es.json'
         })
-        .then (function (data) {
+        .then(function(data) {
           return data;
         });
       }
@@ -241,7 +257,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
           method: 'GET',
           url: 'app/contact/contact.lang.es.json'
         })
-        .then (function (data) {
+        .then(function(data) {
           return data;
         });
       }
@@ -258,7 +274,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
           method: 'GET',
           url: 'app/customer/dashboard/dashboard.lang.es.json'
         })
-        .then (function (data) {
+        .then(function(data) {
           return data;
         });
       }
@@ -276,7 +292,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
               method: 'GET',
               url: 'app/customer/signUp/signUp.lang.es.json'
             })
-            .then (function (data) {
+            .then(function(data) {
               return data;
             });
           }
@@ -291,7 +307,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
               method: 'GET',
               url: 'app/customer/signIn/signIn.lang.es.json'
             })
-            .then (function (data) {
+            .then(function(data) {
               return data;
             });
           }
@@ -309,7 +325,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
           method: 'GET',
           url: 'app/customer/pay/pay.lang.es.json'
         })
-        .then (function (data) {
+        .then(function(data) {
           return data;
         });
       }
@@ -326,7 +342,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
           method: 'GET',
           url: 'app/customer/refer/refer.lang.es.json'
         })
-        .then (function (data) {
+        .then(function(data) {
           return data;
         });
       }
@@ -344,7 +360,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
               method: 'GET',
               url: 'app/customer/signUp/signUp.lang.es.json'
             })
-            .then (function (data) {
+            .then(function(data) {
               return data;
             });
           }
@@ -359,7 +375,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
               method: 'GET',
               url: 'app/customer/signIn/signIn.lang.es.json'
             })
-            .then (function (data) {
+            .then(function(data) {
               return data;
             });
           }
@@ -377,7 +393,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
           method: 'GET',
           url: 'app/support/support.lang.es.json'
         })
-        .then (function (data) {
+        .then(function(data) {
           return data;
         });
       }
@@ -393,7 +409,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
           method: 'GET',
           url: 'app/support/status/status.lang.es.json'
         })
-        .then (function (data) {
+        .then(function(data) {
           return data;
         });
       }

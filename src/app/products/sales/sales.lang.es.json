@@ -7,144 +7,195 @@
       "Únicamente usaremos tus datos para dar seguimiento al asunto por el que nos contactaste.",
       "Para conocer más sobre nuestras políticas de privacidad, da click aquí."
   ],
-  "form" : {
-    "title" : "Forma de Ventas",
-    "name" : "sales",
-    "art" : "",
-    "inputs" : {
-      "service" : {
-        "name" : "service",
-        "label" : "Servicio",
-        "help" : "¿Qué servicio te interesa?",
-        "options" : {
-          "default" : "-- Ninguno --",
-          "items" : [
-            { "label" : "Residential", "value" : "residential" },
-            { "label" : "Business", "value" : "business" },
-            { "label" : "Dedicated", "value" : "dedicated" },
-            { "label" : "Metro Mesh", "value" : "metromesh" },
-            { "label" : "Otro", "value" : "other" }
-          ]
+  "forms" : {
+    "all" : {
+      "inputs" : {
+        "next" : {
+          "label"  : "Siguiente"
         },
-        "validation" : {
-          "required" : "Servicio requerido."
-        }
-      },
-      "name" : {
-        "name" : "name",
-        "label" : "Nombre",
-        "placeholder" : "Homero",
-        "help" : "Tu nombre.",
-        "validation" : {
-          "required" : "Nombre requerido."
-        }
-      },
-      "last" : {
-        "name" : "last",
-        "label" : "Apellido",
-        "placeholder" : "Simpson",
-        "help" : "Tu apellido.",
-        "validation" : {
-          "required" : "Apellido requerido."
-        }
-      },
-      "email" : {
-        "name" : "email",
-        "label" : "Email",
-        "placeholder" : "homero.simpson@gmail.com",
-        "help" : "Tu email.",
-        "validation" : {
-          "required" : "Email requerido.",
-          "invalid" : "Email inválido."
-        }
-      },
-      "mobile" : {
-        "name" : "mobile",
-        "label" : "Móvil",
-        "placeholder" : "Móvil 10 dígitos",
-        "help" : "Tu móvil, 10 dígitos.",
-        "validation" : {
-          "required" : "Móvil requerido.",
-          "invalid" : "Móvil inválido.  Deben ser 10 dígitos."
-        }
-      },
-      "zip" : {
-        "name" : "zip",
-        "label" : "Código Postal",
-        "placeholder" : "Código Postal",
-        "help" : "Tu código postal.",
-        "validation" : {
-          "required" : "Código Postal requerido.",
-          "invalid" : "Código Postal inválido.  Deben ser 5 dígitos."
-        }
-      },
-      "state" : {
-        "name" : "state",
-        "label" : "Estado",
-        "help" : "Tu estado.",
-        "options" : {
-          "default" : "-- Ninguno --",
-          "items" : [
-            { "label" : "Aguascalientes", "value" : "aguascalientes" },
-            { "label" : "Baja California", "value" : "bajacalifornia" }
-          ]
+        "previous" : {
+          "label"  : "Anterior"
         },
-        "validation" : {
-          "required" : "Estado requerido."
+        "submit" : {
+          "label"  : "Enviar"
         }
-      },
-      "city" : {
-        "name" : "city",
-        "label" : "Ciudad / Delegación / Municipio",
-        "help" : "Tu ciudad, delegación o municipio.",
-        "options" : {
-          "default" : "-- Ninguno --",
-          "items" : [
-            { "label" : "Gotham City", "value" : "gothamcity" },
-            { "label" : "Metropolitan", "value" : "metropolitan" }
-          ]
+      }
+    },
+    "client" : {
+      "inputs" : {
+        "service" : {
+          "name" : "service",
+          "label" : "Servicio",
+          "help" : "¿Qué servicio te interesa?",
+          "options" : {
+            "default" : "-- Servicio --",
+            "items" : [
+              { "label" : "Residential", "value" : "residential" },
+              { "label" : "Business", "value" : "business" },
+              { "label" : "Dedicated", "value" : "dedicated" },
+              { "label" : "Metro Mesh", "value" : "metromesh" },
+              { "label" : "Otro", "value" : "other" }
+            ]
+          },
+          "validation" : {
+            "required" : "Servicio requerido."
+          }
         },
-        "validation" : {
-          "required" : "Ciudad requerida."
+        "name" : {
+          "name" : "name",
+          "label" : "Nombre",
+          "placeholder" : "Homero",
+          "help" : "Tu nombre.",
+          "validation" : {
+            "required" : "Nombre requerido."
+          }
+        },
+        "last" : {
+          "name" : "last",
+          "label" : "Apellido",
+          "placeholder" : "Simpson",
+          "help" : "Tu apellido.",
+          "validation" : {
+            "required" : "Apellido requerido."
+          }
+        },
+        "email" : {
+          "name" : "email",
+          "label" : "Email",
+          "placeholder" : "homero.simpson@gmail.com",
+          "help" : "Tu email.",
+          "validation" : {
+            "required" : "Email requerido.",
+            "invalid" : "Email inválido."
+          }
+        },
+        "mobile" : {
+          "name" : "mobile",
+          "label" : "Móvil",
+          "placeholder" : "Móvil 10 dígitos",
+          "help" : "Tu móvil, 10 dígitos.",
+          "validation" : {
+            "required" : "Móvil requerido.",
+            "invalid" : "Móvil inválido.  Deben ser 10 dígitos."
+          }
+        },
+        "contact" : {
+          "name" : "contact",
+          "label" : "¿Cómo prefieres que te contactemos?",
+          "help" : "¿Cómo prefieres que te contactemos?",
+          "options" : {
+            "default" : "-- Contacto --",
+            "items" : [
+              { "label" : "Móvil", "value" : "Phone"},
+              { "label" : "Email", "value" : "Email"},
+              { "label" : "WhatsApp", "value" : "WhatsApp"}
+            ]
+          },
+          "validation" : {
+            "required" : "Campo requerido."
+          }
         }
-      },
-      "street" : {
-        "name" : "street",
-        "label" : "Calle",
-        "placeholder" : "Calle",
-        "help" : "Tu calle.",
-        "validation" : {
-          "required" : "Calle requerida."
+      }
+    },
+    "location" : {
+      "inputs" : {
+        "zip" : {
+          "name" : "zip",
+          "label" : "Código Postal",
+          "placeholder" : "Código Postal",
+          "help" : "Tu código postal.",
+          "validation" : {
+            "required" : "Código Postal requerido.",
+            "invalid" : "Código Postal inválido.  Deben ser 5 dígitos.",
+            "inexistent" : "Código Postal inexistente."
+          }
+        },
+        "state" : {
+          "name" : "state",
+          "label" : "Estado",
+          "help" : "Tu estado.",
+          "options" : {
+            "default" : "-- Estado --"
+          },
+          "validation" : {
+            "required" : "Estado requerido."
+          }
+        },
+        "city" : {
+          "name" : "city",
+          "label" : "Ciudad / Delegación / Municipio",
+          "help" : "Tu ciudad, delegación o municipio.",
+          "options" : {
+            "default" : "-- Ciudad --"
+          },
+          "validation" : {
+            "required" : "Ciudad requerida."
+          }
+        },
+        "district" : {
+          "name" : "district",
+          "label" : "Colonia",
+          "placeholder" : "Colonia",
+          "help" : "Tu colonia.",
+          "options" : {
+            "default" : "-- Colonia --"
+          },
+          "validation" : {
+            "required" : "Colonia requerida."
+          }
+        },
+        "street" : {
+          "name" : "street",
+          "label" : "Calle",
+          "placeholder" : "Calle",
+          "help" : "Tu calle.",
+          "validation" : {
+            "required" : "Calle requerida."
+          }
+        },
+        "number" : {
+          "name" : "number",
+          "label" : "Número Exterior",
+          "placeholder" : "Número Exterior",
+          "help" : "Tu número exterior.",
+          "validation" : {
+            "required" : "Número Exterior requerido."
+          }
+        },
+        "apt" : {
+          "name" : "apt",
+          "label" : "Interior",
+          "placeholder" : "Número Interior",
+          "help" : "Tu número interior.",
+          "validation" : {}
+        },
+        "building" : {
+          "name" : "building",
+          "labelResidential" : "¿Vives en edificio?",
+          "labelBusiness" : "¿Tu negocio está en un edificio?",
+          "helpResidential" : "¿Vives en un edificio?",
+          "helpBusiness" : "Tu negocio está en un edificio?",
+          "options" : {
+            "default" : "-- Seleccionar --",
+            "items" : [
+              { "label" : "Si", "value" : "Yes" },
+              { "label" : "No", "value" : "No" }
+            ]
+          },
+          "validation" : {
+            "required" : "Campo requerido."
+          }
+        },
+        "levels" : {
+          "name" : "levels",
+          "label" : "Niveles de tu edificio",
+          "placeholder" : "Niveles",
+          "help" : "Niveles en tu edificio.  Si vives en casa o tu negocio es un local, usa 1.",
+          "validation" : {
+            "required" : "Niveles requerido.",
+            "invalid" : "Niveles inválido.  Debe ser entre 1 y 99."
+          }
         }
-      },
-      "number" : {
-        "name" : "number",
-        "label" : "Número Exterior",
-        "placeholder" : "Número Exterior",
-        "help" : "Tu número exterior.",
-        "validation" : {
-          "required" : "Número Exterior requerido."
-        }
-      },
-      "apt" : {
-        "name" : "apt",
-        "label" : "Interior",
-        "placeholder" : "Número Interior",
-        "help" : "Tu número interior.",
-        "validation" : {}
-      },
-      "levels" : {
-        "name" : "levels",
-        "label" : "Niveles",
-        "placeholder" : "Niveles",
-        "help" : "Niveles en tu edificio.  Si vives en casa o tu negocio es un local, usa 1.",
-        "validation" : {
-          "required" : "Niveles requerido.",
-          "invalid" : "Niveles inválido.  Debe ser entre 1 y 99."
-        }
-      },
-      "submit" : {
-        "label"  : "Enviar"
       }
     }
   }
