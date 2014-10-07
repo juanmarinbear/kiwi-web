@@ -146,7 +146,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
           }
         })
         .then(function(data) {
-          return data.data.results; 
+          return data.data.results;
         });
       }
     }

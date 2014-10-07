@@ -6,7 +6,7 @@ kiwiWeb.controller('PayCtrl', function ($scope, $filter, lang) {
   $scope.data = {};
   $scope.data.idSubmit = {};
   $scope.data.idSubmit.messages = [];
-  $scope.data.errors = []
+  $scope.data.errors = [];
   $scope.data.step = 'idSubmit';
 
   $scope.data.idSubmitOriginal = angular.copy($scope.data.mobileSignIn);

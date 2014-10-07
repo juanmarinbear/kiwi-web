@@ -2,7 +2,7 @@
 
 kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, Parse, lang, states) {
   $scope.lang = lang.data;
-  $scope.states = states; 
+  $scope.states = states;
   $scope.changeTitle($scope.lang.title);
   $scope.forms = {};
   $scope.ticket = {};
@@ -40,10 +40,10 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, Parse, lang, s
     })
     .then(function(data) {
       $scope.municipalities = data.data.results;
-      $scope.districts = []; 
-      $scope.ticket.district = null; 
-      $scope.ticket.city = null; 
-      $scope.ticket.zip = null; 
+      $scope.districts = [];
+      $scope.ticket.district = null;
+      $scope.ticket.city = null;
+      $scope.ticket.zip = null;
     });
   };
 
@@ -67,8 +67,8 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, Parse, lang, s
     })
     .then(function(data) {
       $scope.districts = data.data.results;
-      $scope.ticket.district = null; 
-      $scope.ticket.zip = null; 
+      $scope.ticket.district = null;
+      $scope.ticket.zip = null;
     });
   
   };
@@ -95,7 +95,7 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, Parse, lang, s
     .then(function(data) {
       $scope.district = data.data.results[0];
       $scope.ticket.district = $scope.district.name;
-      $scope.ticket.zip = $scope.district.zip; 
+      $scope.ticket.zip = $scope.district.zip;
     });
   
   };
@@ -110,7 +110,7 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, Parse, lang, s
       url: 'https://api.parse.com/1/classes/District',
       params: {
         where: {
-          zip: $scope.ticket.zip 
+          zip: $scope.ticket.zip
         },
         order: 'name'
       }
@@ -119,11 +119,11 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, Parse, lang, s
       $scope.district = data.data.results;
       if(!$scope.district.length) {
         $scope.errors.zip = true;
-        $scope.districts = []; 
-        $scope.municipalities = []; 
-        $scope.ticket.state = null; 
-        $scope.ticket.city = null; 
-        $scope.ticket.district = null; 
+        $scope.districts = [];
+        $scope.municipalities = [];
+        $scope.ticket.state = null;
+        $scope.ticket.city = null;
+        $scope.ticket.district = null;
         return;
       }
       $scope.errors.zip = false;
@@ -164,8 +164,8 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, Parse, lang, s
           if($scope.district.length > 1) {
             $scope.districts = $scope.district;
           } else {
-            $scope.districts = data.data.results; 
-          };
+            $scope.districts = data.data.results;
+          }
           $scope.ticket.district = $scope.district[0].name;
           $scope.ticket.city = $scope.district[0].municipality;
           $scope.ticket.state = $scope.district[0].state;
@@ -192,15 +192,15 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, Parse, lang, s
           requester: {
             name: $scope.ticket.name + ' ' + $scope.ticket.last,
             email: $scope.ticket.email,
-            locale_id: '2',
-            user_fields: {
-              mobile_mx: $scope.ticket.mobile 
+            localeId: '2',
+            userFields: {
+              mobileMx: $scope.ticket.mobile
             }
           },
           subject: 'Sales ' + '- ' + $scope.ticket.service,
           description: 'Sales ' + '- ' + $scope.ticket.service,
-          ticket_form_id: '22855',
-          custom_fields: [
+          ticketFormId: '22855',
+          customFields: [
             {
               id: '22630199',
               value: $scope.ticket.service
@@ -239,7 +239,7 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, Parse, lang, s
             },
             {
               id: '22739669',
-              value: $scope.ticket.building 
+              value: $scope.ticket.building
             },
             {
               id: '22630209',
@@ -250,7 +250,7 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, Parse, lang, s
       };
 
       $http({
-        method: 'POST', 
+        method: 'POST',
         url: zendesk.api + '/tickets.json',
         headers: {
           'Accept': 'application/json',
@@ -258,17 +258,17 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, Parse, lang, s
           'Authorization': 'Basic ' + btoa(zendesk.username + '/token:' + zendesk.token)
         },
         data: JSON.stringify(ticket)
-        }).
-        success(function(data, status, headers, config) {
-          console.log('Success!');
-          console.log(data);
-          $scope.success = true;
-        }).
-        error(function(data, status, headers, config) {
-          console.log('Error!');
-          console.log(data);
-        });
-      }
+      }).
+      success(function(data) {
+        console.log('Success!');
+        console.log(data);
+        $scope.success = true;
+      }).
+      error(function(data) {
+        console.log('Error!');
+        console.log(data);
+      });
+    }
     $scope.loading = false;
     $scope.submitted = true;
   };
