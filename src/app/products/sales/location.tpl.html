@@ -55,8 +55,8 @@
       <input type="text" name="apt" placeholder="{{lang.forms.location.inputs.number.placeholder}}" data-ng-model="ticket.apt">
     </div>
     <div class="pure-u-1">
-      <label for="{{lang.forms.location.inputs.building.name}}" data-ng-bind="lang.forms.location.inputs.building.labelResidential" data-ng-show="ticket.service == 'residential'"></label>
-      <label for="{{lang.forms.location.inputs.building.name}}" data-ng-bind="lang.forms.location.inputs.building.labelBusiness" data-ng-show="ticket.service != 'residential'"></label>
+      <label for="{{lang.forms.location.inputs.building.name}}" data-ng-bind="lang.forms.location.inputs.building.labelResidential" data-ng-show="ticket.service == 'Residential'"></label>
+      <label for="{{lang.forms.location.inputs.building.name}}" data-ng-bind="lang.forms.location.inputs.building.labelBusiness" data-ng-show="ticket.service != 'Residential'"></label>
       <select name="building" data-ng-model="ticket.building" data-ng-options="item.value as item.label for item in lang.forms.location.inputs.building.options.items" required>
         <option value="" data-ng-bind="lang.forms.location.inputs.building.options.default" selected></option>
       </select>
@@ -64,7 +64,7 @@
     <div class="pure-u-1" data-ng-show="submitted && forms.location.$invalid">
       <p data-ng-show="forms.location.building.$error.required" data-ng-bind="lang.forms.location.inputs.building.validation.required"></p>
     </div>
-    <div class="pure-u-1" data-ng-show="ticket.building == 'Yes'">
+    <div class="pure-u-1" data-ng-show="ticket.building == 'building'">
       <label for="{{lang.forms.location.inputs.levels.name}}" data-ng-bind="lang.forms.location.inputs.levels.label"></label>
       <input type="text" name="levels" placeholder="{{lang.forms.location.inputs.levels.placeholder}}" maxlength="2" data-ng-model="ticket.levels" data-ng-maxlength="2" data-ng-pattern="/\d{1,2}/" data-ng-required="ticket.building === true">
     </div>

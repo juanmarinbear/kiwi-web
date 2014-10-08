@@ -6,6 +6,7 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, Parse, lang, s
   $scope.changeTitle($scope.lang.title);
   $scope.forms = {};
   $scope.ticket = {};
+  $scope.ticket.type = 'Sales';
   $scope.step = 'client';
   $scope.errors = {};
 
@@ -174,6 +175,29 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, Parse, lang, s
     });
   };
 
+  $scope.submit = function() {
+    $http({
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Parse-Application-Id' : '1r3I7GFxkiMDBE6tbvSnrCLhc7kX0pi9KSc0cWG6',
+        'X-Parse-REST-API-Key' : 'WVJmv33FpwJUBoXPoNaUpXbhmboW2uvYjmjQaCgI'
+      },
+      url: 'https://api.parse.com/1/classes/Sales',
+      data: $scope.ticket
+    }).
+    success(function(data) {
+      console.log('Success!');
+      console.log(data);
+      $scope.success = true;
+    }).
+    error(function(data) {
+      console.log('Error!');
+      console.log(data);
+    });
+  };
+
+/*
   var zendesk = {};
 
   zendesk.username = 'kiwiadmin@kiwinetworks.com';
@@ -272,4 +296,5 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, Parse, lang, s
     $scope.loading = false;
     $scope.submitted = true;
   };
+*/
 });
