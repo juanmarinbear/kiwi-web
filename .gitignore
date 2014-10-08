@@ -19,6 +19,12 @@ cloudCode/cloud/auth.js
 cloudCode/config/global.json
 
 # --------------------
+# API 
+# --------------------
+
+/src/common/services/auth.js
+
+# --------------------
 # Misc 
 # --------------------
 dist
