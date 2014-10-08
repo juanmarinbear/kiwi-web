@@ -1,6 +1,17 @@
+var sales = require('cloud/sales.js');
 
-// Use Parse.Cloud.define to define as many cloud functions as you want.
-// For example:
-Parse.Cloud.define("hello", function(request, response) {
-  response.success("Hello world!");
+Parse.Cloud.beforeSave("Sales", function(request, response) {
+
+  var ticket = JSON.stringify(request.object);
+  ticket = JSON.parse(ticket);
+
+  if(sales.valid(ticket)) {
+    sales.save(ticket, function () {
+      response.success();
+    }, function (error) {
+      response.error(error);
+    });
+  } else {
+    response.error('Error!');
+  }
 });
