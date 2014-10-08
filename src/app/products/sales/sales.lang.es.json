@@ -30,11 +30,11 @@
           "options" : {
             "default" : "-- Servicio --",
             "items" : [
-              { "label" : "Residential", "value" : "residential" },
-              { "label" : "Business", "value" : "business" },
-              { "label" : "Dedicated", "value" : "dedicated" },
-              { "label" : "Metro Mesh", "value" : "metromesh" },
-              { "label" : "Otro", "value" : "other" }
+              { "label" : "Residential", "value" : "Residential" },
+              { "label" : "Business", "value" : "Business" },
+              { "label" : "Dedicated", "value" : "Dedicated" },
+              { "label" : "Metro Mesh", "value" : "Metromesh" },
+              { "label" : "Otro", "value" : "Other" }
             ]
           },
           "validation" : {
@@ -86,7 +86,7 @@
           "options" : {
             "default" : "-- Contacto --",
             "items" : [
-              { "label" : "Móvil", "value" : "Phone"},
+              { "label" : "Móvil", "value" : "Mobile"},
               { "label" : "Email", "value" : "Email"},
               { "label" : "WhatsApp", "value" : "WhatsApp"}
             ]
@@ -178,8 +178,8 @@
           "options" : {
             "default" : "-- Seleccionar --",
             "items" : [
-              { "label" : "Si", "value" : "Yes" },
-              { "label" : "No", "value" : "No" }
+              { "label" : "Si", "value" : "building" },
+              { "label" : "No", "value" : "ground" }
             ]
           },
           "validation" : {
