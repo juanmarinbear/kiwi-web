@@ -5,7 +5,7 @@
  * Submits object to Zendesk.
  */
 
-var validate = require('cloud/validate.min.js');
+var validate = require('cloud/lib/validate.min.js');
 var constraints = require('cloud/constraints.js');
 var zendeskFields = require('cloud/zendeskFields.js');
 var auth = require('cloud/auth.js');
