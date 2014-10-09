@@ -37,6 +37,8 @@ module.exports = {
         description: ticket.type + ' - ' + ticket.service,
         ticket_form_id: zendeskFields.sales,
         custom_fields: [
+          { id: zendeskFields.step, value: ticket.step },
+          { id: zendeskFields.outcome, value: ticket.outcome },
           { id: zendeskFields.service, value: ticket.service },
           { id: zendeskFields.contact, value: ticket.contact },
           { id: zendeskFields.zip, value: ticket.zip },

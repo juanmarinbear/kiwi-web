@@ -4,8 +4,11 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, MxPostApi, Kiw
   $scope.lang = lang.data;
   $scope.changeTitle($scope.lang.title);
   $scope.forms = {};
-  $scope.ticket = {};
-  $scope.ticket.type = 'Sales';
+  $scope.ticket = {
+    type: 'Sales',
+    step: 'Lead',
+    outcome: 'Open'
+  };
   $scope.step = 'client';
   $scope.errors = {};
 
