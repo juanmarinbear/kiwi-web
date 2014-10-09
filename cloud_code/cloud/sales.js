@@ -40,6 +40,7 @@ module.exports = {
           { id: zendeskFields.step, value: ticket.step },
           { id: zendeskFields.outcome, value: ticket.outcome },
           { id: zendeskFields.service, value: ticket.service },
+          { id: zendeskFields.company, value: ticket.company},
           { id: zendeskFields.contact, value: ticket.contact },
           { id: zendeskFields.zip, value: ticket.zip },
           { id: zendeskFields.state, value: ticket.state },
