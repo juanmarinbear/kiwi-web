@@ -6,9 +6,17 @@ kiwiWeb.controller('SupportCtrl', function ($scope, $stateParams, $http, KiwiWeb
   $scope.changeTitle($scope.lang.title);
   $scope.forms = {};
   $scope.ticket = {
-    type: 'Support'
+    type: 'Technical'
   };
   $scope.errors = {};
+
+  $scope.updateType = function () {
+    if($scope.ticket.subject == 'Billing') {
+      $scope.ticket.type = 'Administrative';
+    } else {
+      $scope.ticket.type = 'Technical';
+    }
+  };
 
   $scope.submit = function () {
     if($scope.forms.support.$valid) {

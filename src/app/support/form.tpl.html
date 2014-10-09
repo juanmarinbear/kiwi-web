@@ -11,7 +11,7 @@
     </div>
     <div class="pure-u-1">
       <label for="{{support.inputs.subject.name}}" data-ng-bind="support.inputs.subject.label"></label>
-      <select name="subject" data-ng-model="ticket.subject" data-ng-options="item.value as item.label for item in support.inputs.subject.options.items" required autofocus>
+      <select name="subject" data-ng-model="ticket.subject" data-ng-change="updateType()" data-ng-options="item.value as item.label for item in support.inputs.subject.options.items" required>
         <option value="" data-ng-bind="support.inputs.subject.options.default" selected></option>
       </select>
     </div>
