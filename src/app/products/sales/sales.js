@@ -24,12 +24,14 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, MxPostApi, Kiw
   $scope.next = function() {
     $scope.loading = true;
     $scope.step = 'location';
+    $scope.forms.client.submitted = true;
     $scope.loading = false;
   };
 
   $scope.prev = function() {
     $scope.loading = true;
     $scope.step = 'client';
+    $scope.forms.client.submitted = false;
     $scope.loading = false;
   };
 
@@ -107,7 +109,6 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, MxPostApi, Kiw
         console.log(error);
       });
     }
-    $scope.forms.client.submitted = true;
     $scope.forms.location.submitted = true;
   };
 });

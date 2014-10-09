@@ -4,7 +4,7 @@
       <label for="{{location.inputs.zip.name}}" data-ng-bind="location.inputs.zip.label"></label>
       <input type="text" name="zip" placeholder="{{location.inputs.zip.placeholder}}" maxlength="5" data-ng-model="ticket.zip" data-ng-pattern="/\d{5}/" data-ng-maxlength="5" data-ng-keyup="forms.location.zip.$valid && geoZip()" required autofocus>
     </div>
-    <div class="pure-u-1" data-ng-show="(submitted && forms.location.$invalid) || (errors.zip)">
+    <div class="pure-u-1" data-ng-show="(forms.location.submitted && forms.location.$invalid) || (errors.zip)">
       <p data-ng-show="forms.location.zip.$error.required" data-ng-bind="location.inputs.zip.validation.required"></p>
       <p data-ng-show="forms.location.zip.$error.pattern || forms.location.zip.$error.maxlength" data-ng-bind="location.inputs.zip.validation.invalid"></p>
       <p data-ng-show="errors.zip" data-ng-bind="location.inputs.zip.validation.inexistent"></p>
@@ -15,7 +15,7 @@
         <option value="" data-ng-bind="location.inputs.state.options.default" selected></option>
       </select>
     </div>
-    <div class="pure-u-1" data-ng-show="submitted && forms.location.$invalid">
+    <div class="pure-u-1" data-ng-show="forms.location.submitted && forms.location.$invalid">
       <p data-ng-show="forms.location.state.$error.required" data-ng-bind="location.inputs.state.validation.required"></p>
     </div>
     <div class="pure-u-1">
@@ -24,7 +24,7 @@
         <option value="" data-ng-bind="location.inputs.municipality.options.default" selected></option>
       </select>
     </div>
-    <div class="pure-u-1" data-ng-show="submitted && forms.location.$invalid">
+    <div class="pure-u-1" data-ng-show="forms.location.submitted && forms.location.$invalid">
       <p data-ng-show="forms.location.municipality.$error.required" data-ng-bind="location.inputs.municipality.validation.required"></p>
     </div>
     <div class="pure-u-1">
@@ -33,21 +33,21 @@
         <option value="" data-ng-bind="location.inputs.district.options.default" selected></option>
       </select>
     </div>
-    <div class="pure-u-1" data-ng-show="submitted && forms.location.$invalid">
+    <div class="pure-u-1" data-ng-show="forms.location.submitted && forms.location.$invalid">
       <p data-ng-show="forms.location.district.$error.required" data-ng-bind="location.inputs.district.validation.required"></p>
     </div>
     <div class="pure-u-1">
       <label for="{{location.inputs.street.name}}" data-ng-bind="location.inputs.street.label"></label>
       <input type="text" name="street" placeholder="{{location.inputs.street.placeholder}}" data-ng-model="ticket.street" required>
     </div>
-    <div class="pure-u-1" data-ng-show="submitted && forms.location.$invalid">
+    <div class="pure-u-1" data-ng-show="forms.location.submitted && forms.location.$invalid">
       <p data-ng-show="forms.location.street.$error.required" data-ng-bind="location.inputs.street.validation.required"></p>
     </div>
     <div class="pure-u-1">
       <label for="{{location.inputs.number.name}}" data-ng-bind="location.inputs.number.label"></label>
       <input type="text" name="number" placeholder="{{location.inputs.number.placeholder}}" data-ng-model="ticket.number" required>
     </div>
-    <div class="pure-u-1" data-ng-show="submitted && forms.location.$invalid">
+    <div class="pure-u-1" data-ng-show="forms.location.submitted && forms.location.$invalid">
       <p data-ng-show="forms.location.number.$error.required" data-ng-bind="location.inputs.number.validation.required"></p>
     </div>
     <div class="pure-u-1">
@@ -61,14 +61,14 @@
         <option value="" data-ng-bind="location.inputs.building.options.default" selected></option>
       </select>
     </div>
-    <div class="pure-u-1" data-ng-show="submitted && forms.location.$invalid">
+    <div class="pure-u-1" data-ng-show="forms.location.submitted && forms.location.$invalid">
       <p data-ng-show="forms.location.building.$error.required" data-ng-bind="location.inputs.building.validation.required"></p>
     </div>
     <div class="pure-u-1" data-ng-show="ticket.building == 'building'">
       <label for="{{location.inputs.levels.name}}" data-ng-bind="location.inputs.levels.label"></label>
       <input type="text" name="levels" placeholder="{{location.inputs.levels.placeholder}}" maxlength="2" data-ng-model="ticket.levels" data-ng-maxlength="2" data-ng-pattern="/\d{1,2}/" data-ng-required="ticket.building == 'building'">
     </div>
-    <div class="pure-u-1" data-ng-show="submitted && forms.location.$invalid && (ticket.building === true)">
+    <div class="pure-u-1" data-ng-show="forms.location.submitted && forms.location.$invalid && (ticket.building === true)">
       <p data-ng-show="forms.location.levels.$error.required" data-ng-bind="location.inputs.levels.validation.required"></p>
       <p data-ng-show="forms.location.levels.$error.pattern || location.levels.$error.maxlength" data-ng-bind="location.inputs.levels.validation.invalid"></p>
     </div>

@@ -9,7 +9,7 @@
   </div>
   <div id="location" class="pure-u-1" data-ng-show="step === 'location'" data-ng-include src="'/app/products/sales/location.tpl.html'">
   </div>
-  <div id="actions" class="pure-u-1">
+  <div class="pure-u-1">
     <div data-ng-show="step === 'location'">
       <button class="pure-button button-warning" data-ng-bind="location.inputs.previous.label" data-ng-click="prev()"></button>
       <button class="pure-button button-success" data-ng-bind="location.inputs.submit.label" class="pure-button pure-button-primary" data-ng-class="{'pure-button-disabled': forms.location.$invalid || forms.client.$invalid}" data-ng-disabled="forms.location.$invalid || forms.client.$invalid" data-ng-click="submit()"></button>
