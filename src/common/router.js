@@ -132,6 +132,24 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
         .then(function(data) {
           return data;
         });
+      },
+      client: function($http) {
+        return $http({
+          method: 'GET',
+          url: 'app/products/sales/client.lang.es.json'
+        })
+        .then(function(data) {
+          return data;
+        });
+      },
+      location: function($http) {
+        return $http({
+          method: 'GET',
+          url: 'app/products/sales/location.lang.es.json'
+        })
+        .then(function(data) {
+          return data;
+        });
       }
     }
   })

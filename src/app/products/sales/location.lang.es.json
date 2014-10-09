@@ -1,0 +1,109 @@
+{
+  "location" : {
+    "inputs" : {
+      "zip" : {
+        "name" : "zip",
+        "label" : "Código Postal",
+        "placeholder" : "Código Postal",
+        "help" : "Tu código postal.",
+        "validation" : {
+          "required" : "Código Postal requerido.",
+          "invalid" : "Código Postal inválido.  Deben ser 5 dígitos.",
+          "inexistent" : "Código Postal inexistente."
+        }
+      },
+      "state" : {
+        "name" : "state",
+        "label" : "Estado",
+        "help" : "Tu estado.",
+        "options" : {
+          "default" : "-- Estado --"
+        },
+        "validation" : {
+          "required" : "Estado requerido."
+        }
+      },
+      "municipality" : {
+        "name" : "municipality",
+        "label" : "Ciudad / Delegación / Municipio",
+        "help" : "Tu ciudad, delegación o municipio.",
+        "options" : {
+          "default" : "-- Ciudad --"
+        },
+        "validation" : {
+          "required" : "Ciudad requerida."
+        }
+      },
+      "district" : {
+        "name" : "district",
+        "label" : "Colonia",
+        "placeholder" : "Colonia",
+        "help" : "Tu colonia.",
+        "options" : {
+          "default" : "-- Colonia --"
+        },
+        "validation" : {
+          "required" : "Colonia requerida."
+        }
+      },
+      "street" : {
+        "name" : "street",
+        "label" : "Calle",
+        "placeholder" : "Calle",
+        "help" : "Tu calle.",
+        "validation" : {
+          "required" : "Calle requerida."
+        }
+      },
+      "number" : {
+        "name" : "number",
+        "label" : "Número Exterior",
+        "placeholder" : "Número Exterior",
+        "help" : "Tu número exterior.",
+        "validation" : {
+          "required" : "Número Exterior requerido."
+        }
+      },
+      "apt" : {
+        "name" : "apt",
+        "label" : "Interior",
+        "placeholder" : "Número Interior",
+        "help" : "Tu número interior.",
+        "validation" : {}
+      },
+      "building" : {
+        "name" : "building",
+        "labelResidential" : "¿Vives en edificio?",
+        "labelBusiness" : "¿Tu negocio está en un edificio?",
+        "helpResidential" : "¿Vives en un edificio?",
+        "helpBusiness" : "Tu negocio está en un edificio?",
+        "options" : {
+          "default" : "-- Seleccionar --",
+          "items" : [
+            { "label" : "Si", "value" : "building" },
+            { "label" : "No", "value" : "ground" }
+          ]
+        },
+        "validation" : {
+          "required" : "Campo requerido."
+        }
+      },
+      "levels" : {
+        "name" : "levels",
+        "label" : "Niveles de tu edificio",
+        "placeholder" : "Niveles",
+        "help" : "Niveles en tu edificio.  Si vives en casa o tu negocio es un local, usa 1.",
+        "validation" : {
+          "required" : "Niveles requerido.",
+          "invalid" : "Niveles inválido.  Debe ser entre 1 y 99."
+        }
+      },
+      "previous" : {
+        "label" : "Anterior"
+      },
+      "submit" : {
+        "label" : "Enviar"
+      }
+    }
+  }
+}
