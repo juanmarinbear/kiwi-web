@@ -58,8 +58,22 @@ module.exports = {
       url: 'https://kiwinetworks.zendesk.com/api/v2/tickets.json',
       headers: auth.zendesk.headers, 
       body: this.format(ticket),
-      success: function () {
-        success(); 
+      success: function (httpResponse) {
+        success(httpResponse.data); 
+      },
+      error: function(httpResponse) {
+        error('Request failed with response code ' + httpResponse.status);
+      }
+    });  
+  },
+  update: function (zendeskId, ticket, success, error) {
+    Parse.Cloud.httpRequest({
+      method: 'PUT',
+      url: 'https://kiwinetworks.zendesk.com/api/v2/tickets/' + zendeskId + '.json',
+      headers: auth.zendesk.headers, 
+      body: ticket,
+      success: function (httpResponse) {
+        success(httpResponse.data); 
       },
       error: function(httpResponse) {
         error('Request failed with response code ' + httpResponse.status);
