@@ -121,8 +121,8 @@
             "required" : "Estado requerido."
           }
         },
-        "city" : {
-          "name" : "city",
+        "municipality" : {
+          "name" : "municipality",
           "label" : "Ciudad / Delegación / Municipio",
           "help" : "Tu ciudad, delegación o municipio.",
           "options" : {
