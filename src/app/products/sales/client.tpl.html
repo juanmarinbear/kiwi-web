@@ -10,6 +10,10 @@
       <p data-ng-show="forms.client.service.$error.required" data-ng-bind="client.inputs.service.validation.required"></p>
     </div>
     <div class="pure-u-1">
+      <label for="{{client.inputs.company.name}}" data-ng-bind="client.inputs.company.label"></label>
+      <input type="text" name="company" placeholder="{{client.inputs.company.placeholder}}" data-ng-model="ticket.company">
+    </div>
+    <div class="pure-u-1">
       <label for="{{client.inputs.name.name}}" data-ng-bind="client.inputs.name.label"></label>
       <input type="text" name="name" placeholder="{{client.inputs.name.placeholder}}" data-ng-model="ticket.name" required>
     </div>
