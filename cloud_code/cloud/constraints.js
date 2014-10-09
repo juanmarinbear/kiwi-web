@@ -4,6 +4,15 @@
  */
 
 module.exports = {
+  subject: {
+    presence: true,
+    inclusion: [
+      'Desconexión',
+      'Lentitud',
+      'Facturación y Cobranza',
+      'Otro'
+    ]
+  },
   step: {
     presence: true,
     inclusion: [
