@@ -398,6 +398,15 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
         .then(function(data) {
           return data;
         });
+      },
+      support: function($http) {
+        return $http({
+          method: 'GET',
+          url: 'app/support/form.lang.es.json'
+        })
+        .then(function(data) {
+          return data;
+        });
       }
     }
   })

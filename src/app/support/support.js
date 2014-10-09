@@ -1,18 +1,16 @@
 'use strict';
 
-kiwiWeb.controller('SupportCtrl', function ($scope, $stateParams, $http, lang) {
+kiwiWeb.controller('SupportCtrl', function ($scope, $stateParams, $http, lang, support) {
   $scope.lang = lang.data;
+  $scope.support = support.data.support;
   $scope.changeTitle($scope.lang.title);
-  $scope.data = {};
+  $scope.forms = {};
+  $scope.ticket = {
+    type: 'Support'
+  };
+  $scope.errors = {};
 
   $scope.submit = function() {
-
-    if($scope.support.$valid) {
-      $scope.loading = true;
-      $scope.success = true;
-      $scope.loading = false;
-      $scope.$apply();
-    }
-    $scope.submitted = true;
+    $scope.forms.support.submitted = true;
   };
 });
