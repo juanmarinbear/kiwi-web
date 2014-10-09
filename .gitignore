@@ -15,8 +15,8 @@ src/bower_components
 # Parse 
 # --------------------
 
-cloudCode/cloud/auth.js
-cloudCode/config/global.json
+cloud_code/cloud/auth.js
+cloud_code/config/global.json
 
 # --------------------
 # API 

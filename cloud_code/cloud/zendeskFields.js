@@ -9,7 +9,7 @@ module.exports = {
   contact: '22785105',
   zip: '22739659',
   state: '22630289',
-  city: '22630299',
+  municipality: '22630299',
   district: '22739579',
   street: '22679095',
   number: '22679105',

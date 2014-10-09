@@ -48,7 +48,7 @@ module.exports = {
   state: {
     presence: true
   },
-  city: {
+  municipality: {
     presence: true
   },
   district: {
