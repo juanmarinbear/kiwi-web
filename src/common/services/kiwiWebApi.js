@@ -2,19 +2,37 @@
 
 kiwiWeb.factory('KiwiWebApi', function ($http, Auth) {
   return {
-    saveSales: function(ticket, success, error) {
-      $http({
-        method: 'POST',
-        url: 'https://api.parse.com/1/classes/Sales',
-        headers: Auth.kiwiWebApi.headers,
-        data: ticket
-      }).
-      success(function(data) {
-        success(data);
-      }).
-      error(function(data) {
-        error(data);
-      });
+    sales: {
+      save: function(ticket, success, error) {
+        $http({
+          method: 'POST',
+          url: 'https://api.parse.com/1/classes/Sales',
+          headers: Auth.kiwiWebApi.headers,
+          data: ticket
+        }).
+        success(function(data) {
+          success(data);
+        }).
+        error(function(data) {
+          error(data);
+        });
+      }
+    },
+    support: {
+      save: function(ticket, success, error) {
+        $http({
+          method: 'POST',
+          url: 'https://api.parse.com/1/classes/Support',
+          headers: Auth.kiwiWebApi.headers,
+          data: ticket
+        }).
+        success(function(data) {
+          success(data);
+        }).
+        error(function(data) {
+          error(data);
+        });
+      }
     }
   }
 });
