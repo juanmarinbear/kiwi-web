@@ -4,6 +4,26 @@
  */
 
 module.exports = {
+  step: {
+    presence: true,
+    inclusion: [
+      'Lead',
+      'Contact',
+      'Feasibility Check',
+      'Contract',
+      'Visit',
+      'Installation',
+      'Wrap Up'
+    ]
+  },
+  outcome: {
+    presence: true,
+    inclusion: [
+      'Open',
+      'Won',
+      'Lost'
+    ]
+  },
   service: {
     presence: true,
     inclusion: [
