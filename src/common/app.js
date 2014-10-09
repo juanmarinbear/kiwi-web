@@ -3,7 +3,7 @@
 var kiwiWeb = angular.module('kiwiWeb', [
   'ui.router',
   'ngAnimate',
-  'ngResource'
+  'ngResource',
 ]);
 
 kiwiWeb.controller('AppCtrl', function ($scope, Transition, Menu) {

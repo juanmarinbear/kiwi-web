@@ -19,13 +19,13 @@
       <p data-ng-show="forms.location.state.$error.required" data-ng-bind="lang.forms.location.inputs.state.validation.required"></p>
     </div>
     <div class="pure-u-1">
-      <label for="{{lang.forms.location.inputs.city.name}}" data-ng-bind="lang.forms.location.inputs.city.label"></label>
-      <select name="city" data-ng-model="ticket.city" data-ng-options="municipality.name as municipality.name for municipality in municipalities" data-ng-change="geoCity()"required>
-        <option value="" data-ng-bind="lang.forms.location.inputs.city.options.default" selected></option>
+      <label for="{{lang.forms.location.inputs.municipality.name}}" data-ng-bind="lang.forms.location.inputs.municipality.label"></label>
+      <select name="municipality" data-ng-model="ticket.municipality" data-ng-options="municipality.name as municipality.name for municipality in municipalities" data-ng-change="geoMunicipality()"required>
+        <option value="" data-ng-bind="lang.forms.location.inputs.municipality.options.default" selected></option>
       </select>
     </div>
     <div class="pure-u-1" data-ng-show="submitted && forms.location.$invalid">
-      <p data-ng-show="forms.location.city.$error.required" data-ng-bind="lang.forms.location.inputs.city.validation.required"></p>
+      <p data-ng-show="forms.location.municipality.$error.required" data-ng-bind="lang.forms.location.inputs.municipality.validation.required"></p>
     </div>
     <div class="pure-u-1">
       <label for="{{lang.forms.location.inputs.district.name}}" data-ng-bind="lang.forms.location.inputs.district.label"></label>
@@ -66,16 +66,11 @@
     </div>
     <div class="pure-u-1" data-ng-show="ticket.building == 'building'">
       <label for="{{lang.forms.location.inputs.levels.name}}" data-ng-bind="lang.forms.location.inputs.levels.label"></label>
-      <input type="text" name="levels" placeholder="{{lang.forms.location.inputs.levels.placeholder}}" maxlength="2" data-ng-model="ticket.levels" data-ng-maxlength="2" data-ng-pattern="/\d{1,2}/" data-ng-required="ticket.building === true">
+      <input type="text" name="levels" placeholder="{{lang.forms.location.inputs.levels.placeholder}}" maxlength="2" data-ng-model="ticket.levels" data-ng-maxlength="2" data-ng-pattern="/\d{1,2}/" data-ng-required="ticket.building == 'building'">
     </div>
     <div class="pure-u-1" data-ng-show="submitted && forms.location.$invalid && (ticket.building === true)">
       <p data-ng-show="forms.location.levels.$error.required" data-ng-bind="lang.forms.location.inputs.levels.validation.required"></p>
       <p data-ng-show="forms.location.levels.$error.pattern || location.levels.$error.maxlength" data-ng-bind="lang.forms.location.inputs.levels.validation.invalid"></p>
-    </div>
-    <div class="pure-u-1">
-      <pre>
-        {{ ticket | json }}
-      </pre>
     </div>
   </div>
 </form>
