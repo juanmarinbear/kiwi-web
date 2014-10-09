@@ -41,7 +41,7 @@ module.exports = {
           { id: zendeskFields.contact, value: ticket.contact },
           { id: zendeskFields.zip, value: ticket.zip },
           { id: zendeskFields.state, value: ticket.state },
-          { id: zendeskFields.city, value: ticket.city },
+          { id: zendeskFields.municipality, value: ticket.municipality },
           { id: zendeskFields.district, value: ticket.district },
           { id: zendeskFields.street, value: ticket.street },
           { id: zendeskFields.number, value: ticket.number },
