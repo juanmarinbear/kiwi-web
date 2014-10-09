@@ -19,6 +19,13 @@
           "required" : "Servicio requerido."
         }
       },
+      "company" : {
+        "name" : "company",
+        "label" : "Empresa",
+        "placeholder" : "Planta Nuclear de Springfield",
+        "help" : "Tu empresa.",
+        "validation" : {}
+      },
       "name" : {
         "name" : "name",
         "label" : "Nombre",
