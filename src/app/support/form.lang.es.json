@@ -26,10 +26,10 @@
         "options" : {
           "default" : "-- Ninguno --",
           "items" : [
-            { "label" : "Desconexión", "value" : "Down" },
-            { "label" : "Lentitud", "value" : "Slow" },
-            { "label" : "Facturación y Cobranza", "value" : "Billing" },
-            { "label" : "Otro", "value" : "Other" }
+            { "label" : "Desconexión", "value" : "Desconexión" },
+            { "label" : "Lentitud", "value" : "Lentitud" },
+            { "label" : "Facturación y Cobranza", "value" : "Facturación y Cobranza" },
+            { "label" : "Otro", "value" : "Otro" }
           ]
         },
         "validation" : {
