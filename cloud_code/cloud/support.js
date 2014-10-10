@@ -38,7 +38,7 @@ module.exports = {
         description: ticket.message == '' ? ticket.type + ' - ' + ticket.service + ' - ' + ticket.subject : ticket.message,
         ticket_form_id: zendeskFields[ticket.type.toLowerCase()],
         custom_fields: [
-          { id: zendeskFields.supportSubject, value: foldToASCII(ticket.subject).replace(/\s/g, '_').toLowerCase() },
+          { id: zendeskFields.supportSubject, value: ticket.subject == 'Other' ? 'support_other' : foldToASCII(ticket.subject).replace(/\s/g, '_').toLowerCase() },
           { id: zendeskFields.company, value: ticket.company},
           { id: zendeskFields.service, value: foldToASCII(ticket.service).replace(/\s/g, '_').toLowerCase() },
           { id: zendeskFields.contact, value: ticket.contact }
