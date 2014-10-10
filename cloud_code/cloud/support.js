@@ -6,6 +6,7 @@
  */
 
 var validate = require('cloud/lib/validate.min.js');
+var foldToASCII = require('cloud/lib/fold-to-ascii.min.js');
 var constraints = require('cloud/constraints.js');
 var zendeskFields = require('cloud/zendeskFields.js');
 var auth = require('cloud/auth.js');
@@ -13,14 +14,14 @@ var auth = require('cloud/auth.js');
 module.exports = {
 
   valid: function (ticket) {
-    if(validate(ticket, constraints)) {
+    if(validate(ticket, constraints.support)) {
       return false; 
     } else {
       return true; 
     }
   },
   errors: function (ticket) {
-    return validate(ticket, constraints);
+    return validate(ticket, constraints.support);
   },
   format: function (ticket) {
     return {
@@ -37,9 +38,9 @@ module.exports = {
         description: ticket.message == '' ? ticket.type + ' - ' + ticket.service + ' - ' + ticket.subject : ticket.message,
         ticket_form_id: zendeskFields[ticket.type.toLowerCase()],
         custom_fields: [
-          { id: zendeskFields.supportSubject, value: ticket.subject },
+          { id: zendeskFields.supportSubject, value: foldToASCII(ticket.subject).replace(/\s/g, '_').toLowerCase() },
           { id: zendeskFields.company, value: ticket.company},
-          { id: zendeskFields.service, value: ticket.service },
+          { id: zendeskFields.service, value: foldToASCII(ticket.service).replace(/\s/g, '_').toLowerCase() },
           { id: zendeskFields.contact, value: ticket.contact }
         ]
       } 
