@@ -6,6 +6,7 @@
  */
 
 var validate = require('cloud/lib/validate.min.js');
+var foldToASCII = require('cloud/lib/fold-to-ascii.min.js');
 var constraints = require('cloud/constraints.js');
 var zendeskFields = require('cloud/zendeskFields.js');
 var auth = require('cloud/auth.js');
@@ -13,14 +14,14 @@ var auth = require('cloud/auth.js');
 module.exports = {
 
   valid: function (ticket) {
-    if(validate(ticket, constraints)) {
+    if(validate(ticket, constraints.sales)) {
       return false; 
     } else {
       return true; 
     }
   },
   errors: function (ticket) {
-    return validate(ticket, constraints);
+    return validate(ticket, constraints.sales);
   },
   format: function (ticket) {
     return {
@@ -39,7 +40,7 @@ module.exports = {
         custom_fields: [
           { id: zendeskFields.step, value: ticket.step },
           { id: zendeskFields.outcome, value: ticket.outcome },
-          { id: zendeskFields.service, value: ticket.service },
+          { id: zendeskFields.service, value: foldToASCII(ticket.service).replace(/\s/g, '_').toLowerCase() },
           { id: zendeskFields.company, value: ticket.company},
           { id: zendeskFields.contact, value: ticket.contact },
           { id: zendeskFields.zip, value: ticket.zip },
