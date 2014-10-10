@@ -149,9 +149,9 @@ module.exports = {
         'Privacidad',
         'Proveeduría',
         'Prensa',
-        'Otro'
+        'Other'
       ]
-    }
+    },
     name: {
       presence: true 
     },

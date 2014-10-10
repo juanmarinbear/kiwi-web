@@ -34,8 +34,8 @@ module.exports = {
             mobile_mx: ticket.mobile 
           }
         },
-        subject: ticket.type + ' - ' + ticket.service + ' - ' + ticket.subject,
-        description: ticket.message == '' ? ticket.type + ' - ' + ticket.service + ' - ' + ticket.subject : ticket.message,
+        subject: ticket.type + ' - ' + ticket.subject,
+        description: ticket.message,
         ticket_form_id: zendeskFields.contactForm,
         custom_fields: [
           { id: zendeskFields.contactSubject, value: ticket.subject == 'Other' ? 'contact_other' : foldToASCII(ticket.subject).replace(/\s/g, '_').toLowerCase() },
