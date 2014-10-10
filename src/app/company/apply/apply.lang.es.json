@@ -1,109 +1,12 @@
 {
-  "title" : "Aplicación de Trabajo",
-  "form" : {
-    "name" : "apply",
-    "art" : "",
-    "inputs" : {
-      "job" : {
-        "name" : "job",
-        "label" : "Puesto",
-        "help" : "¿Para qué puesto deseas aplicar?",
-        "options" : {
-          "default" : "-- Ninguno --",
-          "items" : [
-            { "label" : "Ingeniero en Redes", "value" : "network" },
-            { "label" : "Ingeniero de Soluciones", "value" : "solutions" },
-            { "label" : "Ingeniero en Software", "value" : "software" }
-          ]
-        },
-        "validation" : {
-          "required" : "Puesto requerido."
-        }
-      },
-      "location" : {
-        "name" : "location",
-        "label" : "Ubicación",
-        "help" : "¿En qué plaza deseas aplicar?",
-        "options" : {
-          "default" : "-- Ninguno --",
-          "items" : [
-            { "label" : "Distrito Federal", "value" : "dif" },
-            { "label" : "Puebla", "value" : "pue" },
-            { "label" : "Estado de México", "value" : "mex" }
-          ]
-        },
-        "validation" : {
-          "required" : "Ubicación requerida."
-        }
-      },
-      "name" : {
-        "name" : "name",
-        "label" : "Nombre",
-        "placeholder" : "Homero",
-        "help" : "Tu nombre.",
-        "validation" : {
-          "required" : "Nombre requerido."
-        }
-      },
-      "last" : {
-        "name" : "last",
-        "label" : "Apellido",
-        "placeholder" : "Simpson",
-        "help" : "Tu apellido.",
-        "validation" : {
-          "required" : "Apellido requerido."
-        }
-      },
-      "email" : {
-        "name" : "email",
-        "label" : "Email",
-        "placeholder" : "homero.simpson@gmail.com",
-        "help" : "Tu email.",
-        "validation" : {
-          "required" : "Email requerido.",
-          "invalid" : "Email inválido."
-        }
-      },
-      "mobile" : {
-        "name" : "mobile",
-        "label" : "Móvil",
-        "placeholder" : "Móvil 10 dígitos",
-        "help" : "Tu móvil, 10 dígitos.",
-        "validation" : {
-          "required" : "Móvil requerido.",
-          "invalid" : "Móvil inválido.  Deben ser 10 dígitos."
-        }
-      },
-      "education" : {
-        "name" : "education",
-        "label" : "Educación",
-        "help" : "Máximo nivel de escolaridad terminado.",
-        "options" : {
-          "default" : "-- Ninguno --",
-          "items" : [
-            { "label" : "Preparatoria", "value" : "highschool" },
-            { "label" : "Licenciatura", "value" : "college" },
-            { "label" : "Maestría", "value" : "graduate" },
-            { "label" : "Doctorado", "value" : "doctoral" }
-          ]
-        },
-        "validation" : {
-          "required" : "Educación requerida."
-        }
-      },
-      "experience" : {
-        "name" : "experience",
-        "label" : "Experiencia",
-        "placeholder" : "Años",
-        "help" : "Años de experiencia realizando esta labor o similar.",
-        "validation" : {
-          "required" : "Experiencia requerida.",
-          "number" : "Experiencia debe ser dígitos."
-        }
-      },
-      "submit" : {
-        "label"  : "Enviar"
-      }
-    }
-  }
+  "title" : "Aplicación",
+  "subtitle" : "¿Quieres trabajar con nosotros?",
+  "paragraphs" : [
+    "Con esta forma puedes aplicar a alguna de nuestras vacantes.",
+    "En cuanto la llenes, te contactaremos para informarte los siguientes pasos.",
+    "Necesitaras tu Curriculum en PDF.",
+    "Tus datos están seguros, no los compartimos con terceros, ni te enviaremos correos que no solicitaste (Marketing, comunicados, etc...).",
+    "Únicamente usaremos tus datos para dar seguimiento al asunto por el que nos contactaste.",
+    "Para conocer más sobre nuestras políticas de privacidad, da click aquí."
+  ]
 }
