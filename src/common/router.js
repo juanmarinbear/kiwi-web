@@ -214,6 +214,15 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
         .then(function(data) {
           return data;
         });
+      },
+      apply: function($http) {
+        return $http({
+          method: 'GET',
+          url: 'app/company/apply/form.lang.es.json'
+        })
+        .then(function(data) {
+          return data;
+        });
       }
     }
   })
