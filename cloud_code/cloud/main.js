@@ -1,5 +1,6 @@
 var sales = require('cloud/sales.js');
 var support = require('cloud/support.js');
+var contact = require('cloud/contact.js');
 
 Parse.Cloud.beforeSave("Sales", function(request, response) {
 
@@ -55,7 +56,37 @@ Parse.Cloud.afterSave("Support", function(request) {
       external_id: request.object.id
     }
   };
-  sales.update(zendeskId, ticket, function (data) {
+  support.update(zendeskId, ticket, function (data) {
+  }, function (error) {
+    console.error("Got an error " + error.code + " : " + error.message);
+  });
+});
+
+Parse.Cloud.beforeSave("Contact", function(request, response) {
+
+  var ticket = JSON.stringify(request.object);
+  ticket = JSON.parse(ticket);
+
+  if(contact.valid(ticket)) {
+    contact.save(ticket, function (data) {
+      request.object.set('zendeskId', data.ticket.id.toString());
+      response.success();
+    }, function (error) {
+      response.error(error);
+    });
+  } else {
+    response.error(contact.errors(ticket));
+  }
+});
+
+Parse.Cloud.afterSave("Contact", function(request) {
+  var zendeskId = request.object.get('zendeskId');
+  var ticket = {
+    ticket: {
+      external_id: request.object.id
+    }
+  };
+  contact.update(zendeskId, ticket, function (data) {
   }, function (error) {
     console.error("Got an error " + error.code + " : " + error.message);
   });

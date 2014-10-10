@@ -1,35 +1,17 @@
 {
-  "support" : {
+  "contact" : {
     "inputs" : {
-      "service" : {
-        "name" : "service",
-        "label" : "Servicio",
-        "help" : "¿Qué servicio contrataste?",
-        "options" : {
-          "default" : "-- Ninguno --",
-          "items" : [
-            { "label" : "Residential", "value" : "Residential" },
-            { "label" : "Business", "value" : "Business" },
-            { "label" : "Dedicated", "value" : "Dedicated" },
-            { "label" : "Metro Mesh", "value" : "Metro Mesh" },
-            { "label" : "Otro", "value" : "Other" }
-          ]
-        },
-        "validation" : {
-          "required" : "Servicio requerido."
-        }
-      },
       "subject" : {
         "name" : "subject",
         "label" : "Asunto",
-        "help" : "¿Cuál es el problema?",
+        "help" : "¿Para qué nos contactas?",
         "options" : {
           "default" : "-- Ninguno --",
           "items" : [
-            { "label" : "Desconexión", "value" : "Desconexión" },
-            { "label" : "Lentitud", "value" : "Lentitud" },
-            { "label" : "Facturación y Cobranza", "value" : "Facturación y Cobranza" },
-            { "label" : "Otro", "value" : "Otro" }
+            { "label" : "Privacidad", "value" : "Privacidad" },
+            { "label" : "Proveeduría", "value" : "Proveeduría" },
+            { "label" : "Prensa", "value" : "Prensa" },
+            { "label" : "Otro", "value" : "Other" }
           ]
         },
         "validation" : {
@@ -100,9 +82,11 @@
       "message" : {
         "name" : "message",
         "label" : "Mensaje",
-        "placeholder" : "¿Quieres darnos más información?",
-        "help" : "¿Quieres darnos más información?",
-        "validation" : {}
+        "placeholder" : "¿Cómo podemos ayudarte?",
+        "help" : "¿Cómo podemos ayudarte?",
+        "validation" : {
+          "required"  : "Campo requerido."
+        }
       },
       "submit" : {
         "label"  : "Enviar"

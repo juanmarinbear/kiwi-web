@@ -1,0 +1,60 @@
+<form id="contact" class="pure-form pure-form-stacked" name="forms.contact" novalidate>
+  <div class="pure-g">
+    <div class="pure-u-1">
+      <label for="{{contact.inputs.subject.name}}" data-ng-bind="contact.inputs.subject.label"></label>
+      <select name="subject" data-ng-model="ticket.subject" data-ng-change="updateType()" data-ng-options="item.value as item.label for item in contact.inputs.subject.options.items" required autofocus>
+        <option value="" data-ng-bind="contact.inputs.subject.options.default" selected></option>
+      </select>
+    </div>
+    <div class="pure-u-1" data-ng-show="forms.contact.submitted && forms.contact.subject.$invalid">
+      <p data-ng-show="forms.contact.subject.$error.required" data-ng-bind="contact.inputs.subject.validation.required"></p>
+    </div>
+    <div class="pure-u-1">
+      <label for="{{contact.inputs.company.name}}" data-ng-bind="contact.inputs.company.label"></label>
+      <input type="text" name="company" placeholder="{{contact.inputs.company.placeholder}}" data-ng-model="ticket.company">
+    </div>
+    <div class="pure-u-1">
+      <label for="{{contact.inputs.name.name}}" data-ng-bind="contact.inputs.name.label"></label>
+      <input type="text" name="name" placeholder="{{contact.inputs.name.placeholder}}" data-ng-model="ticket.name" required>
+    </div>
+    <div class="pure-u-1" data-ng-show="forms.contact.submitted && forms.contact.$invalid">
+      <p data-ng-show="forms.contact.name.$error.required" data-ng-bind="contact.inputs.name.validation.required"></p>
+    </div>
+    <div class="pure-u-1">
+      <label for="{{contact.inputs.last.name}}" data-ng-bind="contact.inputs.last.label"></label>
+      <input type="text" name="last" placeholder="{{contact.inputs.last.placeholder}}" data-ng-model="ticket.last" required>
+    </div>
+    <div class="pure-u-1" data-ng-show="forms.contact.submitted && forms.contact.$invalid">
+      <p data-ng-show="forms.contact.last.$error.required" data-ng-bind="contact.inputs.last.validation.required"></p>
+    </div>
+    <div class="pure-u-1">
+      <label for="{{contact.inputs.email.name}}" data-ng-bind="contact.inputs.email.label"></label>
+      <input type="email" name="email" placeholder="{{contact.inputs.email.placeholder}}" data-ng-model="ticket.email" required>
+    </div>
+    <div class="pure-u-1" data-ng-show="forms.contact.submitted && forms.contact.$invalid">
+      <p data-ng-show="forms.contact.email.$error.required" data-ng-bind="contact.inputs.email.validation.required"></p>
+      <p data-ng-show="forms.contact.email.$error.email" data-ng-bind="contact.inputs.email.validation.invalid"></p>
+    </div>
+    <div class="pure-u-1">
+      <label for="{{contact.inputs.mobile.name}}" data-ng-bind="contact.inputs.mobile.label"></label>
+      <input type="text" name="mobile" placeholder="{{contact.inputs.mobile.placeholder}}" maxlength="10" data-ng-model="ticket.mobile" data-ng-pattern="/\d{10}/" data-ng-maxlength="10" required>
+    </div>
+    <div class="pure-u-1" data-ng-show="forms.contact.submitted && forms.contact.$invalid">
+      <p data-ng-show="forms.contact.mobile.$error.required" data-ng-bind="contact.inputs.mobile.validation.required"></p>
+      <p data-ng-show="forms.contact.mobile.$error.pattern || forms.contact.mobile.$error.maxlength" data-ng-bind="contact.inputs.mobile.validation.invalid"></p>
+    </div>
+    <div class="pure-u-1">
+      <label for="{{contact.inputs.contact.name}}" data-ng-bind="contact.inputs.contact.label"></label>
+      <select name="contact" data-ng-model="ticket.contact" data-ng-options="item.value as item.label for item in contact.inputs.contact.options.items" required>
+        <option value="" data-ng-bind="contact.inputs.contact.options.default" selected></option>
+      </select>
+    </div>
+    <div class="pure-u-1" data-ng-show="forms.contact.submitted && forms.contact.$invalid">
+      <p data-ng-show="forms.contact.contact.$error.required" data-ng-bind="contact.inputs.contact.validation.required"></p>
+    </div>
+    <div class="pure-u-1">
+      <label for="{{contact.inputs.message.name}}" data-ng-bind="contact.inputs.message.label"></label>
+      <textarea name="message" placeholder="{{contact.inputs.message.placeholder}}" rows=5 data-ng-model="ticket.message" required></textarea>
+    </div>
+  </div>
+</div>

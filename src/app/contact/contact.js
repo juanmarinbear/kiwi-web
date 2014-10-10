@@ -1,19 +1,27 @@
 'use strict';
 
-kiwiWeb.controller('ContactCtrl', function ($scope, lang) {
+kiwiWeb.controller('ContactCtrl', function ($scope, KiwiWebApi, lang, contact) {
   $scope.lang = lang.data;
+  $scope.contact = contact.data.contact;
   $scope.changeTitle($scope.lang.title);
-  $scope.data = {};
-
-  $scope.submit = function() {
-
-    if($scope.contact.$valid) {
-      $scope.loading = true;
-      $scope.success = true;
-      $scope.loading = false;
-      $scope.$apply();
-    }
-    $scope.submitted = true;
+  $scope.forms = {};
+  $scope.ticket = {
+    type: 'Contact'
   };
+  $scope.errors = {};
 
+  $scope.submit = function () {
+    if($scope.forms.contact.$valid) {
+      KiwiWebApi.contact.save($scope.ticket, function (ticket) {
+        console.log('Success!');
+        $scope.success = true;
+        console.log(ticket);
+      }, function (error) {
+        $scope.error = true;
+        console.log('Error!');
+        console.log(error);
+      });
+    }
+    $scope.forms.contact.submitted = true;
+  };
 });

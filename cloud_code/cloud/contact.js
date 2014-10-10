@@ -14,14 +14,14 @@ var auth = require('cloud/auth.js');
 module.exports = {
 
   valid: function (ticket) {
-    if(validate(ticket, constraints.support)) {
+    if(validate(ticket, constraints.contact)) {
       return false; 
     } else {
       return true; 
     }
   },
   errors: function (ticket) {
-    return validate(ticket, constraints.support);
+    return validate(ticket, constraints.contact);
   },
   format: function (ticket) {
     return {
@@ -34,13 +34,12 @@ module.exports = {
             mobile_mx: ticket.mobile 
           }
         },
-        subject: ticket.type + ' - ' + ticket.service + ' - ' + ticket.subject,
-        description: ticket.message == '' ? ticket.type + ' - ' + ticket.service + ' - ' + ticket.subject : ticket.message,
-        ticket_form_id: zendeskFields[ticket.type.toLowerCase()],
+        subject: ticket.type + ' - ' + ticket.subject,
+        description: ticket.message,
+        ticket_form_id: zendeskFields.contactForm,
         custom_fields: [
-          { id: zendeskFields.supportSubject, value: ticket.subject == 'Other' ? 'support_other' : foldToASCII(ticket.subject).replace(/\s/g, '_').toLowerCase() },
+          { id: zendeskFields.contactSubject, value: ticket.subject == 'Other' ? 'contact_other' : foldToASCII(ticket.subject).replace(/\s/g, '_').toLowerCase() },
           { id: zendeskFields.company, value: ticket.company},
-          { id: zendeskFields.service, value: foldToASCII(ticket.service).replace(/\s/g, '_').toLowerCase() },
           { id: zendeskFields.contact, value: ticket.contact }
         ]
       } 

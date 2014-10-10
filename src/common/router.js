@@ -262,6 +262,15 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
         .then(function(data) {
           return data;
         });
+      },
+      contact: function($http) {
+        return $http({
+          method: 'GET',
+          url: 'app/contact/form.lang.es.json'
+        })
+        .then(function(data) {
+          return data;
+        });
       }
     }
   })
