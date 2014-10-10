@@ -11,7 +11,6 @@ kiwiWeb.controller('ApplyCtrl', function ($scope, KiwiWebApi, lang, apply) {
   $scope.errors = {};
 
   $scope.submit = function () {
-    console.log($scope.ticket);
     if($scope.forms.apply.$valid) {
       KiwiWebApi.apply.save($scope.ticket, function (ticket) {
         console.log('Success!');
