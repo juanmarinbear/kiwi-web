@@ -1,6 +1,6 @@
 /*
  * This Module:
- * Validates Sale class object before sending to Zendesk.
+ * Validates Support class object before sending to Zendesk.
  * Formats object according to Zendesk specification.
  * Submits object to Zendesk.
  */

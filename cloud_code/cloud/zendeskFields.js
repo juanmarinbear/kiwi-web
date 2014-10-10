@@ -8,6 +8,7 @@ module.exports = {
   technical: '24019',
   administrative: '22835',
   contactForm: '22845',
+  jobs: '26205',
   step: '22882395',
   outcome: '22882405',
   supportSubject: '22884985',
@@ -23,5 +24,14 @@ module.exports = {
   number: '22679105',
   apt: '22679115',
   building: '22739669',
-  levels: '22630209'
+  levels: '22630209',
+  role: '22896705',
+  education: '22896795',
+  college: '22896815',
+  collegeUrl: '22849599',
+  masters: '22849569',
+  mastersUrl: '22849619',
+  phd: '22849579',
+  phdUrl: '22849629',
+  experience: '22849639'
 }
