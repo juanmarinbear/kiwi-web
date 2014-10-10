@@ -141,5 +141,41 @@ module.exports = {
         'WhatsApp'
       ]
     }
+  },
+  contact: {
+    subject: {
+      presence: true,
+      inclusion: [
+        'Privacidad',
+        'Proveeduría',
+        'Prensa',
+        'Otro'
+      ]
+    }
+    name: {
+      presence: true 
+    },
+    last: {
+      presence: true 
+    },
+    email: {
+      presence: true,
+      email: true
+    },
+    mobile: {
+      presence: true,
+      numericality: true,
+      format: {
+        pattern: /\d{10}/
+      }
+    },
+    contact: {
+      presence: true,
+      inclusion: [
+        'Mobile',
+        'Email',
+        'WhatsApp'
+      ]
+    }
   }
 }
