@@ -10,13 +10,13 @@
       <p data-ng-show="forms.apply.subject.$error.required" data-ng-bind="apply.inputs.subject.validation.required"></p>
     </div>
     <div class="pure-u-1">
-      <label for="{{apply.inputs.location.name}}" data-ng-bind="apply.inputs.location.label"></label>
-      <select name="location" data-ng-model="ticket.location" data-ng-options="item.value as item.label for item in apply.inputs.location.options.items" required>
-        <option value="" data-ng-bind="apply.inputs.location.options.default" selected></option>
+      <label for="{{apply.inputs.state.name}}" data-ng-bind="apply.inputs.state.label"></label>
+      <select name="state" data-ng-model="ticket.state" data-ng-options="item.value as item.label for item in apply.inputs.state.options.items" required>
+        <option value="" data-ng-bind="apply.inputs.state.options.default" selected></option>
       </select>
     </div>
-    <div class="pure-u-1" data-ng-show="forms.apply.submitted && forms.apply.location.$invalid">
-      <p data-ng-show="forms.apply.location.$error.required" data-ng-bind="apply.inputs.location.validation.required"></p>
+    <div class="pure-u-1" data-ng-show="forms.apply.submitted && forms.apply.$invalid">
+      <p data-ng-show="forms.apply.state.$error.required" data-ng-bind="apply.inputs.state.validation.required"></p>
     </div>
     <div class="pure-u-1">
       <label for="{{apply.inputs.name.name}}" data-ng-bind="apply.inputs.name.label"></label>
@@ -54,7 +54,7 @@
         <option value="" data-ng-bind="apply.inputs.contact.options.default" selected></option>
       </select>
     </div>
-    <div class="pure-u-1" data-ng-show="forms.apply.submitted && forms.apply.contact.$invalid">
+    <div class="pure-u-1" data-ng-show="forms.apply.submitted && forms.apply.$invalid">
       <p data-ng-show="forms.apply.contact.$error.required" data-ng-bind="apply.inputs.contact.validation.required"></p>
     </div>
     <div class="pure-u-1">
@@ -123,7 +123,7 @@
     </div>
     <div class="pure-u-1" data-ng-show="forms.apply.submitted && forms.apply.$invalid">
       <p data-ng-show="forms.apply.experience.$error.required" data-ng-bind="apply.inputs.experience.validation.required"></p>
-      <p data-ng-show="forms.location.experience.$error.pattern || location.experience.$error.maxlength" data-ng-bind="location.inputs.experience.validation.invalid"></p>
+      <p data-ng-show="forms.apply.experience.$error.pattern || forms.apply.experience.$error.maxlength" data-ng-bind="apply.inputs.experience.validation.invalid"></p>
     </div>
     <div class="pure-u-1">
       <label for="{{apply.inputs.resume.name}}" data-ng-bind="apply.inputs.resume.label"></label>

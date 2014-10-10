@@ -17,8 +17,8 @@
           "required" : "Puesto requerido."
         }
       },
-      "location" : {
-        "name" : "location",
+      "state" : {
+        "name" : "state",
         "label" : "Ubicación",
         "help" : "¿En qué plaza deseas aplicar?",
         "options" : {
