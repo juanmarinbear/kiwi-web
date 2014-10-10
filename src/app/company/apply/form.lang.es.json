@@ -1,8 +1,8 @@
 {
   "apply" : {
     "inputs" : {
-      "subject" : {
-        "name" : "subject",
+      "role" : {
+        "name" : "role",
         "label" : "Puesto",
         "help" : "¿Para qué puesto deseas aplicar?",
         "options" : {
@@ -116,11 +116,11 @@
       "collegeUrl" : {
         "name" : "collegeUrl",
         "label" : "Url de Universidad Licenciatura",
-        "placeholder" : "www.monsters.edu",
+        "placeholder" : "http://www.monsters.edu",
         "help" : "Url de universidad donde cursaste tu licenciatura.",
         "validation" : {
           "required" : "Url requerida.",
-          "url" : "Url inválida."
+          "url" : "Url inválida.  Debe tener este formato: http://www.ejemplo.com."
         }
       },
       "masters" : {

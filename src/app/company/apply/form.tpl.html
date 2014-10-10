@@ -1,13 +1,13 @@
 <form id="apply" class="pure-form pure-form-stacked" name="forms.apply" novalidate>
   <div class="pure-g">
     <div class="pure-u-1">
-      <label for="{{apply.inputs.subject.name}}" data-ng-bind="apply.inputs.subject.label"></label>
-      <select name="subject" data-ng-model="ticket.subject" data-ng-change="updateType()" data-ng-options="item.value as item.label for item in apply.inputs.subject.options.items" required autofocus>
-        <option value="" data-ng-bind="apply.inputs.subject.options.default" selected></option>
+      <label for="{{apply.inputs.role.name}}" data-ng-bind="apply.inputs.role.label"></label>
+      <select name="role" data-ng-model="ticket.role" data-ng-change="updateType()" data-ng-options="item.value as item.label for item in apply.inputs.role.options.items" required autofocus>
+        <option value="" data-ng-bind="apply.inputs.role.options.default" selected></option>
       </select>
     </div>
-    <div class="pure-u-1" data-ng-show="forms.apply.submitted && forms.apply.subject.$invalid">
-      <p data-ng-show="forms.apply.subject.$error.required" data-ng-bind="apply.inputs.subject.validation.required"></p>
+    <div class="pure-u-1" data-ng-show="forms.apply.submitted && forms.apply.role.$invalid">
+      <p data-ng-show="forms.apply.role.$error.required" data-ng-bind="apply.inputs.role.validation.required"></p>
     </div>
     <div class="pure-u-1">
       <label for="{{apply.inputs.state.name}}" data-ng-bind="apply.inputs.state.label"></label>
