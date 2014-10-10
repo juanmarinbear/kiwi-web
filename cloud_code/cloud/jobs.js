@@ -1,6 +1,6 @@
 /*
  * This Module:
- * Validates Sales class object before sending to Zendesk.
+ * Validates Jobs class object before sending to Zendesk.
  * Formats object according to Zendesk specification.
  * Submits object to Zendesk.
  */
@@ -14,14 +14,14 @@ var auth = require('cloud/auth.js');
 module.exports = {
 
   valid: function (ticket) {
-    if(validate(ticket, constraints.sales)) {
+    if(validate(ticket, constraints.jobs)) {
       return false; 
     } else {
       return true; 
     }
   },
   errors: function (ticket) {
-    return validate(ticket, constraints.sales);
+    return validate(ticket, constraints.jobs);
   },
   format: function (ticket) {
     return {
@@ -34,24 +34,21 @@ module.exports = {
             mobile_mx: ticket.mobile 
           }
         },
-        subject: ticket.type + ' - ' + ticket.service,
-        description: ticket.type + ' - ' + ticket.service,
-        ticket_form_id: zendeskFields.sales,
+        subject: ticket.type + ' - ' + ticket.role,
+        description: ticket.message,
+        ticket_form_id: zendeskFields.jobs,
         custom_fields: [
-          { id: zendeskFields.step, value: ticket.step },
-          { id: zendeskFields.outcome, value: ticket.outcome },
-          { id: zendeskFields.service, value: foldToASCII(ticket.service).replace(/\s/g, '_').toLowerCase() },
-          { id: zendeskFields.company, value: ticket.company},
-          { id: zendeskFields.contact, value: ticket.contact },
-          { id: zendeskFields.zip, value: ticket.zip },
+          { id: zendeskFields.role, value: foldToASCII(ticket.role).replace(/\s/g, '_').toLowerCase() },
           { id: zendeskFields.state, value: ticket.state },
-          { id: zendeskFields.municipality, value: ticket.municipality },
-          { id: zendeskFields.district, value: ticket.district },
-          { id: zendeskFields.street, value: ticket.street },
-          { id: zendeskFields.number, value: ticket.number },
-          { id: zendeskFields.apt, value: ticket.apt },
-          { id: zendeskFields.building, value: ticket.building },
-          { id: zendeskFields.levels, value: ticket.levels }
+          { id: zendeskFields.contact, value: ticket.contact },
+          { id: zendeskFields.education, value: foldToASCII(ticket.education) },
+          { id: zendeskFields.college, value: ticket.college},
+          { id: zendeskFields.collegeUrl, value: ticket.collegeUrl },
+          { id: zendeskFields.masters, value: ticket.masters },
+          { id: zendeskFields.mastersUrl, value: ticket.mastersUrl },
+          { id: zendeskFields.phd, value: ticket.phd },
+          { id: zendeskFields.phdUrl, value: ticket.phdUrl },
+          { id: zendeskFields.experience, value: ticket.experience },
         ]
       } 
     }

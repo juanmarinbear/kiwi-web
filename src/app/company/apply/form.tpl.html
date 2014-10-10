@@ -119,7 +119,7 @@
     </div>
     <div class="pure-u-1">
       <label for="{{apply.inputs.experience.name}}" data-ng-bind="apply.inputs.experience.label"></label>
-      <input type="number" name="experience" placeholder="{{apply.inputs.experience.placeholder}}" data-ng-model="ticket.experience" data-ng-maxlength="2" data-ng-pattern="/\d{1,2}/" required>
+      <input type="text" name="experience" placeholder="{{apply.inputs.experience.placeholder}}" maxlength="2" data-ng-model="ticket.experience" data-ng-maxlength="2"  data-ng-pattern="/\d{1,2}/" required>
     </div>
     <div class="pure-u-1" data-ng-show="forms.apply.submitted && forms.apply.$invalid">
       <p data-ng-show="forms.apply.experience.$error.required" data-ng-bind="apply.inputs.experience.validation.required"></p>

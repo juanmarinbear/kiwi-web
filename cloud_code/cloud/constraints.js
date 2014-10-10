@@ -177,5 +177,59 @@ module.exports = {
         'WhatsApp'
       ]
     }
+  },
+  jobs: {
+    role: {
+      presence: true,
+      inclusion: [
+        'Ingeniero en Redes',
+        'Ingeniero de Soluciones',
+        'Ingeniero en Software'
+      ]
+    },
+    name: {
+      presence: true 
+    },
+    last: {
+      presence: true 
+    },
+    email: {
+      presence: true,
+      email: true
+    },
+    mobile: {
+      presence: true,
+      numericality: true,
+      format: {
+        pattern: /\d{10}/
+      }
+    },
+    contact: {
+      presence: true,
+      inclusion: [
+        'Mobile',
+        'Email',
+        'WhatsApp'
+      ]
+    },
+    education: {
+      presence: true,
+      inclusion: [
+        'Preparatoria',
+        'Licenciatura',
+        'Maestría',
+        'Doctorado'
+      ]
+    },
+    experience: {
+      presence: true,
+      numericality: true,
+      format: {
+        pattern: /\d{2}/
+      }
+    },
+    message: {
+      presence: true
+    }
   }
 }
