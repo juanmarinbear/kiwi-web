@@ -1,0 +1,88 @@
+{
+  "client" : {
+    "inputs" : {
+      "service" : {
+        "name" : "service",
+        "label" : "Servicio",
+        "help" : "¿Qué servicio te interesa?",
+        "options" : {
+          "default" : "-- Servicio --",
+          "items" : [
+            { "label" : "Residential", "value" : "Residential" },
+            { "label" : "Business", "value" : "Business" },
+            { "label" : "Dedicated", "value" : "Dedicated" },
+            { "label" : "Metro Mesh", "value" : "Metro Mesh" },
+            { "label" : "Otro", "value" : "Other" }
+          ]
+        },
+        "validation" : {
+          "required" : "Servicio requerido."
+        }
+      },
+      "company" : {
+        "name" : "company",
+        "label" : "Empresa",
+        "placeholder" : "Planta Nuclear de Springfield",
+        "help" : "Tu empresa.",
+        "validation" : {}
+      },
+      "name" : {
+        "name" : "name",
+        "label" : "Nombre",
+        "placeholder" : "Homero",
+        "help" : "Tu nombre.",
+        "validation" : {
+          "required" : "Nombre requerido."
+        }
+      },
+      "last" : {
+        "name" : "last",
+        "label" : "Apellido",
+        "placeholder" : "Simpson",
+        "help" : "Tu apellido.",
+        "validation" : {
+          "required" : "Apellido requerido."
+        }
+      },
+      "email" : {
+        "name" : "email",
+        "label" : "Email",
+        "placeholder" : "homero.simpson@gmail.com",
+        "help" : "Tu email.",
+        "validation" : {
+          "required" : "Email requerido.",
+          "invalid" : "Email inválido."
+        }
+      },
+      "mobile" : {
+        "name" : "mobile",
+        "label" : "Móvil",
+        "placeholder" : "Móvil 10 dígitos",
+        "help" : "Tu móvil, 10 dígitos.",
+        "validation" : {
+          "required" : "Móvil requerido.",
+          "invalid" : "Móvil inválido.  Deben ser 10 dígitos."
+        }
+      },
+      "contact" : {
+        "name" : "contact",
+        "label" : "¿Cómo prefieres que te contactemos?",
+        "help" : "¿Cómo prefieres que te contactemos?",
+        "options" : {
+          "default" : "-- Contacto --",
+          "items" : [
+            { "label" : "Móvil", "value" : "Mobile"},
+            { "label" : "Email", "value" : "Email"},
+            { "label" : "WhatsApp", "value" : "WhatsApp"}
+          ]
+        },
+        "validation" : {
+          "required" : "Campo requerido."
+        }
+      },
+      "next" : {
+        "label" : "Siguiente"
+      }
+    }
+  }
+}

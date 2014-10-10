@@ -1,7 +1,9 @@
 'use strict';
 
-kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, MxPostApi, KiwiWebApi, lang) {
+kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, MxPostApi, KiwiWebApi, lang, client, location) {
   $scope.lang = lang.data;
+  $scope.client = client.data.client;
+  $scope.location = location.data.location;
   $scope.changeTitle($scope.lang.title);
   $scope.forms = {};
   $scope.ticket = {
@@ -22,12 +24,14 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, MxPostApi, Kiw
   $scope.next = function() {
     $scope.loading = true;
     $scope.step = 'location';
+    $scope.forms.client.submitted = true;
     $scope.loading = false;
   };
 
   $scope.prev = function() {
     $scope.loading = true;
     $scope.step = 'client';
+    $scope.forms.client.submitted = false;
     $scope.loading = false;
   };
 
@@ -96,16 +100,16 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, MxPostApi, Kiw
 
   $scope.submit = function() {
     if($scope.forms.client.$valid && $scope.forms.location.$valid) {
-      KiwiWebApi.saveSales($scope.ticket, function (ticket) {
+      KiwiWebApi.sales.save($scope.ticket, function (ticket) {
         console.log('Success!');
         $scope.success = true;
         console.log(ticket);
       }, function (error) {
         console.log('Error!');
+        $scope.error = true;
         console.log(error);
       });
     }
-    $scope.forms.client.submitted = true;
     $scope.forms.location.submitted = true;
   };
 });

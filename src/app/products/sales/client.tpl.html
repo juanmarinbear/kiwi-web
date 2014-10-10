@@ -1,52 +1,56 @@
 <form id="client" class="pure-form pure-form-stacked" name="forms.client" novalidate>
   <div class="pure-g">
     <div class="pure-u-1">
-      <label for="{{lang.forms.client.inputs.service.name}}" data-ng-bind="lang.forms.client.inputs.service.label"></label>
-      <select name="service" data-ng-model="ticket.service" data-ng-options="item.value as item.label for item in lang.forms.client.inputs.service.options.items" required autofocus>
-        <option value="" data-ng-bind="lang.forms.client.inputs.service.options.default" selected></option>
+      <label for="{{client.inputs.service.name}}" data-ng-bind="client.inputs.service.label"></label>
+      <select name="service" data-ng-model="ticket.service" data-ng-options="item.value as item.label for item in client.inputs.service.options.items" required autofocus>
+        <option value="" data-ng-bind="client.inputs.service.options.default" selected></option>
       </select>
     </div>
-    <div class="pure-u-1" data-ng-show="submitted && forms.client.$invalid">
-      <p data-ng-show="forms.client.service.$error.required" data-ng-bind="lang.forms.client.inputs.service.validation.required"></p>
+    <div class="pure-u-1" data-ng-show="forms.client.submitted && forms.client.$invalid">
+      <p data-ng-show="forms.client.service.$error.required" data-ng-bind="client.inputs.service.validation.required"></p>
     </div>
     <div class="pure-u-1">
-      <label for="{{lang.forms.client.inputs.name.name}}" data-ng-bind="lang.forms.client.inputs.name.label"></label>
-      <input type="text" name="name" placeholder="{{lang.forms.client.inputs.name.placeholder}}" data-ng-model="ticket.name" required>
-    </div>
-    <div class="pure-u-1" data-ng-show="submitted && forms.client.$invalid">
-      <p data-ng-show="forms.client.name.$error.required" data-ng-bind="lang.forms.client.inputs.name.validation.required"></p>
+      <label for="{{client.inputs.company.name}}" data-ng-bind="client.inputs.company.label"></label>
+      <input type="text" name="company" placeholder="{{client.inputs.company.placeholder}}" data-ng-model="ticket.company">
     </div>
     <div class="pure-u-1">
-      <label for="{{lang.forms.client.inputs.last.name}}" data-ng-bind="lang.forms.client.inputs.last.label"></label>
-      <input type="text" name="last" placeholder="{{lang.forms.client.inputs.last.placeholder}}" data-ng-model="ticket.last" required>
+      <label for="{{client.inputs.name.name}}" data-ng-bind="client.inputs.name.label"></label>
+      <input type="text" name="name" placeholder="{{client.inputs.name.placeholder}}" data-ng-model="ticket.name" required>
     </div>
-    <div class="pure-u-1" data-ng-show="submitted && forms.client.$invalid">
-      <p data-ng-show="forms.client.last.$error.required" data-ng-bind="lang.forms.client.inputs.last.validation.required"></p>
-    </div>
-    <div class="pure-u-1">
-      <label for="{{lang.forms.client.inputs.email.name}}" data-ng-bind="lang.forms.client.inputs.email.label"></label>
-      <input type="email" name="email" placeholder="{{lang.forms.client.inputs.email.placeholder}}" data-ng-model="ticket.email" required>
-    </div>
-    <div class="pure-u-1" data-ng-show="submitted && forms.client.$invalid">
-      <p data-ng-show="forms.client.email.$error.required" data-ng-bind="lang.forms.client.inputs.email.validation.required"></p>
-      <p data-ng-show="forms.client.email.$error.email" data-ng-bind="lang.forms.client.inputs.email.validation.invalid"></p>
+    <div class="pure-u-1" data-ng-show="forms.client.submitted && forms.client.$invalid">
+      <p data-ng-show="forms.client.name.$error.required" data-ng-bind="client.inputs.name.validation.required"></p>
     </div>
     <div class="pure-u-1">
-      <label for="{{lang.forms.client.inputs.mobile.name}}" data-ng-bind="lang.forms.client.inputs.mobile.label"></label>
-      <input type="text" name="mobile" placeholder="{{lang.forms.client.inputs.mobile.placeholder}}" maxlength="10" data-ng-model="ticket.mobile" data-ng-pattern="/\d{10}/" data-ng-maxlength="10" required>
+      <label for="{{client.inputs.last.name}}" data-ng-bind="client.inputs.last.label"></label>
+      <input type="text" name="last" placeholder="{{client.inputs.last.placeholder}}" data-ng-model="ticket.last" required>
     </div>
-    <div class="pure-u-1" data-ng-show="submitted && forms.client.$invalid">
-      <p data-ng-show="forms.client.mobile.$error.required" data-ng-bind="lang.forms.client.inputs.mobile.validation.required"></p>
-      <p data-ng-show="forms.client.mobile.$error.pattern || forms.client.mobile.$error.maxlength" data-ng-bind="lang.forms.client.inputs.mobile.validation.invalid"></p>
+    <div class="pure-u-1" data-ng-show="forms.client.submitted && forms.client.$invalid">
+      <p data-ng-show="forms.client.last.$error.required" data-ng-bind="client.inputs.last.validation.required"></p>
     </div>
     <div class="pure-u-1">
-      <label for="{{lang.forms.client.inputs.contact.name}}" data-ng-bind="lang.forms.client.inputs.contact.label"></label>
-      <select name="contact" data-ng-model="ticket.contact" data-ng-options="item.value as item.label for item in lang.forms.client.inputs.contact.options.items" required autofocus>
-        <option value="" data-ng-bind="lang.forms.client.inputs.contact.options.default" selected></option>
+      <label for="{{client.inputs.email.name}}" data-ng-bind="client.inputs.email.label"></label>
+      <input type="email" name="email" placeholder="{{client.inputs.email.placeholder}}" data-ng-model="ticket.email" required>
+    </div>
+    <div class="pure-u-1" data-ng-show="forms.client.submitted && forms.client.$invalid">
+      <p data-ng-show="forms.client.email.$error.required" data-ng-bind="client.inputs.email.validation.required"></p>
+      <p data-ng-show="forms.client.email.$error.email" data-ng-bind="client.inputs.email.validation.invalid"></p>
+    </div>
+    <div class="pure-u-1">
+      <label for="{{client.inputs.mobile.name}}" data-ng-bind="client.inputs.mobile.label"></label>
+      <input type="text" name="mobile" placeholder="{{client.inputs.mobile.placeholder}}" maxlength="10" data-ng-model="ticket.mobile" data-ng-pattern="/\d{10}/" data-ng-maxlength="10" required>
+    </div>
+    <div class="pure-u-1" data-ng-show="forms.client.submitted && forms.client.$invalid">
+      <p data-ng-show="forms.client.mobile.$error.required" data-ng-bind="client.inputs.mobile.validation.required"></p>
+      <p data-ng-show="forms.client.mobile.$error.pattern || forms.client.mobile.$error.maxlength" data-ng-bind="client.inputs.mobile.validation.invalid"></p>
+    </div>
+    <div class="pure-u-1">
+      <label for="{{client.inputs.contact.name}}" data-ng-bind="client.inputs.contact.label"></label>
+      <select name="contact" data-ng-model="ticket.contact" data-ng-options="item.value as item.label for item in client.inputs.contact.options.items" required autofocus>
+        <option value="" data-ng-bind="client.inputs.contact.options.default" selected></option>
       </select>
     </div>
-    <div class="pure-u-1" data-ng-show="submitted && forms.client.$invalid">
-      <p data-ng-show="forms.client.contact.$error.required" data-ng-bind="lang.forms.client.inputs.contact.validation.required"></p>
+    <div class="pure-u-1" data-ng-show="forms.client.submitted && forms.client.$invalid">
+      <p data-ng-show="forms.client.contact.$error.required" data-ng-bind="client.inputs.contact.validation.required"></p>
     </div>
   </div>
 </div>
