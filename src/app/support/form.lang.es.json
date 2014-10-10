@@ -8,11 +8,11 @@
         "options" : {
           "default" : "-- Ninguno --",
           "items" : [
-            { "label" : "Residential", "value" : "residential" },
-            { "label" : "Business", "value" : "business" },
-            { "label" : "Dedicated", "value" : "dedicated" },
-            { "label" : "Metro Mesh", "value" : "metromesh" },
-            { "label" : "Otro", "value" : "other" }
+            { "label" : "Residential", "value" : "Residential" },
+            { "label" : "Business", "value" : "Business" },
+            { "label" : "Dedicated", "value" : "Dedicated" },
+            { "label" : "Metro Mesh", "value" : "Metro Mesh" },
+            { "label" : "Otro", "value" : "Other" }
           ]
         },
         "validation" : {
