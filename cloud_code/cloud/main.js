@@ -14,7 +14,7 @@ Parse.Cloud.beforeSave("Sales", function(request, response) {
       response.error(error);
     });
   } else {
-    response.error('Error!');
+    response.error(sales.errors(ticket));
   }
 });
 
@@ -44,7 +44,7 @@ Parse.Cloud.beforeSave("Support", function(request, response) {
       response.error(error);
     });
   } else {
-    response.error('Error!');
+    response.error(support.errors(ticket));
   }
 });
 
