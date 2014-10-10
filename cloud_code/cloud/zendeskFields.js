@@ -9,7 +9,7 @@ module.exports = {
   administrative: '22835',
   step: '22882395',
   outcome: '22882405',
-  supportSubject: '22884985'
+  supportSubject: '22884985',
   service: '22630199',
   company: '22884735',
   contact: '22785105',
