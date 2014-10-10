@@ -81,13 +81,6 @@
           "invalid" : "Móvil inválido.  Deben ser 10 dígitos."
         }
       },
-      "message" : {
-        "name" : "message",
-        "label" : "Mensaje",
-        "placeholder" : "¿Quieres darnos más información?",
-        "help" : "¿Quieres darnos más información?",
-        "validation" : {}
-      },
       "contact" : {
         "name" : "contact",
         "label" : "¿Cómo prefieres que te contactemos?",
@@ -103,6 +96,13 @@
         "validation" : {
           "required" : "Campo requerido."
         }
+      },
+      "message" : {
+        "name" : "message",
+        "label" : "Mensaje",
+        "placeholder" : "¿Quieres darnos más información?",
+        "help" : "¿Quieres darnos más información?",
+        "validation" : {}
       },
       "submit" : {
         "label"  : "Enviar"
