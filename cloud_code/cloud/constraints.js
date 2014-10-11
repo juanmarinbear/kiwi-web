@@ -30,8 +30,8 @@ module.exports = {
       inclusion: [
         'Residential',
         'Business',
-        'Metro Mesh',
-        'Other'
+        'Dedicated',
+        'Metro Mesh'
       ]
     },
     name: {
