@@ -100,7 +100,7 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, MxPostApi, Kiw
 
   $scope.submit = function() {
     if($scope.forms.client.$valid && $scope.forms.location.$valid) {
-      KiwiWebApi.sales.save($scope.ticket, function (ticket) {
+      KiwiWebApi.save($scope.ticket, 'Sales', function (ticket) {
         console.log('Success!');
         $scope.success = true;
         console.log(ticket);
@@ -110,6 +110,7 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, MxPostApi, Kiw
         console.log(error);
       });
     }
+    $scope.forms.client.submitted = true;
     $scope.forms.location.submitted = true;
   };
 });
