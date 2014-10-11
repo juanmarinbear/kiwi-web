@@ -6,13 +6,13 @@ kiwiWeb.controller('ApplyCtrl', function ($scope, KiwiWebApi, lang, apply) {
   $scope.changeTitle($scope.lang.title);
   $scope.forms = {};
   $scope.ticket = {
-    type: 'Job'
+    type: 'Jobs'
   };
   $scope.errors = {};
 
   $scope.submit = function () {
     if($scope.forms.apply.$valid) {
-      KiwiWebApi.apply.save($scope.ticket, function (ticket) {
+      KiwiWebApi.save($scope.ticket, $scope.ticket.type, function (ticket) {
         console.log('Success!');
         $scope.success = true;
         console.log(ticket);
