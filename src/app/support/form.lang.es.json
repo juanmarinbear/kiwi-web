@@ -11,8 +11,7 @@
             { "label" : "Residential", "value" : "Residential" },
             { "label" : "Business", "value" : "Business" },
             { "label" : "Dedicated", "value" : "Dedicated" },
-            { "label" : "Metro Mesh", "value" : "Metro Mesh" },
-            { "label" : "Otro", "value" : "Other" }
+            { "label" : "Metro Mesh", "value" : "Metro Mesh" }
           ]
         },
         "validation" : {
