@@ -100,7 +100,7 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, MxPostApi, Kiw
 
   $scope.submit = function() {
     if($scope.forms.client.$valid && $scope.forms.location.$valid) {
-      KiwiWebApi.save($scope.ticket, 'Sales', function (ticket) {
+      KiwiWebApi.save($scope.ticket, $scope.ticket.type, function (ticket) {
         console.log('Success!');
         $scope.success = true;
         console.log(ticket);
