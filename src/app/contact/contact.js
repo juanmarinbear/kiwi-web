@@ -12,7 +12,7 @@ kiwiWeb.controller('ContactCtrl', function ($scope, KiwiWebApi, lang, contact) {
 
   $scope.submit = function () {
     if($scope.forms.contact.$valid) {
-      KiwiWebApi.contact.save($scope.ticket, function (ticket) {
+      KiwiWebApi.save($scope.ticket, $scope.ticket.type, function (ticket) {
         console.log('Success!');
         $scope.success = true;
         console.log(ticket);

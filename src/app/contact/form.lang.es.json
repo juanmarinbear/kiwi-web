@@ -8,10 +8,9 @@
         "options" : {
           "default" : "-- Ninguno --",
           "items" : [
-            { "label" : "Privacidad", "value" : "Privacidad" },
             { "label" : "Proveeduría", "value" : "Proveeduría" },
             { "label" : "Prensa", "value" : "Prensa" },
-            { "label" : "Otro", "value" : "Other" }
+            { "label" : "Otro", "value" : "Otro" }
           ]
         },
         "validation" : {

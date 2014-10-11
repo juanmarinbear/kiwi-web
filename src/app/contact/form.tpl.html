@@ -56,5 +56,8 @@
       <label for="{{contact.inputs.message.name}}" data-ng-bind="contact.inputs.message.label"></label>
       <textarea name="message" placeholder="{{contact.inputs.message.placeholder}}" rows=5 data-ng-model="ticket.message" required></textarea>
     </div>
+    <div class="pure-u-1" data-ng-show="forms.contact.submitted && forms.contact.$invalid">
+      <p data-ng-show="forms.contact.message.$error.required" data-ng-bind="contact.inputs.message.validation.required"></p>
+    </div>
   </div>
 </div>
