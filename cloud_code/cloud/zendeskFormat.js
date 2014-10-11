@@ -53,9 +53,9 @@ module.exports = {
         },
         subject: ticket.type + ' - ' + ticket.service + ' - ' + ticket.subject,
         description: ticket.message == '' ? ticket.type + ' - ' + ticket.service + ' - ' + ticket.subject : ticket.message,
-        ticket_form_id: zendeskFields[ticket.type.toLowerCase()],
+        ticket_form_id: zendeskFields.technical,
         custom_fields: [
-          { id: zendeskFields.supportSubject, value: ticket.subject == 'Other' ? 'support_other' : foldToASCII(ticket.subject).replace(/\s/g, '_').toLowerCase() },
+          { id: zendeskFields.technicalSubject, value: ticket.subject == 'Otro' ? 'technical_other' : foldToASCII(ticket.subject).replace(/\s/g, '_').toLowerCase() },
           { id: zendeskFields.company, value: ticket.company},
           { id: zendeskFields.service, value: foldToASCII(ticket.service).replace(/\s/g, '_').toLowerCase() },
           { id: zendeskFields.contact, value: ticket.contact }
@@ -76,9 +76,8 @@ module.exports = {
         },
         subject: ticket.type + ' - ' + ticket.service + ' - ' + ticket.subject,
         description: ticket.message == '' ? ticket.type + ' - ' + ticket.service + ' - ' + ticket.subject : ticket.message,
-        ticket_form_id: zendeskFields[ticket.type.toLowerCase()],
+        ticket_form_id: zendeskFields.administrative,
         custom_fields: [
-          { id: zendeskFields.supportSubject, value: ticket.subject == 'Other' ? 'support_other' : foldToASCII(ticket.subject).replace(/\s/g, '_').toLowerCase() },
           { id: zendeskFields.company, value: ticket.company},
           { id: zendeskFields.service, value: foldToASCII(ticket.service).replace(/\s/g, '_').toLowerCase() },
           { id: zendeskFields.contact, value: ticket.contact }
@@ -101,7 +100,7 @@ module.exports = {
         description: ticket.message,
         ticket_form_id: zendeskFields.contactForm,
         custom_fields: [
-          { id: zendeskFields.contactSubject, value: ticket.subject == 'Other' ? 'contact_other' : foldToASCII(ticket.subject).replace(/\s/g, '_').toLowerCase() },
+          { id: zendeskFields.contactSubject, value: ticket.subject == 'Otro' ? 'contact_other' : foldToASCII(ticket.subject).replace(/\s/g, '_').toLowerCase() },
           { id: zendeskFields.company, value: ticket.company},
           { id: zendeskFields.contact, value: ticket.contact }
         ]
