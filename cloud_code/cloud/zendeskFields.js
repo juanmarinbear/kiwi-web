@@ -11,7 +11,7 @@ module.exports = {
   jobs: '26205',
   step: '22882395',
   outcome: '22882405',
-  supportSubject: '22884985',
+  technicalSubject: '22884985',
   contactSubject: '22841659',
   service: '22630199',
   company: '22884735',

@@ -68,7 +68,7 @@
       <label for="{{location.inputs.levels.name}}" data-ng-bind="location.inputs.levels.label"></label>
       <input type="text" name="levels" placeholder="{{location.inputs.levels.placeholder}}" maxlength="2" data-ng-model="ticket.levels" data-ng-maxlength="2" data-ng-pattern="/\d{1,2}/" data-ng-required="ticket.building == 'building'">
     </div>
-    <div class="pure-u-1" data-ng-show="forms.location.submitted && forms.location.$invalid && (ticket.building === true)">
+    <div class="pure-u-1" data-ng-show="forms.location.submitted && forms.location.$invalid">
       <p data-ng-show="forms.location.levels.$error.required" data-ng-bind="location.inputs.levels.validation.required"></p>
       <p data-ng-show="forms.location.levels.$error.pattern || location.levels.$error.maxlength" data-ng-bind="location.inputs.levels.validation.invalid"></p>
     </div>

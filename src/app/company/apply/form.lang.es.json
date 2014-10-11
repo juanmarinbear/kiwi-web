@@ -139,7 +139,7 @@
         "help" : "Url de universidad donde cursaste tu maestría.",
         "validation" : {
           "required" : "Url requerida.",
-          "url" : "Url inválida."
+          "url" : "Url inválida.  Debe tener este formato: http://www.ejemplo.com."
         }
       },
       "phd" : {
@@ -158,7 +158,7 @@
         "help" : "Url de universidad donde cursaste tu doctorado.",
         "validation" : {
           "required" : "Url requerida.",
-          "url" : "Url inválida."
+          "url" : "Url inválida.  Debe tener este formato: http://www.ejemplo.com."
         }
       },
       "experience" : {

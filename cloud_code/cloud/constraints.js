@@ -30,8 +30,8 @@ module.exports = {
       inclusion: [
         'Residential',
         'Business',
-        'Metro Mesh',
-        'Other'
+        'Dedicated',
+        'Metro Mesh'
       ]
     },
     name: {
@@ -97,12 +97,54 @@ module.exports = {
       }
     }
   },
-  support: {
+  technical: {
     subject: {
       presence: true,
       inclusion: [
         'Desconexión',
         'Lentitud',
+        'Otro'
+      ]
+    },
+    service: {
+      presence: true,
+      inclusion: [
+        'Residential',
+        'Business',
+        'Dedicated',
+        'Metro Mesh'
+      ]
+    },
+    name: {
+      presence: true 
+    },
+    last: {
+      presence: true 
+    },
+    email: {
+      presence: true,
+      email: true
+    },
+    mobile: {
+      presence: true,
+      numericality: true,
+      format: {
+        pattern: /\d{10}/
+      }
+    },
+    contact: {
+      presence: true,
+      inclusion: [
+        'Mobile',
+        'Email',
+        'WhatsApp'
+      ]
+    }
+  },
+  administrative: {
+    subject: {
+      presence: true,
+      inclusion: [
         'Facturación y Cobranza',
         'Otro'
       ]
@@ -112,8 +154,8 @@ module.exports = {
       inclusion: [
         'Residential',
         'Business',
-        'Metro Mesh',
-        'Other'
+        'Dedicated',
+        'Metro Mesh'
       ]
     },
     name: {
@@ -146,10 +188,9 @@ module.exports = {
     subject: {
       presence: true,
       inclusion: [
-        'Privacidad',
         'Proveeduría',
         'Prensa',
-        'Other'
+        'Otro'
       ]
     },
     name: {

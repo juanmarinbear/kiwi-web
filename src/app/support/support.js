@@ -20,7 +20,7 @@ kiwiWeb.controller('SupportCtrl', function ($scope, KiwiWebApi, lang, support) {
 
   $scope.submit = function () {
     if($scope.forms.support.$valid) {
-      KiwiWebApi.support.save($scope.ticket, function (ticket) {
+      KiwiWebApi.save($scope.ticket, $scope.ticket.type, function (ticket) {
         console.log('Success!');
         $scope.success = true;
         console.log(ticket);
