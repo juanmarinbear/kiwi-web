@@ -2,7 +2,7 @@ var zendesk = require('cloud/zendesk.js');
 var constraints = require('cloud/constraints.js');
 var format = require('cloud/zendeskFormat.js');
 
-Parse.Cloud.beforeSave("Sales", function(request, response) {
+Parse.Cloud.beforeSave('Sales', function(request, response) {
 
   var ticket = JSON.stringify(request.object);
   ticket = JSON.parse(ticket);
@@ -20,7 +20,7 @@ Parse.Cloud.beforeSave("Sales", function(request, response) {
   }
 });
 
-Parse.Cloud.afterSave("Sales", function(request) {
+Parse.Cloud.afterSave('Sales', function(request) {
   var zendeskId = request.object.get('zendeskId');
   var ticket = {
     ticket: {
@@ -29,11 +29,11 @@ Parse.Cloud.afterSave("Sales", function(request) {
   };
   zendesk.update(zendeskId, ticket, function (data) {
   }, function (error) {
-    console.error("Got an error " + error.code + " : " + error.message);
+    console.error('Got an error ' + error.code + ' : ' + error.message);
   });
 });
 
-Parse.Cloud.beforeSave("Technical", function(request, response) {
+Parse.Cloud.beforeSave('Technical', function(request, response) {
 
   var ticket = JSON.stringify(request.object);
   ticket = JSON.parse(ticket);
@@ -51,7 +51,7 @@ Parse.Cloud.beforeSave("Technical", function(request, response) {
   }
 });
 
-Parse.Cloud.afterSave("Technical", function(request) {
+Parse.Cloud.afterSave('Technical', function(request) {
   var zendeskId = request.object.get('zendeskId');
   var ticket = {
     ticket: {
@@ -60,11 +60,11 @@ Parse.Cloud.afterSave("Technical", function(request) {
   };
   zendesk.update(zendeskId, ticket, function (data) {
   }, function (error) {
-    console.error("Got an error " + error.code + " : " + error.message);
+    console.error('Got an error ' + error.code + ' : ' + error.message);
   });
 });
 
-Parse.Cloud.beforeSave("Administrative", function(request, response) {
+Parse.Cloud.beforeSave('Administrative', function(request, response) {
 
   var ticket = JSON.stringify(request.object);
   ticket = JSON.parse(ticket);
@@ -82,7 +82,7 @@ Parse.Cloud.beforeSave("Administrative", function(request, response) {
   }
 });
 
-Parse.Cloud.afterSave("Administrative", function(request) {
+Parse.Cloud.afterSave('Administrative', function(request) {
   var zendeskId = request.object.get('zendeskId');
   var ticket = {
     ticket: {
@@ -91,11 +91,11 @@ Parse.Cloud.afterSave("Administrative", function(request) {
   };
   zendesk.update(zendeskId, ticket, function (data) {
   }, function (error) {
-    console.error("Got an error " + error.code + " : " + error.message);
+    console.error('Got an error ' + error.code + ' : ' + error.message);
   });
 });
 
-Parse.Cloud.beforeSave("Contact", function(request, response) {
+Parse.Cloud.beforeSave('Contact', function(request, response) {
 
   var ticket = JSON.stringify(request.object);
   ticket = JSON.parse(ticket);
@@ -113,7 +113,7 @@ Parse.Cloud.beforeSave("Contact", function(request, response) {
   }
 });
 
-Parse.Cloud.afterSave("Contact", function(request) {
+Parse.Cloud.afterSave('Contact', function(request) {
   var zendeskId = request.object.get('zendeskId');
   var ticket = {
     ticket: {
@@ -122,11 +122,11 @@ Parse.Cloud.afterSave("Contact", function(request) {
   };
   zendesk.update(zendeskId, ticket, function (data) {
   }, function (error) {
-    console.error("Got an error " + error.code + " : " + error.message);
+    console.error('Got an error ' + error.code + ' : ' + error.message);
   });
 });
 
-Parse.Cloud.beforeSave("Jobs", function(request, response) {
+Parse.Cloud.beforeSave('Jobs', function(request, response) {
 
   var ticket = JSON.stringify(request.object);
   ticket = JSON.parse(ticket);
@@ -144,7 +144,7 @@ Parse.Cloud.beforeSave("Jobs", function(request, response) {
   }
 });
 
-Parse.Cloud.afterSave("Jobs", function(request) {
+Parse.Cloud.afterSave('Jobs', function(request) {
   var zendeskId = request.object.get('zendeskId');
   var ticket = {
     ticket: {
@@ -153,6 +153,6 @@ Parse.Cloud.afterSave("Jobs", function(request) {
   };
   zendesk.update(zendeskId, ticket, function (data) {
   }, function (error) {
-    console.error("Got an error " + error.code + " : " + error.message);
+    console.error('Got an error ' + error.code + ' : ' + error.message);
   });
 });
