@@ -43,7 +43,7 @@ module.exports = {
     email: {
       presence: true,
       email: true
-    },
+   },
     mobile: {
       presence: true,
       numericality: true,
@@ -93,7 +93,7 @@ module.exports = {
     levels: {
       numericality: true,
       format: {
-        pattern: /\d{2}/
+        pattern: /\d{1,2}/
       }
     }
   },
@@ -266,7 +266,7 @@ module.exports = {
       presence: true,
       numericality: true,
       format: {
-        pattern: /\d{2}/
+        pattern: /\d{1,2}/
       }
     },
     message: {
