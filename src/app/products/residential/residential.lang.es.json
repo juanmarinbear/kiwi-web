@@ -26,7 +26,7 @@
     }, 
     {
       "title" : "Contrata",
-      "href" : "sales({product: 'residential'})"
+      "href" : "sales({service: 'residential'})"
     } 
   ]
 }

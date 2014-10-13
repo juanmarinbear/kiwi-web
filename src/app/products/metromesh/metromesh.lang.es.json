@@ -36,7 +36,7 @@
     }, 
     {
       "title" : "Contrata",
-      "href" : "sales({product: 'metromesh'})"
+      "href" : "sales({service: 'metromesh'})"
     } 
   ]
 }

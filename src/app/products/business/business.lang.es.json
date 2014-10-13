@@ -30,7 +30,7 @@
     }, 
     {
       "title" : "Contrata",
-      "href" : "sales({product: 'business'})"
+      "href" : "sales({service: 'business'})"
     } 
   ]
 }

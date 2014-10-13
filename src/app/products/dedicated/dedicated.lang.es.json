@@ -52,7 +52,7 @@
     }, 
     {
       "title" : "Contrata",
-      "href" : "sales({product: 'dedicated'})"
+      "href" : "sales({service: 'dedicated'})"
     } 
   ]
 }
