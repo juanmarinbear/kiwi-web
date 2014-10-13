@@ -6,7 +6,12 @@ kiwiWeb.controller('UnsubscribeCtrl', function ($scope, KiwiWebApi, lang, unsubs
   $scope.changeTitle($scope.lang.title);
   $scope.forms = {};
   $scope.ticket = {
-    type: 'Unsubscribe'
+    type: 'Unsubscribe',
+    unsubscribeEmail: false,
+    unsubscribeMobile: false,
+    unsubscribeAddress: false,
+    opposeTransfer: false,
+    forgetMe: false
   };
   $scope.errors = {};
 

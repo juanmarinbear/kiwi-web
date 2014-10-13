@@ -1,42 +1,8 @@
 {
   "title" : "Unsubscribe",
-  "sections" : [
-    {
-      "title" : "Online",
-      "subtitle" : "Para darte atención inmediata y eficiente, usa nuestras formas online:",
-      "art" : "",
-      "paragraphs" : [
-        "Ventas",
-        "Soporte"
-      ]
-    },
-    {
-      "title" : "Teléfono",
-      "subtitle" : "Llámanos a:",
-      "art" : "",
-      "paragraphs" : [
-        "México:",
-        "Estados Unidos:"
-      ]
-    },
-    {
-      "title" : "Email",
-      "subtitle" : "Escríbenos a:",
-      "art" : "",
-      "paragraphs" : [
-        "Ventas:",
-        "Soporte:",
-        "Contacto:"
-      ]
-    },
-    {
-      "title" : "Redes Sociales",
-      "subtitle" : "Síguenos en:",
-      "art" : "",
-      "paragraphs" : [
-        "Facebook:",
-        "Twitter:"
-      ]
-    }
+  "subtitle" : "¿Nos quieres cortar?",
+    "paragraphs" : [
+      "Llena esta forma para cambiar tus preferencias de comunicación.",
+      "Si seleccionas la última opción, eliminaremos toda información relacionada a tu nombre, email o móvil de nuestra base de datos.  Si todavía eres nuestro cliente, cancela tu(s) servicio(s) para que esta acción tenga efecto.  No podemos eliminar información que por caracter legal o fiscal debamos conservar como contratos, facturas, transacciones etc..."
   ]
 }

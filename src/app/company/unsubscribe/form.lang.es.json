@@ -1,29 +1,6 @@
 {
-  "contact" : {
+  "unsubscribe" : {
     "inputs" : {
-      "subject" : {
-        "name" : "subject",
-        "label" : "Asunto",
-        "help" : "¿Para qué nos contactas?",
-        "options" : {
-          "default" : "-- Ninguno --",
-          "items" : [
-            { "label" : "Proveeduría", "value" : "Proveeduría" },
-            { "label" : "Prensa", "value" : "Prensa" },
-            { "label" : "Otro", "value" : "Otro" }
-          ]
-        },
-        "validation" : {
-          "required" : "Asunto requerido."
-        }
-      },
-      "company" : {
-        "name" : "company",
-        "label" : "Empresa",
-        "placeholder" : "Planta Nuclear de Springfield",
-        "help" : "Tu empresa.",
-        "validation" : {}
-      },
       "name" : {
         "name" : "name",
         "label" : "Nombre",
@@ -62,30 +39,36 @@
           "invalid" : "Móvil inválido.  Deben ser 10 dígitos."
         }
       },
-      "contact" : {
-        "name" : "contact",
-        "label" : "¿Cómo prefieres que te contactemos?",
-        "help" : "¿Cómo prefieres que te contactemos?",
-        "options" : {
-          "default" : "-- Contacto --",
-          "items" : [
-            { "label" : "Móvil", "value" : "Mobile"},
-            { "label" : "Email", "value" : "Email"},
-            { "label" : "WhatsApp", "value" : "WhatsApp"}
-          ]
-        },
-        "validation" : {
-          "required" : "Campo requerido."
-        }
+      "unsubscribeMobile" : {
+        "name" : "unsubscribeMobile",
+        "label" : "No deseo recibir comunicación por teléfono móvil o fijo.",
+        "help" : "No deseo recibir comunicación por teléfono móvil o fijo."
+      },
+      "unsubscribeEmail" : {
+        "name" : "unsubscribeEmail",
+        "label" : "No deseo recibir comunicación por Email.",
+        "help" : "No deseo recibir comunicación por Email."
+      },
+      "unsubscribeAddress" : {
+        "name" : "unsubscribeAddress",
+        "label" : "No deseo recibir comunicación a mi dirección física.",
+        "help" : "No deseo recibir comunicación a mi dirección física."
+      },
+      "opposeTransfer" : {
+        "name" : "opposeTransfer",
+        "label" : "Me opongo a que mis datos personales sean transferidos.",
+        "help" : "Me opongo a que mis datos personales sean transferidos."
+      },
+      "forgetMe" : {
+        "name" : "forgetMe",
+        "label" : "Eliminen todos los registros relacionado a mi.",
+        "help" : "Eliminaremos toda información relacionada a tu nombre, email o móvil en nuestras bases de datos.  Si todavía eres nuestro cliente, cancela tu(s) servicio(s) para que esta acción tenga efecto.  No podremos eliminar información que por caracter legal o fiscal debamos conservar como contratos, facturas, transacciones etc..."
       },
       "message" : {
         "name" : "message",
         "label" : "Mensaje",
-        "placeholder" : "¿Cómo podemos ayudarte?",
-        "help" : "¿Cómo podemos ayudarte?",
-        "validation" : {
-          "required"  : "Campo requerido."
-        }
+        "placeholder" : "¿Última palabra?",
+        "help" : "¿Últimas palabras?"
       },
       "submit" : {
         "label"  : "Enviar"

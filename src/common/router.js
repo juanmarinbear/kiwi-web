@@ -260,13 +260,13 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
   })
   .state('unsubscribe', {
     url: '/unsubscribe',
-    templateUrl: 'app/company/privacy/unsubscribe/unsubscribe.tpl.html',
+    templateUrl: 'app/company/unsubscribe/unsubscribe.tpl.html',
     controller: 'UnsubscribeCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/company/privacy/unsubscribe/unsubscribe.lang.es.json'
+          url: 'app/company/unsubscribe/unsubscribe.lang.es.json'
         })
         .then(function(data) {
           return data;
@@ -275,7 +275,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
       unsubscribe: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/company/privacy/unsubscribe/form.lang.es.json'
+          url: 'app/company/unsubscribe/form.lang.es.json'
         })
         .then(function(data) {
           return data;
