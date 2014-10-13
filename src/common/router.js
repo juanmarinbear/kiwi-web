@@ -120,7 +120,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
     }
   })
   .state('sales', {
-    url: '/sales/:product',
+    url: '/sales/:service',
     templateUrl: 'app/products/sales/sales.tpl.html',
     controller: 'SalesCtrl',
     resolve: {
