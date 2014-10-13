@@ -19,7 +19,7 @@
         }, 
         {
           "title" : "Contrata",
-          "href" : "sales({product: 'residential'})"
+          "href" : "sales({service: 'residential'})"
         } 
       ]
     },
@@ -41,7 +41,7 @@
         }, 
         {
           "title" : "Contrata",
-          "href" : "sales({product: 'business'})"
+          "href" : "sales({service: 'business'})"
         } 
       ]
     },
@@ -63,7 +63,7 @@
         }, 
         {
           "title" : "Contrata",
-          "href" : "sales({product: 'dedicated'})"
+          "href" : "sales({service: 'dedicated'})"
         } 
       ]
     },
@@ -84,7 +84,7 @@
         }, 
         {
           "title" : "Contrata",
-          "href" : "sales({product: 'metromesh'})"
+          "href" : "sales({service: 'metromesh'})"
         } 
       ]
     } 

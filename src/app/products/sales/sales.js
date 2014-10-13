@@ -1,6 +1,6 @@
 'use strict';
 
-kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, MxPostApi, KiwiWebApi, lang, client, location) {
+kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, $stateParams, MxPostApi, KiwiWebApi, lang, client, location) {
   $scope.lang = lang.data;
   $scope.client = client.data.client;
   $scope.location = location.data.location;
@@ -13,6 +13,11 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, MxPostApi, Kiw
   };
   $scope.step = 'client';
   $scope.errors = {};
+
+  if($stateParams.service) {
+    $scope.ticket.service = $stateParams.service == 'metromesh' ? 'Metro Mesh' : $filter('capitalize')($stateParams.service);
+  }
+
 
   MxPostApi.getStates(function (data) {
     $scope.states = data.results;   
