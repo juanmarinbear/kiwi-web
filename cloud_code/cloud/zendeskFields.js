@@ -9,6 +9,7 @@ module.exports = {
   administrative: '22835',
   contactForm: '22845',
   jobs: '26205',
+  unsubscribe: '26305',
   step: '22882395',
   outcome: '22882405',
   technicalSubject: '22884985',
@@ -33,5 +34,10 @@ module.exports = {
   mastersUrl: '22849619',
   phd: '22849579',
   phdUrl: '22849629',
-  experience: '22849639'
+  experience: '22849639',
+  unsubscribeEmail: '22860429',
+  unsubscribeMobile: '22908715',
+  unsubscribeAddress: '22908725',
+  opposeTransfer: '22908735',
+  forgetMe: '22860439'
 }

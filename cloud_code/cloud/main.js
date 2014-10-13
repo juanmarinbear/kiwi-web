@@ -156,3 +156,34 @@ Parse.Cloud.afterSave('Jobs', function(request) {
     console.error('Got an error ' + error.code + ' : ' + error.message);
   });
 });
+
+Parse.Cloud.beforeSave('Unsubscribe', function(request, response) {
+
+  var ticket = JSON.stringify(request.object);
+  ticket = JSON.parse(ticket);
+
+  if(zendesk.valid(ticket, constraints.unsubscribe )) {
+    ticket = format.unsubscribe(ticket);
+    zendesk.save(ticket, function (data) {
+      request.object.set('zendeskId', data.ticket.id.toString());
+      response.success();
+    }, function (error) {
+      response.error(error);
+    });
+  } else {
+    response.error(zendesk.errors(ticket, constraints.unsubscribe));
+  }
+});
+
+Parse.Cloud.afterSave('Unsubscribe', function(request) {
+  var zendeskId = request.object.get('zendeskId');
+  var ticket = {
+    ticket: {
+      external_id: request.object.id
+    }
+  };
+  zendesk.update(zendeskId, ticket, function (data) {
+  }, function (error) {
+    console.error('Got an error ' + error.code + ' : ' + error.message);
+  });
+});
