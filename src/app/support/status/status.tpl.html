@@ -1,11 +1,11 @@
 <h2 data-ng-bind="lang.title"></h2>
-  <div data-ng-repeat="section in lang.sections">
-    <h3 data-ng-bind="section.title"></h3>
-    <div data-ng-repeat="question in section.questions">
-      <p data-ng-bind="question.question"></p>
-      <div data-ng-repeat="answer in question.answer">
-        <p data-ng-bind="answer"></p>
-      </div>
-    </div>
+<div class="pure-g">
+  <div class="pure-u-1">
+    <h3 data-ng-bind="lang.subtitle"></h3>
+    <div class="art"></div>
+    <p data-ng-repeat="paragraph in lang.paragraphs" data-ng-bind="paragraph"></p>
+  </div>
+  <div class="pure-u-1" data-ng-repeat="network in lang.networks">
+    <p><span data-ng-bind="network.status"></span> <span data-ng-bind="network.name"></span></p>
   </div>
 </div>
