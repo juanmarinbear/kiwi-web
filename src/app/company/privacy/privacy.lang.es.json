@@ -57,7 +57,7 @@
                 "Nombre y apellidos.",
                 "Correo electrónico.",
                 "Teléfono particular y/o oficina.",
-                "Teléfono celular.",
+                "Teléfono móvil.",
                 "Dirección.",
                 "Registro Fedral de Contribuyente (R.F.C.)",
                 "Domicilio Fiscal.",
@@ -80,7 +80,7 @@
                 "Nombre y apellidos.",
                 "Correo electrónico.",
                 "Teléfono particular y/o oficina.",
-                "Teléfono celular.",
+                "Teléfono móvil.",
                 "Dirección."
               ]
             }
@@ -95,7 +95,7 @@
                 "Nombre y apellidos.",
                 "Correo electrónico.",
                 "Teléfono particular y/o oficina.",
-                "Teléfono celular.",
+                "Teléfono móvil.",
                 "Dirección.",
                 "Registro Fedral de Contribuyente (R.F.C.)",
                 "Domicilio Fiscal.",
@@ -110,7 +110,7 @@
         {
           "title" : "¿Cómo puede limitar el uso o divulgación de sus datos personales?",
           "sections" : [
-            "Usted puede dejar de recibir mensajes promocionales por teléfono fijo o celular entrando a esta liga.",
+            "Usted puede dejar de recibir mensajes promocionales por teléfono fijo o móvil entrando a esta liga.",
             "Asimismo, puede dejar de recibir correo postal publicitario entrando a esta liga.",
             "También puede dejar de recibir correos electrónicos con promocionales entrando a esta liga."
           ]
