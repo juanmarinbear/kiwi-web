@@ -272,5 +272,24 @@ module.exports = {
     message: {
       presence: true
     }
+  },
+  unsubscribe: {
+    name: {
+      presence: true 
+    },
+    last: {
+      presence: true 
+    },
+    email: {
+      presence: true,
+      email: true
+    },
+    mobile: {
+      presence: true,
+      numericality: true,
+      format: {
+        pattern: /\d{10}/
+      }
+    }
   }
 }

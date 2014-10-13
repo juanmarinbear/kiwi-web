@@ -1,0 +1,58 @@
+<form id="unsubscribe" class="pure-form pure-form-stacked" name="forms.unsubscribe" novalidate>
+  <div class="pure-g">
+    <div class="pure-u-1">
+      <label for="{{unsubscribe.inputs.name.name}}" data-ng-bind="unsubscribe.inputs.name.label"></label>
+      <input type="text" name="name" placeholder="{{unsubscribe.inputs.name.placeholder}}" data-ng-model="ticket.name" autofocus required>
+    </div>
+    <div class="pure-u-1" data-ng-show="forms.unsubscribe.submitted && forms.unsubscribe.$invalid">
+      <p data-ng-show="forms.unsubscribe.name.$error.required" data-ng-bind="unsubscribe.inputs.name.validation.required"></p>
+    </div>
+    <div class="pure-u-1">
+      <label for="{{unsubscribe.inputs.last.name}}" data-ng-bind="unsubscribe.inputs.last.label"></label>
+      <input type="text" name="last" placeholder="{{unsubscribe.inputs.last.placeholder}}" data-ng-model="ticket.last" required>
+    </div>
+    <div class="pure-u-1" data-ng-show="forms.unsubscribe.submitted && forms.unsubscribe.$invalid">
+      <p data-ng-show="forms.unsubscribe.last.$error.required" data-ng-bind="unsubscribe.inputs.last.validation.required"></p>
+    </div>
+    <div class="pure-u-1">
+      <label for="{{unsubscribe.inputs.email.name}}" data-ng-bind="unsubscribe.inputs.email.label"></label>
+      <input type="email" name="email" placeholder="{{unsubscribe.inputs.email.placeholder}}" data-ng-model="ticket.email" required>
+    </div>
+    <div class="pure-u-1" data-ng-show="forms.unsubscribe.submitted && forms.unsubscribe.$invalid">
+      <p data-ng-show="forms.unsubscribe.email.$error.required" data-ng-bind="unsubscribe.inputs.email.validation.required"></p>
+      <p data-ng-show="forms.unsubscribe.email.$error.email" data-ng-bind="unsubscribe.inputs.email.validation.invalid"></p>
+    </div>
+    <div class="pure-u-1">
+      <label for="{{unsubscribe.inputs.mobile.name}}" data-ng-bind="unsubscribe.inputs.mobile.label"></label>
+      <input type="text" name="mobile" placeholder="{{unsubscribe.inputs.mobile.placeholder}}" maxlength="10" data-ng-model="ticket.mobile" data-ng-pattern="/\d{10}/" data-ng-maxlength="10" required>
+    </div>
+    <div class="pure-u-1" data-ng-show="forms.unsubscribe.submitted && forms.unsubscribe.$invalid">
+      <p data-ng-show="forms.unsubscribe.mobile.$error.required" data-ng-bind="unsubscribe.inputs.mobile.validation.required"></p>
+      <p data-ng-show="forms.unsubscribe.mobile.$error.pattern || forms.unsubscribe.mobile.$error.maxlength" data-ng-bind="unsubscribe.inputs.mobile.validation.invalid"></p>
+    </div>
+    <div class="pure-u-1">
+      <input type="checkbox" data-ng-model="ticket.unsubscribeEmail">
+      <span data-ng-bind="unsubscribe.inputs.unsubscribeEmail.label"></span>
+    </div>
+    <div class="pure-u-1">
+      <input type="checkbox" data-ng-model="ticket.unsubscribeMobile">
+      <span data-ng-bind="unsubscribe.inputs.unsubscribeMobile.label"></span>
+    </div>
+    <div class="pure-u-1">
+      <input type="checkbox" data-ng-model="ticket.unsubscribeAddress">
+      <span data-ng-bind="unsubscribe.inputs.unsubscribeAddress.label"></span>
+    </div>
+    <div class="pure-u-1">
+      <input type="checkbox" data-ng-model="ticket.opposeTransfer">
+      <span data-ng-bind="unsubscribe.inputs.opposeTransfer.label"></span>
+    </div>
+    <div class="pure-u-1">
+      <input type="checkbox" data-ng-model="ticket.forgetMe">
+      <span data-ng-bind="unsubscribe.inputs.forgetMe.label"></span>
+    </div>
+    <div class="pure-u-1">
+      <label for="{{unsubscribe.inputs.message.name}}" data-ng-bind="unsubscribe.inputs.message.label"></label>
+      <textarea name="message" placeholder="{{unsubscribe.inputs.message.placeholder}}" rows=5 data-ng-model="ticket.message"></textarea>
+    </div>
+  </div>
+</div>

@@ -158,5 +158,29 @@ module.exports = {
         ]
       } 
     }
+  },
+  unsubscribe: function(ticket) {
+    return {
+      ticket: {
+        requester: {
+          name: ticket.name + ' ' + ticket.last,
+          email: ticket.email,
+          locale_id: '2',
+          user_fields: {
+            mobile_mx: ticket.mobile 
+          }
+        },
+        subject: ticket.type,
+        description: ticket.message == '' ? ticket.type : ticket.message,
+        ticket_form_id: zendeskFields.unsubscribe,
+        custom_fields: [
+          { id: zendeskFields.unsubscribeEmail, value: ticket.unsubscribeEmail},
+          { id: zendeskFields.unsubscribeMobile, value: ticket.unsubscribeMobile},
+          { id: zendeskFields.unsubscribeAddress, value: ticket.unsubscribeAddress},
+          { id: zendeskFields.opposeTransfer, value: ticket.opposeTransfer},
+          { id: zendeskFields.forgetMe, value: ticket.forgetMe }
+        ]
+      } 
+    }
   }
 }

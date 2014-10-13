@@ -31,6 +31,9 @@ kiwiWeb.factory('Routes', function() {
       xOrder: 0,
       yOrder: 4
     },
+    unsubscribe: {
+      parent: 'form'
+    },
     home: {
       parent: 'home',
       xOrder: 1,

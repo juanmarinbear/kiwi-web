@@ -1,0 +1,13 @@
+<h2 data-ng-bind="lang.title"></h2>
+<div class="pure-g">
+  <div class="pure-u-1">
+    <h3 data-ng-bind="lang.subtitle"></h3>
+    <div class="art"></div>
+    <p data-ng-repeat="paragraph in lang.paragraphs" data-ng-bind="paragraph"></p>
+  </div>
+  <div id="unsubscribe" class="pure-u-1" data-ng-include src="'/app/company/unsubscribe/form.tpl.html'">
+  </div>
+  <div class="pure-u-1">
+    <button class="pure-button pure-button-primary" data-ng-class="{'pure-button-disabled': forms.unsubscribe.$invalid}" data-ng-disabled="forms.unsubscribe.$invalid" data-ng-bind="unsubscribe.inputs.submit.label" data-ng-click="submit()"></button>
+  </div>
+</div>
