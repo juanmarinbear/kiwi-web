@@ -4,6 +4,7 @@ var kiwiWeb = angular.module('kiwiWeb', [
   'ui.router',
   'ngAnimate',
   'ngResource',
+  'ngSanitize'
 ]);
 
 kiwiWeb.controller('AppCtrl', function ($scope, Transition, Menu) {
