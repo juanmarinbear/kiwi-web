@@ -223,9 +223,9 @@ module.exports = {
     role: {
       presence: true,
       inclusion: [
-        'Ingeniero en Redes',
+        'Ingeniero de Redes',
         'Ingeniero de Soluciones',
-        'Ingeniero en Software'
+        'Ingeniero de Software'
       ]
     },
     name: {
