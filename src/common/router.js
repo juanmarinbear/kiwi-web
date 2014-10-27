@@ -202,7 +202,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
     }
   })
   .state('apply', {
-    url: '/apply',
+    url: '/apply/:job',
     templateUrl: 'app/company/apply/apply.tpl.html',
     controller: 'ApplyCtrl',
     resolve: {

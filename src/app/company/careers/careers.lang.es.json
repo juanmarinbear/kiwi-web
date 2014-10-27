@@ -7,15 +7,15 @@
       "careers" : [
         {
           "name" : "Ingeniero en Redes",
-          "description" : "#networkEngineer"
+          "anchor" : "networkEngineer"
         },
         {
           "name" : "Ingeniero de Soluciones",
-          "description" : "#solutionsEngineer"
+          "anchor" : "solutionsEngineer" 
         },
         {
           "name" : "Ingeniero en Software",
-          "description" : "#softwareEngineer"
+          "anchor" : "softwareEngineer" 
         }
       ]
     },
@@ -25,15 +25,15 @@
       "careers" : [
         {
           "name" : "Ingeniero en Redes",
-          "description" : "#networkEngineer"
+          "anchor" : "networkEngineer"
         },
         {
           "name" : "Ingeniero de Soluciones",
-          "description" : "#solutionsEngineer"
+          "anchor" : "solutionsEngineer" 
         },
         {
           "name" : "Ingeniero en Software",
-          "description" : "#softwareEngineer"
+          "anchor" : "softwareEngineer" 
         }
       ]
     },
@@ -43,22 +43,22 @@
       "careers" : [
         {
           "name" : "Ingeniero en Redes",
-          "description" : "#networkEngineer"
+          "anchor" : "networkEngineer"
         },
         {
           "name" : "Ingeniero de Soluciones",
-          "description" : "#solutionsEngineer"
+          "anchor" : "solutionsEngineer" 
         },
         {
           "name" : "Ingeniero en Software",
-          "description" : "#softwareEngineer"
+          "anchor" : "softwareEngineer" 
         }
       ]
     }
   ],
   "descriptions" : [ 
     {
-      "anchor" : "#networkEngineer",
+      "anchor" : "networkEngineer",
       "title" : "Ingeniero en Redes",
       "intro" : [
         "Kiwi Networks S.A.P.I. de C.V. es un proveedor concesionado de servicios de telecomunicaciones rentable y en crecimiento.",
@@ -111,13 +111,13 @@
         {
           "title" : "Aplicación",
           "paragraphs" : [
-            "Para aplicar, da click aquí."
+            "Para aplicar, <a href='/#/apply/networkEngineer'>da click aquí</a>."
           ]
         }
       ]
     },
     {
-      "anchor" : "#solutionsEngineer",
+      "anchor" : "solutionsEngineer",
       "title" : "Ingeniero en Soluciones",
       "intro" : [
         "Kiwi Networks S.A.P.I. de C.V. es un proveedor concesionado de servicios de telecomunicaciones rentable y en crecimiento.",
@@ -168,13 +168,13 @@
         {
           "title" : "Aplicación",
           "paragraphs" : [
-            "Para aplicar, da click aquí."
+            "Para aplicar, <a href='/#/apply/solutionsEngineer'>da click aquí</a>."
           ]
         }
       ]
     },
     {
-      "anchor" : "#softwareEngineer",
+      "anchor" : "softwareEngineer",
       "title" : "Ingeniero en Software",
       "intro" : [
         "Kiwi Networks S.A.P.I. de C.V. es un proveedor concesionado de servicios de telecomunicaciones rentable y en crecimiento.",
@@ -230,7 +230,7 @@
         {
           "title" : "Aplicación",
           "paragraphs" : [
-            "Para aplicar, da click aquí."
+            "Para aplicar, <a href='/#/apply/softwareEngineer'>da click aquí</a>."
           ]
         }
       ]
