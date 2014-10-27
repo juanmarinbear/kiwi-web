@@ -110,16 +110,16 @@
         {
           "title" : "¿Cómo puede limitar el uso o divulgación de sus datos personales?",
           "sections" : [
-            "Usted puede dejar de recibir mensajes promocionales por teléfono fijo o móvil entrando a esta liga.",
-            "Asimismo, puede dejar de recibir correo postal publicitario entrando a esta liga.",
-            "También puede dejar de recibir correos electrónicos con promocionales entrando a esta liga."
+            "Usted puede dejar de recibir mensajes promocionales por teléfono fijo o móvil entrando a <a href='/#/unsubscribe' target='_blank'>esta liga</a>.",
+            "Asimismo, puede dejar de recibir correo postal publicitario entrando a <a href='/#/unsubscribe' target='_blank'>esta liga</a>.",
+            "También puede dejar de recibir correos electrónicos con promocionales entrando a <a href='/#/unsubscribe' target='_blank'>esta liga</a>."
           ]
         },
         {
           "title" : "¿Cómo acceder o rectificar sus datos personales o cancelar u oponerse a su uso?",
           "sections" : [
             "Usted tiene derecho de acceder a sus datos personales que poseemos y a los detalles del tratamiento de los mismos, así como a rectificarlos en caso de ser inexactos o incompletos; cancelarlos cuando considere que no se requieren para alguna de las finalidades señalados en el presente aviso de privacidad, estén siendo utilizados para finalidades no consentidas o haya finalizado la relación contractual o de servicio, o bien, oponerse al tratamiento de los mismos para fines específicos.",
-            "Los mecanismos que se han implementado para el ejercicio de dichos derechos son a través de la presentación de la solicitud respectiva en esta liga.",
+            "Los mecanismos que se han implementado para el ejercicio de dichos derechos son a través de la presentación de la solicitud respectiva en <a href='/#/unsubscribe' target='_blank'>esta liga</a>.",
             "Los plazos para atender su solicitud son los siguientes: 7 días hábiles.",
             {
               "title" : "Para mayor información, favor de comunicarse al departamento de privacidad:",
@@ -155,8 +155,7 @@
             },
             "Nos comprometemos a no transferir su información personal a terceros sin su consentimiento, salvo las excepciones previstas en el artículo 37 de la Ley Federal de Protección de Datos Personales en Posesión de los Particulares, así como a realizar esta transferencia en los términos que fija esa ley.",
             "Si usted no manifiesta su oposición para que sus datos personales sean transferidos, se entenderá que ha otorgado su consentimiento para ello.",
-            "Para oponerse a que sus datos personales puedan ser transferidos, entre a esta liga.",
-            "Cuando sea cliente, y en virtud de que transferiremos datos personales sensibles, requerimos de su consentimiento expreso, de conformidad con lo que establece el artículo 9 de la Ley en cita, por lo que solicitamos indique si acepta esta transferencia accediendo a la siguiente liga."
+            "Para oponerse a que sus datos personales puedan ser transferidos, entre a <a href='/#/unsubscribe' target='_blank'>esta liga</a>."
           ]
         },
         {
@@ -181,7 +180,7 @@
                 "El sitio que visitó antes de entrar al nuestro."
               ]
             },
-            "Estas cookies y otras tecnologías pueden ser deshabilitadas. Para conocer cómo hacerlo, consulte la siguiente liga." 
+            "Estas cookies y otras tecnologías pueden ser deshabilitadas. Para conocer cómo hacerlo, consulte la <a href='https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-que-los-sitios-we' target='_blank'>siguiente liga</a>." 
           ]
         },
         {
