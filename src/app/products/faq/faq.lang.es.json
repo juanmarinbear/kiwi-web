@@ -7,7 +7,7 @@
         {
           "question" : "¿Cómo contrato?",
           "answer" : [
-            "<a href='/#/sales/'>Llena esta forma.</a>"
+            "<a href='/#/sales/' target='_blank'>Llena esta forma.</a>"
           ]
         },
         {
@@ -80,7 +80,7 @@
         {
           "question" : "¿Cómo cancelo?",
           "answer" : [
-            "Entra al <a href='/#/dashboard/anon'>Dashboard</a>, selecciona la pestaña de \"Cancelar\" y llena la forma."
+            "Entra al <a href='/#/dashboard/anon' target='_blank'>Dashboard</a>, selecciona la pestaña de \"Cancelar\" y llena la forma."
           ]
         },
         {
@@ -133,7 +133,7 @@
         {
           "question" : "¿Y si no vivo en un edificio con Kiwi Networks instalado?",
           "answer" : [
-            "Conseguir a 5 vecinos que quieran el servicio y darnos el contacto de la administración de tu edificio.  <a href='/#/builtin/'>Usa esta forma para hacerlo</a>.  Por cierto, si consigues 5 vecinos, tu servicio es gratis."
+            "Conseguir a 5 vecinos que quieran el servicio y darnos el contacto de la administración de tu edificio.  <a href='/#/builtin/' target='_blank'>Usa esta forma para hacerlo</a>.  Por cierto, si consigues 5 vecinos, tu servicio es gratis."
           ]
         },
         {
