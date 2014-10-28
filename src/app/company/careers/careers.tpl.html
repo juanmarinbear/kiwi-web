@@ -3,15 +3,15 @@
   <div class="pure-u-1" data-ng-repeat="location in lang.locations">
     <h3 data-ng-bind="location.title"></h3>
     <div data-ng-repeat="career in location.careers">
-      <h4><a data-ng-href="{{ career.description }}" data-ng-bind="career.name"></a></h4>
+      <h4><a data-ng-bind="career.name" href="" data-ng-click="goTo(career.anchor)"></a></h4>
     </div>
   </div>
   <div class="pure-u-1" data-ng-repeat="description in lang.descriptions">
-    <h3 data-ng-bind="description.title"></h3>
+    <h3 id="{{ description.anchor }}" data-ng-bind="description.title"></h3>
     <p data-ng-repeat="paragraph in description.intro" data-ng-bind="paragraph"></p>
     <div data-ng-repeat="section in description.sections">
       <h4 data-ng-bind="section.title"></h4>
-      <p data-ng-repeat="paragraph in section.paragraphs" data-ng-bind="paragraph"></p>
+      <p data-ng-repeat="paragraph in section.paragraphs" data-ng-bind-html="paragraph"></p>
     </div>
   </div>
 </div>

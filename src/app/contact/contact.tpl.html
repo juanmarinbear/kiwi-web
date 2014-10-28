@@ -5,7 +5,10 @@
     </div>
     <h3 data-ng-bind="section.title"></h3>
     <h4 data-ng-bind="section.subtitle"></h4>
-    <p data-ng-repeat="paragraph in section.paragraphs" data-ng-bind="paragraph"></p>
+    <p data-ng-repeat="paragraph in section.paragraphs" data-ng-bind-html="paragraph"></p>
+  </div>
+  <div class="pure-u-1">
+    <p data-ng-repeat="paragraph in lang.paragraphs" data-ng-bind="paragraph"></p>
   </div>
   <div id="contact" class="pure-u-1" data-ng-include src="'/app/contact/form.tpl.html'">
   </div>

@@ -6,8 +6,8 @@
       "subtitle" : "Para darte atención inmediata y eficiente, usa nuestras formas online:",
       "art" : "",
       "paragraphs" : [
-        "Ventas",
-        "Soporte"
+        "<a href='/#/sales/'>Ventas</a>",
+        "<a href='/#/support'>Soporte</a>"
       ]
     },
     {
@@ -24,9 +24,9 @@
       "subtitle" : "Escríbenos a:",
       "art" : "",
       "paragraphs" : [
-        "Ventas:",
-        "Soporte:",
-        "Contacto:"
+        "<a href='mailto:sales@kiwinetworks.com?Subject=Sales' target='_blank'>Ventas: sales[a]kiwinetworks.com</a>",
+        "<a href='mailto:support@kiwinetworks.com?Subject=Support' target='_blank'>Soporte: support[a]kiwinetworks.com</a>",
+        "<a href='mailto:contact@kiwinetworks.com?Subject=Contact' target='_blank'>Contacto: contact[a]kiwinetworks.com</a>"
       ]
     },
     {
@@ -34,9 +34,12 @@
       "subtitle" : "Síguenos en:",
       "art" : "",
       "paragraphs" : [
-        "Facebook:",
-        "Twitter:"
+        "Facebook: <a href='https://www.facebook.com/KiwiNetworks' target='_blank'>KiwiNetworks</a>",
+        "Twitter: <a href='https://twitter.com/KiwiNetworks' target='_blank'>@kiwinetworks</a>"
       ]
     }
+  ],
+  "paragraphs": [
+    "También puedes usar nuestra forma de contacto." 
   ]
 }

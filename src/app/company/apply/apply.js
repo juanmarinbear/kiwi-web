@@ -1,6 +1,6 @@
 'use strict';
 
-kiwiWeb.controller('ApplyCtrl', function ($scope, KiwiWebApi, lang, apply) {
+kiwiWeb.controller('ApplyCtrl', function ($scope, $stateParams,KiwiWebApi, lang, apply) {
   $scope.lang = lang.data;
   $scope.apply = apply.data.apply;
   $scope.changeTitle($scope.lang.title);
@@ -9,6 +9,17 @@ kiwiWeb.controller('ApplyCtrl', function ($scope, KiwiWebApi, lang, apply) {
     type: 'Jobs'
   };
   $scope.errors = {};
+
+  /* Not the cleanest solution, need to refactor. */
+  $scope.roles = {
+    'networkEngineer' : 'Ingeniero de Redes',
+    'solutionsEngineer' : 'Ingeniero de Soluciones',
+    'softwareEngineer' : 'Ingeniero de Software'
+  };
+
+  if($stateParams.role) {
+    $scope.ticket.role = $scope.roles[$stateParams.role];
+  }
 
   $scope.submit = function () {
     if($scope.forms.apply.$valid) {

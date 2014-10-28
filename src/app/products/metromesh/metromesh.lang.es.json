@@ -32,11 +32,11 @@
   "buttons" : [
     {
       "title" : "¿Dudas?",
-      "href" : "faq({location: 'metromesh'})"
+      "href" : "faq({section: 'metromesh'})"
     }, 
     {
       "title" : "Contrata",
-      "href" : "sales({product: 'metromesh'})"
+      "href" : "sales({service: 'metromesh'})"
     } 
   ]
 }

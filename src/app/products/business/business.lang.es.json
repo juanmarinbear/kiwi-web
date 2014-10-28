@@ -26,11 +26,11 @@
   "buttons" : [
     {
       "title" : "¿Dudas?",
-      "href" : "faq({location: 'business'})"
+      "href" : "faq({section: 'business'})"
     }, 
     {
       "title" : "Contrata",
-      "href" : "sales({product: 'business'})"
+      "href" : "sales({service: 'business'})"
     } 
   ]
 }

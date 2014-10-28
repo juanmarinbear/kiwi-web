@@ -8,9 +8,9 @@
         "options" : {
           "default" : "-- Ninguno --",
           "items" : [
-            { "label" : "Ingeniero en Redes", "value" : "Ingeniero en Redes" },
+            { "label" : "Ingeniero de Redes", "value" : "Ingeniero de Redes" },
             { "label" : "Ingeniero de Soluciones", "value" : "Ingeniero de Soluciones" },
-            { "label" : "Ingeniero en Software", "value" : "Ingeniero en Software" }
+            { "label" : "Ingeniero de Software", "value" : "Ingeniero de Software" }
           ]
         },
         "validation" : {
