@@ -16,5 +16,5 @@ kiwiWeb.factory('KiwiWebApi', function ($http, Auth) {
         error(data);
       });
     }
-  }
+  };
 });

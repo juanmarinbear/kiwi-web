@@ -11,7 +11,7 @@ kiwiWeb.controller('SupportCtrl', function ($scope, KiwiWebApi, lang, support) {
   $scope.errors = {};
 
   $scope.updateType = function () {
-    if($scope.ticket.subject == $scope.support.inputs.subject.options.items[2].value) {
+    if($scope.ticket.subject === $scope.support.inputs.subject.options.items[2].value) {
       $scope.ticket.type = 'Administrative';
     } else {
       $scope.ticket.type = 'Technical';

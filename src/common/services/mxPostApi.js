@@ -5,7 +5,7 @@ kiwiWeb.factory('MxPostApi', function ($http, Auth) {
 
     getStates: function (success, error) {
       $http({
-        method: 'GET', 
+        method: 'GET',
         url: 'https://api.parse.com/1/classes/States',
         headers: Auth.mxPostApi.headers,
         params: {
@@ -22,7 +22,7 @@ kiwiWeb.factory('MxPostApi', function ($http, Auth) {
 
     getMunicipalities: function (state, success, error) {
       $http({
-        method: 'GET', 
+        method: 'GET',
         url: 'https://api.parse.com/1/classes/Municipalities',
         headers: Auth.mxPostApi.headers,
         params: {
@@ -33,7 +33,7 @@ kiwiWeb.factory('MxPostApi', function ($http, Auth) {
           order: 'name'
         }
       })
-      .success(function(data) { 
+      .success(function(data) {
         success(data.results);
       })
       .error(function(data) {
@@ -43,7 +43,7 @@ kiwiWeb.factory('MxPostApi', function ($http, Auth) {
 
     getDistricts: function (district, success, error) {
       $http({
-        method: 'GET', 
+        method: 'GET',
         url: 'https://api.parse.com/1/classes/Districts',
         headers: Auth.mxPostApi.headers,
         params: {
@@ -55,7 +55,7 @@ kiwiWeb.factory('MxPostApi', function ($http, Auth) {
           order: 'name'
         }
       })
-      .success(function(data) { 
+      .success(function(data) {
         success(data.results);
       })
       .error(function(data) {
@@ -65,12 +65,12 @@ kiwiWeb.factory('MxPostApi', function ($http, Auth) {
 
     geoZip: function (zip, success, error) {
       $http({
-        method: 'GET', 
+        method: 'GET',
         url: 'https://api.parse.com/1/classes/Districts',
         headers: Auth.mxPostApi.headers,
         params: {
           where: {
-            zip: zip 
+            zip: zip
           },
           order: 'name'
         }
@@ -85,7 +85,7 @@ kiwiWeb.factory('MxPostApi', function ($http, Auth) {
 
     geoDistrict: function (district, success, error) {
       $http({
-        method: 'GET', 
+        method: 'GET',
         url: 'https://api.parse.com/1/classes/Districts',
         headers: Auth.mxPostApi.headers,
         params: {
@@ -108,7 +108,7 @@ kiwiWeb.factory('MxPostApi', function ($http, Auth) {
 
     geoMunicipality: function (district, success, error) {
       $http({
-        method: 'GET', 
+        method: 'GET',
         url: 'https://api.parse.com/1/classes/Districts',
         headers: Auth.mxPostApi.headers,
         params: {
@@ -131,7 +131,7 @@ kiwiWeb.factory('MxPostApi', function ($http, Auth) {
 
     geoState: function(district, success, error) {
       $http({
-        method: 'GET', 
+        method: 'GET',
         url: 'https://api.parse.com/1/classes/Municipalities',
         headers: Auth.mxPostApi.headers,
         params: {
@@ -149,5 +149,5 @@ kiwiWeb.factory('MxPostApi', function ($http, Auth) {
         error(data);
       });
     }
-  }
+  };
 });
