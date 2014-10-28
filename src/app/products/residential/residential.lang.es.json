@@ -22,7 +22,7 @@
   "buttons" : [
     {
       "title" : "¿Dudas?",
-      "href" : "faq({location: 'residential'})"
+      "href" : "faq({section: 'residential'})"
     }, 
     {
       "title" : "Contrata",

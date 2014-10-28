@@ -1,8 +1,31 @@
 {
   "title" : "Preguntas Frecuentes",
+  "tableOfContents" : [
+    {
+      "title": "General",
+      "anchor": "general"
+    },
+    {
+      "title": "Residential",
+      "anchor": "residential"
+    },
+    {
+      "title": "Business",
+      "anchor": "business"
+    },
+    {
+      "title": "Dedicated",
+      "anchor": "dedicated"
+    },
+    {
+      "title": "Metro Mesh",
+      "anchor": "metromesh"
+    }
+  ],
   "sections" : [
     {
       "title" : "General",
+      "anchor" : "general",
       "questions" : [
         {
           "question" : "¿Cómo contrato?",
@@ -123,6 +146,7 @@
     },
     {
       "title" : "Residencial",
+      "anchor" : "residential",
       "questions" : [
         {
           "question" : "¿Qué necesito para contratar?",
@@ -194,6 +218,7 @@
     },
     {
       "title" : "Business",
+      "anchor" : "business",
       "questions" : [
         {
           "question" : "¿Cuál es la diferencia entre On-Net y Off-Net?",
@@ -259,6 +284,7 @@
     },
     {
       "title" : "Dedicated",
+      "anchor" : "dedicated",
       "questions" : [
         {
           "question" : "¿Cuál es la diferencia entre Business y Dedicated?",
@@ -274,6 +300,7 @@
     },
     {
       "title" : "Metro Mesh",
+      "anchor" : "metromesh",
       "questions" : [
         {
           "question" : "¿Qué es Metro Mesh?",

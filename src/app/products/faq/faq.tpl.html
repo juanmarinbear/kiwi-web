@@ -1,6 +1,7 @@
 <h2 data-ng-bind="lang.title"></h2>
+<p data-ng-repeat="content in lang.tableOfContents"><a href="" data-ng-click="goTo(content.anchor)" data-ng-bind="content.title"></a></p>
   <div data-ng-repeat="section in lang.sections">
-    <h3 data-ng-bind="section.title"></h3>
+    <h3 id="{{ section.anchor }}" data-ng-bind="section.title"></h3>
     <div data-ng-repeat="question in section.questions">
       <p data-ng-bind="question.question"></p>
       <div data-ng-repeat="answer in question.answer">

@@ -48,7 +48,7 @@
   "buttons" : [
     {
       "title" : "¿Dudas?",
-      "href" : "faq({location: 'dedicated'})"
+      "href" : "faq({section: 'dedicated'})"
     }, 
     {
       "title" : "Contrata",
