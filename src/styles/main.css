@@ -64,6 +64,13 @@ html, body { height: 100%; }
 }
 
 /*
+ * Fonts
+ */
+
+font-family: 'Droid Serif', serif;
+font-family: 'Roboto', sans-serif;
+
+/*
  * Page Styles
  */
 
@@ -177,7 +184,7 @@ html, body { height: 100%; }
 
 /*
  * Buttons
-*/
+ */
 
 .button-success,
 .button-error,
