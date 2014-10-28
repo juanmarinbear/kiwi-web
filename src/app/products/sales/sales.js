@@ -15,15 +15,15 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, $stateParams, 
   $scope.errors = {};
 
   if($stateParams.service) {
-    $scope.ticket.service = $stateParams.service == 'metromesh' ? 'Metro Mesh' : $filter('capitalize')($stateParams.service);
+    $scope.ticket.service = $stateParams.service === 'metromesh' ? 'Metro Mesh' : $filter('capitalize')($stateParams.service);
   }
 
 
   MxPostApi.getStates(function (data) {
-    $scope.states = data.results;   
-  },function (error) {
-    console.log('Could not load states!');
-    $scope.states = []; 
+    $scope.states = data.results;
+  }, function (error) {
+    console.log(error);
+    $scope.states = [];
   });
 
   $scope.next = function() {
@@ -77,7 +77,7 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, $stateParams, 
       $scope.ticket.zip = district.zip;
     }, function (error) {
       console.log(error);
-    })
+    });
   };
 
   $scope.geoMunicipality = function () {
@@ -88,7 +88,7 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, $stateParams, 
       $scope.ticket.zip = null;
     }, function (error) {
       console.log(error);
-    })
+    });
   };
 
   $scope.geoState = function () {
