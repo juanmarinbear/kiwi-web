@@ -63,6 +63,23 @@ html, body { height: 100%; }
   left: 150px;
 }
 
+.kw-content {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/*
+ * Fonts
+ */
+
+font-family: 'Droid Serif', serif;
+font-family: 'Roboto', sans-serif;
+
 /*
  * Page Styles
  */
@@ -174,6 +191,10 @@ html, body { height: 100%; }
 	-webkit-animation: rotateCubeTopOut .6s both ease-in;
 	animation: rotateCubeTopOut .6s both ease-in;
 }
+
+/*
+ * Buttons
+ */
 
 .button-success,
 .button-error,
