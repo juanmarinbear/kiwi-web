@@ -1,0 +1,11 @@
+h1, h3, h5, p {
+  font-family: 'Droid Serif', serif;
+}
+
+h2, h4, h6, li {
+  font-family: 'Roboto', sans-serif;
+}
+
+.kw-home {
+  text-align: center;
+}
