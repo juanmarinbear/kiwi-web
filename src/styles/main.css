@@ -175,6 +175,10 @@ html, body { height: 100%; }
 	animation: rotateCubeTopOut .6s both ease-in;
 }
 
+/*
+ * Buttons
+*/
+
 .button-success,
 .button-error,
 .button-warning,
