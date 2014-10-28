@@ -6,6 +6,18 @@ h2, h4, h6, li {
   font-family: 'Roboto', sans-serif;
 }
 
-.kw-home {
+.kw-home, .kw-products {
   text-align: center;
+}
+
+.kw-products ul {
+  display: inline-block;
+}
+
+.kw-products li {
+  text-align: left;
+}
+
+.kw-button {
+  padding: 1rem;
 }

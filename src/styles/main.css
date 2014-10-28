@@ -64,6 +64,8 @@ html, body { height: 100%; }
 }
 
 .kw-content {
+  width: 80%;
+  margin: 0 auto;
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
