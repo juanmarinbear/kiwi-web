@@ -2,12 +2,12 @@
   "title" : "Soporte",
   "subtitle" : "¿Necesitas ayuda?",
   "paragraphs" : [
-    "Aquí puedes consultar el Status de la red Kiwi Networks.",
-    "Tenemos un Help Center con problemas comunes y su solución.",
+    "<a href='/#/status'>Aquí</a> puedes consultar el Status de la red Kiwi Networks.",
+    "Tenemos un <a href='http://support.kiwinetworks.com' target='_blank'>Help Center</a> con problemas comunes y su solución.",
     "También nos puedes llamar al 01-800-XXX-XXXXX.  Si no te contestamos, deja un mensaje con tu nombre, email, móvil y empresa.  Tu mensaje se convierte automáticamente en un ticket y le daremos seguimiento.",
     "Si no encontraste solución a tu problema en el Help Center o no quieres llamar, llena esta forma de soporte y te contactaremos inmediatamente.",
     "Tus datos están seguros, no los compartimos con terceros, ni te enviaremos correos que no solicitaste (Marketing, comunicados, etc...).",
     "Únicamente usaremos tus datos para dar seguimiento al asunto por el que nos contactaste.",
-    "Para conocer más sobre nuestras políticas de privacidad, da click aquí."
+    "Para conocer más sobre nuestras políticas de privacidad, <a href='/#/privacy' target='_blank'>da click aquí</a>."
   ]
 }
