@@ -76,7 +76,7 @@ kiwiWeb.factory('Menu', function() {
           {
             name : 'sales',
             label : 'Contrata',
-            uiSref : 'sales({product: \'\'})'
+            uiSref : 'sales({service: \'\'})'
           }
         ]
       },

@@ -4,7 +4,7 @@
     {
       "title" : "¡Hola!",
       "subtitle" : "Somos Kiwi Networks",
-      "art" : "",
+      "art" : "ion-ionic",
       "paragraphs" : [
         "Una empresa de telecomunicaciones.",
         "¿Otra más? ¡Sí! Pero somos diferentes.",
@@ -14,8 +14,8 @@
     },
     {
       "title" : "Velocidad y Calidad",
-      "subtitle" : "Sobrepasando la necesidad de tus aplicaciones",
-      "art" : "",
+      "subtitle" : "Superando las necesidades de tus aplicaciones",
+      "art" : "ion-speedometer",
       "paragraphs" : [
         "Kiwi Networks usa lo último en fibra óptica y microondas para darte servicios desde 4 Mbps hasta 10 Gbps simétricos (es decir, misma velocidad de subida que descarga).",
         "Cuando lo requieras, puedes incrementar o disminuir tu velocidad (escalable).  Con cada servicio, te damos 8 IPs públicas y estáticas para aplicaciones como servidores o cámaras de video vigilancia.",
@@ -25,7 +25,7 @@
     {
       "title" : "Servicio excepcional",
       "subtitle" : "Tu eres lo más importante",
-      "art" : "",
+      "art" : "ion-happy",
       "paragraphs" : [
         "¿Todavía no te convences?",
         "¿Y si te decimos que no te cobramos instalación ni obligamos a un plan forzoso?",
@@ -37,7 +37,7 @@
     {
       "title" : "Ecológico y moderno",
       "subtitle" : "Rompiendo paradigmas de trabajo",
-      "art" : "",
+      "art" : "ion-leaf",
       "paragraphs" : [
         "Otros proveedores usan fibra o cobre aéreo y dejan tendederos de cables que no sólo contaminen visualmente, también son inseguros.  Kiwi Networks usa fibra 100% subterránea.",
         "Nuestros enlaces de microondas usan lo último en wireless para minimizar interferencia, dar alta velocidad, baja latencia y no contaminan la imagen de tu comunidad.",

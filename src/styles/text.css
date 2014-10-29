@@ -6,18 +6,51 @@ h2, h4, h6, li {
   font-family: 'Roboto', sans-serif;
 }
 
-.kw-home, .kw-products {
+.kw-home, .kw-products, .kw-residential, .kw-business, .kw-dedicated, .kw-metromesh {
   text-align: center;
 }
 
-.kw-products ul {
+.kw-products ul, .kw-residential ul, .kw-business ul, .kw-dedicated ul, .kw-metromesh ul {
   display: inline-block;
 }
 
-.kw-products li {
+.kw-products li, .kw-residential li, .kw-business li, .kw-dedicated li, .kw-metromesh li {
   text-align: left;
 }
 
 .kw-button {
   padding: 1rem;
+}
+
+.kw-icon-lg {
+  font-size: 12em;
+}
+
+.kw-icon-md {
+  font-size: 6em;
+}
+
+.kw-icon-sm {
+  font-size: 3em;
+}
+
+.kw-about-art {
+  text-align: center;
+}
+
+.kw-role, .kw-section {
+  margin-top: 1rem;
+}
+
+.kw-section {
+  padding: 1rem;
+}
+
+.kw-section h1,
+.kw-section h2,
+.kw-section h3,
+.kw-section h4,
+.kw-section h5,
+.kw-section h6 {
+  text-align: center;
 }

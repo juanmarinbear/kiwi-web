@@ -4,7 +4,7 @@
     {
       "title" : "Online",
       "subtitle" : "Para darte atención inmediata y eficiente, usa nuestras formas online:",
-      "art" : "",
+      "art" : "ion-at",
       "paragraphs" : [
         "<a href='/#/sales/'>Ventas</a>",
         "<a href='/#/support'>Soporte</a>"
@@ -13,7 +13,7 @@
     {
       "title" : "Teléfono",
       "subtitle" : "Llámanos a:",
-      "art" : "",
+      "art" : "ion-ios7-telephone",
       "paragraphs" : [
         "México:",
         "Estados Unidos:"
@@ -22,7 +22,7 @@
     {
       "title" : "Email",
       "subtitle" : "Escríbenos a:",
-      "art" : "",
+      "art" : "ion-email",
       "paragraphs" : [
         "<a href='mailto:sales@kiwinetworks.com?Subject=Sales' target='_blank'>Ventas: sales[a]kiwinetworks.com</a>",
         "<a href='mailto:support@kiwinetworks.com?Subject=Support' target='_blank'>Soporte: support[a]kiwinetworks.com</a>",
@@ -32,7 +32,7 @@
     {
       "title" : "Redes Sociales",
       "subtitle" : "Síguenos en:",
-      "art" : "",
+      "art" : "ion-social-twitter",
       "paragraphs" : [
         "Facebook: <a href='https://www.facebook.com/KiwiNetworks' target='_blank'>KiwiNetworks</a>",
         "Twitter: <a href='https://twitter.com/KiwiNetworks' target='_blank'>@kiwinetworks</a>"

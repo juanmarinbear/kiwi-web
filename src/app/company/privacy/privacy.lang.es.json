@@ -36,7 +36,7 @@
           "title" : "¿Para qué fines recabamos y utilizamos sus datos personales?",
           "sections" : [
             {
-              "title" : "Usaremos sus datos personales para las siguientes finalidades:",
+              "subtitle" : "Usaremos sus datos personales para las siguientes finalidades:",
               "sections" : [
                 "Proveer los servicios y productos requeridos por usted.",
                 "Informar sobre cambios o nuevos productos o servicios que estén relacionados con el contratado o adquirido por el cliente.",

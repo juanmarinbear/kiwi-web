@@ -1,6 +1,6 @@
 /*
  * This Module:
- * Validates Sales, Technical, Administrative, Contact, Jobs and Privacy classes object before sending to Zendesk.
+ * Validates Sales, Technical, Administrative, Contact, Jobs and Unsubscribe classes object before sending to Zendesk.
  * Formats object according to Zendesk specification.
  * Submits object to Zendesk.
  */
