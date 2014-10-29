@@ -23,15 +23,15 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
       }
     }
   })
-  .state('products', {
-    url: '/products',
-    templateUrl: 'app/products/products.tpl.html',
-    controller: 'ProductsCtrl',
+  .state('services', {
+    url: '/services',
+    templateUrl: 'app/services/services.tpl.html',
+    controller: 'ServicesCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/products/products.lang.es.json'
+          url: 'app/services/services.lang.es.json'
         })
         .then(function(data) {
           return data;
@@ -41,13 +41,13 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
   })
   .state('residential', {
     url: '/residential',
-    templateUrl: 'app/products/residential/residential.tpl.html',
+    templateUrl: 'app/services/residential/residential.tpl.html',
     controller: 'ResidentialCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/products/residential/residential.lang.es.json'
+          url: 'app/services/residential/residential.lang.es.json'
         })
         .then(function(data) {
           return data;
@@ -57,13 +57,13 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
   })
   .state('business', {
     url: '/business',
-    templateUrl: 'app/products/business/business.tpl.html',
+    templateUrl: 'app/services/business/business.tpl.html',
     controller: 'BusinessCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/products/business/business.lang.es.json'
+          url: 'app/services/business/business.lang.es.json'
         })
         .then(function(data) {
           return data;
@@ -73,13 +73,13 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
   })
   .state('dedicated', {
     url: '/dedicated',
-    templateUrl: 'app/products/dedicated/dedicated.tpl.html',
+    templateUrl: 'app/services/dedicated/dedicated.tpl.html',
     controller: 'DedicatedCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/products/dedicated/dedicated.lang.es.json'
+          url: 'app/services/dedicated/dedicated.lang.es.json'
         })
         .then(function(data) {
           return data;
@@ -89,13 +89,13 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
   })
   .state('metromesh', {
     url: '/metromesh',
-    templateUrl: 'app/products/metromesh/metromesh.tpl.html',
+    templateUrl: 'app/services/metromesh/metromesh.tpl.html',
     controller: 'MetroMeshCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/products/metromesh/metromesh.lang.es.json'
+          url: 'app/services/metromesh/metromesh.lang.es.json'
         })
         .then(function(data) {
           return data;
@@ -105,13 +105,13 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
   })
   .state('faq', {
     url: '/faq/:section',
-    templateUrl: 'app/products/faq/faq.tpl.html',
+    templateUrl: 'app/services/faq/faq.tpl.html',
     controller: 'FaqCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/products/faq/faq.lang.es.json'
+          url: 'app/services/faq/faq.lang.es.json'
         })
         .then(function(data) {
           return data;
@@ -121,13 +121,13 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
   })
   .state('sales', {
     url: '/sales/:service',
-    templateUrl: 'app/products/sales/sales.tpl.html',
+    templateUrl: 'app/services/sales/sales.tpl.html',
     controller: 'SalesCtrl',
     resolve: {
       lang: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/products/sales/sales.lang.es.json'
+          url: 'app/services/sales/sales.lang.es.json'
         })
         .then(function(data) {
           return data;
@@ -136,7 +136,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
       client: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/products/sales/client.lang.es.json'
+          url: 'app/services/sales/client.lang.es.json'
         })
         .then(function(data) {
           return data;
@@ -145,7 +145,7 @@ kiwiWeb.config(function ($stateProvider, $urlRouterProvider) {
       location: function($http) {
         return $http({
           method: 'GET',
-          url: 'app/products/sales/location.lang.es.json'
+          url: 'app/services/sales/location.lang.es.json'
         })
         .then(function(data) {
           return data;

@@ -44,8 +44,8 @@ kiwiWeb.factory('Menu', function() {
         ]
       },
       {
-        name : 'products',
-        label : 'Productos',
+        name : 'services',
+        label : 'Servicios',
         visible: false,
         sections : [
           {

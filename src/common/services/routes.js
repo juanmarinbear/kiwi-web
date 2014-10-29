@@ -39,7 +39,7 @@ kiwiWeb.factory('Routes', function() {
       xOrder: 1,
       yOrder: 0
     },
-    products: {
+    services: {
       parent: 'home',
       xOrder: 1,
       yOrder: 1
