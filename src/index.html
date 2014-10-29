@@ -37,7 +37,7 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div id="menu" data-ng-class="{ 'active' : menu.active }">
+    <div id="menu" class="kw-menu-transition" data-ng-class="{ 'active' : menu.active }">
       <div class="pure-menu pure-menu-open">
         <a class="pure-menu-heading" data-ui-sref="/home" data-ng-bind="menu.title"></a>
         <ul>
@@ -56,14 +56,14 @@
       </div>
     </div>
 
-    <div class="kw-header" data-ng-class="{ 'active' : menu.active }">
+    <div class="kw-header kw-menu-transition" data-ng-class="{ 'active' : menu.active }">
       <p data-ng-click="menuToggle()">
       <i class="icon" data-ng-class="{ 'ion-close-round' : menu.active, 'ion-navicon-round' : !menu.active }"></i>
         Kiwi Networks
       </p>
     </div>
 
-    <div class="kw-perspective" data-ng-class="{ 'active' : menu.active }">
+    <div class="kw-perspective">
       <div class="kw-page kw-page-current" data-ng-class="[styles.page, styles.transition]" ui-view></div>
     </div>
 
@@ -104,13 +104,13 @@
     <script src="common/services/kiwiWebApi.js"></script>
     <script src="common/filters/capitalize.js"></script>
     <script src="app/home/home.js"></script>
-    <script src="app/products/products.js"></script>
-    <script src="app/products/residential/residential.js"></script>
-    <script src="app/products/business/business.js"></script>
-    <script src="app/products/dedicated/dedicated.js"></script>
-    <script src="app/products/metromesh/metromesh.js"></script>
-    <script src="app/products/faq/faq.js"></script>
-    <script src="app/products/sales/sales.js"></script>
+    <script src="app/services/services.js"></script>
+    <script src="app/services/residential/residential.js"></script>
+    <script src="app/services/business/business.js"></script>
+    <script src="app/services/dedicated/dedicated.js"></script>
+    <script src="app/services/metromesh/metromesh.js"></script>
+    <script src="app/services/faq/faq.js"></script>
+    <script src="app/services/sales/sales.js"></script>
     <script src="app/company/about/about.js"></script>
     <script src="app/company/concesion/concesion.js"></script>
     <script src="app/company/careers/careers.js"></script>

@@ -1,7 +1,7 @@
 <p data-ng-if="isString(section)" data-ng-bind-html="section"></p>
 <div data-ng-if="!isString(section)">
   <h4 data-ng-if="section.title" data-ng-bind-html="section.title"></h4>
-  <h5 data-ng-if="section.subtitle" data-ng-bind-html="section.subtitle"></h5>
+  <p data-ng-if="section.subtitle"><strong><span data-ng-bind-html="section.subtitle"></span></strong></p>
   <div data-ng-repeat="section in section.sections" data-ng-include="'/app/company/privacy/paragraphTree.tpl.html'">
   </div>
 </div>

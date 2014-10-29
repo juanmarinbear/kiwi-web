@@ -1,8 +1,8 @@
 {
-  "title" : "Productos",
-  "products" : [ 
+  "title" : "Servicios",
+  "services" : [ 
     { 
-      "art" : "",
+      "art" : "ion-home",
       "title" : "Residencial",
       "paragraphs" : [
         "Velocidad simétrica",
@@ -23,7 +23,7 @@
       ]
     },
     { 
-      "art" : "",
+      "art" : "ion-briefcase",
       "title" : "Business",
       "paragraphs" : [
         "Velocidad simétrica",
@@ -44,7 +44,7 @@
       ]
     },
     { 
-      "art" : "",
+      "art" : "ion-jet",
       "title" : "Dedicado",
       "paragraphs" : [
         "Velocidad simétrica",
@@ -65,7 +65,7 @@
       ]
     },
     { 
-      "art" : "",
+      "art" : "ion-network",
       "title" : "Metro Mesh",
       "paragraphs" : [
         "Conecta 2 o más sitios",
