@@ -6,18 +6,22 @@ h2, h4, h6, li {
   font-family: 'Roboto', sans-serif;
 }
 
-.kw-home, .kw-products {
+.kw-home, .kw-products, .kw-residential, .kw-business, .kw-dedicated, .kw-metromesh {
   text-align: center;
 }
 
-.kw-products ul {
+.kw-products ul, .kw-residential ul, .kw-business ul, .kw-dedicated ul, .kw-metromesh ul {
   display: inline-block;
 }
 
-.kw-products li {
+.kw-products li, .kw-residential li, .kw-business li, .kw-dedicated li, .kw-metromesh li {
   text-align: left;
 }
 
 .kw-button {
   padding: 1rem;
+}
+
+.kw-icon-lg {
+  font-size: 12em;
 }
