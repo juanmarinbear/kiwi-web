@@ -107,28 +107,6 @@ module.exports = {
       }
     }
   },
-  privacy: function(ticket) {
-    return {
-      ticket: {
-        requester: {
-          name: ticket.name + ' ' + ticket.last,
-          email: ticket.email,
-          locale_id: '2',
-          user_fields: {
-            mobile_mx: ticket.mobile 
-          }
-        },
-        subject: ticket.type + ' - ' + ticket.subject,
-        description: ticket.message,
-        ticket_form_id: zendeskFields.contactForm,
-        custom_fields: [
-          { id: zendeskFields.contactSubject, value: ticket.subject == 'Other' ? 'contact_other' : foldToASCII(ticket.subject).replace(/\s/g, '_').toLowerCase() },
-          { id: zendeskFields.company, value: ticket.company },
-          { id: zendeskFields.contact, value: ticket.contact }
-        ]
-      }
-    }
-  },
   jobs: function(ticket) {
     return {
       ticket: {
