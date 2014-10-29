@@ -1,9 +1,11 @@
-<h2 data-ng-bind="lang.title"></h2>
-<div class="pure-g">
-  <div class="pure-u-1" data-ng-repeat="section in lang.sections">
-    <h3 data-ng-if="section.title" data-ng-bind="section.title"></h3>
-    <h4 data-ng-if="section.subtitle" data-ng-bind="section.subtitle"></h4>
-    <div data-ng-repeat="section in section.sections" data-ng-include="'/app/company/privacy/paragraphTree.tpl.html'">
+<div class="kw-content">
+  <h2 data-ng-bind="lang.title"></h2>
+  <div class="pure-g">
+    <div class="pure-u-1" data-ng-repeat="section in lang.sections">
+      <h3 data-ng-if="section.title" data-ng-bind="section.title"></h3>
+      <h4 data-ng-if="section.subtitle" data-ng-bind="section.subtitle"></h4>
+      <div data-ng-repeat="section in section.sections" data-ng-include="'/app/company/privacy/paragraphTree.tpl.html'">
+      </div>
     </div>
   </div>
 </div>
