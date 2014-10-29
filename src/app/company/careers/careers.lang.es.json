@@ -6,7 +6,7 @@
       "art" : "",
       "careers" : [
         {
-          "name" : "Ingeniero en Redes",
+          "name" : "Ingeniero de Redes",
           "anchor" : "networkEngineer"
         },
         {
@@ -14,7 +14,7 @@
           "anchor" : "solutionsEngineer" 
         },
         {
-          "name" : "Ingeniero en Software",
+          "name" : "Ingeniero de Software",
           "anchor" : "softwareEngineer" 
         }
       ]
@@ -24,7 +24,7 @@
       "art" : "",
       "careers" : [
         {
-          "name" : "Ingeniero en Redes",
+          "name" : "Ingeniero de Redes",
           "anchor" : "networkEngineer"
         },
         {
@@ -32,7 +32,7 @@
           "anchor" : "solutionsEngineer" 
         },
         {
-          "name" : "Ingeniero en Software",
+          "name" : "Ingeniero de Software",
           "anchor" : "softwareEngineer" 
         }
       ]
@@ -42,7 +42,7 @@
       "art" : "",
       "careers" : [
         {
-          "name" : "Ingeniero en Redes",
+          "name" : "Ingeniero de Redes",
           "anchor" : "networkEngineer"
         },
         {
@@ -50,7 +50,7 @@
           "anchor" : "solutionsEngineer" 
         },
         {
-          "name" : "Ingeniero en Software",
+          "name" : "Ingeniero de Software",
           "anchor" : "softwareEngineer" 
         }
       ]
@@ -59,7 +59,7 @@
   "descriptions" : [ 
     {
       "anchor" : "networkEngineer",
-      "title" : "Ingeniero en Redes",
+      "title" : "Ingeniero de Redes",
       "intro" : [
         "Kiwi Networks S.A.P.I. de C.V. es un proveedor concesionado de servicios de telecomunicaciones rentable y en crecimiento.",
         "Ofrecemos servicios residenciales y empresariales que van desde 4 Mbps hasta 1 Gbps.",
@@ -118,7 +118,7 @@
     },
     {
       "anchor" : "solutionsEngineer",
-      "title" : "Ingeniero en Soluciones",
+      "title" : "Ingeniero de Soluciones",
       "intro" : [
         "Kiwi Networks S.A.P.I. de C.V. es un proveedor concesionado de servicios de telecomunicaciones rentable y en crecimiento.",
         "Ofrecemos servicios residenciales y empresariales que van desde 4 Mbps hasta 1 Gbps.",
@@ -175,7 +175,7 @@
     },
     {
       "anchor" : "softwareEngineer",
-      "title" : "Ingeniero en Software",
+      "title" : "Ingeniero de Software",
       "intro" : [
         "Kiwi Networks S.A.P.I. de C.V. es un proveedor concesionado de servicios de telecomunicaciones rentable y en crecimiento.",
         "Ofrecemos servicios residenciales y empresariales que van desde 4 Mbps hasta 1 Gbps.",
