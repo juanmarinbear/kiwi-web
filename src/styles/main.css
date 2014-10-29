@@ -67,7 +67,8 @@ html, body {
 }
 
 .kw-content {
-  padding: 1rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
   /*
   position: relative;
   top: 50%;
