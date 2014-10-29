@@ -37,7 +37,7 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div id="menu" data-ng-class="{ 'active' : menu.active }">
+    <div id="menu" class="kw-menu-transition" data-ng-class="{ 'active' : menu.active }">
       <div class="pure-menu pure-menu-open">
         <a class="pure-menu-heading" data-ui-sref="/home" data-ng-bind="menu.title"></a>
         <ul>
@@ -56,7 +56,7 @@
       </div>
     </div>
 
-    <div class="kw-header" data-ng-class="{ 'active' : menu.active }">
+    <div class="kw-header kw-menu-transition" data-ng-class="{ 'active' : menu.active }">
       <p data-ng-click="menuToggle()">
       <i class="icon" data-ng-class="{ 'ion-close-round' : menu.active, 'ion-navicon-round' : !menu.active }"></i>
         Kiwi Networks
