@@ -99,7 +99,7 @@ a {
 }
 
 .kw-content {
-  max-width: 800px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 2em;
   /*
@@ -234,27 +234,20 @@ font-family: 'Roboto', sans-serif;
  * Buttons
  */
 
-.button-success,
-.button-error,
-.button-warning,
-.button-secondary {
-  color: white;
-  border-radius: 4px;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+.pure-button {
+  color: #ffffff;
+  background-color: rgba(0,0,0,0);
+  border: 1px solid #ffffff;
+  max-width: 8em;
+  width: 100%;
 }
 
-.button-success {
-  background: rgb(28, 184, 65); /* this is a green */
+.pure-button:hover {
+  color: #000000;
+  background-color: rgba(255,255,255,1);
 }
 
-.button-error {
-  background: rgb(202, 60, 60); /* this is a maroon */
-}
-
-.button-warning {
-  background: rgb(223, 117, 20); /* this is an orange */
-}
-
-.button-secondary {
-  background: rgb(66, 184, 221); /* this is a light blue */
+.pure-button-disabled {
+  color: #000000;
+  background-color: rgba(255,255,255,1);
 }

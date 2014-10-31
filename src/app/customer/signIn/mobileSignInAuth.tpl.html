@@ -5,7 +5,7 @@
       <input type="password" name="password" placeholder="{{lang.forms.mobileSignInAuth.inputs.password.placeholder}}" maxlength="4" data-ng-model="data.mobileSignInAuth.password" data-ng-maxlength="4" data-ng-pattern="/\d{4}/" data-ng-keypress="data.errors = []" required>
     </div>
     <div class="pure-u-1">
-      <button type="submit" class="pure-button pure-button-primary" data-ng-bind="lang.forms.mobileSignInAuth.inputs.authenticate.label" data-ng-class="{'pure-button-disabled': forms.mobileSignInAuth.$invalid}" data-ng-disabled="forms.mobileSignInAuth.$invalid" data-ng-click="mobileSignInAuthSubmit()"></button>
+      <button type="submit" class="pure-button" data-ng-bind="lang.forms.mobileSignInAuth.inputs.authenticate.label" data-ng-class="{'pure-button-disabled': forms.mobileSignInAuth.$invalid}" data-ng-disabled="forms.mobileSignInAuth.$invalid" data-ng-click="mobileSignInAuthSubmit()"></button>
     </div>
   </div>
 </form>
