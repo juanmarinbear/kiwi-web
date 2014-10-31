@@ -3,7 +3,7 @@
 var kiwiWeb = angular.module('kiwiWeb', [
   'ui.router',
   'ngAnimate',
-  'ngResource',
+//  'ngResource',
   'ngSanitize'
 ]);
 
@@ -38,7 +38,7 @@ kiwiWeb.controller('AppCtrl', function ($scope, $window, MediaQuery, Transition,
   };
 
   $scope.sectionStyle = function(visible, length) {
-    return visible ? {'margin-top': '0'} : {'margin-top': '-' + length * (44 / 16) + 'rem'}
+    return visible ? {'margin-top': '0'} : {'margin-top': '-' + length * (44 / 16) + 'rem'};
   };
 
   $scope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {

@@ -21,6 +21,7 @@
   "globals": {
     "kiwiWeb": true,
     "Parse" : true,
+    "$" : true,
     "angular": false,
     /* Jasmine */
     "jasmine": false,
