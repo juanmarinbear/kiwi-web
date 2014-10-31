@@ -7,7 +7,7 @@
         <h4><a data-ng-bind="career.name" href="" data-ng-click="goTo(career.anchor)"></a></h4>
       </div>
     </div>
-    <div class="pure-u-1 kw-role" data-ng-repeat="description in lang.descriptions">
+    <div class="pure-u-1" data-ng-repeat="description in lang.descriptions">
       <h3 id="{{ description.anchor }}" data-ng-bind="description.title"></h3>
       <p data-ng-repeat="paragraph in description.intro" data-ng-bind="paragraph"></p>
       <div data-ng-repeat="section in description.sections">

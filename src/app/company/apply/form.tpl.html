@@ -127,13 +127,10 @@
     </div>
     <div class="pure-u-1">
       <label for="{{apply.inputs.resume.name}}" data-ng-bind="apply.inputs.resume.label"></label>
-      <button class="pure-button pure-button-primary" data-ng-bind="apply.inputs.upload.label"></button>
+      <div class="kw-button-group">
+        <button class="pure-button" data-ng-bind="apply.inputs.upload.label"></button>
+      </div>
     </div>
-    <!--
-    <div class="pure-u-1" data-ng-show="forms.apply.submitted && forms.apply.$invalid">
-      <p data-ng-show="forms.apply.resume.$error.required" data-ng-bind="apply.inputs.resume.validation.required"></p>
-    </div>
-    -->
     <div class="pure-u-1">
       <label for="{{apply.inputs.message.name}}" data-ng-bind="apply.inputs.message.label"></label>
       <textarea name="message" placeholder="{{apply.inputs.message.placeholder}}" rows=5 data-ng-model="ticket.message" required></textarea>

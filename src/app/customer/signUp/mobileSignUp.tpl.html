@@ -13,7 +13,9 @@
       <input type="text" name="mobile" placeholder="{{lang.forms.mobileSignUp.inputs.mobile.placeholder}}" maxlength="10" data-ng-model="data.mobileSignUp.mobile" data-ng-pattern="/\d{10}/" data-ng-maxlength="10" required>
     </div>
     <div class="pure-u-1">
-      <button type="submit" class="pure-button pure-button-primary" data-ng-class="{'pure-button-disabled': forms.mobileSignUp.$invalid}" data-ng-disabled="forms.mobileSignUp.$invalid" data-ng-bind="lang.forms.mobileSignUp.inputs.submit.label" data-ng-click="mobileSignUpSubmit()"></button>
+      <div class="kw-button-group">
+        <button type="submit" class="pure-button" data-ng-class="{'pure-button-disabled': forms.mobileSignUp.$invalid}" data-ng-disabled="forms.mobileSignUp.$invalid" data-ng-bind="lang.forms.mobileSignUp.inputs.submit.label" data-ng-click="mobileSignUpSubmit()"></button>
+      </div>
     </div>
   </div>
 </form>

@@ -7,7 +7,8 @@ var kiwiWeb = angular.module('kiwiWeb', [
   'ngSanitize'
 ]);
 
-kiwiWeb.controller('AppCtrl', function ($scope, Transition, Menu) {
+kiwiWeb.controller('AppCtrl', function ($scope, $window, MediaQuery, Transition, Menu) {
+  $scope.screen = MediaQuery.screenSize();
   $scope.title = 'Kiwi Networks';
   $scope.styles = {};
   $scope.menu = Menu;
@@ -36,6 +37,10 @@ kiwiWeb.controller('AppCtrl', function ($scope, Transition, Menu) {
     }
   };
 
+  $scope.sectionStyle = function(visible, length) {
+    return visible ? {'margin-top': '0'} : {'margin-top': '-' + length * (44 / 16) + 'rem'}
+  };
+
   $scope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
 
     if(toParams === fromParams) {
@@ -51,4 +56,10 @@ kiwiWeb.controller('AppCtrl', function ($scope, Transition, Menu) {
     $scope.styles.page = '';
 
   });
+
+  $(window).resize(function() {
+    $scope.screen = MediaQuery.screenSize();
+    $scope.$apply();
+  });
+
 });

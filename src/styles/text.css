@@ -18,10 +18,6 @@ h2, h4, h6, li {
   text-align: left;
 }
 
-.kw-button {
-  padding: 1rem;
-}
-
 .kw-icon-lg {
   font-size: 12em;
 }
@@ -38,14 +34,6 @@ h2, h4, h6, li {
   text-align: center;
 }
 
-.kw-role, .kw-section {
-  margin-top: 1rem;
-}
-
-.kw-section {
-  padding: 1rem;
-}
-
 .kw-section h1,
 .kw-section h2,
 .kw-section h3,
@@ -53,4 +41,12 @@ h2, h4, h6, li {
 .kw-section h5,
 .kw-section h6 {
   text-align: center;
+}
+
+.kw-section {
+  padding: 0 1em;
+}
+
+.kw-mailto {
+  font-size: 0.8em;
 }

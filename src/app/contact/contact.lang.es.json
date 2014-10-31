@@ -24,9 +24,9 @@
       "subtitle" : "Escríbenos a:",
       "art" : "ion-email",
       "paragraphs" : [
-        "<a href='mailto:sales@kiwinetworks.com?Subject=Sales' target='_blank'>Ventas: sales[a]kiwinetworks.com</a>",
-        "<a href='mailto:support@kiwinetworks.com?Subject=Support' target='_blank'>Soporte: support[a]kiwinetworks.com</a>",
-        "<a href='mailto:contact@kiwinetworks.com?Subject=Contact' target='_blank'>Contacto: contact[a]kiwinetworks.com</a>"
+        "<a class='kw-mailto' href='mailto:sales@kiwinetworks.com?Subject=Sales' target='_blank'>Ventas: sales[a]kiwinetworks.com</a>",
+        "<a class='kw-mailto' href='mailto:support@kiwinetworks.com?Subject=Support' target='_blank'>Soporte: support[a]kiwinetworks.com</a>",
+        "<a class='kw-mailto' href='mailto:contact@kiwinetworks.com?Subject=Contact' target='_blank'>Contacto: contact[a]kiwinetworks.com</a>"
       ]
     },
     {

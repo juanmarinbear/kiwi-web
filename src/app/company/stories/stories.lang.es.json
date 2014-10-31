@@ -2,20 +2,20 @@
   "title" : "Casos de Éxito",
   "sections" : [
     {
-      "title" : "Productos Internacionales Mabe S.A. de C.V.",
-      "video" : "<iframe src=\"//player.vimeo.com/video/109805292\" width=\"500\" height=\"281\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>"
+      "title" : "P. I. Mabe S.A. de C.V.",
+      "video" : "<iframe src=\"//player.vimeo.com/video/109805292\" width=\"380\" height=\"212\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>"
     },
     {
       "title" : "Seamless Global Solutions S.A. de C.V.",
-      "video" : "<iframe src=\"//player.vimeo.com/video/109626933\" width=\"500\" height=\"281\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>"
+      "video" : "<iframe src=\"//player.vimeo.com/video/109626933\" width=\"380\" height=\"212\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>"
     },
     {
       "title" : "Inmobiliaria Quiero Casa S.A. de C.V.",
-      "video" : "<iframe src=\"//player.vimeo.com/video/109672232\" width=\"500\" height=\"281\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>"
+      "video" : "<iframe src=\"//player.vimeo.com/video/109672232\" width=\"380\" height=\"212\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>"
     },
     {
       "title" : "ThyssenKrupp AG",
-      "video" : "<iframe src=\"//player.vimeo.com/video/110140870\" width=\"500\" height=\"281\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>"
+      "video" : "<iframe src=\"//player.vimeo.com/video/110140870\" width=\"380\" height=\"212\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>"
     }
   ]
 }

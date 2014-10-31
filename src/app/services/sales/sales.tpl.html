@@ -7,20 +7,24 @@
       <p data-ng-repeat="paragraph in lang.paragraphs" data-ng-bind-html="paragraph"></p>
     </div>
     <div class="pure-u-1">
-      <div id="client" class="kw-section" data-ng-show="step === 'client'" data-ng-include src="'/app/products/sales/client.tpl.html'">
+      <div id="client" class="kw-section" data-ng-show="step === 'client'" data-ng-include src="'/app/services/sales/client.tpl.html'">
       </div>
     </div>
     <div class="pure-u-1">
-      <div id="location" class="pure-section" data-ng-show="step === 'location'" data-ng-include src="'/app/products/sales/location.tpl.html'">
+      <div id="location" class="pure-section" data-ng-show="step === 'location'" data-ng-include src="'/app/services/sales/location.tpl.html'">
       </div>
     </div>
     <div class="pure-u-1">
       <div data-ng-show="step === 'location'">
-        <button class="pure-button button-warning" data-ng-bind="location.inputs.previous.label" data-ng-click="prev()"></button>
-        <button class="pure-button button-success" data-ng-bind="location.inputs.submit.label" data-ng-class="{'pure-button-disabled': forms.location.$invalid || forms.client.$invalid}" data-ng-disabled="forms.location.$invalid || forms.client.$invalid" data-ng-click="submit()"></button>
+        <div class="kw-button-group">
+          <button class="pure-button" data-ng-bind="location.inputs.previous.label" data-ng-click="prev()"></button>
+          <button class="pure-button" data-ng-bind="location.inputs.submit.label" data-ng-class="{'pure-button-disabled': forms.location.$invalid || forms.client.$invalid}" data-ng-disabled="forms.location.$invalid || forms.client.$invalid" data-ng-click="submit()"></button>
+        </div>
       </div>
       <div data-ng-show="step === 'client'">
-        <button class="pure-button pure-button-primary" data-ng-class="{'pure-button-disabled': forms.client.$invalid}" data-ng-disabled="forms.client.$invalid" data-ng-bind="client.inputs.next.label" data-ng-click="next()"></button>
+        <div class="kw-button-group">
+          <button class="pure-button" data-ng-class="{'pure-button-disabled': forms.client.$invalid}" data-ng-disabled="forms.client.$invalid" data-ng-bind="client.inputs.next.label" data-ng-click="next()"></button>
+        </div>
       </div>
     </div>
   </div>
