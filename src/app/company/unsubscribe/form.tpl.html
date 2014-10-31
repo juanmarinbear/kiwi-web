@@ -31,24 +31,34 @@
       <p data-ng-show="forms.unsubscribe.mobile.$error.pattern || forms.unsubscribe.mobile.$error.maxlength" data-ng-bind="unsubscribe.inputs.mobile.validation.invalid"></p>
     </div>
     <div class="pure-u-1">
-      <input type="checkbox" data-ng-model="ticket.unsubscribeEmail">
-      <span data-ng-bind="unsubscribe.inputs.unsubscribeEmail.label"></span>
+      <div class="kw-input">
+        <input type="checkbox" data-ng-model="ticket.unsubscribeEmail">
+        <span data-ng-bind="unsubscribe.inputs.unsubscribeEmail.label"></span>
+      </div>
     </div>
     <div class="pure-u-1">
-      <input type="checkbox" data-ng-model="ticket.unsubscribeMobile">
-      <span data-ng-bind="unsubscribe.inputs.unsubscribeMobile.label"></span>
+      <div class="kw-input">
+        <input type="checkbox" data-ng-model="ticket.unsubscribeMobile">
+        <span data-ng-bind="unsubscribe.inputs.unsubscribeMobile.label"></span>
+      </div>
     </div>
     <div class="pure-u-1">
-      <input type="checkbox" data-ng-model="ticket.unsubscribeAddress">
-      <span data-ng-bind="unsubscribe.inputs.unsubscribeAddress.label"></span>
+      <div class="kw-input">
+        <input type="checkbox" data-ng-model="ticket.unsubscribeAddress">
+        <span data-ng-bind="unsubscribe.inputs.unsubscribeAddress.label"></span>
+      </div>
     </div>
     <div class="pure-u-1">
-      <input type="checkbox" data-ng-model="ticket.opposeTransfer">
-      <span data-ng-bind="unsubscribe.inputs.opposeTransfer.label"></span>
+      <div class="kw-input">
+        <input type="checkbox" data-ng-model="ticket.opposeTransfer">
+        <span data-ng-bind="unsubscribe.inputs.opposeTransfer.label"></span>
+      </div>
     </div>
     <div class="pure-u-1">
-      <input type="checkbox" data-ng-model="ticket.forgetMe">
-      <span data-ng-bind="unsubscribe.inputs.forgetMe.label"></span>
+      <div class="kw-input">
+        <input type="checkbox" data-ng-model="ticket.forgetMe">
+        <span data-ng-bind="unsubscribe.inputs.forgetMe.label"></span>
+      </div>
     </div>
     <div class="pure-u-1">
       <label for="{{unsubscribe.inputs.message.name}}" data-ng-bind="unsubscribe.inputs.message.label"></label>

@@ -100,8 +100,8 @@ a {
 
 .kw-content {
   max-width: 960px;
-  margin: 0 auto;
-  padding: 2em;
+  margin: 4em auto;
+  padding: 0 2em;
   /*
   position: relative;
   top: 50%;
@@ -144,6 +144,37 @@ font-family: 'Roboto', sans-serif;
 
 .metromesh {
   background: #93d161;
+}
+
+/*
+ * Form Styles
+*/
+
+.kw-input {
+  margin: 0.5em auto;
+  max-width: 16em;
+  width: 100%;
+}
+
+.pure-form-stacked label, .pure-form-stacked p {
+  text-align: center;
+}
+
+.pure-form-stacked input[type='text'], 
+.pure-form-stacked input[type='number'], 
+.pure-form-stacked input[type='email'], 
+.pure-form-stacked input[type='url'], 
+.pure-form-stacked input[type='password'], 
+.pure-form-stacked textarea, 
+.pure-form-stacked select {
+  margin: 0.5em auto;
+  max-width: 16em;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #ffffff;
+  border-radius: 0;
+  color: #ffffff;
+  box-shadow: none;
 }
 
 /*
@@ -250,4 +281,13 @@ font-family: 'Roboto', sans-serif;
 .pure-button-disabled {
   color: #000000;
   background-color: rgba(255,255,255,1);
+}
+
+.kw-button-group {
+  text-align: center;
+}
+
+.kw-button-group button,
+.kw-button-group a {
+  margin: 0.5em;
 }
