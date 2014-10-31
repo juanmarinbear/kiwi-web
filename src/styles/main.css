@@ -99,8 +99,9 @@ a {
 }
 
 .kw-content {
-  padding: 2rem;
-  margin-bottom: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2em;
   /*
   position: relative;
   top: 50%;
