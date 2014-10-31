@@ -36,6 +36,10 @@ kiwiWeb.controller('AppCtrl', function ($scope, Transition, Menu) {
     }
   };
 
+  $scope.sectionStyle = function(visible, length) {
+    return visible ? {'margin-top': '0'} : {'margin-top': '-' + length * (44 / 16) + 'rem'}
+  };
+
   $scope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
 
     if(toParams === fromParams) {

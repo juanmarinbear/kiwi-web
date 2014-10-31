@@ -43,8 +43,8 @@
         <ul>
           <li data-ng-repeat="section in menu.sections">
             <a class="menu-header" data-ng-bind="section.label" data-ng-click="menuSectionToggle(section)"></a>
-            <div class="menu-item-divided" data-ng-class="{ 'pure-menu pure-menu-open': section.visible }">
-              <ul>
+            <div class="menu-item-divided kw-menu">
+              <ul class="kw-menu-transition" data-ng-style="sectionStyle(section.visible, section.sections.length)">
                 <li data-ng-repeat="option in section.sections">
                   <a ng-if="option.uiSref" data-ui-sref="{{ option.uiSref }}" data-ng-bind="option.label"></a>
                   <a ng-if="option.href" href="{{ option.href }}" data-ng-bind="option.label" target="{{ option.target }}"></a>
@@ -63,8 +63,8 @@
       </p>
     </div>
 
-    <div class="kw-perspective">
-      <div class="kw-page kw-page-current" data-ng-class="[styles.page, styles.transition]" ui-view></div>
+    <div class="kw-perspective kw-bg kw-bg-main">
+      <div class="kw-page kw-page-current" data-ng-class="[styles.transition]" ui-view></div>
     </div>
 
 
