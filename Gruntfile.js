@@ -110,8 +110,8 @@ module.exports = function (grunt) {
       dist: {
         files: {
           src: [
-            '<%= codecery.dist %>/common/**/*.js',
             '<%= codecery.dist %>/app/**/*.js',
+            '<%= codecery.dist %>/common/**/*.js',
             '<%= codecery.dist %>/styles/{,*/}*.css',
             '<%= codecery.dist %>/assets/**/*.{png,jpg,jpeg,gif,webp,svg}',
             '<%= codecery.dist %>/styles/fonts/*'
