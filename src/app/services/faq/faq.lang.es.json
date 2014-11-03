@@ -73,7 +73,7 @@
         {
           "question" : "¿Qué especificaciones tiene el router que me entregan?",
           "answer" : [
-            "<a href='/assets/UniFi_Security_Gateway_DS.pdf' target='_blank'>Estas.</a>"
+            "<a href='/assets/docs/UniFi_Security_Gateway_DS.pdf' target='_blank'>Estas.</a>"
           ]
         },
         {
