@@ -7,7 +7,7 @@ var kiwiWeb = angular.module('kiwiWeb', [
   'ngSanitize'
 ]);
 
-kiwiWeb.controller('AppCtrl', function ($scope, $window, MediaQuery, Transition, Menu) {
+kiwiWeb.controller('AppCtrl', ['$scope', '$window', 'MediaQuery', 'Transition', 'Menu', function ($scope, $window, MediaQuery, Transition, Menu) {
   $scope.screen = MediaQuery.screenSize();
   $scope.title = 'Kiwi Networks';
   $scope.styles = {};
@@ -62,4 +62,4 @@ kiwiWeb.controller('AppCtrl', function ($scope, $window, MediaQuery, Transition,
     $scope.$apply();
   });
 
-});
+}]);

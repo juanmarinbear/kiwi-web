@@ -1,6 +1,6 @@
 'use strict';
 
-kiwiWeb.factory('KiwiWebApi', function ($http, Auth) {
+kiwiWeb.factory('KiwiWebApi', ['$http', 'Auth', function ($http, Auth) {
   return {
     save: function(ticket, endpoint, success, error) {
       $http({
@@ -17,4 +17,4 @@ kiwiWeb.factory('KiwiWebApi', function ($http, Auth) {
       });
     }
   };
-});
+}]);

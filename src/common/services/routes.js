@@ -1,6 +1,6 @@
 'use strict';
 
-kiwiWeb.factory('Routes', function() {
+kiwiWeb.factory('Routes', [function() {
 
   return {
     about: {
@@ -103,4 +103,4 @@ kiwiWeb.factory('Routes', function() {
       yOrder: 0
     }
   };
-});
+}]);

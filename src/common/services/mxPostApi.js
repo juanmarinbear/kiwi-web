@@ -1,6 +1,6 @@
 'use strict';
 
-kiwiWeb.factory('MxPostApi', function ($http, Auth) {
+kiwiWeb.factory('MxPostApi', ['$http', 'Auth', function ($http, Auth) {
   return {
 
     getStates: function (success, error) {
@@ -150,4 +150,4 @@ kiwiWeb.factory('MxPostApi', function ($http, Auth) {
       });
     }
   };
-});
+}]);

@@ -1,6 +1,6 @@
 'use strict';
 
-kiwiWeb.factory('Transition', function(Routes) {
+kiwiWeb.factory('Transition', ['Routes', function(Routes) {
 
   return {
     getTransition: function(toState, toParams, fromState, fromParams) {
@@ -33,4 +33,4 @@ kiwiWeb.factory('Transition', function(Routes) {
       }
     }
   };
-});
+}]);

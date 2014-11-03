@@ -1,6 +1,6 @@
 'use strict';
 
-kiwiWeb.factory('MediaQuery', function($window) {
+kiwiWeb.factory('MediaQuery', ['$window', function($window) {
   return {
     screenSize: function() {
       if($window.matchMedia('(max-width: 35.5em)').matches) {
@@ -18,4 +18,4 @@ kiwiWeb.factory('MediaQuery', function($window) {
       return 'xl';
     }
   };
-});
+}]);

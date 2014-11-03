@@ -1,6 +1,6 @@
 'use strict';
 
-kiwiWeb.controller('SupportCtrl', function ($scope, KiwiWebApi, lang, support) {
+kiwiWeb.controller('SupportCtrl', ['$scope', 'KiwiWebApi', 'lang', 'support', function ($scope, KiwiWebApi, lang, support) {
   $scope.lang = lang.data;
   $scope.support = support.data.support;
   $scope.changeTitle($scope.lang.title);
@@ -32,4 +32,4 @@ kiwiWeb.controller('SupportCtrl', function ($scope, KiwiWebApi, lang, support) {
     }
     $scope.forms.support.submitted = true;
   };
-});
+}]);
