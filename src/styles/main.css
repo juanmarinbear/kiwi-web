@@ -13,7 +13,7 @@ a {
 }
 
 .kw-bg-main {
-  background: url('/media/IMG_1043.jpg');
+  background: url('/assets/images/IMG_1043.jpg');
 }
 
 .kw-menu {
@@ -115,7 +115,7 @@ a {
  * Fonts
  */
 
-font-family: 'Droid Serif', serif;
+font-family: 'Roboto Slab', serif;
 font-family: 'Roboto', sans-serif;
 
 /*

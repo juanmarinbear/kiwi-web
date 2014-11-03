@@ -1,6 +1,6 @@
 'use strict';
 
-kiwiWeb.controller('ReferCtrl', function ($scope, lang) {
+kiwiWeb.controller('ReferCtrl', ['$scope', 'lang', function ($scope, lang) {
   $scope.lang = lang.data;
   $scope.changeTitle($scope.lang.title);
-});
+}]);

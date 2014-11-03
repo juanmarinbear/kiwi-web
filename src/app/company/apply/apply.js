@@ -1,6 +1,6 @@
 'use strict';
 
-kiwiWeb.controller('ApplyCtrl', function ($scope, $stateParams,KiwiWebApi, lang, apply) {
+kiwiWeb.controller('ApplyCtrl', ['$scope', '$stateParams', 'KiwiWebApi', 'lang', 'apply', function ($scope, $stateParams, KiwiWebApi, lang, apply) {
   $scope.lang = lang.data;
   $scope.apply = apply.data.apply;
   $scope.changeTitle($scope.lang.title);
@@ -35,4 +35,4 @@ kiwiWeb.controller('ApplyCtrl', function ($scope, $stateParams,KiwiWebApi, lang,
     }
     $scope.forms.apply.submitted = true;
   };
-});
+}]);

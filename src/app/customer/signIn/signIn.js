@@ -1,6 +1,6 @@
 'use strict';
 
-kiwiWeb.controller('SignInCtrl', function ($scope, $filter, lang) {
+kiwiWeb.controller('SignInCtrl', ['$scope', '$filter', 'lang', function ($scope, $filter, lang) {
   $scope.lang = lang.data;
   $scope.data = {};
   $scope.forms = {};
@@ -89,4 +89,4 @@ kiwiWeb.controller('SignInCtrl', function ($scope, $filter, lang) {
     $scope.data.mobileSignInAuth.submitted = true;
     $scope.loading = false;
   };
-});
+}]);

@@ -1,6 +1,6 @@
 'use strict';
 
-kiwiWeb.factory('Menu', function() {
+kiwiWeb.factory('Menu', [function() {
 
   return {
     title : 'Menu',
@@ -149,4 +149,4 @@ kiwiWeb.factory('Menu', function() {
       }
     ]
   };
-});
+}]);

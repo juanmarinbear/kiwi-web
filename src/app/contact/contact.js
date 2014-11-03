@@ -1,6 +1,6 @@
 'use strict';
 
-kiwiWeb.controller('ContactCtrl', function ($scope, KiwiWebApi, lang, contact) {
+kiwiWeb.controller('ContactCtrl', ['$scope', 'KiwiWebApi', 'lang', 'contact', function ($scope, KiwiWebApi, lang, contact) {
   $scope.lang = lang.data;
   $scope.contact = contact.data.contact;
   $scope.changeTitle($scope.lang.title);
@@ -24,4 +24,4 @@ kiwiWeb.controller('ContactCtrl', function ($scope, KiwiWebApi, lang, contact) {
     }
     $scope.forms.contact.submitted = true;
   };
-});
+}]);

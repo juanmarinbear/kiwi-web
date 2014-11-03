@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('kiwiWeb')
-.controller('FaqCtrl', function ($scope, $stateParams, $location, $anchorScroll, lang) {
+.controller('FaqCtrl', ['$scope', '$stateParams', '$location', '$anchorScroll', 'lang', function ($scope, $stateParams, $location, $anchorScroll, lang) {
   $scope.lang = lang.data;
   $scope.changeTitle($scope.lang.title);
 
@@ -9,4 +9,4 @@ angular.module('kiwiWeb')
     $location.hash(anchor);
     $anchorScroll();
   };
-});
+}]);

@@ -1,6 +1,6 @@
 'use strict';
 
-kiwiWeb.controller('PayCtrl', function ($scope, $filter, lang) {
+kiwiWeb.controller('PayCtrl', ['$scope', '$fileter', 'lang', function ($scope, $filter, lang) {
   $scope.lang = lang.data;
   $scope.changeTitle($scope.lang.title);
   $scope.data = {};
@@ -10,4 +10,4 @@ kiwiWeb.controller('PayCtrl', function ($scope, $filter, lang) {
   $scope.data.step = 'idSubmit';
 
   $scope.data.idSubmitOriginal = angular.copy($scope.data.mobileSignIn);
-});
+}]);

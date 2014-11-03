@@ -1,6 +1,6 @@
 'use strict';
 
-kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, $stateParams, MxPostApi, KiwiWebApi, lang, client, location) {
+kiwiWeb.controller('SalesCtrl', ['$scope', '$filter', '$stateParams', 'MxPostApi', 'KiwiWebApi', 'lang', 'client', 'location', function ($scope, $filter, $stateParams, MxPostApi, KiwiWebApi, lang, client, location) {
   $scope.lang = lang.data;
   $scope.client = client.data.client;
   $scope.location = location.data.location;
@@ -118,4 +118,4 @@ kiwiWeb.controller('SalesCtrl', function ($scope, $http, $filter, $stateParams, 
     $scope.forms.client.submitted = true;
     $scope.forms.location.submitted = true;
   };
-});
+}]);
