@@ -114,7 +114,8 @@ module.exports = function (grunt) {
             '<%= codecery.dist %>/common/**/*.js',
             '<%= codecery.dist %>/styles/{,*/}*.css',
             '<%= codecery.dist %>/assets/**/*.{png,jpg,jpeg,gif,webp,svg}',
-            '<%= codecery.dist %>/styles/fonts/*'
+            '<%= codecery.dist %>/styles/fonts/*.{ttf, woff}',
+            '<%= codecery.dist %>/bower_components/ionicons/fonts/*.{ttf, woff}'
           ]
         }
       }
@@ -197,11 +198,12 @@ module.exports = function (grunt) {
           src: [
             '*.{ico,png,txt}',
             '.htaccess',
-            'bower_components/**/*',
             'assets/images/{,*/}*.{gif,webp}',
-            'styles/fonts/*'
+            'app/**/*.json',
+            'fonts/*.{ttf, woff, svg, eot}'
           ]
-        }, {
+        },
+        {
           expand: true,
           cwd: '.tmp/assets/images',
           dest: '<%= codecery.dist %>/assets/images',
@@ -266,6 +268,11 @@ module.exports = function (grunt) {
           ]
         }
       }
+    },
+    'json-minify': {
+      dist: {
+        files: 'dist/app/**/*.json'
+      }
     }
   });
 
@@ -303,7 +310,8 @@ module.exports = function (grunt) {
     'cssmin',
     'uglify',
     'rev',
-    'usemin'
+    'usemin',
+    'json-minify'
   ]);
 
   grunt.registerTask('default', [
