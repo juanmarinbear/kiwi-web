@@ -11,20 +11,20 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <!-- build:css styles/main.css -->
-        <link rel="stylesheet" href="bower_components/pure/base.css">
-        <link rel="stylesheet" href="bower_components/pure/grids.css">
-        <link rel="stylesheet" href="bower_components/pure/grids-responsive.css">
-        <link rel="stylesheet" href="bower_components/pure/menus.css">
-        <link rel="stylesheet" href="bower_components/pure/buttons.css">
-        <link rel="stylesheet" href="bower_components/pure/forms.css">
-        <link rel="stylesheet" href="bower_components/ionicons/css/ionicons.css">
-        <link rel="stylesheet" href="styles/main.css">
-        <link rel="stylesheet" href="styles/text.css">
-        <link rel="stylesheet" href="styles/animations.css">
-        <link rel="stylesheet" href="styles/side-menu.css">
-        <!-- endbuild -->
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Slab|Roboto' rel='stylesheet' type='text/css'>
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="bower_components/pure/base.css">
+    <link rel="stylesheet" href="bower_components/pure/grids.css">
+    <link rel="stylesheet" href="bower_components/pure/grids-responsive.css">
+    <link rel="stylesheet" href="bower_components/pure/menus.css">
+    <link rel="stylesheet" href="bower_components/pure/buttons.css">
+    <link rel="stylesheet" href="bower_components/pure/forms.css">
+    <link rel="stylesheet" href="bower_components/ionicons/css/ionicons.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <!-- endbuild -->
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab|Roboto' rel='stylesheet' type='text/css'>
+
   </head>
   <body>
     <!--[if lt IE 7]>
@@ -83,55 +83,46 @@
 
     <!-- build:js scripts/modules.js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
-    <!--
-    <script src="bower_components/modernizr/modernizr.js"></script>
-    <script src="bower_components/d3/d3.js"></script>
-    <script src="bower_components/underscore/underscore.js"></script>
-    -->
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <!--
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    -->
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <!-- endbuild -->
 
     <!-- build:js scripts/scripts.js -->
-    <script src="common/app.js"></script>
-    <script src="common/router.js"></script>
-    <script src="common/services/transition.js"></script>
-    <script src="common/services/routes.js"></script>
-    <script src="common/services/menu.js"></script>
-    <script src="common/services/auth.js"></script>
-    <script src="common/services/mxPostApi.js"></script>
-    <script src="common/services/kiwiWebApi.js"></script>
-    <script src="common/services/mediaQuery.js"></script>
-    <script src="common/filters/capitalize.js"></script>
-    <script src="app/home/home.js"></script>
-    <script src="app/services/services.js"></script>
-    <script src="app/services/residential/residential.js"></script>
-    <script src="app/services/business/business.js"></script>
-    <script src="app/services/dedicated/dedicated.js"></script>
-    <script src="app/services/metromesh/metromesh.js"></script>
-    <script src="app/services/faq/faq.js"></script>
-    <script src="app/services/sales/sales.js"></script>
-    <script src="app/company/about/about.js"></script>
-    <script src="app/company/concesion/concesion.js"></script>
-    <script src="app/company/careers/careers.js"></script>
-    <script src="app/company/apply/apply.js"></script>
-    <script src="app/company/stories/stories.js"></script>
-    <script src="app/company/privacy/privacy.js"></script>
-    <script src="app/company/unsubscribe/unsubscribe.js"></script>
-    <script src="app/contact/contact.js"></script>
-    <script src="app/customer/dashboard/dashboard.js"></script>
-    <script src="app/customer/signUp/signUp.js"></script>
-    <script src="app/customer/signIn/signIn.js"></script>
-    <script src="app/customer/pay/pay.js"></script>
-    <script src="app/customer/refer/refer.js"></script>
-    <script src="app/support/support.js"></script>
-    <script src="app/support/status/status.js"></script>
+    <script src="/app.js"></script>
+    <script src="/app-controller.js"></script>
+    <script src="/components/transition/transition-service.js"></script>
+    <script src="/components/routes/routes-service.js"></script>
+    <script src="/components/menu/menu-service.js"></script>
+    <script src="/components/auth/auth-service.js"></script>
+    <script src="/components/mxpostapi/mxpostapi-service.js"></script>
+    <script src="/components/kiwiwebapi/kiwiwebapi-service.js"></script>
+    <script src="/components/mediaquery/mediaquery-service.js"></script>
+    <script src="/components/signup/signup-controller.js"></script>
+    <script src="/components/signin/signin-controller.js"></script>
+    <script src="/components/capitalize/capitalize-filter.js"></script>
+    <script src="/home/home-controller.js"></script>
+    <script src="/services/services/services-controller.js"></script>
+    <script src="/services/residential/residential-controller.js"></script>
+    <script src="/services/business/business-controller.js"></script>
+    <script src="/services/dedicated/dedicated-controller.js"></script>
+    <script src="/services/metromesh/metromesh-controller.js"></script>
+    <script src="/services/faq/faq-controller.js"></script>
+    <script src="/services/sales/sales-controller.js"></script>
+    <script src="/company/about/about-controller.js"></script>
+    <script src="/company/concesion/concesion-controller.js"></script>
+    <script src="/company/careers/careers-controller.js"></script>
+    <script src="/company/apply/apply-controller.js"></script>
+    <script src="/company/stories/stories-controller.js"></script>
+    <script src="/company/privacy/privacy-controller.js"></script>
+    <script src="/company/unsubscribe/unsubscribe-controller.js"></script>
+    <script src="/contact/contact-controller.js"></script>
+    <script src="/customer/dashboard/dashboard-controller.js"></script>
+    <script src="/customer/pay/pay-controller.js"></script>
+    <script src="/customer/refer/refer-controller.js"></script>
+    <script src="/support/support/support-controller.js"></script>
+    <script src="/support/status/status-controller.js"></script>
     <!-- endbuild -->
-
   </body>
 </html>

@@ -1,0 +1,19 @@
+<div class="kw-content">
+  <h2 data-ng-bind="lang.title"></h2>
+  <div class="pure-g">
+    <div class="pure-u-1">
+      <h3 data-ng-bind="lang.subtitle"></h3>
+      <div class="art"></div>
+      <p data-ng-repeat="paragraph in lang.paragraphs" data-ng-bind="paragraph"></p>
+    </div>
+    <div class="pure-u-1">
+      <div id="unsubscribe" class="kw-section" data-ng-include src="'/company/unsubscribe/form.html'">
+      </div>
+    </div>
+    <div class="pure-u-1">
+      <div class="kw-button-group">
+        <button class="pure-button" data-ng-class="{'pure-button-disabled': forms.unsubscribe.$invalid}" data-ng-disabled="forms.unsubscribe.$invalid" data-ng-bind="unsubscribe.inputs.submit.label" data-ng-click="submit()"></button>
+      </div>
+    </div>
+  </div>
+</div>

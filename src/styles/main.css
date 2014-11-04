@@ -1,3 +1,7 @@
+/*
+ * Elements
+*/
+
 html, body { 
   height: 100%; 
   overflow: hidden;
@@ -8,12 +12,31 @@ a {
   color: #ffffff;
 }
 
+h1, h3, h5, p {
+  font-family: 'Roboto Slab', serif;
+}
+
+h2, h4, h6, li {
+  font-family: 'Roboto', sans-serif;
+}
+
+/*
+ * Fonts
+ */
+
+font-family: 'Roboto Slab', serif; font-family: 'Roboto', sans-serif;
+
+
+/*
+ * Pages
+*/
+
 .kw-bg {
   background: no-repeat fixed;
 }
 
 .kw-bg-main {
-  background: url('/assets/images/IMG_1043.jpg');
+  background: url('/media/images/IMG_1043.jpg');
 }
 
 .kw-menu {
@@ -56,6 +79,7 @@ a {
 	position: relative;
 	width: 100%;
 	height: 100%;
+  overflow-y: hidden;
 	-webkit-perspective: 1200px;
 	-moz-perspective: 1200px;
 	perspective: 1200px;
@@ -102,52 +126,10 @@ a {
   max-width: 960px;
   margin: 4em auto;
   padding: 0 2em;
-  /*
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  */
 }
 
 /*
- * Fonts
- */
-
-font-family: 'Roboto Slab', serif;
-font-family: 'Roboto', sans-serif;
-
-/*
- * Page Styles
- */
-
-.home{
-  background: #ca2a90;
-}
-
-.services {
-  background: #ca2a90;
-}
-
-.residential {
-  background: #fd331b;
-}
-
-.business {
-  background: #cefd1b;
-}
-
-.dedicated {
-  background: #644a47;
-}
-
-.metromesh {
-  background: #93d161;
-}
-
-/*
- * Form Styles
+ * Forms 
 */
 
 .kw-input {
@@ -178,7 +160,7 @@ font-family: 'Roboto', sans-serif;
 }
 
 /*
- * Page Animations
+ * Animations
  */
 
 [ui-view].slideUp.ng-enter {
@@ -290,4 +272,143 @@ font-family: 'Roboto', sans-serif;
 .kw-button-group button,
 .kw-button-group a {
   margin: 0.5em;
+}
+
+/*
+ * Text
+*/
+
+.kw-home, .kw-services, .kw-residential, .kw-business, .kw-dedicated, .kw-metromesh {
+  text-align: center;
+}
+
+.kw-services ul, .kw-residential ul, .kw-business ul, .kw-dedicated ul, .kw-metromesh ul {
+  display: inline-block;
+}
+
+.kw-services li, .kw-residential li, .kw-business li, .kw-dedicated li, .kw-metromesh li {
+  text-align: left;
+}
+
+.kw-icon-lg {
+  font-size: 12em;
+}
+
+.kw-icon-md {
+  font-size: 6em;
+}
+
+.kw-icon-sm {
+  font-size: 3em;
+}
+
+.kw-about-art {
+  text-align: center;
+}
+
+.kw-section h1,
+.kw-section h2,
+.kw-section h3,
+.kw-section h4,
+.kw-section h5,
+.kw-section h6 {
+  text-align: center;
+}
+
+.kw-section {
+  padding: 0 1em;
+}
+
+.kw-mailto {
+  font-size: 0.8em;
+}
+
+/*
+ * Side Menu
+*/
+
+#menu {
+  width: 150px;
+  position: fixed;
+  top: 0;
+  left: -150px;
+  bottom: 0;
+  z-index: 1000; /* so the menu or its navicon stays above all content */
+  background: #191818;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+#menu.active {
+  left: 0;
+}
+
+/*
+All anchors inside the menu should be styled like this.
+ */
+
+#menu a {
+  color: #999;
+  border: none;
+  padding: 0.6em 0 0.6em 0.6em;
+}
+
+#menu a.menu-header {
+  color: #ffffff;
+}
+
+/*
+Remove all background/borders, since we are applying them to #menu.
+ */
+
+#menu .pure-menu,
+#menu .pure-menu ul {
+  border: none;
+  background: transparent;
+}
+
+/*
+Add that light border to separate items into groups.
+ */
+
+#menu .pure-menu ul,
+#menu .pure-menu .menu-item-divided {
+  border-top: 1px solid #333;
+}
+
+/*
+Change color of the anchor links on hover/focus.
+ */
+
+#menu .pure-menu li a:hover,
+#menu .pure-menu li a:focus {
+  background: #333;
+}
+
+/*
+This styles the selected menu item `<li>`.
+ */
+
+#menu .pure-menu-selected,
+#menu .pure-menu-heading {
+  background: #1f8dd6;
+  background: #ca2a90;
+}
+
+/*
+This styles a link within a selected menu item `<li>`.
+ */
+
+#menu .pure-menu-selected a {
+  color: #fff;
+}
+
+/*
+This styles the menu heading.
+ */
+
+#menu .pure-menu-heading {
+  font-size: 110%;
+  color: #fff;
+  margin: 0;
 }
