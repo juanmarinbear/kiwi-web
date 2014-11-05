@@ -6,9 +6,10 @@ var gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
+    jsonminify = require('gulp-jsonminify'),
     notify = require('gulp-notify'),
-    notify = require('gulp-minify-html'),
-    notify = require('gulp-ng-html2js'),
+    minifyHtml = require('gulp-minify-html'),
+    ngHtml2Js = require('gulp-ng-html2js'),
     cache = require('gulp-cache'),
     livereload = require('gulp-livereload'),
     del = require('del');
@@ -43,9 +44,16 @@ var paths = {
     'src/bower_components/ionicons/css/ionicons.css',
     'src/styles/*.css'
   ],
-  'fonts': [
-  ],
   'templates': [
+    'src/components/**/*.html',
+    'src/company/**/*.html',
+    'src/contact/**/*.html',
+    'src/customer/**/*.html',
+    'src/home/**/*.html',
+    'src/services/**/*.html',
+    'src/support/**/*.html'
+  ],
+  'fonts': [
   ],
   'lang': [
   ]
@@ -58,7 +66,7 @@ gulp.task('styles', function () {
     .pipe(rename({suffix: '.min'}))
     .pipe(minifycss())
     .pipe(gulp.dest(paths.dist + '/styles'))
-    .pipe(notify('Styles task complete'));
+    .pipe(notify('Styles task complete!'));
 });
 
 gulp.task('modules', function () {
@@ -67,7 +75,7 @@ gulp.task('modules', function () {
     .pipe(rename({suffix: '.min'}))
     .pipe(uglify())
     .pipe(gulp.dest(paths.dist + '/scripts'))
-    .pipe(notify('Modules task complete'));
+    .pipe(notify('Modules task complete!'));
 });
 
 gulp.task('scripts', function () {
@@ -76,11 +84,33 @@ gulp.task('scripts', function () {
     .pipe(jshint.reporter('default'))
     .pipe(concat('scripts.js'))
     .pipe(rename({suffix: '.min'}))
-    //.pipe(uglify())
+    .pipe(uglify())
     .pipe(gulp.dest(paths.dist + '/scripts'))
-    .pipe(notify('Scripts task complete'));
+    .pipe(notify('Scripts task complete!'));
 });
 
-gulp.task('default', function() {
-  gulp.start('styles', 'modules', 'scripts');
+gulp.task('templates', function () {
+  return gulp.src(paths.templates)
+    .pipe(minifyHtml({
+      empty: true,
+      spare: true,
+      quotes: true
+    }))
+    .pipe(ngHtml2Js({
+      moduleName: function (file) {
+        var path = JSON.stringify(file).split('/'),
+        folder = path[path.length - 2];
+        return folder.replace(/-[a-z]/g, function (match) {
+          return match.substr(1).toUpperCase();
+        });
+      }
+    }))
+    .pipe(concat("templates.min.js"))
+    .pipe(uglify())
+    .pipe(gulp.dest('dist/templates'))
+    .pipe(notify('Templates task complete!'));
+});
+
+gulp.task('default', function () {
+  gulp.start('styles', 'modules', 'scripts', 'templates');
 });
