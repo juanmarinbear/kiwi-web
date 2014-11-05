@@ -1,10 +1,11 @@
 'use strict';
 
-kiwiWeb.controller('AppCtrl', ['$scope', '$window', 'MediaQuery', 'Transition', 'Menu', function ($scope, $window, MediaQuery, Transition, Menu) {
+kiwiWeb.controller('AppCtrl', ['$scope', '$window', '$templateCache', 'MediaQuery', 'Transition', 'Menu', function ($scope, $window, $templateCache, MediaQuery, Transition, Menu) {
 
   $scope.screen = MediaQuery.screenSize();
   $scope.title = 'Kiwi Networks';
   $scope.styles = {};
+  $scope.langKey = 'es';
   $scope.menu = Menu;
   $scope.menu.active = true;
   $scope.menu.current = $scope.menu.sections[0];
@@ -55,5 +56,11 @@ kiwiWeb.controller('AppCtrl', ['$scope', '$window', 'MediaQuery', 'Transition', 
     $scope.screen = MediaQuery.screenSize();
     $scope.$apply();
   });
+
+  $scope.changeLanguage = function (template, langKey) {
+    if($scope.langKey !== langKey)
+      $scope.langKey = langKey;
+    return $templateCache.get(template + '_' + langKey + '.json');
+  }
 
 }]);
