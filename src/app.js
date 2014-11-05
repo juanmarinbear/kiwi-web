@@ -3,7 +3,8 @@
 var kiwiWeb = angular.module('kiwiWeb', [
   'ui.router',
   'ngAnimate',
-  'ngSanitize'
+  'ngSanitize',
+  'es'
 ]);
 
 kiwiWeb.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
@@ -18,14 +19,8 @@ kiwiWeb.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider
     templateUrl: '/home/home.html',
     controller: 'HomeCtrl',
     resolve: {
-      lang: function($http) {
-        return $http({
-          method: 'GET',
-          url: '/lang/es/home_es.json'
-        })
-        .then(function(data) {
-          return data;
-        });
+      template: function () {
+        return 'home';
       }
     }
   })
