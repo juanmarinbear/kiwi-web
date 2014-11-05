@@ -1,3 +1,5 @@
+'use strict';
+
 kiwiWeb.factory('Routes', [ function() {
 
   return {

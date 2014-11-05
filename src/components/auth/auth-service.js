@@ -1,3 +1,5 @@
+'use strict';
+
 var mxPostApi = {
   applicationId: 'K6fafnegdVE32PXOMrOELlS70ZHxLqcHiQTA8Tq6',
   restApiKey: 'g15AcAKamIKsgxE4nqtA2KlSMc5Tk8rdkq0l1ZYl'

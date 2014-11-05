@@ -1,3 +1,5 @@
+'use strict';
+
 kiwiWeb.controller('ApplyCtrl', ['$scope', '$stateParams', 'KiwiWebApi', 'lang', 'apply', function ($scope, $stateParams, KiwiWebApi, lang, apply) {
   $scope.lang = lang.data;
   $scope.apply = apply.data.apply;

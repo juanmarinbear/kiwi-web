@@ -1,3 +1,5 @@
+'use strict';
+
 kiwiWeb.factory('KiwiWebApi', ['$http', 'Auth', function ($http, Auth) {
   return {
     save: function(ticket, endpoint, success, error) {

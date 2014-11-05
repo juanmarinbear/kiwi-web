@@ -1,3 +1,5 @@
+'use strict';
+
 kiwiWeb.controller('UnsubscribeCtrl', ['$scope', 'KiwiWebApi', 'lang', 'unsubscribe', function ($scope, KiwiWebApi, lang, unsubscribe) {
   $scope.lang = lang.data;
   $scope.unsubscribe = unsubscribe.data.unsubscribe;

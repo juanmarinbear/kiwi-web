@@ -1,3 +1,5 @@
+'use strict';
+
 kiwiWeb.controller('SupportCtrl', ['$scope', 'KiwiWebApi', 'lang', 'support', function ($scope, KiwiWebApi, lang, support) {
   $scope.lang = lang.data;
   $scope.support = support.data.support;

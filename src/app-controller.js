@@ -1,3 +1,5 @@
+'use strict';
+
 kiwiWeb.controller('AppCtrl', ['$scope', '$window', 'MediaQuery', 'Transition', 'Menu', function ($scope, $window, MediaQuery, Transition, Menu) {
 
   $scope.screen = MediaQuery.screenSize();

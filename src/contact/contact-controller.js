@@ -1,3 +1,5 @@
+'use strict';
+
 kiwiWeb.controller('ContactCtrl', ['$scope', 'KiwiWebApi', 'lang', 'contact', function ($scope, KiwiWebApi, lang, contact) {
   $scope.lang = lang.data;
   $scope.contact = contact.data.contact;

@@ -1,3 +1,5 @@
+'use strict';
+
 kiwiWeb.controller('SignInCtrl', ['$scope', '$filter', 'lang', function ($scope, $filter, lang) {
   $scope.lang = lang.data;
   $scope.data = {};
