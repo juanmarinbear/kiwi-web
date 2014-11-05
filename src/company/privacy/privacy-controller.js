@@ -1,7 +1,7 @@
 'use strict';
 
-kiwiWeb.controller('PrivacyCtrl', ['$scope', 'lang', function ($scope, lang) {
-  $scope.lang = lang.data;
+kiwiWeb.controller('PrivacyCtrl', ['$scope', function ($scope) {
+  $scope.lang = $scope.language['company/privacy/privacy_es'];
   $scope.changeTitle($scope.lang.title);
 
   $scope.isString = function (section) {

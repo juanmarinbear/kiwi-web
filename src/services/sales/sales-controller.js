@@ -1,9 +1,9 @@
 'use strict';
 
-kiwiWeb.controller('SalesCtrl', ['$scope', '$filter', '$stateParams', 'MxPostApi', 'KiwiWebApi', 'lang', 'client', 'location', function ($scope, $filter, $stateParams, MxPostApi, KiwiWebApi, lang, client, location) {
-  $scope.lang = lang.data;
-  $scope.client = client.data.client;
-  $scope.location = location.data.location;
+kiwiWeb.controller('SalesCtrl', ['$scope', '$filter', '$stateParams', 'MxPostApi', 'KiwiWebApi', function ($scope, $filter, $stateParams, MxPostApi, KiwiWebApi) {
+  $scope.lang = $scope.language['services/sales/sales_es'];
+  $scope.client = $scope.language['services/sales/client_es'].client;
+  $scope.location = $scope.language['services/sales/location_es'].location;
   $scope.changeTitle($scope.lang.title);
   $scope.forms = {};
   $scope.ticket = {

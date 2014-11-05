@@ -1,6 +1,6 @@
 'use strict';
 
-kiwiWeb.controller('AboutCtrl', ['$scope', '$templateCache', function ($scope, $templateCache) {
-  $scope.lang = JSON.parse($templateCache.get('company/about/about_' + $scope.langKey + '.json'));
+kiwiWeb.controller('AboutCtrl', ['$scope', function ($scope) {
+  $scope.lang = $scope.language['company/about/about_es'];
   $scope.changeTitle($scope.lang.title);
 }]);

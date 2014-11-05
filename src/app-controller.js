@@ -1,6 +1,6 @@
 'use strict';
 
-kiwiWeb.controller('AppCtrl', ['$scope', '$window', '$templateCache', 'MediaQuery', 'Transition', 'Menu', function ($scope, $window, $templateCache, MediaQuery, Transition, Menu) {
+kiwiWeb.controller('AppCtrl', ['$scope', '$window', '$http', 'MediaQuery', 'Transition', 'Menu', function ($scope, $window, $http, MediaQuery, Transition, Menu) {
 
   $scope.screen = MediaQuery.screenSize();
   $scope.title = 'Kiwi Networks';
@@ -9,6 +9,13 @@ kiwiWeb.controller('AppCtrl', ['$scope', '$window', '$templateCache', 'MediaQuer
   $scope.menu = Menu;
   $scope.menu.active = true;
   $scope.menu.current = $scope.menu.sections[0];
+  $http({
+    method: 'GET',
+    url: '/languages/language_es.json'
+  })
+  .then(function(data) {
+    $scope.language = data.data;
+  });
 
   $scope.changeTitle = function (title) {
     $scope.title = title;
@@ -57,10 +64,9 @@ kiwiWeb.controller('AppCtrl', ['$scope', '$window', '$templateCache', 'MediaQuer
     $scope.$apply();
   });
 
-  $scope.changeLanguage = function (template, langKey) {
+  $scope.changeLanguage = function (langKey) {
     if($scope.langKey !== langKey)
       $scope.langKey = langKey;
-    return $templateCache.get(template + '_' + langKey + '.json');
   }
 
 }]);

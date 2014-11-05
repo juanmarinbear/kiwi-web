@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('kiwiWeb')
-.controller('FaqCtrl', ['$scope', '$location', '$anchorScroll', 'lang', function ($scope, $location, $anchorScroll, lang) {
-  $scope.lang = lang.data;
+.controller('FaqCtrl', ['$scope', '$location', '$anchorScroll', function ($scope, $location, $anchorScroll) {
+  $scope.lang = $scope.language['services/faq/faq_es'];
   $scope.changeTitle($scope.lang.title);
 
   $scope.goTo = function (anchor) {

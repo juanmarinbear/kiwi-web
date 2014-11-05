@@ -1,8 +1,8 @@
 'use strict';
 
-kiwiWeb.controller('SupportCtrl', ['$scope', 'KiwiWebApi', 'lang', 'support', function ($scope, KiwiWebApi, lang, support) {
-  $scope.lang = lang.data;
-  $scope.support = support.data.support;
+kiwiWeb.controller('SupportCtrl', ['$scope', 'KiwiWebApi', function ($scope, KiwiWebApi) {
+  $scope.lang = $scope.language['support/support/support_es'];
+  $scope.support = $scope.language['support/support/supportform_es'].support;
   $scope.changeTitle($scope.lang.title);
   $scope.forms = {};
   $scope.ticket = {
