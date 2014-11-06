@@ -45,13 +45,11 @@ kiwiWeb.controller('AppCtrl', ['$scope', '$window', '$templateCache', 'MediaQuer
     }
 
     $scope.styles.transition = Transition.getTransition(toState, toParams, fromState, fromParams);
+    $scope.styles.transition = Transition.getTransition(toState, toParams, fromState, fromParams);
 
   });
 
   $scope.$on('$stateChangeSuccess', function () {
-
-    $scope.styles.page = '';
-
   });
 
   $(window).resize(function () {
