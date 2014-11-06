@@ -11,7 +11,10 @@ var gulp = require('gulp'),
     minifyHtml = require('gulp-minify-html'),
     ngHtml2Js = require('gulp-ng-html2js'),
     cache = require('gulp-cache'),
+    jsoncombine = require("gulp-jsoncombine"),
+    jsonFormat = require('gulp-json-format'),
     livereload = require('gulp-livereload'),
+    util = require('util'),
     del = require('del');
 
 var paths = {
@@ -53,9 +56,16 @@ var paths = {
     'src/services/**/*.html',
     'src/support/**/*.html'
   ],
-  'fonts': [
+  'languages': [
+    'src/components/**/*.json',
+    'src/company/**/*.json',
+    'src/contact/**/*.json',
+    'src/customer/**/*.json',
+    'src/home/**/*.json',
+    'src/services/**/*.json',
+    'src/support/**/*.json'
   ],
-  'lang': [
+  'fonts': [
   ]
 };
 
@@ -107,10 +117,24 @@ gulp.task('templates', function () {
     }))
     .pipe(concat("templates.min.js"))
     .pipe(uglify())
-    .pipe(gulp.dest('dist/templates'))
+    .pipe(gulp.dest(paths.dist + '/templates'))
     .pipe(notify('Templates task complete!'));
 });
 
+gulp.task('languages', function () {
+
+  var TEMPLATE = "angular.module(\'%s\', []).run([\'$templateCache\', function($templateCache) {\n" +
+    "  $templateCache.put(\'%s\',\n    %s);\n" +
+    "}]);\n";
+
+  return gulp.src(paths.languages)
+    .pipe(jsoncombine('language_default.js', function (data) {
+      return new Buffer(util.format(TEMPLATE, 'languages', 'language_default', JSON.stringify(data)), 'utf-8');
+    }))
+    .pipe(gulp.dest(paths.dist + '/languages'))
+    .pipe(notify('Languages task complete!'));
+});
+
 gulp.task('default', function () {
-  gulp.start('styles', 'modules', 'scripts', 'templates');
+  gulp.start('styles', 'modules', 'scripts', 'templates', 'languages');
 });
