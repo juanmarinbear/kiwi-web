@@ -1,7 +1,7 @@
 'use strict';
 
 kiwiWeb.controller('PayCtrl', ['$scope', function ($scope) {
-  $scope.lang = $scope.language['pay'];
+  $scope.lang = $scope.language.pay;
   $scope.changeTitle($scope.lang.title);
   $scope.data = {};
   $scope.data.idSubmit = {};

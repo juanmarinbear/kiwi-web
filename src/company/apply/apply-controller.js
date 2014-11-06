@@ -2,8 +2,8 @@
 
 kiwiWeb.controller('ApplyCtrl', ['$scope', '$stateParams', 'KiwiWebApi', function ($scope, $stateParams, KiwiWebApi) {
   console.log($scope.language);
-  $scope.lang = $scope.language['apply'];
-  $scope.apply = $scope.language['applyform'].apply;
+  $scope.lang = $scope.language.apply;
+  $scope.apply = $scope.language.applyform.apply;
   $scope.changeTitle($scope.lang.title);
   $scope.forms = {};
   $scope.ticket = {

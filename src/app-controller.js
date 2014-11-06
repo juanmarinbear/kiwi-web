@@ -60,8 +60,9 @@ kiwiWeb.controller('AppCtrl', ['$scope', '$window', '$templateCache', 'MediaQuer
   });
 
   $scope.changeLanguage = function (langKey) {
-    if($scope.langKey !== langKey)
+    if($scope.langKey !== langKey) {
       $scope.langKey = langKey;
-  }
+    }
+  };
 
 }]);
