@@ -6,13 +6,11 @@ var gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
-    jsonminify = require('gulp-jsonminify'),
     notify = require('gulp-notify'),
     minifyHtml = require('gulp-minify-html'),
     ngHtml2Js = require('gulp-ng-html2js'),
     cache = require('gulp-cache'),
     jsoncombine = require("gulp-jsoncombine"),
-    jsonFormat = require('gulp-json-format'),
     livereload = require('gulp-livereload'),
     util = require('util'),
     del = require('del');
@@ -65,7 +63,11 @@ var paths = {
     'src/services/**/*.json',
     'src/support/**/*.json'
   ],
+  'images' : [
+    'src/media/images/**/*.jpg' 
+  ],
   'fonts': [
+    'src/fonts/**/*'
   ]
 };
 
@@ -107,13 +109,7 @@ gulp.task('templates', function () {
       quotes: true
     }))
     .pipe(ngHtml2Js({
-      moduleName: function (file) {
-        var path = JSON.stringify(file).split('/'),
-        folder = path[path.length - 2];
-        return folder.replace(/-[a-z]/g, function (match) {
-          return match.substr(1).toUpperCase();
-        });
-      }
+      moduleName: 'templates'
     }))
     .pipe(concat("templates.min.js"))
     .pipe(uglify())
@@ -128,13 +124,36 @@ gulp.task('languages', function () {
     "}]);\n";
 
   return gulp.src(paths.languages)
-    .pipe(jsoncombine('language_default.js', function (data) {
+    .pipe(jsoncombine('language_default.min.js', function (data) {
       return new Buffer(util.format(TEMPLATE, 'languages', 'language_default', JSON.stringify(data)), 'utf-8');
     }))
     .pipe(gulp.dest(paths.dist + '/languages'))
     .pipe(notify('Languages task complete!'));
 });
 
-gulp.task('default', function () {
-  gulp.start('styles', 'modules', 'scripts', 'templates', 'languages');
+gulp.task('images', function () {
+  return gulp.src(paths.images)
+    .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
+    .pipe(gulp.dest(paths.dist + '/media/images'))
+    .pipe(notify({ message: 'Images task complete' }));
+});
+
+gulp.task('fonts', function () {
+  return gulp.src(paths.fonts)
+    .pipe(gulp.dest(paths.dist + '/fonts'))
+    .pipe(notify({ message: 'Fonts task complete' }));
+});
+
+gulp.task('clean', function(cb) {
+  del([
+    paths.dist + '/styles', 
+    paths.dist + '/scripts', 
+    paths.dist + '/templates', 
+    paths.dist + '/media', 
+    paths.dist + '/fonts', 
+    paths.dist + '/languages'], cb)
+});
+
+gulp.task('default', ['clean'], function () {
+  gulp.start('styles', 'modules', 'scripts', 'templates', 'languages', 'fonts', 'images');
 });
