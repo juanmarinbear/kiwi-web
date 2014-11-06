@@ -1,7 +1,7 @@
 'use strict';
 
 kiwiWeb.controller('SignInCtrl', ['$scope', '$filter', function ($scope, $filter) {
-  $scope.lang = $scope.language['components/signin/signin_es'];
+  $scope.lang = $scope.language['signin'];
   $scope.data = {};
   $scope.forms = {};
   $scope.data.mobileSignIn = {};

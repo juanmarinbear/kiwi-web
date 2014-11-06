@@ -3,7 +3,8 @@
 var kiwiWeb = angular.module('kiwiWeb', [
   'ui.router',
   'ngAnimate',
-  'ngSanitize'
+  'ngSanitize',
+  'languages'
 ]);
 
 kiwiWeb.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
@@ -21,18 +22,7 @@ kiwiWeb.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider
   .state('services', {
     url: '/services',
     templateUrl: '/services/services/services.html',
-    controller: 'ServicesCtrl',
-    resolve: {
-      lang: function($http) {
-        return $http({
-          method: 'GET',
-          url: '/lang/es/services_es.json'
-        })
-        .then(function(data) {
-          return data;
-        });
-      }
-    }
+    controller: 'ServicesCtrl'
   })
   .state('residential', {
     url: '/residential',
@@ -82,27 +72,7 @@ kiwiWeb.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider
   .state('apply', {
     url: '/apply/:role',
     templateUrl: '/company/apply/apply.html',
-    controller: 'ApplyCtrl',
-    resolve: {
-      lang: function($http) {
-        return $http({
-          method: 'GET',
-          url: '/lang/es/apply_es.json'
-        })
-        .then(function(data) {
-          return data;
-        });
-      },
-      apply: function($http) {
-        return $http({
-          method: 'GET',
-          url: '/lang/es/applyform_es.json'
-        })
-        .then(function(data) {
-          return data;
-        });
-      }
-    }
+    controller: 'ApplyCtrl'
   })
   .state('stories', {
     url: '/stories',

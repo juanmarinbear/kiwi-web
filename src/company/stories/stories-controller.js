@@ -1,7 +1,7 @@
 'use strict';
 
 kiwiWeb.controller('StoriesCtrl', ['$scope', '$sce', function ($scope, $sce) {
-  $scope.lang = $scope.language['company/stories/stories_es'];
+  $scope.lang = $scope.language['stories'];
   $scope.changeTitle($scope.lang.title);
 
   $scope.trustHtml = function (html) {
