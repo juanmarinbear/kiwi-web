@@ -1,6 +1,6 @@
 'use strict';
 
-kiwiWeb.controller('AppCtrl', ['$scope', '$window', '$templateCache', 'MediaQuery', 'Transition', 'Menu', function ($scope, $window, $templateCache, MediaQuery, Transition, Menu) {
+kiwiWeb.controller('AppCtrl', ['$scope', '$state', '$window', '$templateCache', 'MediaQuery', 'Transition', 'Menu', function ($scope, $state, $window, $templateCache, MediaQuery, Transition, Menu) {
 
   $scope.screen = MediaQuery.screenSize();
   $scope.title = 'Kiwi Networks';
@@ -40,12 +40,16 @@ kiwiWeb.controller('AppCtrl', ['$scope', '$window', '$templateCache', 'MediaQuer
 
   $scope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
 
-    if(toParams === fromParams) {
-      console.log('Useless JSLint!');
-    }
+//    event.preventDefault();
 
-    $scope.styles.transition = Transition.getTransition(toState, toParams, fromState, fromParams);
-    $scope.styles.transition = Transition.getTransition(toState, toParams, fromState, fromParams);
+
+      if(toParams === fromParams) {
+        console.log('Useless JSLint!');
+      }
+
+      $scope.styles.transition = Transition.getTransition(toState, toParams, fromState, fromParams);
+//    $state.go(toState.name, null, {notify: false});
+
 
   });
 

@@ -1,10 +1,12 @@
 <div class="kw-content">
   <h2 data-ng-bind="lang.title"></h2>
   <div class="pure-g">
-    <div class="pure-u-1" data-ng-repeat="section in lang.sections">
-      <h3 data-ng-if="section.title" data-ng-bind="section.title"></h3>
-      <p data-ng-if="section.subtitle" ><strong><span data-ng-bind="section.subtitle"></span></strong></p>
-      <div data-ng-repeat="section in section.sections" data-ng-include="'privacy/paragraphtree.html'">
+    <div class="pure-u-1" data-ng-repeat="term in lang.terms">
+      <h3 data-ng-bind="term.title"></h3>
+      <h4 data-ng-bind="term.subtitle"></h4>
+      <div data-ng-repeat="section in term.sections">
+        <h4 data-ng-bind="section.title"></h4>
+        <p data-ng-repeat="paragraph in section.paragraphs" data-ng-bind-html="paragraph"></p>
       </div>
     </div>
   </div>
