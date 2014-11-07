@@ -1,4 +1,32 @@
 /*
+ * Fonts
+ */
+
+@font-face {
+  font-family: 'Roboto Slab';
+  src: url('/fonts/robotoslab-regular-webfont.eot');
+  src: url('/fonts/robotoslab-regular-webfont.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/robotoslab-regular-webfont.woff2') format('woff2'),
+  url('/fonts/robotoslab-regular-webfont.woff') format('woff'),
+  url('/fonts/robotoslab-regular-webfont.ttf') format('truetype'),
+  url('/fonts/robotoslab-regular-webfont.svg#roboto_slabregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/roboto-regular-webfont.eot');
+  src: url('/fonts/roboto-regular-webfont.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/roboto-regular-webfont.woff2') format('woff2'),
+  url('/fonts/roboto-regular-webfont.woff') format('woff'),
+  url('/fonts/roboto-regular-webfont.ttf') format('truetype'),
+  url('/fonts/roboto-regular-webfont.svg#robotoregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*
  * Elements
 */
 
@@ -19,13 +47,6 @@ h1, h3, h5, p {
 h2, h4, h6, li {
   font-family: 'Roboto', sans-serif;
 }
-
-/*
- * Fonts
- */
-
-font-family: 'Roboto Slab', serif; font-family: 'Roboto', sans-serif;
-
 
 /*
  * Pages
