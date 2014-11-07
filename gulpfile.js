@@ -13,6 +13,7 @@ var gulp = require('gulp'),
     jsoncombine = require("gulp-jsoncombine"),
     livereload = require('gulp-livereload'),
     util = require('util'),
+    ngAnnotate = require('gulp-ng-annotate'),
     del = require('del');
 
 var paths = {
@@ -102,8 +103,9 @@ gulp.task('scripts', function () {
   return gulp.src(paths.scripts)
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('default'))
+    .pipe(ngAnnotate())
     .pipe(concat('scripts.min.js'))
-    //.pipe(uglify())
+    .pipe(uglify())
     .pipe(gulp.dest(paths.dist + '/scripts'))
     .pipe(notify('Scripts task complete!'));
 });
