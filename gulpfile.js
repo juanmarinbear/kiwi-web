@@ -17,13 +17,24 @@ var gulp = require('gulp'),
 
 var paths = {
   'dist': 'dist',
-  'modules': [
-    'src/bower_components/jquery/dist/jquery.js',
-    'src/bower_components/angular/angular.js',
-    'src/bower_components/angular-animate/angular-animate.js',
-    'src/bower_components/angular-sanitize/angular-sanitize.js',
-    'src/bower_components/angular-ui-router/release/angular-ui-router.js'
-  ],
+  'vendor': {
+    'scripts': [
+      'src/bower_components/jquery/dist/jquery.min.js',
+      'src/bower_components/angular/angular.min.js',
+      'src/bower_components/angular-animate/angular-animate.min.js',
+      'src/bower_components/angular-sanitize/angular-sanitize.min.js',
+      'src/bower_components/angular-ui-router/release/angular-ui-router.min.js'
+    ],
+    'styles': [
+      'src/bower_components/pure/base-min.css',
+      'src/bower_components/pure/grids-min.css',
+      'src/bower_components/pure/grids-responsive-min.css',
+      'src/bower_components/pure/menus-min.css',
+      'src/bower_components/pure/buttons-min.css',
+      'src/bower_components/pure/forms-min.css',
+      'src/bower_components/ionicons/css/ionicons.min.css'
+    ],
+  },
   'scripts': [
     'src/app.js',
     'src/app-controller.js',
@@ -36,13 +47,6 @@ var paths = {
     'src/support/**/!(*_test.js).js'
   ],
   'styles': [
-    'src/bower_components/pure/base.css',
-    'src/bower_components/pure/grids.css',
-    'src/bower_components/pure/grids-responsive.css',
-    'src/bower_components/pure/menu.css',
-    'src/bower_components/pure/buttons.css',
-    'src/bower_componetns/pure/forms.css',
-    'src/bower_components/ionicons/css/ionicons.css',
     'src/styles/*.css'
   ],
   'templates': [
@@ -71,21 +75,25 @@ var paths = {
   ]
 };
 
+gulp.task('vendorStyles', function () {
+  return gulp.src(paths.vendor.styles)
+    .pipe(concat('vendor.min.css'))
+    .pipe(gulp.dest(paths.dist + '/styles'))
+    .pipe(notify('Vendor Styles task complete!'));
+});
+
 gulp.task('styles', function () {
   return gulp.src(paths.styles)
-    .pipe(concat('main.css'))
     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-    .pipe(rename({suffix: '.min'}))
     .pipe(minifycss())
+    .pipe(concat('styles.min.css'))
     .pipe(gulp.dest(paths.dist + '/styles'))
     .pipe(notify('Styles task complete!'));
 });
 
 gulp.task('modules', function () {
-  return gulp.src(paths.modules)
-    .pipe(concat('modules.js'))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(uglify())
+  return gulp.src(paths.vendor.scripts)
+    .pipe(concat('modules.min.js'))
     .pipe(gulp.dest(paths.dist + '/scripts'))
     .pipe(notify('Modules task complete!'));
 });
@@ -94,9 +102,8 @@ gulp.task('scripts', function () {
   return gulp.src(paths.scripts)
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('default'))
-    .pipe(concat('scripts.js'))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(uglify())
+    .pipe(concat('scripts.min.js'))
+    //.pipe(uglify())
     .pipe(gulp.dest(paths.dist + '/scripts'))
     .pipe(notify('Scripts task complete!'));
 });
@@ -155,5 +162,5 @@ gulp.task('clean', function(cb) {
 });
 
 gulp.task('default', ['clean'], function () {
-  gulp.start('styles', 'modules', 'scripts', 'templates', 'languages', 'fonts', 'images');
+  gulp.start('vendorStyles', 'styles', 'modules', 'scripts', 'templates', 'languages', 'fonts', 'images');
 });
