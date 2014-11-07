@@ -2,6 +2,6 @@
 <div data-ng-if="!isString(section)">
   <h4 data-ng-if="section.title" data-ng-bind-html="section.title"></h4>
   <p data-ng-if="section.subtitle"><strong><span data-ng-bind-html="section.subtitle"></span></strong></p>
-  <div data-ng-repeat="section in section.sections" data-ng-include="'/company/privacy/paragraphtree.html'">
+  <div data-ng-repeat="section in section.sections" data-ng-include="privacy/paragraphtree.html'">
   </div>
 </div>
