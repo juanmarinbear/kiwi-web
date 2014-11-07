@@ -40,14 +40,7 @@ kiwiWeb.controller('AppCtrl', ['$scope', '$state', '$window', '$templateCache', 
 
   $scope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
 
-    event.preventDefault();
     $scope.styles.transition = Transition.getTransition(fromState.name, toState.name);
-    $timeout(function () {
-      $state.go(toState.name, null, {notify: false})
-        .then(function (state) {
-          $scope.$broadcast('$stateChangeSuccess', state, null);
-        });
-    }, 1)
   });
 
   $(window).resize(function () {

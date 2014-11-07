@@ -17,121 +17,155 @@ kiwiWeb.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider
   $stateProvider
   .state('home', {
     url: '/home',
-    templateProvider: function ($templateCache) {
-      return $templateCache.get('home.html');
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('home.html');
+      }, 1);
     },
     controller: 'HomeCtrl'
   })
   .state('services', {
     url: '/services',
-    templateProvider: function ($templateCache) {
-      return $templateCache.get('services/services.html');
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('services/services.html');
+      }, 1);
     },
     controller: 'ServicesCtrl'
   })
   .state('residential', {
     url: '/residential',
-    templateProvider: function ($templateCache) {
-      return $templateCache.get('residential/residential.html');
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('residential/residential.html');
+      }, 1);
     },
     controller: 'ResidentialCtrl'
   })
   .state('business', {
     url: '/business',
-    templateProvider: function ($templateCache) {
-      return $templateCache.get('business/business.html');
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('business/business.html');
+      }, 1);
     },
     controller: 'BusinessCtrl'
   })
   .state('dedicated', {
     url: '/dedicated',
-    templateProvider: function ($templateCache) {
-      return $templateCache.get('dedicated/dedicated.html');
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('dedicated/dedicated.html');
+      }, 1);
     },
     controller: 'DedicatedCtrl'
   })
   .state('metromesh', {
     url: '/metromesh',
-    templateProvider: function ($templateCache) {
-      return $templateCache.get('metromesh/metromesh.html');
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('metromesh/metromesh.html');
+      }, 1);
     },
     controller: 'MetroMeshCtrl'
   })
   .state('faq', {
     url: '/faq/:section',
-    templateProvider: function ($templateCache) {
-      return $templateCache.get('faq/faq.html');
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('faq/faq.html');
+      }, 1);
     },
     controller: 'FaqCtrl'
   })
   .state('sales', {
     url: '/sales/:service',
-    templateProvider: function ($templateCache) {
-      return $templateCache.get('sales/sales.html');
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('sales/sales.html');
+      }, 1);
     },
     controller: 'SalesCtrl'
   })
   .state('about', {
     url: '/about',
-    templateProvider: function ($templateCache) {
-      return $templateCache.get('about/about.html');
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('about/about.html');
+      }, 1);
     },
     controller: 'AboutCtrl'
   })
   .state('concesion', {
     url: '/concesion',
-    templateProvider: function ($templateCache) {
-      return $templateCache.get('concesion/concesion.html');
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('concesion/concesion.html');
+      }, 1);
     },
     controller: 'ConcesionCtrl'
   })
   .state('careers', {
     url: '/careers',
-    templateProvider: function ($templateCache) {
-      return $templateCache.get('careers/careers.html');
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('careers/careers.html');
+      }, 1);
     },
     controller: 'CareersCtrl'
   })
   .state('apply', {
     url: '/apply/:role',
-    templateProvider: function ($templateCache) {
-      return $templateCache.get('apply/apply.html');
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('apply/apply.html');
+      }, 1);
     },
     controller: 'ApplyCtrl'
   })
   .state('stories', {
     url: '/stories',
-    templateProvider: function ($templateCache) {
-      return $templateCache.get('stories/stories.html');
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('stories/stories.html');
+      }, 1);
     },
     controller: 'StoriesCtrl'
   })
   .state('privacy', {
     url: '/privacy',
-    templateProvider: function ($templateCache) {
-      return $templateCache.get('privacy/privacy.html');
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('privacy/privacy.html');
+      }, 1);
     },
     controller: 'PrivacyCtrl'
   })
   .state('unsubscribe', {
     url: '/unsubscribe',
-    templateProvider: function ($templateCache) {
-      return $templateCache.get('unsubscribe/unsubscribe.html');
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('unsubscribe/unsubscribe.html');
+      }, 1);
     },
     controller: 'UnsubscribeCtrl'
   })
   .state('contact', {
     url: '/contact',
-    templateProvider: function ($templateCache) {
-      return $templateCache.get('contact.html');
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('contact.html');
+      }, 1);
     },
     controller: 'ContactCtrl'
   })
   .state('dashboard', {
     abstract: true,
     url: '/dashboard',
-    templateProvider: function ($templateCache) {
-      return $templateCache.get('dashboard/dashboard.html');
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('dashboard/dashboard.html');
+      }, 1);
     },
     controller: 'DashboardCtrl'
   })
@@ -139,14 +173,18 @@ kiwiWeb.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider
     url: '/anon',
     views: {
       'signup' : {
-        templateProvider: function ($templateCache) {
-          return $templateCache.get('signup/signup.html');
+        templateProvider: function ($templateCache, $timeout) {
+          return $timeout(function () {
+            return $templateCache.get('signup/signup.html');
+          }, 1);
         },
         controller: 'SignUpCtrl'
       },
       'signin' : {
-        templateProvider: function ($templateCache) {
-          return $templateCache.get('signin/signin.html');
+        templateProvider: function ($templateCache, $timeout) {
+          return $timeout(function () {
+            return $templateCache.get('signin/signin.html');
+          }, 1);
         },
         controller: 'SignInCtrl'
       }
@@ -154,16 +192,20 @@ kiwiWeb.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider
   })
   .state('pay', {
     url: '/pay',
-    templateProvider: function ($templateCache) {
-      return $templateCache.get('pay/pay.html');
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('pay/pay.html');
+      }, 1);
     },
     controller: 'PayCtrl'
   })
   .state('refer', {
     abstract: true,
     url: '/refer',
-    templateProvider: function ($templateCache) {
-      return $templateCache.get('refer/refer.html');
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('refer/refer.html');
+      }, 1);
     },
     controller: 'ReferCtrl'
   })
@@ -171,30 +213,38 @@ kiwiWeb.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider
     url: '/anon',
     views: {
       'signup' : {
-        templateProvider: function ($templateCache) {
-          return $templateCache.get('signup/signup.html');
-        },
+        templateProvider: function ($templateCache, $timeout) {
+          return $timeout(function () {
+            return $templateCache.get('signup/signup.html');
+          }, 1);
+    },
         controller: 'SignUpCtrl'
       },
       'signin' : {
-        templateProvider: function ($templateCache) {
-          return $templateCache.get('signin/signin.html');
-        },
+        templateProvider: function ($templateCache, $timeout) {
+          return $timeout(function () {
+            return $templateCache.get('signin/signin.html');
+          }, 1);
+    },
         controller: 'SignInCtrl'
       }
     }
   })
   .state('support', {
     url: '/support',
-    templateProvider: function ($templateCache) {
-      return $templateCache.get('support/support.html');
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('support/support.html');
+      }, 1);
     },
     controller: 'SupportCtrl'
   })
   .state('status', {
     url: '/status',
-    templateProvider: function ($templateCache) {
-      return $templateCache.get('status/status.html');
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('status/status.html');
+      }, 1);
     },
     controller: 'StatusCtrl'
   });
