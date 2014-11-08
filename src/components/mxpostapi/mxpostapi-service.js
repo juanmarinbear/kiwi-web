@@ -1,3 +1,5 @@
+'use strict';
+
 kiwiWeb.factory('MxPostApi', ['$http', 'Auth', function ($http, Auth) {
   return {
 

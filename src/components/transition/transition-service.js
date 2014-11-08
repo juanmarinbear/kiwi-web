@@ -1,20 +1,18 @@
+'use strict';
+
 kiwiWeb.factory('Transition', ['Routes', function (Routes) {
 
   return {
-    getTransition: function (toState, toParams, fromState, fromParams) {
+    getTransition: function (fromState, toState) {
+
+      if(fromState === '') {
+        return; 
+      }
 
       var fromStateName, toStateName;
 
-      if(toParams === fromParams) {
-        console.log('Useless JSLint!');
-      }
-
-      if(fromState.name === '') {
-        return;
-      }
-
-      fromStateName = fromState.name.split('.')[0];
-      toStateName = toState.name.split('.')[0];
+      fromStateName = fromState.split('.')[0];
+      toStateName = toState.split('.')[0];
 
       if(Routes[fromStateName].parent === 'form') {
         return 'rotateCubeDown';

@@ -1,4 +1,6 @@
-kiwiWeb.controller('DashboardCtrl', ['$scope', 'lang', function ($scope, lang) {
-  $scope.lang = lang.data;
+'use strict';
+
+kiwiWeb.controller('DashboardCtrl', ['$scope', function ($scope) {
+  $scope.lang = $scope.language.dashboard;
   $scope.changeTitle($scope.lang.title);
 }]);

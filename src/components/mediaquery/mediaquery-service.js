@@ -1,3 +1,5 @@
+'use strict';
+
 kiwiWeb.factory('MediaQuery', ['$window', function ($window) {
   return {
     screenSize: function() {

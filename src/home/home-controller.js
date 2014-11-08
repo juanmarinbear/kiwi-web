@@ -1,5 +1,6 @@
-kiwiWeb.controller('HomeCtrl', ['$scope', 'lang', function ($scope, lang) {
-  $scope.lang = lang.data;
+'use strict';
+
+kiwiWeb.controller('HomeCtrl', ['$scope', function ($scope) {
+  $scope.lang = $scope.language.home;
   $scope.changeTitle($scope.lang.title);
-  $scope.styles.page = 'home';
 }]);

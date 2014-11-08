@@ -1,5 +1,7 @@
-kiwiWeb.controller('SignUpCtrl', ['$scope', '$filter', 'lang', function ($scope, $filter, lang) {
-  $scope.lang = lang.data;
+'use strict';
+
+kiwiWeb.controller('SignUpCtrl', ['$scope', '$filter', function ($scope, $filter) {
+  $scope.lang = $scope.language.signup;
   $scope.data = {};
   $scope.forms = {};
   $scope.data.serialLookUp = {};

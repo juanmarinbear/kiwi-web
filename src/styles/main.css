@@ -12,31 +12,12 @@ a {
   color: #ffffff;
 }
 
-h1, h3, h5, p {
-  font-family: 'Roboto Slab', serif;
-}
-
-h2, h4, h6, li {
-  font-family: 'Roboto', sans-serif;
-}
-
-/*
- * Fonts
- */
-
-font-family: 'Roboto Slab', serif; font-family: 'Roboto', sans-serif;
-
-
 /*
  * Pages
 */
 
 .kw-bg {
   background: no-repeat fixed;
-}
-
-.kw-bg-main {
-  background: url('/media/images/IMG_1043.jpg');
 }
 
 .kw-menu {

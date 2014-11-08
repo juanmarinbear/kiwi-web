@@ -1,11 +1,18 @@
-kiwiWeb.controller('AppCtrl', ['$scope', '$window', 'MediaQuery', 'Transition', 'Menu', function ($scope, $window, MediaQuery, Transition, Menu) {
+'use strict';
+
+kiwiWeb.controller('AppCtrl', ['$scope', '$state', '$window', '$templateCache', '$timeout', 'MediaQuery', 'Transition', 'Menu', function ($scope, $state, $window, $templateCache, $timeout, MediaQuery, Transition, Menu) {
 
   $scope.screen = MediaQuery.screenSize();
   $scope.title = 'Kiwi Networks';
   $scope.styles = {};
+  $scope.langKey = 'es';
   $scope.menu = Menu;
   $scope.menu.active = true;
   $scope.menu.current = $scope.menu.sections[0];
+
+  var w = angular.element($window);
+
+  $scope.language = $templateCache.get('language_default');
 
   $scope.changeTitle = function (title) {
     $scope.title = title;
@@ -36,22 +43,21 @@ kiwiWeb.controller('AppCtrl', ['$scope', '$window', 'MediaQuery', 'Transition', 
   $scope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
 
     if(toParams === fromParams) {
-      console.log('Useless JSLint!');
+      console.log('Useles JSHINT!');
     }
 
-    $scope.styles.transition = Transition.getTransition(toState, toParams, fromState, fromParams);
-
+    $scope.styles.transition = Transition.getTransition(fromState.name, toState.name);
   });
 
-  $scope.$on('$stateChangeSuccess', function () {
-
-    $scope.styles.page = '';
-
-  });
-
-  $(window).resize(function () {
+  w.bind('resize', function () {
     $scope.screen = MediaQuery.screenSize();
     $scope.$apply();
   });
+
+  $scope.changeLanguage = function (langKey) {
+    if($scope.langKey !== langKey) {
+      $scope.langKey = langKey;
+    }
+  };
 
 }]);

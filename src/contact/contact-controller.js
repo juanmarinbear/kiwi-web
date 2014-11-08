@@ -1,6 +1,8 @@
-kiwiWeb.controller('ContactCtrl', ['$scope', 'KiwiWebApi', 'lang', 'contact', function ($scope, KiwiWebApi, lang, contact) {
-  $scope.lang = lang.data;
-  $scope.contact = contact.data.contact;
+'use strict';
+
+kiwiWeb.controller('ContactCtrl', ['$scope', 'KiwiWebApi', function ($scope, KiwiWebApi) {
+  $scope.lang = $scope.language.contact;
+  $scope.contact = $scope.language.contactform.contact;
   $scope.changeTitle($scope.lang.title);
   $scope.forms = {};
   $scope.ticket = {

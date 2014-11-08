@@ -3,7 +3,9 @@
 var kiwiWeb = angular.module('kiwiWeb', [
   'ui.router',
   'ngAnimate',
-  'ngSanitize'
+  'ngSanitize',
+  'templates',
+  'languages'
 ]);
 
 kiwiWeb.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
@@ -15,464 +17,235 @@ kiwiWeb.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider
   $stateProvider
   .state('home', {
     url: '/home',
-    templateUrl: '/home/home.html',
-    controller: 'HomeCtrl',
-    resolve: {
-      lang: function($http) {
-        return $http({
-          method: 'GET',
-          url: '/lang/es/home_es.json'
-        })
-        .then(function(data) {
-          return data;
-        });
-      }
-    }
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('home.html');
+      }, 1);
+    },
+    controller: 'HomeCtrl'
   })
   .state('services', {
     url: '/services',
-    templateUrl: '/services/services/services.html',
-    controller: 'ServicesCtrl',
-    resolve: {
-      lang: function($http) {
-        return $http({
-          method: 'GET',
-          url: '/lang/es/services_es.json'
-        })
-        .then(function(data) {
-          return data;
-        });
-      }
-    }
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('services/services.html');
+      }, 1);
+    },
+    controller: 'ServicesCtrl'
   })
   .state('residential', {
     url: '/residential',
-    templateUrl: '/services/residential/residential.html',
-    controller: 'ResidentialCtrl',
-    resolve: {
-      lang: function($http) {
-        return $http({
-          method: 'GET',
-          url: '/lang/es/residential_es.json'
-        })
-        .then(function(data) {
-          return data;
-        });
-      }
-    }
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('residential/residential.html');
+      }, 1);
+    },
+    controller: 'ResidentialCtrl'
   })
   .state('business', {
     url: '/business',
-    templateUrl: '/services/business/business.html',
-    controller: 'BusinessCtrl',
-    resolve: {
-      lang: function($http) {
-        return $http({
-          method: 'GET',
-          url: '/lang/es/business_es.json'
-        })
-        .then(function(data) {
-          return data;
-        });
-      }
-    }
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('business/business.html');
+      }, 1);
+    },
+    controller: 'BusinessCtrl'
   })
   .state('dedicated', {
     url: '/dedicated',
-    templateUrl: '/services/dedicated/dedicated.html',
-    controller: 'DedicatedCtrl',
-    resolve: {
-      lang: function($http) {
-        return $http({
-          method: 'GET',
-          url: '/lang/es/dedicated_es.json'
-        })
-        .then(function(data) {
-          return data;
-        });
-      }
-    }
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('dedicated/dedicated.html');
+      }, 1);
+    },
+    controller: 'DedicatedCtrl'
   })
   .state('metromesh', {
     url: '/metromesh',
-    templateUrl: '/services/metromesh/metromesh.html',
-    controller: 'MetroMeshCtrl',
-    resolve: {
-      lang: function($http) {
-        return $http({
-          method: 'GET',
-          url: '/lang/es/metromesh_es.json'
-        })
-        .then(function(data) {
-          return data;
-        });
-      }
-    }
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('metromesh/metromesh.html');
+      }, 1);
+    },
+    controller: 'MetroMeshCtrl'
   })
   .state('faq', {
     url: '/faq/:section',
-    templateUrl: '/services/faq/faq.html',
-    controller: 'FaqCtrl',
-    resolve: {
-      lang: function($http) {
-        return $http({
-          method: 'GET',
-          url: '/lang/es/faq_es.json'
-        })
-        .then(function(data) {
-          return data;
-        });
-      }
-    }
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('faq/faq.html');
+      }, 1);
+    },
+    controller: 'FaqCtrl'
   })
   .state('sales', {
     url: '/sales/:service',
-    templateUrl: '/services/sales/sales.html',
-    controller: 'SalesCtrl',
-    resolve: {
-      lang: function($http) {
-        return $http({
-          method: 'GET',
-          url: '/lang/es/sales_es.json'
-        })
-        .then(function(data) {
-          return data;
-        });
-      },
-      client: function($http) {
-        return $http({
-          method: 'GET',
-          url: '/lang/es/client_es.json'
-        })
-        .then(function(data) {
-          return data;
-        });
-      },
-      location: function($http) {
-        return $http({
-          method: 'GET',
-          url: '/lang/es/location_es.json'
-        })
-        .then(function(data) {
-          return data;
-        });
-      }
-    }
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('sales/sales.html');
+      }, 1);
+    },
+    controller: 'SalesCtrl'
   })
   .state('about', {
     url: '/about',
-    templateUrl: '/company/about/about.html',
-    controller: 'AboutCtrl',
-    resolve: {
-      lang: function($http) {
-        return $http({
-          method: 'GET',
-          url: '/lang/es/about_es.json'
-        })
-        .then(function(data) {
-          return data;
-        });
-      }
-    }
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('about/about.html');
+      }, 1);
+    },
+    controller: 'AboutCtrl'
   })
   .state('concesion', {
     url: '/concesion',
-    templateUrl: '/company/concesion/concesion.html',
-    controller: 'ConcesionCtrl',
-    resolve: {
-      lang: function($http) {
-        return $http({
-          method: 'GET',
-          url: '/lang/es/concesion_es.json'
-        })
-        .then(function(data) {
-          return data;
-        });
-      }
-    }
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('concesion/concesion.html');
+      }, 1);
+    },
+    controller: 'ConcesionCtrl'
   })
   .state('careers', {
     url: '/careers',
-    templateUrl: '/company/careers/careers.html',
-    controller: 'CareersCtrl',
-    resolve: {
-      lang: function($http) {
-        return $http({
-          method: 'GET',
-          url: '/lang/es/careers_es.json'
-        })
-        .then(function(data) {
-          return data;
-        });
-      }
-    }
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('careers/careers.html');
+      }, 1);
+    },
+    controller: 'CareersCtrl'
   })
   .state('apply', {
     url: '/apply/:role',
-    templateUrl: '/company/apply/apply.html',
-    controller: 'ApplyCtrl',
-    resolve: {
-      lang: function($http) {
-        return $http({
-          method: 'GET',
-          url: '/lang/es/apply_es.json'
-        })
-        .then(function(data) {
-          return data;
-        });
-      },
-      apply: function($http) {
-        return $http({
-          method: 'GET',
-          url: '/lang/es/applyform_es.json'
-        })
-        .then(function(data) {
-          return data;
-        });
-      }
-    }
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('apply/apply.html');
+      }, 1);
+    },
+    controller: 'ApplyCtrl'
   })
   .state('stories', {
     url: '/stories',
-    templateUrl: '/company/stories/stories.html',
-    controller: 'StoriesCtrl',
-    resolve: {
-      lang: function($http) {
-        return $http({
-          method: 'GET',
-          url: '/lang/es/stories_es.json'
-        })
-        .then(function(data) {
-          return data;
-        });
-      }
-    }
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('stories/stories.html');
+      }, 1);
+    },
+    controller: 'StoriesCtrl'
   })
   .state('privacy', {
     url: '/privacy',
-    templateUrl: '/company/privacy/privacy.html',
-    controller: 'PrivacyCtrl',
-    resolve: {
-      lang: function($http) {
-        return $http({
-          method: 'GET',
-          url: '/lang/es/privacy_es.json'
-        })
-        .then(function(data) {
-          return data;
-        });
-      }
-    }
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('privacy/privacy.html');
+      }, 1);
+    },
+    controller: 'PrivacyCtrl'
   })
   .state('unsubscribe', {
     url: '/unsubscribe',
-    templateUrl: '/company/unsubscribe/unsubscribe.html',
-    controller: 'UnsubscribeCtrl',
-    resolve: {
-      lang: function($http) {
-        return $http({
-          method: 'GET',
-          url: '/lang/es/unsubscribe_es.json'
-        })
-        .then(function(data) {
-          return data;
-        });
-      },
-      unsubscribe: function($http) {
-        return $http({
-          method: 'GET',
-          url: '/lang/es/unsubscribeform_es.json'
-        })
-        .then(function(data) {
-          return data;
-        });
-      }
-    }
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('unsubscribe/unsubscribe.html');
+      }, 1);
+    },
+    controller: 'UnsubscribeCtrl'
   })
   .state('contact', {
     url: '/contact',
-    templateUrl: '/contact/contact.html',
-    controller: 'ContactCtrl',
-    resolve: {
-      lang: function($http) {
-        return $http({
-          method: 'GET',
-          url: '/lang/es/contact_es.json'
-        })
-        .then(function(data) {
-          return data;
-        });
-      },
-      contact: function($http) {
-        return $http({
-          method: 'GET',
-          url: '/lang/es/contactform_es.json'
-        })
-        .then(function(data) {
-          return data;
-        });
-      }
-    }
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('contact.html');
+      }, 1);
+    },
+    controller: 'ContactCtrl'
   })
   .state('dashboard', {
     abstract: true,
     url: '/dashboard',
-    templateUrl: '/customer/dashboard/dashboard.html',
-    controller: 'DashboardCtrl',
-    resolve: {
-      lang: function($http) {
-        return $http({
-          method: 'GET',
-          url: '/lang/es/dashboard_es.json'
-        })
-        .then(function(data) {
-          return data;
-        });
-      }
-    }
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('dashboard/dashboard.html');
+      }, 1);
+    },
+    controller: 'DashboardCtrl'
   })
   .state('dashboard.anon', {
     url: '/anon',
     views: {
       'signup' : {
-        templateUrl: '/components/signup/signup.html',
-        controller: 'SignUpCtrl',
-        resolve: {
-          lang: function($http) {
-            return $http({
-              method: 'GET',
-              url: '/lang/es/signup_es.json'
-            })
-            .then(function(data) {
-              return data;
-            });
-          }
-        }
+        templateProvider: function ($templateCache, $timeout) {
+          return $timeout(function () {
+            return $templateCache.get('signup/signup.html');
+          }, 1);
+        },
+        controller: 'SignUpCtrl'
       },
       'signin' : {
-        templateUrl: '/components/signin/signin.html',
-        controller: 'SignInCtrl',
-        resolve: {
-          lang: function($http) {
-            return $http({
-              method: 'GET',
-              url: '/lang/es/signin_es.json'
-            })
-            .then(function(data) {
-              return data;
-            });
-          }
-        }
+        templateProvider: function ($templateCache, $timeout) {
+          return $timeout(function () {
+            return $templateCache.get('signin/signin.html');
+          }, 1);
+        },
+        controller: 'SignInCtrl'
       }
     }
   })
   .state('pay', {
     url: '/pay',
-    templateUrl: '/customer/pay/pay.html',
-    controller: 'PayCtrl',
-    resolve: {
-      lang: function($http) {
-        return $http({
-          method: 'GET',
-          url: '/lang/es/pay_es.json'
-        })
-        .then(function(data) {
-          return data;
-        });
-      }
-    }
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('pay/pay.html');
+      }, 1);
+    },
+    controller: 'PayCtrl'
   })
   .state('refer', {
     abstract: true,
     url: '/refer',
-    templateUrl: '/customer/refer/refer.html',
-    controller: 'ReferCtrl',
-    resolve: {
-      lang: function($http) {
-        return $http({
-          method: 'GET',
-          url: '/lang/es/refer_es.json'
-        })
-        .then(function(data) {
-          return data;
-        });
-      }
-    }
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('refer/refer.html');
+      }, 1);
+    },
+    controller: 'ReferCtrl'
   })
   .state('refer.anon', {
     url: '/anon',
     views: {
       'signup' : {
-        templateUrl: '/components/signup/signup.html',
-        controller: 'SignUpCtrl',
-        resolve: {
-          lang: function($http) {
-            return $http({
-              method: 'GET',
-              url: '/lang/es/signup_es.json'
-            })
-            .then(function(data) {
-              return data;
-            });
-          }
-        }
+        templateProvider: function ($templateCache, $timeout) {
+          return $timeout(function () {
+            return $templateCache.get('signup/signup.html');
+          }, 1);
+    },
+        controller: 'SignUpCtrl'
       },
       'signin' : {
-        templateUrl: '/components/signin/signin.html',
-        controller: 'SignInCtrl',
-        resolve: {
-          lang: function($http) {
-            return $http({
-              method: 'GET',
-              url: '/lang/es/signin_es.json'
-            })
-            .then(function(data) {
-              return data;
-            });
-          }
-        }
+        templateProvider: function ($templateCache, $timeout) {
+          return $timeout(function () {
+            return $templateCache.get('signin/signin.html');
+          }, 1);
+    },
+        controller: 'SignInCtrl'
       }
     }
   })
   .state('support', {
     url: '/support',
-    templateUrl: '/support/support/support.html',
-    controller: 'SupportCtrl',
-    resolve: {
-      lang: function($http) {
-        return $http({
-          method: 'GET',
-          url: '/lang/es/support_es.json'
-        })
-        .then(function(data) {
-          return data;
-        });
-      },
-      support: function($http) {
-        return $http({
-          method: 'GET',
-          url: '/lang/es/supportform_es.json'
-        })
-        .then(function(data) {
-          return data;
-        });
-      }
-    }
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('support/support.html');
+      }, 1);
+    },
+    controller: 'SupportCtrl'
   })
   .state('status', {
     url: '/status',
-    templateUrl: '/support/status/status.html',
-    controller: 'StatusCtrl',
-    resolve: {
-      lang: function($http) {
-        return $http({
-          method: 'GET',
-          url: '/lang/es/status_es.json'
-        })
-        .then(function(data) {
-          return data;
-        });
-      }
-    }
+    templateProvider: function ($templateCache, $timeout) {
+      return $timeout(function () {
+        return $templateCache.get('status/status.html');
+      }, 1);
+    },
+    controller: 'StatusCtrl'
   });
 }]);

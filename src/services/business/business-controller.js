@@ -1,5 +1,6 @@
-kiwiWeb.controller('BusinessCtrl', ['$scope', 'lang', function ($scope, lang) {
-  $scope.lang = lang.data;
+'use strict';
+
+kiwiWeb.controller('BusinessCtrl', ['$scope', function ($scope) {
+  $scope.lang = $scope.language.business;
   $scope.changeTitle($scope.lang.title);
-  $scope.styles.page = 'business';
 }]);

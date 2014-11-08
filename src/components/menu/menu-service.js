@@ -1,3 +1,5 @@
+'use strict';
+
 kiwiWeb.factory('Menu', [ function() {
 
   return {

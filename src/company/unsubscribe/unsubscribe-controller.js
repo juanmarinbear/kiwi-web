@@ -1,6 +1,8 @@
-kiwiWeb.controller('UnsubscribeCtrl', ['$scope', 'KiwiWebApi', 'lang', 'unsubscribe', function ($scope, KiwiWebApi, lang, unsubscribe) {
-  $scope.lang = lang.data;
-  $scope.unsubscribe = unsubscribe.data.unsubscribe;
+'use strict';
+
+kiwiWeb.controller('UnsubscribeCtrl', ['$scope', 'KiwiWebApi', function ($scope, KiwiWebApi) {
+  $scope.lang = $scope.language.unsubscribe;
+  $scope.unsubscribe = $scope.language.unsubscribeform.unsubscribe;
   $scope.changeTitle($scope.lang.title);
   $scope.forms = {};
   $scope.ticket = {
