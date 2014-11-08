@@ -1,20 +1,21 @@
-var gulp = require('gulp'),
-    autoprefixer = require('gulp-autoprefixer'),
-    minifycss = require('gulp-minify-css'),
-    jshint = require('gulp-jshint'),
-    uglify = require('gulp-uglify'),
-    imagemin = require('gulp-imagemin'),
-    rename = require('gulp-rename'),
-    concat = require('gulp-concat'),
-    notify = require('gulp-notify'),
-    minifyHtml = require('gulp-minify-html'),
-    ngHtml2Js = require('gulp-ng-html2js'),
-    cache = require('gulp-cache'),
-    jsoncombine = require("gulp-jsoncombine"),
-    livereload = require('gulp-livereload'),
-    util = require('util'),
-    ngAnnotate = require('gulp-ng-annotate'),
-    del = require('del');
+var gulp = require('gulp');
+var autoprefixer = require('gulp-autoprefixer');
+var minifycss = require('gulp-minify-css');
+var jshint = require('gulp-jshint');
+var uglify = require('gulp-uglify');
+var imagemin = require('gulp-imagemin');
+var rename = require('gulp-rename');
+var concat = require('gulp-concat');
+var notify = require('gulp-notify');
+var minifyHtml = require('gulp-minify-html');
+var ngHtml2Js = require('gulp-ng-html2js');
+var cache = require('gulp-cache');
+var jsoncombine = require("gulp-jsoncombine");
+var livereload = require('gulp-livereload');
+var util = require('util');
+var ngAnnotate = require('gulp-ng-annotate');
+var streamqueue = require('streamqueue');
+var del = require('del');
 
 var paths = {
   'dist': 'dist',
@@ -76,42 +77,32 @@ var paths = {
   ]
 };
 
-gulp.task('vendorStyles', function () {
-  return gulp.src(paths.vendor.styles)
-    .pipe(concat('vendor.min.css'))
-    .pipe(gulp.dest(paths.dist + '/styles'))
-    .pipe(notify('Vendor Styles task complete!'));
-});
+gulp.task('styles', function() {
 
-gulp.task('styles', function () {
-  return gulp.src(paths.styles)
+  return streamqueue({ objectMode: true },
+    gulp.src(paths.vendor.styles),
+    gulp.src(paths.styles)
     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-    .pipe(minifycss())
+    .pipe(minifycss()))
     .pipe(concat('styles.min.css'))
     .pipe(gulp.dest(paths.dist + '/styles'))
     .pipe(notify('Styles task complete!'));
 });
 
-gulp.task('modules', function () {
-  return gulp.src(paths.vendor.scripts)
-    .pipe(concat('modules.min.js'))
-    .pipe(gulp.dest(paths.dist + '/scripts'))
-    .pipe(notify('Modules task complete!'));
-});
+gulp.task('scripts', function() {
 
-gulp.task('scripts', function () {
-  return gulp.src(paths.scripts)
+  var TEMPLATE = "angular.module(\'%s\', []).run([\'$templateCache\', function($templateCache) {\n" +
+    "  $templateCache.put(\'%s\',\n    %s);\n" +
+    "}]);\n";
+
+  return streamqueue({ objectMode: true},
+    gulp.src(paths.vendor.scripts),
+    gulp.src(paths.scripts)
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('default'))
     .pipe(ngAnnotate())
-    .pipe(concat('scripts.min.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest(paths.dist + '/scripts'))
-    .pipe(notify('Scripts task complete!'));
-});
-
-gulp.task('templates', function () {
-  return gulp.src(paths.templates)
+    .pipe(uglify()),
+    gulp.src(paths.templates)
     .pipe(minifyHtml({
       empty: true,
       spare: true,
@@ -120,24 +111,14 @@ gulp.task('templates', function () {
     .pipe(ngHtml2Js({
       moduleName: 'templates'
     }))
-    .pipe(concat("templates.min.js"))
-    .pipe(uglify())
-    .pipe(gulp.dest(paths.dist + '/templates'))
-    .pipe(notify('Templates task complete!'));
-});
-
-gulp.task('languages', function () {
-
-  var TEMPLATE = "angular.module(\'%s\', []).run([\'$templateCache\', function($templateCache) {\n" +
-    "  $templateCache.put(\'%s\',\n    %s);\n" +
-    "}]);\n";
-
-  return gulp.src(paths.languages)
+    .pipe(uglify()),
+    gulp.src(paths.languages)
     .pipe(jsoncombine('language_default.min.js', function (data) {
       return new Buffer(util.format(TEMPLATE, 'languages', 'language_default', JSON.stringify(data)), 'utf-8');
-    }))
-    .pipe(gulp.dest(paths.dist + '/languages'))
-    .pipe(notify('Languages task complete!'));
+    })))
+    .pipe(concat('scripts.min.js'))
+    .pipe(gulp.dest(paths.dist + '/scripts'))
+    .pipe(notify('Scripts task complete!'));
 });
 
 gulp.task('images', function () {
@@ -157,12 +138,10 @@ gulp.task('clean', function(cb) {
   del([
     paths.dist + '/styles', 
     paths.dist + '/scripts', 
-    paths.dist + '/templates', 
     paths.dist + '/media', 
-    paths.dist + '/fonts', 
-    paths.dist + '/languages'], cb)
+    paths.dist + '/fonts'], cb)
 });
 
 gulp.task('default', ['clean'], function () {
-  gulp.start('vendorStyles', 'styles', 'modules', 'scripts', 'templates', 'languages', 'fonts', 'images');
+  gulp.start('styles', 'scripts', 'fonts', 'images');
 });
