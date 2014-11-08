@@ -21,7 +21,6 @@ var paths = {
   'dist': 'dist',
   'vendor': {
     'scripts': [
-      'src/bower_components/jquery/dist/jquery.min.js',
       'src/bower_components/angular/angular.min.js',
       'src/bower_components/angular-animate/angular-animate.min.js',
       'src/bower_components/angular-sanitize/angular-sanitize.min.js',

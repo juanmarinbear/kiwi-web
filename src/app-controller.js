@@ -10,6 +10,8 @@ kiwiWeb.controller('AppCtrl', ['$scope', '$state', '$window', '$templateCache', 
   $scope.menu.active = true;
   $scope.menu.current = $scope.menu.sections[0];
 
+  var w = angular.element($window);
+
   $scope.language = $templateCache.get('language_default');
 
   $scope.changeTitle = function (title) {
@@ -47,7 +49,7 @@ kiwiWeb.controller('AppCtrl', ['$scope', '$state', '$window', '$templateCache', 
     $scope.styles.transition = Transition.getTransition(fromState.name, toState.name);
   });
 
-  $(window).resize(function () {
+  w.bind('resize', function () {
     $scope.screen = MediaQuery.screenSize();
     $scope.$apply();
   });
