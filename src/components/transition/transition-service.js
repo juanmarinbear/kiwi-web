@@ -5,7 +5,7 @@ kiwiWeb.factory('Transition', ['Routes', function (Routes) {
   return {
     getTransition: function (fromState, toState) {
 
-      if(fromState == '') {
+      if(fromState === '') {
         return; 
       }
 
