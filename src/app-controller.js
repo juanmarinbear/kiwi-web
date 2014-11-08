@@ -40,6 +40,10 @@ kiwiWeb.controller('AppCtrl', ['$scope', '$state', '$window', '$templateCache', 
 
   $scope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
 
+    if(toParams === fromParams) {
+      console.log('Useles JSHINT!');
+    }
+
     $scope.styles.transition = Transition.getTransition(fromState.name, toState.name);
   });
 
