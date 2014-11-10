@@ -96,16 +96,12 @@ gulp.task('scripts', function() {
     "}]);\n";
 
   return streamqueue({ objectMode: true},
-    gulp.src(paths.vendor.scripts)
-    .pipe(sourcemaps.init())
-    .pipe(sourcemaps.write()),
+    gulp.src(paths.vendor.scripts),
     gulp.src(paths.scripts)
-    .pipe(sourcemaps.init())
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('default'))
     .pipe(ngAnnotate())
-    .pipe(uglify())
-    .pipe(sourcemaps.write()),
+    .pipe(uglify()),
     gulp.src(paths.templates)
     .pipe(minifyHtml({
       empty: true,
