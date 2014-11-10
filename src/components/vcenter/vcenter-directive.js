@@ -14,8 +14,8 @@ angular.module('kiwiWeb')
           var windowHeight = $window.innerHeight;
           var headerHeight = document.querySelector('#header').offsetHeight;
           var boxHeight = element[0].offsetHeight;
-          var margin = (windowHeight - headerHeight - boxHeight) / 2;
-          box.css({'margin-top': margin + 'px'});
+          var margin = (boxHeight + headerHeight) > windowHeight ? '4em' : ((windowHeight - headerHeight - boxHeight) / 2) + 'px';
+          box.css({'margin-top': margin});
         };
 
         $timeout(function () {
