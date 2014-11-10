@@ -15,6 +15,7 @@ var livereload = require('gulp-livereload');
 var util = require('util');
 var ngAnnotate = require('gulp-ng-annotate');
 var streamqueue = require('streamqueue');
+var sourcemaps = require('gulp-sourcemaps');
 var del = require('del');
 
 var paths = {
@@ -95,12 +96,16 @@ gulp.task('scripts', function() {
     "}]);\n";
 
   return streamqueue({ objectMode: true},
-    gulp.src(paths.vendor.scripts),
+    gulp.src(paths.vendor.scripts)
+    .pipe(sourcemaps.init())
+    .pipe(sourcemaps.write()),
     gulp.src(paths.scripts)
+    .pipe(sourcemaps.init())
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('default'))
     .pipe(ngAnnotate())
-    .pipe(uglify()),
+    .pipe(uglify())
+    .pipe(sourcemaps.write()),
     gulp.src(paths.templates)
     .pipe(minifyHtml({
       empty: true,
@@ -141,6 +146,15 @@ gulp.task('clean', function(cb) {
     paths.dist + '/fonts'], cb)
 });
 
+gulp.task('watch', function () {
+  gulp.watch(paths.styles, ['styles']);
+  gulp.watch(paths.images, ['images']);
+  gulp.watch(paths.scripts, ['scripts']);
+  gulp.watch(paths.templates, ['scripts']);
+  gulp.watch(paths.languages, ['scripts']);
+});
+
 gulp.task('default', ['clean'], function () {
   gulp.start('styles', 'scripts', 'fonts', 'images');
+  gulp.start('watch');
 });
