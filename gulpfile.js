@@ -15,6 +15,7 @@ var livereload = require('gulp-livereload');
 var util = require('util');
 var ngAnnotate = require('gulp-ng-annotate');
 var streamqueue = require('streamqueue');
+var sourcemaps = require('gulp-sourcemaps');
 var del = require('del');
 
 var paths = {
@@ -141,6 +142,15 @@ gulp.task('clean', function(cb) {
     paths.dist + '/fonts'], cb)
 });
 
+gulp.task('watch', function () {
+  gulp.watch(paths.styles, ['styles']);
+  gulp.watch(paths.images, ['images']);
+  gulp.watch(paths.scripts, ['scripts']);
+  gulp.watch(paths.templates, ['scripts']);
+  gulp.watch(paths.languages, ['scripts']);
+});
+
 gulp.task('default', ['clean'], function () {
   gulp.start('styles', 'scripts', 'fonts', 'images');
+  gulp.start('watch');
 });

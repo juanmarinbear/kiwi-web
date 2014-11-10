@@ -1,6 +1,6 @@
 <div class="kw-home kw-content" vcenter>
   <div data-ng-repeat="header in lang.headers">
-    <h1 data-ng-if="$even" data-ng-bind="header"></h1>
+    <h1 data-ng-if="$even" data-ng-bind="header" vcenter></h1>
     <h2 data-ng-if="$odd" data-ng-bind="header"><h2>
   </div>
   <div class="pure-g">
