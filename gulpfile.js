@@ -74,6 +74,9 @@ var paths = {
   ],
   'fonts': [
     'src/fonts/**/*'
+  ],
+  'videos': [
+    'src/media/videos/**/*.{webm, mp4}'
   ]
 };
 
@@ -134,6 +137,12 @@ gulp.task('fonts', function () {
     .pipe(notify({ message: 'Fonts task complete' }));
 });
 
+gulp.task('videos', function () {
+  return gulp.src(paths.videos)
+    .pipe(gulp.dest(paths.dist + '/media/videos'))
+    .pipe(notify({ message: 'Videos task complete' }));
+});
+
 gulp.task('clean', function(cb) {
   del([
     paths.dist + '/styles', 
@@ -145,12 +154,13 @@ gulp.task('clean', function(cb) {
 gulp.task('watch', function () {
   gulp.watch(paths.styles, ['styles']);
   gulp.watch(paths.images, ['images']);
+  gulp.watch(paths.videos, ['videos']);
   gulp.watch(paths.scripts, ['scripts']);
   gulp.watch(paths.templates, ['scripts']);
   gulp.watch(paths.languages, ['scripts']);
 });
 
 gulp.task('default', ['clean'], function () {
-  gulp.start('styles', 'scripts', 'fonts', 'images');
+  gulp.start('styles', 'scripts', 'fonts', 'images', 'videos');
   gulp.start('watch');
 });
