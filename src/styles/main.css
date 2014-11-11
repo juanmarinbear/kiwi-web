@@ -16,8 +16,66 @@ a {
  * Pages
 */
 
+#video-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 50;
+}
+
+.video-show {
+  opacity: 1;
+  -webkit-transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.6s;
+  transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.6s;
+}
+
+.video-show.ng-hide {
+  opacity: 0;
+}
+
+#video-bg > video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-aspect-ration: 16/9) {
+  #video-bg > video {
+    height: 300%;
+    top: -100%;
+  }
+}
+
+@media (min-aspect-ration: 16/9) {
+  #video-bg > video {
+    width: 300%;
+    left: -100%;
+  }
+}
+
+@supports (object-fit: cover) {
+  #video-bg > video {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
 .kw-bg {
   background: no-repeat fixed;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
 }
 
 .kw-menu {
@@ -46,6 +104,10 @@ a {
   background: #191818;
 }
 
+.kw-header-home {
+  background-color: rgba(0, 0, 0, 0);
+}
+
 .kw-header p {
   text-transform: uppercase;
   line-height: 1.5em;
@@ -54,6 +116,10 @@ a {
   border: none;
   padding: 0.6em 0 0.6em 0.6em;
   margin: 0;
+}
+
+#kw-container {
+  z-index: 100;
 }
 
 .kw-perspective {
@@ -265,10 +331,18 @@ a {
 
 .kw-services ul, .kw-residential ul, .kw-business ul, .kw-dedicated ul, .kw-metromesh ul {
   display: inline-block;
+  list-style-type: none;
 }
 
 .kw-services li, .kw-residential li, .kw-business li, .kw-dedicated li, .kw-metromesh li {
   text-align: left;
+}
+
+.kw-content li:before {
+  font-family: 'Ionicons';
+  content: "\f16d";
+  float: left;
+  width: 1.4em;
 }
 
 .kw-icon-lg {
