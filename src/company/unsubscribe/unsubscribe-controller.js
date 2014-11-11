@@ -1,6 +1,6 @@
 'use strict';
 
-kiwiWeb.controller('UnsubscribeCtrl', ['$scope', 'KiwiWebApi', function ($scope, KiwiWebApi) {
+kiwiWeb.controller('UnsubscribeCtrl', ['$scope', '$timeout', 'KiwiWebApi', function ($scope, $timeout, KiwiWebApi) {
   $scope.lang = $scope.language.unsubscribe;
   $scope.unsubscribe = $scope.language.unsubscribeform.unsubscribe;
   $scope.changeTitle($scope.lang.title);
@@ -17,15 +17,17 @@ kiwiWeb.controller('UnsubscribeCtrl', ['$scope', 'KiwiWebApi', function ($scope,
 
   $scope.submit = function () {
     if($scope.forms.unsubscribe.$valid) {
+      $scope.interactions.loading = true;
+      $timeout(function () {
+        $scope.interactions.loading = false;
+      }, 2000);
+      /*
       KiwiWebApi.save($scope.ticket, $scope.ticket.type, function (ticket) {
-        console.log('Success!');
         $scope.success = true;
-        console.log(ticket);
       }, function (error) {
         $scope.error = true;
-        console.log('Error!');
-        console.log(error);
       });
+      */
     }
     $scope.forms.unsubscribe.submitted = true;
   };

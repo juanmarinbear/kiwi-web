@@ -1,6 +1,6 @@
 'use strict';
 
-kiwiWeb.controller('ApplyCtrl', ['$scope', '$stateParams', 'KiwiWebApi', function ($scope, $stateParams, KiwiWebApi) {
+kiwiWeb.controller('ApplyCtrl', ['$scope', '$stateParams', '$timeout', 'KiwiWebApi', function ($scope, $stateParams, $timeout, KiwiWebApi) {
   $scope.lang = $scope.language.apply;
   $scope.apply = $scope.language.applyform.apply;
   $scope.changeTitle($scope.lang.title);
@@ -23,15 +23,17 @@ kiwiWeb.controller('ApplyCtrl', ['$scope', '$stateParams', 'KiwiWebApi', functio
 
   $scope.submit = function () {
     if($scope.forms.apply.$valid) {
+      $scope.interactions.loading = true;
+      $timeout(function () {
+        $scope.interactions.loading = false;
+      }, 2000);
+      /*
       KiwiWebApi.save($scope.ticket, $scope.ticket.type, function (ticket) {
-        console.log('Success!');
         $scope.success = true;
-        console.log(ticket);
       }, function (error) {
         $scope.error = true;
-        console.log('Error!');
-        console.log(error);
       });
+      */
     }
     $scope.forms.apply.submitted = true;
   };
