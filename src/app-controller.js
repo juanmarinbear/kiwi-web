@@ -8,6 +8,8 @@ kiwiWeb.controller('AppCtrl', ['$scope', '$state', '$window', '$templateCache', 
   $scope.langKey = 'es';
   $scope.menu = Menu;
   $scope.menu.current = $scope.menu.sections[0];
+  $scope.interactions = {};
+  $scope.interactions.loading = false;
 
   var w = angular.element($window);
 
@@ -75,5 +77,4 @@ kiwiWeb.controller('AppCtrl', ['$scope', '$state', '$window', '$templateCache', 
       $scope.langKey = langKey;
     }
   };
-
 }]);

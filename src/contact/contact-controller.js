@@ -1,6 +1,6 @@
 'use strict';
 
-kiwiWeb.controller('ContactCtrl', ['$scope', 'KiwiWebApi', function ($scope, KiwiWebApi) {
+kiwiWeb.controller('ContactCtrl', ['$scope', '$timeout', 'KiwiWebApi', function ($scope, $timeout, KiwiWebApi) {
   $scope.lang = $scope.language.contact;
   $scope.contact = $scope.language.contactform.contact;
   $scope.changeTitle($scope.lang.title);
@@ -12,15 +12,17 @@ kiwiWeb.controller('ContactCtrl', ['$scope', 'KiwiWebApi', function ($scope, Kiw
 
   $scope.submit = function () {
     if($scope.forms.contact.$valid) {
+      $scope.interactions.loading = true;
+      $timeout(function () {
+        $scope.interactions.loading = false;
+      }, 2000);
+      /*
       KiwiWebApi.save($scope.ticket, $scope.ticket.type, function (ticket) {
-        console.log('Success!');
         $scope.success = true;
-        console.log(ticket);
       }, function (error) {
-        $scope.error = true;
         console.log('Error!');
-        console.log(error);
       });
+      */
     }
     $scope.forms.contact.submitted = true;
   };

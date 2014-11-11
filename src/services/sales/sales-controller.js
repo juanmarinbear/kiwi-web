@@ -1,6 +1,6 @@
 'use strict';
 
-kiwiWeb.controller('SalesCtrl', ['$scope', '$filter', '$stateParams', 'MxPostApi', 'KiwiWebApi', function ($scope, $filter, $stateParams, MxPostApi, KiwiWebApi) {
+kiwiWeb.controller('SalesCtrl', ['$scope', '$filter', '$stateParams', '$timeout', 'MxPostApi', 'KiwiWebApi', function ($scope, $filter, $stateParams, $timeout, MxPostApi, KiwiWebApi) {
   $scope.lang = $scope.language.sales;
   $scope.client = $scope.language.client.client;
   $scope.location = $scope.language.location.location;
@@ -27,17 +27,13 @@ kiwiWeb.controller('SalesCtrl', ['$scope', '$filter', '$stateParams', 'MxPostApi
   });
 
   $scope.next = function () {
-    $scope.loading = true;
     $scope.step = 'location';
     $scope.forms.client.submitted = true;
-    $scope.loading = false;
   };
 
   $scope.prev = function () {
-    $scope.loading = true;
     $scope.step = 'client';
     $scope.forms.client.submitted = false;
-    $scope.loading = false;
   };
 
   $scope.geoZip = function () {
@@ -105,15 +101,17 @@ kiwiWeb.controller('SalesCtrl', ['$scope', '$filter', '$stateParams', 'MxPostApi
 
   $scope.submit = function () {
     if($scope.forms.client.$valid && $scope.forms.location.$valid) {
+      $scope.interactions.loading = true;
+      $timeout(function () {
+        $scope.interactions.loading = false;
+      }, 2000);
+      /*
       KiwiWebApi.save($scope.ticket, $scope.ticket.type, function (ticket) {
-        console.log('Success!');
         $scope.success = true;
-        console.log(ticket);
       }, function (error) {
-        console.log('Error!');
         $scope.error = true;
-        console.log(error);
       });
+      */
     }
     $scope.forms.client.submitted = true;
     $scope.forms.location.submitted = true;

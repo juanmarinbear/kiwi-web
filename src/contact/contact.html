@@ -4,8 +4,10 @@
     <div class="pure-u-1 pure-u-md-1-4" data-ng-repeat="section in lang.sections">
       <div class="kw-section">
         <h3 data-ng-bind="section.title"></h3>
-        <div class="kw-about-art">
-          <i class="icon kw-icon-md" data-ng-class="section.art"></i>
+        <div class="kw-art-container">
+          <div>
+            <i class="icon kw-icon-md" data-ng-class="section.art"></i>
+          </div>
         </div>
         <p class="kw-subtitle"><strong><span data-ng-bind="section.subtitle"></span></strong></p>
         <p data-ng-repeat="paragraph in section.paragraphs" data-ng-bind-html="paragraph"></p>
