@@ -3,8 +3,8 @@
   <div data-ng-repeat="section in lang.sections">
     <div data-ng-if="screen == 'lg' || screen == 'xl'">
       <div data-ng-if="$odd" class="pure-g">
-        <div class="pure-u-1 pure-u-md-1-2">
-          <div class="kw-about-art">
+        <div class="pure-u-1 pure-u-md-1-2 kw-art-container">
+          <div>
             <i class="icon kw-icon-lg" data-ng-class="section.art"></i>
           </div>
         </div>
@@ -20,16 +20,16 @@
           <h4 data-ng-bind="section.subtitle"></h4>
           <p data-ng-repeat="paragraph in section.paragraphs" data-ng-bind="paragraph"></p>
         </div>
-        <div class="pure-u-1 pure-u-md-1-2">
-          <div class="kw-about-art">
+        <div class="pure-u-1 pure-u-md-1-2 kw-art-container">
+          <div>
             <i class="icon kw-icon-lg" data-ng-class="section.art"></i>
           </div>
         </div>
       </div>
     </div>
     <div data-ng-if="screen == 'sm' || screen == 'md'">
-      <div class="pure-u-1 pure-u-md-1-2">
-        <div class="kw-about-art">
+      <div class="pure-u-1 pure-u-md-1-2 kw-art-container">
+        <div>
           <i class="icon kw-icon-lg" data-ng-class="section.art"></i>
         </div>
       </div>

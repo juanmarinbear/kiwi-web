@@ -357,8 +357,12 @@ a {
   font-size: 3em;
 }
 
-.kw-about-art {
-  text-align: center;
+.kw-art-container {
+  display: flex;
+}
+
+.kw-art-container > div {
+  margin: auto;
 }
 
 .kw-section h1,
