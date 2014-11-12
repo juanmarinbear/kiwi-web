@@ -205,6 +205,10 @@ a {
  * Forms 
 */
 
+.kw-error {
+  color: rgb(202, 60, 60);
+}
+
 .kw-input {
   margin: 0.5em auto;
   max-width: 16em;
