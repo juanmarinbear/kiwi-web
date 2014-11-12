@@ -17,6 +17,7 @@ src/bower_components
 
 cloud_code/cloud/auth.js
 cloud_code/config/global.json
+cloud_code/public
 
 # --------------------
 # API 
