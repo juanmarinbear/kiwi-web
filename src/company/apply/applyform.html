@@ -1,129 +1,99 @@
 <form id="apply" class="pure-form pure-form-stacked" name="forms.apply" novalidate>
   <div class="pure-g">
     <div class="pure-u-1">
-      <label for="{{apply.inputs.role.name}}" data-ng-bind="apply.inputs.role.label"></label>
+      <label for="{{apply.inputs.role.name}}" data-ng-hide="forms.apply.role.$dirty && forms.apply.role.$error.required" data-ng-bind="apply.inputs.role.label"></label>
+      <label for="{{apply.inputs.role.name}}" class="kw-error" data-ng-show="forms.apply.role.$dirty && forms.apply.role.$error.required" data-ng-bind="apply.inputs.role.validation.required"></label>
       <select name="role" data-ng-model="ticket.role" data-ng-change="updateType()" data-ng-options="item.value as item.label for item in apply.inputs.role.options.items" required autofocus>
         <option value="" data-ng-bind="apply.inputs.role.options.default" selected></option>
       </select>
     </div>
-    <div class="pure-u-1" data-ng-show="forms.apply.submitted && forms.apply.role.$invalid">
-      <p data-ng-show="forms.apply.role.$error.required" data-ng-bind="apply.inputs.role.validation.required"></p>
-    </div>
     <div class="pure-u-1">
-      <label for="{{apply.inputs.state.name}}" data-ng-bind="apply.inputs.state.label"></label>
+      <label for="{{apply.inputs.state.name}}" data-ng-hide="forms.apply.state.$dirty && forms.apply.state.$error.required" data-ng-bind="apply.inputs.state.label"></label>
+      <label for="{{apply.inputs.state.name}}" class="kw-error" data-ng-show="forms.apply.state.$dirty && forms.apply.state.$error.required" data-ng-bind="apply.inputs.state.validation.required"></label>
       <select name="state" data-ng-model="ticket.state" data-ng-options="item.value as item.label for item in apply.inputs.state.options.items" required>
         <option value="" data-ng-bind="apply.inputs.state.options.default" selected></option>
       </select>
     </div>
-    <div class="pure-u-1" data-ng-show="forms.apply.submitted && forms.apply.$invalid">
-      <p data-ng-show="forms.apply.state.$error.required" data-ng-bind="apply.inputs.state.validation.required"></p>
-    </div>
     <div class="pure-u-1">
-      <label for="{{apply.inputs.name.name}}" data-ng-bind="apply.inputs.name.label"></label>
+      <label for="{{apply.inputs.name.name}}" data-ng-hide="forms.apply.name.$dirty && forms.apply.name.$error.required" data-ng-bind="apply.inputs.name.label"></label>
+      <label for="{{apply.inputs.name.name}}" class="kw-error" data-ng-show="forms.apply.name.$dirty && forms.apply.name.$error.required" data-ng-bind="apply.inputs.name.validation.required"></label>
       <input type="text" name="name" placeholder="{{apply.inputs.name.placeholder}}" data-ng-model="ticket.name" required>
     </div>
-    <div class="pure-u-1" data-ng-show="forms.apply.submitted && forms.apply.$invalid">
-      <p data-ng-show="forms.apply.name.$error.required" data-ng-bind="apply.inputs.name.validation.required"></p>
-    </div>
     <div class="pure-u-1">
-      <label for="{{apply.inputs.last.name}}" data-ng-bind="apply.inputs.last.label"></label>
+      <label for="{{apply.inputs.last.name}}" data-ng-hide="forms.apply.last.$dirty && forms.apply.last.$error.required" data-ng-bind="apply.inputs.last.label"></label>
+      <label for="{{apply.inputs.last.name}}" class="kw-error" data-ng-show="forms.apply.last.$dirty && forms.apply.last.$error.required" data-ng-bind="apply.inputs.last.validation.required"></label>
       <input type="text" name="last" placeholder="{{apply.inputs.last.placeholder}}" data-ng-model="ticket.last" required>
     </div>
-    <div class="pure-u-1" data-ng-show="forms.apply.submitted && forms.apply.$invalid">
-      <p data-ng-show="forms.apply.last.$error.required" data-ng-bind="apply.inputs.last.validation.required"></p>
-    </div>
     <div class="pure-u-1">
-      <label for="{{apply.inputs.email.name}}" data-ng-bind="apply.inputs.email.label"></label>
+      <label for="{{apply.inputs.email.name}}" data-ng-hide="forms.apply.email.$dirty && (forms.apply.email.$error.required || forms.apply.email.$error.email)" data-ng-bind="apply.inputs.email.label"></label>
+      <label for="{{apply.inputs.email.name}}" class="kw-error" data-ng-show="forms.apply.email.$dirty && forms.apply.email.$error.required" data-ng-bind="apply.inputs.email.validation.required"></label>
+      <label for="{{apply.inputs.email.name}}" class="kw-error" data-ng-show="forms.apply.email.$dirty && forms.apply.email.$error.email" data-ng-bind="apply.inputs.email.validation.invalid"></label>
       <input type="email" name="email" placeholder="{{apply.inputs.email.placeholder}}" data-ng-model="ticket.email" required>
     </div>
-    <div class="pure-u-1" data-ng-show="forms.apply.submitted && forms.apply.$invalid">
-      <p data-ng-show="forms.apply.email.$error.required" data-ng-bind="apply.inputs.email.validation.required"></p>
-      <p data-ng-show="forms.apply.email.$error.email" data-ng-bind="apply.inputs.email.validation.invalid"></p>
-    </div>
     <div class="pure-u-1">
-      <label for="{{apply.inputs.mobile.name}}" data-ng-bind="apply.inputs.mobile.label"></label>
+      <label for="{{apply.inputs.mobile.name}}" data-ng-hide="forms.apply.mobile.$dirty && (forms.apply.mobile.$error.required || forms.apply.mobile.$error.pattern || forms.apply.mobile.$error.maxlength)" data-ng-bind="apply.inputs.mobile.label"></label>
+      <label for="{{apply.inputs.mobile.name}}" class="kw-error" data-ng-show="forms.apply.mobile.$dirty && forms.apply.mobile.$error.required" data-ng-bind="apply.inputs.mobile.validation.required"></label>
+      <label for="{{apply.inputs.mobile.name}}" class="kw-error" data-ng-show="forms.apply.mobile.$dirty && (forms.apply.mobile.$error.pattern || forms.apply.mobile.$error.maxlength)" data-ng-bind="apply.inputs.mobile.validation.invalid"></label>
       <input type="text" name="mobile" placeholder="{{apply.inputs.mobile.placeholder}}" maxlength="10" data-ng-model="ticket.mobile" data-ng-pattern="/\d{10}/" data-ng-maxlength="10" required>
     </div>
-    <div class="pure-u-1" data-ng-show="forms.apply.submitted && forms.apply.$invalid">
-      <p data-ng-show="forms.apply.mobile.$error.required" data-ng-bind="apply.inputs.mobile.validation.required"></p>
-      <p data-ng-show="forms.apply.mobile.$error.pattern || forms.apply.mobile.$error.maxlength" data-ng-bind="apply.inputs.mobile.validation.invalid"></p>
-    </div>
     <div class="pure-u-1">
-      <label for="{{apply.inputs.contact.name}}" data-ng-bind="apply.inputs.contact.label"></label>
-      <select name="contact" data-ng-model="ticket.contact" data-ng-options="item.value as item.label for item in apply.inputs.contact.options.items" required>
+      <label for="{{apply.inputs.contact.name}}" data-ng-hide="forms.apply.contact.$dirty && forms.apply.contact.$error.required" data-ng-bind="apply.inputs.contact.label"></label>
+      <label for="{{apply.inputs.contact.name}}" class="kw-error" data-ng-show="forms.apply.contact.$dirty && forms.apply.contact.$error.required" data-ng-bind="apply.inputs.contact.validation.required"></label>
+      <select name="contact" data-ng-model="ticket.contact" data-ng-options="item.value as item.label for item in apply.inputs.contact.options.items" required autofocus>
         <option value="" data-ng-bind="apply.inputs.contact.options.default" selected></option>
       </select>
     </div>
-    <div class="pure-u-1" data-ng-show="forms.apply.submitted && forms.apply.$invalid">
-      <p data-ng-show="forms.apply.contact.$error.required" data-ng-bind="apply.inputs.contact.validation.required"></p>
-    </div>
     <div class="pure-u-1">
-      <label for="{{apply.inputs.education.name}}" data-ng-bind="apply.inputs.education.label"></label>
+      <label for="{{apply.inputs.education.name}}" data-ng-hide="forms.apply.education.$dirty && forms.apply.education.$error.required" data-ng-bind="apply.inputs.education.label"></label>
+      <label for="{{apply.inputs.education.name}}" class="kw-error" data-ng-show="forms.apply.education.$dirty && forms.apply.education.$error.required" data-ng-bind="apply.inputs.education.validation.required"></label>
       <select name="education" data-ng-model="ticket.education" data-ng-options="item.value as item.label for item in apply.inputs.education.options.items" required>
         <option value="" data-ng-bind="apply.inputs.education.options.default" selected></option>
       </select>
     </div>
-    <div class="pure-u-1" data-ng-show="forms.apply.submitted && forms.apply.$invalid">
-      <p data-ng-show="forms.apply.education.$error.required" data-ng-bind="apply.inputs.education.validation.required"></p>
-    </div>
     <div class="pure-u-1" data-ng-show="ticket.education == 'Licenciatura' || ticket.education == 'Maestría' || ticket.education == 'Doctorado'">
       <div>
-        <label for="{{apply.inputs.college.name}}" data-ng-bind="apply.inputs.college.label"></label>
+        <label for="{{apply.inputs.college.name}}" data-ng-hide="forms.apply.college.$dirty && forms.apply.college.$error.required" data-ng-bind="apply.inputs.college.label"></label>
+        <label for="{{apply.inputs.college.name}}" class="kw-error" data-ng-show="forms.apply.college.$dirty && forms.apply.college.$error.required" data-ng-bind="apply.inputs.college.validation.required"></label>
         <input type="text" name="college" placeholder="{{apply.inputs.college.placeholder}}" data-ng-model="ticket.college" data-ng-required="ticket.education == 'Licenciatura' || ticket.education == 'Maestría' || ticket.education == 'Doctorado'">
       </div>
-      <div data-ng-show="forms.apply.submitted && forms.apply.$invalid">
-        <p data-ng-show="forms.apply.college.$error.required" data-ng-bind="apply.inputs.college.validation.required"></p>
-      </div>
       <div>
-        <label for="{{apply.inputs.collegeUrl.name}}" data-ng-bind="apply.inputs.collegeUrl.label"></label>
+        <label for="{{apply.inputs.collegeUrl.name}}" data-ng-hide="forms.apply.collegeUrl.$dirty && (forms.apply.collegeUrl.$error.required || forms.apply.collegeUrl.$error.url)" data-ng-bind="apply.inputs.collegeUrl.label"></label>
+        <label for="{{apply.inputs.collegeUrl.name}}" class="kw-error" data-ng-show="forms.apply.collegeUrl.$dirty && forms.apply.collegeUrl.$error.required" data-ng-bind="apply.inputs.collegeUrl.validation.required"></label>
+        <label for="{{apply.inputs.collegeUrl.name}}" class="kw-error" data-ng-show="forms.apply.collegeUrl.$dirty && forms.apply.collegeUrl.$error.url" data-ng-bind="apply.inputs.collegeUrl.validation.url"></label>
         <input type="url" name="collegeUrl" placeholder="{{apply.inputs.collegeUrl.placeholder}}" data-ng-model="ticket.collegeUrl" data-ng-required="ticket.education == 'Licenciatura' || ticket.education == 'Maestría' || ticket.education == 'Doctorado'">
-      </div>
-      <div data-ng-show="forms.apply.submitted && forms.apply.$invalid">
-        <p data-ng-show="forms.apply.collegeUrl.$error.required" data-ng-bind="apply.inputs.collegeUrl.validation.required"></p>
-        <p data-ng-show="forms.apply.collegeUrl.$error.url" data-ng-bind="apply.inputs.collegeUrl.validation.url"></p>
       </div>
     </div>
     <div class="pure-u-1" data-ng-show="ticket.education == 'Maestría' || ticket.education == 'Doctorado'">
       <div>
-        <label for="{{apply.inputs.masters.name}}" data-ng-bind="apply.inputs.masters.label"></label>
-        <input type="text" name="masters" placeholder="{{apply.inputs.masters.placeholder}}" data-ng-model="ticket.masters" data-ng-required="ticket.education == 'Maestría' || ticket.education == 'Doctorado'">
-      </div>
-      <div data-ng-show="forms.apply.submitted && forms.apply.$invalid">
-        <p data-ng-show="forms.apply.masters.$error.required" data-ng-bind="apply.inputs.masters.validation.required"></p>
+        <label for="{{apply.inputs.masters.name}}" data-ng-hide="forms.apply.masters.$dirty && forms.apply.masters.$error.required" data-ng-bind="apply.inputs.masters.label"></label>
+        <label for="{{apply.inputs.masters.name}}" class="kw-error" data-ng-show="forms.apply.masters.$dirty && forms.apply.masters.$error.required" data-ng-bind="apply.inputs.masters.validation.required"></label>
+        <input type="text" name="masters" placeholder="{{apply.inputs.masters.placeholder}}" data-ng-model="ticket.masters" data-ng-required="ticket.education == 'Licenciatura' || ticket.education == 'Maestría' || ticket.education == 'Doctorado'">
       </div>
       <div>
-        <label for="{{apply.inputs.mastersUrl.name}}" data-ng-bind="apply.inputs.mastersUrl.label"></label>
-        <input type="url" name="mastersUrl" placeholder="{{apply.inputs.mastersUrl.placeholder}}" data-ng-model="ticket.mastersUrl" data-ng-required="ticket.education == 'Maestría' || ticket.education == 'Doctorado'">
-      </div>
-      <div data-ng-show="forms.apply.submitted && forms.apply.$invalid">
-        <p data-ng-show="forms.apply.mastersUrl.$error.required" data-ng-bind="apply.inputs.mastersUrl.validation.required"></p>
-        <p data-ng-show="forms.apply.mastersUrl.$error.url" data-ng-bind="apply.inputs.mastersUrl.validation.url"></p>
+        <label for="{{apply.inputs.mastersUrl.name}}" data-ng-hide="forms.apply.mastersUrl.$dirty && (forms.apply.mastersUrl.$error.required || forms.apply.mastersUrl.$error.url)" data-ng-bind="apply.inputs.mastersUrl.label"></label>
+        <label for="{{apply.inputs.mastersUrl.name}}" class="kw-error" data-ng-show="forms.apply.mastersUrl.$dirty && forms.apply.mastersUrl.$error.required" data-ng-bind="apply.inputs.mastersUrl.validation.required"></label>
+        <label for="{{apply.inputs.mastersUrl.name}}" class="kw-error" data-ng-show="forms.apply.mastersUrl.$dirty && forms.apply.mastersUrl.$error.url" data-ng-bind="apply.inputs.mastersUrl.validation.url"></label>
+        <input type="url" name="mastersUrl" placeholder="{{apply.inputs.mastersUrl.placeholder}}" data-ng-model="ticket.mastersUrl" data-ng-required="ticket.education == 'Licenciatura' || ticket.education == 'Maestría' || ticket.education == 'Doctorado'">
       </div>
     </div>
     <div class="pure-u-1" data-ng-show="ticket.education == 'Doctorado'">
       <div>
-        <label for="{{apply.inputs.phd.name}}" data-ng-bind="apply.inputs.phd.label"></label>
-        <input type="text" name="phd" placeholder="{{apply.inputs.phd.placeholder}}" data-ng-model="ticket.phd" data-ng-required="ticket.education == 'Doctorado'">
-      </div>
-      <div data-ng-show="forms.apply.submitted && forms.apply.$invalid">
-        <p data-ng-show="forms.apply.phd.$error.required" data-ng-bind="apply.inputs.phd.validation.required"></p>
+        <label for="{{apply.inputs.phd.name}}" data-ng-hide="forms.apply.phd.$dirty && forms.apply.phd.$error.required" data-ng-bind="apply.inputs.phd.label"></label>
+        <label for="{{apply.inputs.phd.name}}" class="kw-error" data-ng-show="forms.apply.phd.$dirty && forms.apply.phd.$error.required" data-ng-bind="apply.inputs.phd.validation.required"></label>
+        <input type="text" name="phd" placeholder="{{apply.inputs.phd.placeholder}}" data-ng-model="ticket.phd" data-ng-required="ticket.education == 'Licenciatura' || ticket.education == 'Maestría' || ticket.education == 'Doctorado'">
       </div>
       <div>
-        <label for="{{apply.inputs.phdUrl.name}}" data-ng-bind="apply.inputs.phdUrl.label"></label>
-        <input type="url" name="phdUrl" placeholder="{{apply.inputs.phdUrl.placeholder}}" data-ng-model="ticket.phdUrl" data-ng-required="ticket.education == 'Doctorado'">
-      </div>
-      <div data-ng-show="forms.apply.submitted && forms.apply.$invalid">
-        <p data-ng-show="forms.apply.phdUrl.$error.required" data-ng-bind="apply.inputs.phdUrl.validation.required"></p>
-        <p data-ng-show="forms.apply.phdUrl.$error.url" data-ng-bind="apply.inputs.phdUrl.validation.url"></p>
+        <label for="{{apply.inputs.phdUrl.name}}" data-ng-hide="forms.apply.phdUrl.$dirty && (forms.apply.phdUrl.$error.required || forms.apply.phdUrl.$error.url)" data-ng-bind="apply.inputs.phdUrl.label"></label>
+        <label for="{{apply.inputs.phdUrl.name}}" class="kw-error" data-ng-show="forms.apply.phdUrl.$dirty && forms.apply.phdUrl.$error.required" data-ng-bind="apply.inputs.phdUrl.validation.required"></label>
+        <label for="{{apply.inputs.phdUrl.name}}" class="kw-error" data-ng-show="forms.apply.phdUrl.$dirty && forms.apply.phdUrl.$error.url" data-ng-bind="apply.inputs.phdUrl.validation.url"></label>
+        <input type="url" name="phdUrl" placeholder="{{apply.inputs.phdUrl.placeholder}}" data-ng-model="ticket.phdUrl" data-ng-required="ticket.education == 'Licenciatura' || ticket.education == 'Maestría' || ticket.education == 'Doctorado'">
       </div>
     </div>
     <div class="pure-u-1">
-      <label for="{{apply.inputs.experience.name}}" data-ng-bind="apply.inputs.experience.label"></label>
+      <label for="{{apply.inputs.experience.name}}" data-ng-hide="forms.apply.experience.$dirty && (forms.apply.experience.$error.required || forms.apply.experience.$error.pattern || forms.apply.experience.$error.maxlength)" data-ng-bind="apply.inputs.experience.label"></label>
+      <label for="{{apply.inputs.experience.name}}" class="kw-error" data-ng-show="forms.apply.experience.$dirty && forms.apply.experience.$error.required" data-ng-bind="apply.inputs.experience.validation.required"></label>
+      <label for="{{apply.inputs.experience.name}}" class="kw-error" data-ng-show="forms.apply.experience.$dirty && (forms.apply.experience.$error.pattern || forms.apply.experience.$error.maxlength)" data-ng-bind="apply.inputs.experience.validation.invalid"></label>
       <input type="text" name="experience" placeholder="{{apply.inputs.experience.placeholder}}" maxlength="2" data-ng-model="ticket.experience" data-ng-maxlength="2"  data-ng-pattern="/\d{1,2}/" required>
-    </div>
-    <div class="pure-u-1" data-ng-show="forms.apply.submitted && forms.apply.$invalid">
-      <p data-ng-show="forms.apply.experience.$error.required" data-ng-bind="apply.inputs.experience.validation.required"></p>
-      <p data-ng-show="forms.apply.experience.$error.pattern || forms.apply.experience.$error.maxlength" data-ng-bind="apply.inputs.experience.validation.invalid"></p>
     </div>
     <div class="pure-u-1">
       <label for="{{apply.inputs.resume.name}}" data-ng-bind="apply.inputs.resume.label"></label>
@@ -132,11 +102,9 @@
       </div>
     </div>
     <div class="pure-u-1">
-      <label for="{{apply.inputs.message.name}}" data-ng-bind="apply.inputs.message.label"></label>
+      <label for="{{apply.inputs.message.name}}" data-ng-hide="forms.apply.message.$dirty && forms.apply.message.$error.required" data-ng-bind="apply.inputs.message.label"></label>
+      <label for="{{apply.inputs.message.name}}" class="kw-error" data-ng-show="forms.apply.message.$dirty && forms.apply.message.$error.required" data-ng-bind="apply.inputs.message.validation.required"></label>
       <textarea name="message" placeholder="{{apply.inputs.message.placeholder}}" rows=5 data-ng-model="ticket.message" required></textarea>
-    </div>
-    <div class="pure-u-1" data-ng-show="forms.apply.submitted && forms.apply.$invalid">
-      <p data-ng-show="forms.apply.message.$error.required" data-ng-bind="apply.inputs.message.validation.required"></p>
     </div>
   </div>
 </form>
