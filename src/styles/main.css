@@ -236,6 +236,10 @@ a {
   box-shadow: none;
 }
 
+.pure-form-stacked select option {
+  background-color: #333;
+}
+
 /*
  * Animations
  */
