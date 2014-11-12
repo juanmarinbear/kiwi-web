@@ -1,65 +1,51 @@
 <form id="support" class="pure-form pure-form-stacked" name="forms.support" novalidate>
   <div class="pure-g">
     <div class="pure-u-1">
-      <label for="{{support.inputs.service.name}}" data-ng-bind="support.inputs.service.label"></label>
+      <label for="{{support.inputs.service.name}}" data-ng-hide="forms.support.service.$dirty && forms.support.service.$error.required" data-ng-bind="support.inputs.service.label"></label>
+      <label for="{{support.inputs.service.name}}" class="kw-error" data-ng-show="forms.support.service.$dirty && forms.support.service.$error.required" data-ng-bind="support.inputs.service.validation.required"></label>
       <select name="service" data-ng-model="ticket.service" data-ng-options="item.value as item.label for item in support.inputs.service.options.items" required autofocus>
         <option value="" data-ng-bind="support.inputs.service.options.default" selected></option>
       </select>
     </div>
-    <div class="pure-u-1" data-ng-show="forms.support.submitted && forms.support.service.$invalid">
-      <p data-ng-show="forms.support.service.$error.required" data-ng-bind="support.inputs.service.validation.required"></p>
-    </div>
     <div class="pure-u-1">
-      <label for="{{support.inputs.subject.name}}" data-ng-bind="support.inputs.subject.label"></label>
+      <label for="{{support.inputs.subject.name}}" data-ng-hide="forms.support.subject.$dirty && forms.support.subject.$error.required" data-ng-bind="support.inputs.subject.label"></label>
+      <label for="{{support.inputs.subject.name}}" class="kw-error" data-ng-show="forms.support.subject.$dirty && forms.support.subject.$error.required" data-ng-bind="support.inputs.subject.validation.required"></label>
       <select name="subject" data-ng-model="ticket.subject" data-ng-change="updateType()" data-ng-options="item.value as item.label for item in support.inputs.subject.options.items" required>
         <option value="" data-ng-bind="support.inputs.subject.options.default" selected></option>
       </select>
-    </div>
-    <div class="pure-u-1" data-ng-show="forms.support.submitted && forms.support.subject.$invalid">
-      <p data-ng-show="forms.support.subject.$error.required" data-ng-bind="support.inputs.subject.validation.required"></p>
     </div>
     <div class="pure-u-1">
       <label for="{{support.inputs.company.name}}" data-ng-bind="support.inputs.company.label"></label>
       <input type="text" name="company" placeholder="{{support.inputs.company.placeholder}}" data-ng-model="ticket.company">
     </div>
     <div class="pure-u-1">
-      <label for="{{support.inputs.name.name}}" data-ng-bind="support.inputs.name.label"></label>
+      <label for="{{support.inputs.name.name}}" data-ng-hide="forms.support.name.$dirty && forms.support.name.$error.required" data-ng-bind="support.inputs.name.label"></label>
+      <label for="{{support.inputs.name.name}}" class="kw-error" data-ng-show="forms.support.name.$dirty && forms.support.name.$error.required" data-ng-bind="support.inputs.name.validation.required"></label>
       <input type="text" name="name" placeholder="{{support.inputs.name.placeholder}}" data-ng-model="ticket.name" required>
     </div>
-    <div class="pure-u-1" data-ng-show="forms.support.submitted && forms.support.$invalid">
-      <p data-ng-show="forms.support.name.$error.required" data-ng-bind="support.inputs.name.validation.required"></p>
-    </div>
     <div class="pure-u-1">
-      <label for="{{support.inputs.last.name}}" data-ng-bind="support.inputs.last.label"></label>
+      <label for="{{support.inputs.last.name}}" data-ng-hide="forms.support.last.$dirty && forms.support.last.$error.required" data-ng-bind="support.inputs.last.label"></label>
+      <label for="{{support.inputs.last.name}}" class="kw-error" data-ng-show="forms.support.last.$dirty && forms.support.last.$error.required" data-ng-bind="support.inputs.last.validation.required"></label>
       <input type="text" name="last" placeholder="{{support.inputs.last.placeholder}}" data-ng-model="ticket.last" required>
     </div>
-    <div class="pure-u-1" data-ng-show="forms.support.submitted && forms.support.$invalid">
-      <p data-ng-show="forms.support.last.$error.required" data-ng-bind="support.inputs.last.validation.required"></p>
-    </div>
     <div class="pure-u-1">
-      <label for="{{support.inputs.email.name}}" data-ng-bind="support.inputs.email.label"></label>
+      <label for="{{support.inputs.email.name}}" data-ng-hide="forms.support.email.$dirty && (forms.support.email.$error.required || forms.support.email.$error.email)" data-ng-bind="support.inputs.email.label"></label>
+      <label for="{{support.inputs.email.name}}" class="kw-error" data-ng-show="forms.support.email.$dirty && forms.support.email.$error.required" data-ng-bind="support.inputs.email.validation.required"></label>
+      <label for="{{support.inputs.email.name}}" class="kw-error" data-ng-show="forms.support.email.$dirty && forms.support.email.$error.email" data-ng-bind="support.inputs.email.validation.invalid"></label>
       <input type="email" name="email" placeholder="{{support.inputs.email.placeholder}}" data-ng-model="ticket.email" required>
     </div>
-    <div class="pure-u-1" data-ng-show="forms.support.submitted && forms.support.$invalid">
-      <p data-ng-show="forms.support.email.$error.required" data-ng-bind="support.inputs.email.validation.required"></p>
-      <p data-ng-show="forms.support.email.$error.email" data-ng-bind="support.inputs.email.validation.invalid"></p>
-    </div>
     <div class="pure-u-1">
-      <label for="{{support.inputs.mobile.name}}" data-ng-bind="support.inputs.mobile.label"></label>
+      <label for="{{support.inputs.mobile.name}}" data-ng-hide="forms.support.mobile.$dirty && (forms.support.mobile.$error.required || forms.support.mobile.$error.pattern || forms.support.mobile.$error.maxlength)" data-ng-bind="support.inputs.mobile.label"></label>
+      <label for="{{support.inputs.mobile.name}}" class="kw-error" data-ng-show="forms.support.mobile.$dirty && forms.support.mobile.$error.required" data-ng-bind="support.inputs.mobile.validation.required"></label>
+      <label for="{{support.inputs.mobile.name}}" class="kw-error" data-ng-show="forms.support.mobile.$dirty && (forms.support.mobile.$error.pattern || forms.support.mobile.$error.maxlength)" data-ng-bind="support.inputs.mobile.validation.invalid"></label>
       <input type="text" name="mobile" placeholder="{{support.inputs.mobile.placeholder}}" maxlength="10" data-ng-model="ticket.mobile" data-ng-pattern="/\d{10}/" data-ng-maxlength="10" required>
     </div>
-    <div class="pure-u-1" data-ng-show="forms.support.submitted && forms.support.$invalid">
-      <p data-ng-show="forms.support.mobile.$error.required" data-ng-bind="support.inputs.mobile.validation.required"></p>
-      <p data-ng-show="forms.support.mobile.$error.pattern || forms.support.mobile.$error.maxlength" data-ng-bind="support.inputs.mobile.validation.invalid"></p>
-    </div>
     <div class="pure-u-1">
-      <label for="{{support.inputs.contact.name}}" data-ng-bind="support.inputs.contact.label"></label>
+      <label for="{{support.inputs.contact.name}}" data-ng-hide="forms.support.contact.$dirty && forms.support.contact.$error.required" data-ng-bind="support.inputs.contact.label"></label>
+      <label for="{{support.inputs.contact.name}}" class="kw-error" data-ng-show="forms.support.contact.$dirty && forms.support.contact.$error.required" data-ng-bind="support.inputs.contact.validation.required"></label>
       <select name="contact" data-ng-model="ticket.contact" data-ng-options="item.value as item.label for item in support.inputs.contact.options.items" required autofocus>
         <option value="" data-ng-bind="support.inputs.contact.options.default" selected></option>
       </select>
-    </div>
-    <div class="pure-u-1" data-ng-show="forms.support.submitted && forms.support.$invalid">
-      <p data-ng-show="forms.support.contact.$error.required" data-ng-bind="support.inputs.contact.validation.required"></p>
     </div>
     <div class="pure-u-1">
       <label for="{{support.inputs.message.name}}" data-ng-bind="support.inputs.message.label"></label>

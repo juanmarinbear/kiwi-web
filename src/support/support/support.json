@@ -1,10 +1,41 @@
 {
   "title" : "Soporte",
-  "subtitle" : "¿Necesitas ayuda?",
-  "paragraphs" : [
-    "<a href='/#/status'>Aquí</a> puedes consultar el Status de la red Kiwi Networks.",
-    "Tenemos un <a href='http://support.kiwinetworks.com' target='_blank'>Help Center</a> con problemas comunes y su solución.",
-    "También nos puedes llamar al 01-800-XXX-XXXXX.  Si no te contestamos, deja un mensaje con tu nombre, email, móvil y empresa.  Tu mensaje se convierte automáticamente en un ticket y le daremos seguimiento.",
+  "sections" : [
+    {
+      "title" : "Status",
+      "subtitle" : "Consulta el <a href=\"/#/status\">status</a> de la red Kiwi Networks",
+      "art" : "ion-connection-bars",
+      "paragraphs" : [
+      ]
+    },
+    {
+      "title" : "Help Center",
+      "subtitle" : "Entra a nuestro <a href=\"http://support.kiwinetworks.com\">Help Center</a> para:",
+      "art" : "ion-help-buoy",
+      "paragraphs" : [
+        "Encontrar problemas técnicos comunes y sus soluciones.",
+        "Hacer preguntas técnicas."
+      ]
+    },
+    {
+      "title" : "Email",
+      "subtitle" : "Escríbenos a:",
+      "art" : "ion-email",
+      "paragraphs" : [
+        "<a class='kw-mailto' href='mailto:support@kiwinetworks.com?Subject=Support' target='_blank'>Soporte: support[a]kiwinetworks.com</a>"
+      ]
+    },
+    {
+      "title" : "Teléfono",
+      "subtitle" : "Llámanos a:",
+      "art" : "ion-ios7-telephone",
+      "paragraphs" : [
+        "México:",
+        "Estados Unidos:"
+      ]
+    }
+  ],
+  "paragraphs": [
     "Si no encontraste solución a tu problema en el Help Center o no quieres llamar, llena esta forma de soporte y te contactaremos inmediatamente.",
     "Tus datos están seguros, no los compartimos con terceros, ni te enviaremos correos que no solicitaste (Marketing, comunicados, etc...).",
     "Únicamente usaremos tus datos para dar seguimiento al asunto por el que nos contactaste.",
